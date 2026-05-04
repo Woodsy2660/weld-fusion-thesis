@@ -1,0 +1,35 @@
+# Dempster-Shafer fusion configuration
+framework: dempster_shafer
+
+frame_of_discernment:
+  - porosity
+  - lack_of_fusion
+  - crack
+  - no_defect
+
+conflict_handling: murphy_averaging  # Murphy (2000)
+
+bpa_conversion:
+  method: calibrated_softmax
+  uncertainty_floor: 0.05  # minimum m(theta) per modality
+
+ablation_conditions:
+  - [vision]
+  - [geometry]
+  - [ut]
+  - [vision, geometry]
+  - [vision, ut]
+  - [geometry, ut]
+  - [vision, geometry, ut]
+
+evaluation_metrics:
+  - accuracy
+  - precision_macro
+  - recall_macro
+  - f1_macro
+  - detection_rate
+  - false_positive_rate
+  - confusion_matrix
+
+benchmark:
+  human_inspector_pod: 0.65  # Campbell et al. 2019

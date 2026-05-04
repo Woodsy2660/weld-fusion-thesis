@@ -1,0 +1,62 @@
+# ===== DATA (too large for git) =====
+data/raw/
+data/processed/
+data/blender/renders_rgb/
+data/blender/renders_depth/
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.exr
+
+# ===== TRAINED MODELS =====
+models/*.pth
+models/*.pt
+models/*.pkl
+models/*.joblib
+models/**/*.pth
+models/**/*.pkl
+
+# ===== BLENDER =====
+blender/exports/
+*.blend1
+*.blend2
+
+# ===== PYTHON =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# ===== VIRTUAL ENVIRONMENT =====
+venv/
+env/
+.env
+
+# ===== JUPYTER =====
+.ipynb_checkpoints/
+*.ipynb_metadata
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== LATEX =====
+thesis/**/*.aux
+thesis/**/*.log
+thesis/**/*.out
+thesis/**/*.toc
+thesis/**/*.bbl
+thesis/**/*.blg
+thesis/**/*.synctex.gz

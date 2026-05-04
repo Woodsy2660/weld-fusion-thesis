@@ -1,0 +1,37 @@
+# UT modality training configuration
+model:
+  primary: random_forest
+  comparison: xgboost
+
+random_forest:
+  n_estimators: 200
+  max_depth: null
+  min_samples_split: 5
+  min_samples_leaf: 2
+  class_weight: balanced
+
+xgboost:
+  n_estimators: 200
+  max_depth: 6
+  learning_rate: 0.1
+  subsample: 0.8
+  colsample_bytree: 0.8
+
+evaluation:
+  cv_folds: 5
+  stratified: true
+  scoring: f1_macro
+
+features:
+  - peak_amplitude_db
+  - time_of_flight_us
+  - signal_width_6db_us
+  - snr_db
+  - backwall_echo_db
+  - echo_count
+
+classes:
+  - porosity
+  - lack_of_fusion
+  - crack
+  - no_defect

@@ -1,0 +1,29 @@
+# Geometry modality configuration
+sensor:
+  type: realsense_d435  # or realsense_d415
+  depth_resolution: [1280, 720]
+  rgb_resolution: [1920, 1080]
+  working_distance_mm: 200
+
+profile_extraction:
+  slice_interval_mm: 5
+  smoothing_kernel_size: 5
+  base_plate_detection: ransac
+
+acceptance_criteria:
+  standard: iso_5817_2023
+  quality_level: B
+  plate_thickness_mm: 10
+  limits:
+    undercut_max_mm: 0.5
+    undercut_ratio: 0.05  # h <= 0.05t
+    reinforcement_max_mm: 5.0
+    reinforcement_formula: "1 + 0.1b"  # h <= 1 + 0.1*width, max 5mm
+    misalignment_max_mm: 3.0
+    misalignment_ratio: 0.1  # h <= 0.1t + 0.2mm
+
+classes:
+  - porosity
+  - lack_of_fusion
+  - crack
+  - no_defect
