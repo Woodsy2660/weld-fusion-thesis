@@ -1,29 +1,24 @@
-# Geometry modality configuration
-sensor:
-  type: realsense_d435  # or realsense_d415
-  depth_resolution: [1280, 720]
-  rgb_resolution: [1920, 1080]
-  working_distance_mm: 200
-
-profile_extraction:
-  slice_interval_mm: 5
-  smoothing_kernel_size: 5
-  base_plate_detection: ransac
-
 acceptance_criteria:
   standard: iso_5817_2023
   quality_level: B
-  plate_thickness_mm: 10
+  plate_thickness_mm: 10.0
   limits:
     undercut_max_mm: 0.5
-    undercut_ratio: 0.05  # h <= 0.05t
+    undercut_ratio: 0.05          # h <= 0.05 t
     reinforcement_max_mm: 5.0
-    reinforcement_formula: "1 + 0.1b"  # h <= 1 + 0.1*width, max 5mm
+    reinforcement_offset_mm: 1.0  # h <= 1 + 0.1 b
+    reinforcement_width_coeff: 0.1
     misalignment_max_mm: 3.0
-    misalignment_ratio: 0.1  # h <= 0.1t + 0.2mm
+    misalignment_ratio: 0.1       # h <= 0.1 t + 0.2 mm
+    misalignment_offset_mm: 0.2
 
-classes:
-  - porosity
-  - lack_of_fusion
-  - crack
-  - no_defect
+uncertainty:
+  u_cal_mm: 0.02
+  u_noise_mm: 0.028   # ~25-row average of D435 at 200 mm standoff
+  u_align_mm: 0.05
+
+profile_extraction:
+  n_rows: 25
+  smoothing_kernel_size: 5
+  base_plate_detection: ransac    # primary; outer_median is the implemented fallback
+  pixel_pitch_mm: 0.1

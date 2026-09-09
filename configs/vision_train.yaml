@@ -1,9 +1,8 @@
-# Vision modality training configuration
 model:
   architecture: resnet50
   pretrained: imagenet
-  num_classes: 4
-  freeze_layers: false  # fine-tune all layers
+  # num_classes is derived from configs/frame.yaml (len(theta)); do not hardcode.
+  freeze_layers: false
 
 data:
   train_dir: data/processed/vision/train
@@ -36,9 +35,3 @@ training:
 normalization:
   mean: [0.485, 0.456, 0.406]
   std: [0.229, 0.224, 0.225]
-
-classes:
-  - porosity
-  - lack_of_fusion
-  - crack
-  - no_defect

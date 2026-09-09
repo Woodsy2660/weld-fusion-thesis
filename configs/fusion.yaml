@@ -1,19 +1,9 @@
-# Dempster-Shafer fusion configuration
 framework: dempster_shafer
+conflict_handling: murphy_averaging   # Murphy (2000); primary rule
+decision_rule: pignistic
+discounting: shafer                   # alpha_m = 1 - balanced_accuracy on val folds only
 
-frame_of_discernment:
-  - porosity
-  - lack_of_fusion
-  - crack
-  - no_defect
-
-conflict_handling: murphy_averaging  # Murphy (2000)
-
-bpa_conversion:
-  method: calibrated_softmax
-  uncertainty_floor: 0.05  # minimum m(theta) per modality
-
-ablation_conditions:
+ablation_subsets:
   - [vision]
   - [geometry]
   - [ut]
@@ -21,15 +11,3 @@ ablation_conditions:
   - [vision, ut]
   - [geometry, ut]
   - [vision, geometry, ut]
-
-evaluation_metrics:
-  - accuracy
-  - precision_macro
-  - recall_macro
-  - f1_macro
-  - detection_rate
-  - false_positive_rate
-  - confusion_matrix
-
-benchmark:
-  human_inspector_pod: 0.65  # Campbell et al. 2019

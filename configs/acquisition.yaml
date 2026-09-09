@@ -1,0 +1,21 @@
+# Sensor settings. Not a substitute for a per-run provenance manifest.
+
+realsense:
+  model: d435
+  baseline_mm: 50.0
+  # Approximate focal length in pixels at 848x480 (D435 active IR stereo).
+  f_px: 447.0
+  delta_d_px: 0.08
+  depth_resolution: [848, 480]
+  rgb_resolution: [1920, 1080]
+  standoff_mm: 200.0
+  n_profile_rows: 25
+  n_temporal_frames: 8
+
+vision:
+  image_size: 224
+
+ut:
+  instrument: usm100
+  probe_angles_deg: [60, 70]
+  shear_velocity_mm_per_us: 3.23

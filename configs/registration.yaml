@@ -1,0 +1,22 @@
+coupon:
+  n_coupons: 15
+  length_mm: 300.0
+  width_mm: 150.0
+  thickness_mm: 10.0
+  material: Grade 250/350
+  weld: single-V GMAW
+
+zones:
+  A: [0.0, 100.0]
+  B: [100.0, 200.0]
+  C: [200.0, 300.0]
+
+cell:
+  width_mm: 10.0
+  guard_band_mm: 10.0
+  # Local s within each 100 mm zone. Cells occupy [centre-5, centre+5).
+  local_centres_mm: [15.0, 25.0, 35.0, 45.0, 55.0, 65.0, 75.0, 85.0]
+
+ut:
+  probe_angles_deg: [60, 70]
+  max_leg: 2

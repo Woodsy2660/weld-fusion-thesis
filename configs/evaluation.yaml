@@ -1,0 +1,34 @@
+cv:
+  type: nested_group_kfold
+  group_by: coupon_id
+  n_outer: 5
+  n_inner: 3
+  # Random cell-level splits are a bug: no coupon may appear in both train and test.
+
+metrics:
+  - per_class_precision
+  - per_class_recall
+  - per_class_f1
+  - macro_f1
+  - confusion_matrix
+  - detection_rate
+  - false_positive_rate
+
+statistics:
+  mcnemar: true
+  bootstrap_cis: true
+  bootstrap_n: 10000
+  bootstrap_seed: 42
+  multiple_comparison: holm_bonferroni
+  alpha: 0.05
+
+binary_collapse:
+  defect_is_not: N   # detection rate / FPR via predicted class != N
+
+prior:
+  # Uniform unless a fabrication-intent prior is supplied at evaluation time.
+  N: 0.2
+  U: 0.2
+  P: 0.2
+  L: 0.2
+  C: 0.2

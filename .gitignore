@@ -1,8 +1,11 @@
-# ===== DATA (too large for git) =====
-data/raw/
-data/processed/
-data/blender/renders_rgb/
-data/blender/renders_depth/
+# ===== DATA (too large for git; keep directory placeholders) =====
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/groundtruth/*
+!data/groundtruth/.gitkeep
+data/blender/
 *.npy
 *.npz
 *.h5
@@ -10,12 +13,24 @@ data/blender/renders_depth/
 *.exr
 
 # ===== TRAINED MODELS =====
-models/*.pth
-models/*.pt
-models/*.pkl
-models/*.joblib
-models/**/*.pth
-models/**/*.pkl
+models/*
+!models/.gitkeep
+*.pth
+*.pt
+*.pkl
+*.joblib
+
+# ===== RESULTS =====
+results/*
+!results/figures/
+!results/tables/
+!results/manifests/
+results/figures/*
+results/tables/*
+results/manifests/*
+!results/figures/.gitkeep
+!results/tables/.gitkeep
+!results/manifests/.gitkeep
 
 # ===== BLENDER =====
 blender/exports/
@@ -31,6 +46,7 @@ dist/
 build/
 .eggs/
 *.egg
+.pytest_cache/
 
 # ===== VIRTUAL ENVIRONMENT =====
 venv/

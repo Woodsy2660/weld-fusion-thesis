@@ -1,0 +1,58 @@
+# Single source of truth for the frame of discernment and per-modality
+# focal elements. No other module may hardcode the class list.
+
+theta: [N, U, P, L, C]
+
+labels:
+  N: no defect / acceptable
+  U: undercut exceeding AS/NZS 1554.1 and ISO 5817 Level B (rejectable)
+  P: porosity
+  L: lack of fusion / lack of penetration (merged; both planar, both root/sidewall)
+  C: crack (represented experimentally by a machined notch surrogate)
+
+# Human-readable folder names for processed vision ImageFolder layout.
+folder_names:
+  N: no_defect
+  U: undercut
+  P: porosity
+  L: lack_of_fusion
+  C: crack
+
+# Each modality assigns mass ONLY over subsets it can physically resolve.
+modalities:
+  vision:
+    focal_elements:
+      - [P]
+      - [C]
+      - [N, U]          # surface irregularity present, depth not measurable
+      - [N, U, L]       # surface clean; sound, sub-visible undercut, or internal LOF
+      - [N, U, P, L, C] # Theta
+  geometry:
+    focal_elements:
+      - [U]
+      - [N, P, L, C]    # profile conforms; says nothing about internals
+      - [N, U, P, L, C]
+  ut:
+    focal_elements:
+      - [P]
+      - [L]
+      - [C]
+      - [N, U]          # no subsurface indication; blind to surface geometry
+      - [N, U, P, L, C]
+
+# Competence partitions used by the algebraic accuracy ceiling.
+# Vision is coarsened to {{P},{C},{N,U,L}}: {N,U} vs {N,U,L} are alternative
+# visual reports, not nested measurements that isolate L.
+competence_partitions:
+  vision:
+    - [P]
+    - [C]
+    - [N, U, L]
+  geometry:
+    - [U]
+    - [N, P, L, C]
+  ut:
+    - [P]
+    - [L]
+    - [C]
+    - [N, U]
