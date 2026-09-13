@@ -1,0 +1,23 @@
+# Source label -> vision head mapping for patch extraction.
+#
+# Vision heads (from frame.yaml):
+#   V1: {P}        surface-breaking porosity
+#   V2: {C}        surface-breaking crack
+#   V3: {N,U}      surface irregularity, depth not measurable
+#   V4: {N,U,L}    surface clean - sound, sub-visible undercut, or internal LOF
+#
+# "discard" must be EXPLICIT. Any source label not present here is a hard error.
+# A silently dropped label is how a class disappears from a dataset.
+
+sources:
+  weld-dataset:
+    pore: V1
+    discontinuity: V3   # PROVISIONAL - requires human review (see Part E gate)
+    stain: V4           # discolouration carries no evidence about defects
+    deposit: V4         # spatter carries no evidence about defects
+    _background: V4     # negative samples
+
+  welding-defect-kaggle:
+    "Good Weld": V4
+    "Bad Weld": discard   # too coarse - cannot map to specific head
+    "Defect": discard     # too coarse - could be P, L, or C

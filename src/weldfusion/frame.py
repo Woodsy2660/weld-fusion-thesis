@@ -82,6 +82,26 @@ def modalities() -> tuple[str, ...]:
     return tuple(_raw()["modalities"].keys())
 
 
+def vision_heads() -> dict[str, Focal]:
+    """Return mapping from head name (V1, V2, ...) to focal element.
+
+    This is the SINGLE SOURCE OF TRUTH for what the vision classifier outputs.
+    Vision outputs 4 heads, NOT 5 Theta singletons.
+    """
+    raw = _raw().get("vision_heads", {})
+    return {name: as_focal(classes) for name, classes in raw.items()}
+
+
+def vision_head_count() -> int:
+    """Number of vision output heads (read from frame.yaml, never hardcoded)."""
+    return len(vision_heads())
+
+
+def vision_head_order() -> tuple[str, ...]:
+    """Ordered head names (V1, V2, V3, V4)."""
+    return tuple(sorted(vision_heads().keys()))
+
+
 def is_subset(a: Focal, b: Focal) -> bool:
     return a <= b
 

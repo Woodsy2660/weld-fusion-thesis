@@ -40,6 +40,14 @@ modalities:
       - [N, U]          # no subsurface indication; blind to surface geometry
       - [N, U, P, L, C]
 
+# Vision outputs 4 heads corresponding to allowed focal elements, NOT Theta singletons.
+# This is the SINGLE SOURCE OF TRUTH for the head-to-focal-element mapping.
+vision_heads:
+  V1: [P]           # surface-breaking porosity
+  V2: [C]           # surface-breaking crack
+  V3: [N, U]        # surface irregularity present, depth not measurable
+  V4: [N, U, L]     # surface clean - sound, sub-visible undercut, or internal LOF
+
 # Competence partitions used by the algebraic accuracy ceiling.
 # Vision is coarsened to {{P},{C},{N,U,L}}: {N,U} vs {N,U,L} are alternative
 # visual reports, not nested measurements that isolate L.
