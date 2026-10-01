@@ -1,0 +1,51 @@
+{
+ "git_sha": "87db5fc73abcb0840318a85fc0730dc7351629c9",
+ "architecture": "resnet50",
+ "torch": "2.6.0+cu124",
+ "cuda": "12.4",
+ "device": "cuda",
+ "seed": 42,
+ "config": "configs/vision_train.yaml",
+ "config_sha256_16": "210b90f11162ce40",
+ "frame_sha256_16": "0923b9e5df5a4c89",
+ "class_map_sha256_16": "b2851f89bb3eb12c",
+ "checkpoint": "models/vision/best_resnet50_v2.pth",
+ "checkpoint_sha256_16": "ab492b21e08106d2",
+ "trainable_parameters": 22069251,
+ "total_parameters": 23514179,
+ "freeze_through": "layer2",
+ "class_weights": {
+  "V1": 1.9924768209457397,
+  "V3": 0.5220921039581299,
+  "V4": 0.4854308068752289
+ },
+ "patch_counts_per_head": {
+  "train": {
+   "V1": 3931,
+   "V3": 15002,
+   "V4": 16135
+  },
+  "val": {
+   "V1": 463,
+   "V3": 2209,
+   "V4": 1454
+  },
+  "test": {
+   "V1": 590,
+   "V3": 1715,
+   "V4": 2262
+  }
+ },
+ "source_frames_per_split": {
+  "train": 4780,
+  "val": 538,
+  "test": 590
+ },
+ "split_approach": "StratifiedGroupKFold(n_splits=10, groups=source_frame)",
+ "split_composition_drift_pp": {
+  "V1": 10.967774845607636,
+  "V3": 19.5475889061864,
+  "V4": 11.238902235447185
+ },
+ "test_macro_f1_three_head": 0.9119912773034967
+}

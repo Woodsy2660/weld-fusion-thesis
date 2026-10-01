@@ -1,0 +1,171 @@
+{
+ "tag": "resnet50_v2",
+ "seed": 42,
+ "per_head_all_sources": {
+  "V1": {
+   "precision": 0.8435374149659864,
+   "recall": 0.8406779661016949,
+   "f1": 0.8421052631578947,
+   "support": 590
+  },
+  "V3": {
+   "precision": 0.9490445859872612,
+   "recall": 0.9556851311953353,
+   "f1": 0.9523532829750145,
+   "support": 1715
+  },
+  "V4": {
+   "precision": 0.9436056838365897,
+   "recall": 0.9394341290893015,
+   "f1": 0.9415152857775808,
+   "support": 2262
+  }
+ },
+ "per_head_by_source": {
+  "final_welding": {
+   "source": "final_welding",
+   "n_patches": 1510,
+   "per_head": {
+    "V1": {
+     "precision": 0.9492753623188406,
+     "recall": 0.8061538461538461,
+     "f1": 0.8718801996672213,
+     "support": 325
+    },
+    "V3": {
+     "precision": 0.9125475285171103,
+     "recall": 0.933852140077821,
+     "f1": 0.9230769230769231,
+     "support": 771
+    },
+    "V4": {
+     "precision": 0.8224719101123595,
+     "recall": 0.8840579710144928,
+     "f1": 0.8521536670547147,
+     "support": 414
+    }
+   },
+   "macro_f1_three_head": 0.8823702632662863,
+   "accuracy": 0.8927152317880794,
+   "source_labels_present": [
+    "Arc strike",
+    "Burn Through",
+    "Crack",
+    "Excess-Reinforcement",
+    "Irregular",
+    "Lack of Fusion",
+    "Overlap",
+    "Porosity",
+    "Spatters",
+    "Undercut",
+    "__negative__",
+    "cluster of porosity",
+    "mechanical-damage"
+   ]
+  },
+  "weld_dataset": {
+   "source": "weld_dataset",
+   "n_patches": 3042,
+   "per_head": {
+    "V1": {
+     "precision": 0.75,
+     "recall": 0.8830188679245283,
+     "f1": 0.8110918544194108,
+     "support": 265
+    },
+    "V3": {
+     "precision": 0.9797441364605544,
+     "recall": 0.9735169491525424,
+     "f1": 0.9766206163655685,
+     "support": 944
+    },
+    "V4": {
+     "precision": 0.9732142857142857,
+     "recall": 0.9514457174031642,
+     "f1": 0.9622068965517241,
+     "support": 1833
+    }
+   },
+   "macro_f1_three_head": 0.9166397891122345,
+   "accuracy": 0.9523339907955293,
+   "source_labels_present": [
+    "__negative__",
+    "deposit",
+    "discontinuity",
+    "pore",
+    "stain"
+   ]
+  },
+  "wijaya": {
+   "source": "wijaya",
+   "n_patches": 15,
+   "per_head": {
+    "V1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 0
+    },
+    "V3": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "support": 0
+    },
+    "V4": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 15
+    }
+   },
+   "macro_f1_three_head": 0.3333333333333333,
+   "accuracy": 1.0,
+   "source_labels_present": [
+    "Good Weld",
+    "__negative__"
+   ]
+  }
+ },
+ "geometry_source_probe": {
+  "features": [
+   "pad_fraction",
+   "log_aspect_ratio",
+   "log_box_w",
+   "log_box_h",
+   "log_box_area"
+  ],
+  "accuracy": 0.49091307203853735,
+  "majority_class_baseline": 0.6660827676811911,
+  "majority_class": "weld_dataset",
+  "lift_over_baseline": -0.17516969564265378,
+  "macro_f1": 0.3403643011949152,
+  "per_source": {
+   "final_welding": {
+    "precision": 0.35803200948429165,
+    "recall": 0.4,
+    "f1": 0.37785423834845167,
+    "support": 1510
+   },
+   "weld_dataset": {
+    "precision": 0.7084421235857267,
+    "recall": 0.5351742274819198,
+    "f1": 0.6097378277153558,
+    "support": 3042
+   },
+   "wijaya": {
+    "precision": 0.01718213058419244,
+    "recall": 0.6666666666666666,
+    "f1": 0.03350083752093802,
+    "support": 15
+   }
+  },
+  "median_box_area_px2": {
+   "final_welding": 298.9854,
+   "weld_dataset": 236.48969999999997,
+   "wijaya": 4733.75
+  },
+  "n_train": 35068,
+  "n_test": 4567
+ }
+}

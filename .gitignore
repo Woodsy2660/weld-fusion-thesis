@@ -79,3 +79,24 @@ thesis/**/*.synctex.gz
 !results/
 !results/vision/*.npz
 !results/vision/*.json
+
+# ===== SPLIT + PROVENANCE MANIFESTS (tracked: nothing is reproducible without them) =====
+# data/processed/ is excluded above because it holds the 395MB patch corpus.
+# These text files are the split assignment and the dedup/grouping provenance.
+# manifest.csv is 21MB raw but ~1.1MB gzipped in the pack; without it the
+# train/val/test membership behind every reported number is unrecoverable.
+!data/processed/
+!data/processed/vision_patches/
+!data/processed/vision_patches/manifest.csv
+!data/processed/vision_patches/manifest_taskC_source_frame.csv
+!data/processed/vision_patches/split_summary.json
+!data/processed/vision_patches/sequence_groups.json
+!data/processed/vision_patches/dedup_report.json
+!data/merged/
+!data/merged/label_conflicts.json
+
+# The directory had to be un-ignored above to reach the manifests inside it.
+# Re-exclude the 395MB / 43,761-file patch corpus itself -- it is regenerable
+# from data/Vision/ plus convert_and_remap.py. Patch images stay out.
+data/processed/vision_patches/*/
+data/processed/vision_patches/**/*.jpg
