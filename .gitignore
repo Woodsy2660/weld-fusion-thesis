@@ -9,6 +9,18 @@ data/blender/renders_depth/
 *.hdf5
 *.exr
 
+# ===== VISION DATA (raw sources + generated stages, too large for git) =====
+data/Vision/
+data/vision/
+data/staged/
+data/merged/
+# Generated patch corpus (43k crops). Regenerate with convert_and_remap.py.
+data/processed/vision_patches/
+
+# ===== PRETRAINED BASELINE CHECKPOINTS (LoHi-WELD YOLOv7 runs, 1.3GB) =====
+# NOTE: these are model PREDICTIONS + weights, never training labels.
+models/lohi-weld-baselines/
+
 # ===== TRAINED MODELS =====
 models/*.pth
 models/*.pt
@@ -60,3 +72,10 @@ thesis/**/*.toc
 thesis/**/*.bbl
 thesis/**/*.blg
 thesis/**/*.synctex.gz
+
+# ===== VISION RESULTS (committed: downstream calibration depends on them) =====
+# *.npz above is for bulk data; the validation logits are small and are the
+# input to temperature scaling, so they are tracked deliberately.
+!results/
+!results/vision/*.npz
+!results/vision/*.json

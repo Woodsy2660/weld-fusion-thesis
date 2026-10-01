@@ -1,34 +1,56 @@
-# Vision modality training configuration
+# Vision modality training configuration.
+#
+# The classifier predicts VISION FOCAL ELEMENTS, not classes in Theta.
+# The head count and the head->focal-element mapping live in configs/frame.yaml
+# and are NOT duplicated here -- src/vision/model.py reads them from the frame.
+#
+# Settings below changed from fold 0 to address the epoch-13 overfit, where
+# validation loss ran 0.4840 -> 0.9051 over the final 16 epochs while macro-F1
+# stayed flat.
+
 model:
-  architecture: resnet50
+  architecture: resnet50   # resnet18 is the other candidate; --arch overrides
   pretrained: imagenet
-  num_classes: 4
-  freeze_layers: false  # fine-tune all layers
+  # Freeze permanently through layer2 and train layer3/layer4/fc. Fold 0 froze
+  # everything for 5 epochs then unfroze the whole backbone, which gave the
+  # model 23.5M trainable parameters against roughly 5,908 independent source
+  # frames. Early layers carry generic edge and texture filters that weld
+  # imagery does not need to relearn.
+  freeze_through: layer2
 
 data:
-  train_dir: data/processed/vision/train
-  val_dir: data/processed/vision/val
-  test_dir: data/processed/vision/test
+  # Per-instance patches from src/vision/convert_and_remap.py. Split membership
+  # is recorded in manifest.csv (grouped by source_frame, label-stratified),
+  # not by directory.
+  patches_dir: data/processed/vision_patches
   image_size: 224
-  batch_size: 32
-  num_workers: 4
+  batch_size: 64
+  num_workers: 8
 
 augmentation:
-  horizontal_flip: true
+  # Collapsing the Roboflow augmented siblings removed variation that used to
+  # be baked into the corpus, so this restores signal rather than adding noise.
+  #
+  # NO hue or saturation jitter: these are near-monochrome steel surfaces and a
+  # hue shift is unphysical. NO aggressive scale jitter: crop scale carries
+  # real signal about defect size.
+  horizontal_flip: 0.5
+  vertical_flip: 0.5       # a weld bead has no canonical up
   rotation_degrees: 15
-  color_jitter:
-    brightness: 0.2
-    contrast: 0.2
-    saturation: 0.1
-  random_resized_crop:
-    scale: [0.8, 1.0]
+  brightness: 0.2
+  contrast: 0.2
+  gaussian_blur:
+    p: 0.2
+    kernel_size: 5
+    sigma: [0.1, 1.0]
 
 training:
   optimizer: adam
+  class_weights: inverse_frequency   # recomputed from the training split
   learning_rate: 0.0001
-  weight_decay: 0.0001
-  epochs: 50
-  early_stopping_patience: 10
+  weight_decay: 0.001      # was 1e-4
+  epochs: 18               # was 30
+  early_stopping_patience: 5   # was 8
   scheduler:
     type: cosine
     min_lr: 0.000001
@@ -36,9 +58,3 @@ training:
 normalization:
   mean: [0.485, 0.456, 0.406]
   std: [0.229, 0.224, 0.225]
-
-classes:
-  - porosity
-  - lack_of_fusion
-  - crack
-  - no_defect

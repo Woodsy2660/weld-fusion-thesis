@@ -1,0 +1,8 @@
+{
+ "exact_groups": 1098,
+ "exact_removed": 0,
+ "perceptual_groups": 2223,
+ "perceptual_removed": 21469,
+ "cross_dataset": 681,
+ "within_dataset": 1542
+}

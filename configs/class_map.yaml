@@ -1,0 +1,79 @@
+# Source annotation class -> vision focal element (see configs/frame.yaml).
+#
+# Rationale (preserve):
+#
+# - V3 collects every surface-visible geometric anomaly. Vision flags that a
+#   deviation exists; geometry measures whether it exceeds the limit. That
+#   division of labour is the whole point of the compound focal element {N,U}.
+#
+# - Spatter, arc strike and stain carry no evidence about porosity, cracking or
+#   geometry. They belong in V4, and including them makes the model robust to
+#   spatter -- which the C4 welding condition will produce in quantity.
+#
+# - Including stain/spatter/arc-strike in V4 also fixes the single-source
+#   monoculture: V4 stops being 437 Wijaya-only images and becomes a large
+#   multi-dataset class.
+#
+# Unmapped source classes RAISE. A class present in a source data.yaml but
+# absent here is an error, never a silent discard -- see
+# src/utils/frame.py:load_class_map().
+
+sources:
+
+  # -------------------------------------------------------------------------
+  # FINAL WELDING DATASET -- 15 classes, Roboflow export.
+  # -------------------------------------------------------------------------
+  final_welding:
+    Porosity:                  V1
+    "cluster of porosity":     V1    # CONFIRMED 30 Sep 2026. Its weak recall
+                                     # (0.659) tracks its padding (mean 0.479
+                                     # against 0.171 for `pore`), not its
+                                     # label -- a geometry artefact, not a
+                                     # mapping error.
+    Crack:                     V4    # was V2. The V2 {C} head was removed --
+                                     # 60 patches from 46 frames, precision
+                                     # 0.19, unsupported by the data. NOT
+                                     # discard: a crack patch is a legitimate
+                                     # member of the ignorance set {N,U,L,C},
+                                     # so mapping it to V4 asserts nothing
+                                     # false and keeps 60 patches of signal
+                                     # for what "no conclusive evidence" looks
+                                     # like. DECISION CONFIRMED 30 Sep 2026.
+    "Lack of Fusion":          V3    # surface-visible LOF is a geometric
+                                     # anomaly at the toe; vision cannot see
+                                     # internal LOF
+    Undercut:                  V3
+    Irregular:                 V3
+    "Excess-Reinforcement":    V3
+    Overlap:                   V3
+    "Burn Through":            V3
+    "root concvity":           V3    # sic - match the source spelling
+    "excess root penetration": V3
+    Spatters:                  V4
+    "Arc strike":              V4
+    "mechanical-damage":       V4
+    "slag-inclusion":          discard
+
+  # -------------------------------------------------------------------------
+  # weld-dataset -- SylvioBlock LoHi-WELD source images, 4 classes.
+  # -------------------------------------------------------------------------
+  weld_dataset:
+    pore:                      V1
+    discontinuity:             V3    # CONFIRMED 30 Sep 2026. V3 scores F1
+                                     # 0.829 within final_welding alone, where
+                                     # no discontinuity patches exist, so the
+                                     # mapping is not propping the head up.
+                                     # The UMAP island is dataset identity,
+                                     # not defect identity: crop geometry
+                                     # alone predicts source dataset at 0.790
+                                     # against a 0.522 baseline.
+    stain:                     V4
+    deposit:                   V4
+
+  # -------------------------------------------------------------------------
+  # The Welding Defect Dataset (Wijaya) -- 3 coarse classes.
+  # -------------------------------------------------------------------------
+  wijaya:
+    "Good Weld":               V4
+    "Bad Weld":                discard
+    Defect:                    discard

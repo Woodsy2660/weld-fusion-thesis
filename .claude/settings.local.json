@@ -4,7 +4,10 @@
       "Bash(git init *)",
       "Bash(git remote *)",
       "Bash(git fetch *)",
-      "Bash(git checkout *)"
+      "Bash(git checkout *)",
+      "Bash(xargs -I{} ls -lh {})",
+      "Bash(cd *)",
+      "Bash(python3 *)"
     ]
   }
 }

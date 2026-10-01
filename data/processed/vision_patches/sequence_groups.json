@@ -1,0 +1,94 @@
+{
+ "seed": 42,
+ "n_source_frames": 5908,
+ "n_sequence_groups": 1759,
+ "reduction_factor": 3.358726549175668,
+ "relations": {
+  "1_perceptual_union_find": {
+   "merges": 0,
+   "note": "already encoded in source_frame; every surviving image is its own representative, so this contributes the identity partition"
+  },
+  "2_sequence_stem": {
+   "merges": 4149,
+   "groups_after": 1759,
+   "distinct_stems": 1759
+  },
+  "3_embedding_adjacency": {
+   "merges": 0,
+   "skipped": true,
+   "note": "run without --skip-embedding to include this relation"
+  }
+ },
+ "group_size_distribution": {
+  "1": 622,
+  "2": 958,
+  "3": 38,
+  "4": 11,
+  "5": 13,
+  "6": 10,
+  "7": 6,
+  "8": 9,
+  "9": 12,
+  "10": 7,
+  "11": 7,
+  "12": 2,
+  "13": 3,
+  "14": 4,
+  "15": 3,
+  "16": 6,
+  "17": 1,
+  "18": 1,
+  "20": 2,
+  "21": 1,
+  "22": 3,
+  "23": 2,
+  "24": 1,
+  "25": 3,
+  "27": 2,
+  "28": 2,
+  "30": 1,
+  "31": 1,
+  "32": 1,
+  "36": 2,
+  "37": 1,
+  "38": 3,
+  "40": 2,
+  "42": 1,
+  "43": 3,
+  "44": 1,
+  "46": 1,
+  "47": 3,
+  "50": 1,
+  "59": 1,
+  "61": 1,
+  "68": 1,
+  "79": 1,
+  "85": 1,
+  "114": 1,
+  "185": 1,
+  "251": 1,
+  "291": 1
+ },
+ "largest_groups": [
+  {
+   "size": 291,
+   "representative": "/mnt/e/weld-fusion-thesis/data/vision/weld-dataset/high_resolution_welds/26_100.jpg"
+  },
+  {
+   "size": 251,
+   "representative": "/mnt/e/weld-fusion-thesis/data/vision/weld-dataset/high_resolution_welds/25_100.jpg"
+  },
+  {
+   "size": 185,
+   "representative": "/mnt/e/weld-fusion-thesis/data/vision/weld-dataset/high_resolution_welds/27_100.jpg"
+  },
+  {
+   "size": 114,
+   "representative": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/good_welding_nul_ttttt103_png_jpg.rf.af8106b34cc0db9bad6a90cd25bdd7fd.jpg"
+  },
+  {
+   "size": 85,
+   "representative": "/mnt/e/weld-fusion-thesis/data/vision/The Welding Defect Dataset/train/images/SampleV2_2_mp4-10_jpg.rf.f645577d02c06916d8db77e65f188cb4.jpg"
+  }
+ ]
+}

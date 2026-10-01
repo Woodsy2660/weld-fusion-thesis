@@ -1,0 +1,708 @@
+{
+ "f1_sequence_detection": {
+  "final_welding": {
+   "n_frames": 2748,
+   "n_distinct_stems": 734,
+   "n_stems_with_multiple_members": 223,
+   "frames_without_a_digit_run": 0,
+   "members_per_stem_distribution": {
+    "1": 511,
+    "2": 70,
+    "3": 36,
+    "4": 10,
+    "5": 10,
+    "6": 10,
+    "7": 6,
+    "8": 7,
+    "9": 9,
+    "10": 5,
+    "11": 7,
+    "12": 2,
+    "13": 3,
+    "14": 4,
+    "15": 3,
+    "16": 5,
+    "17": 1,
+    "18": 1,
+    "20": 2,
+    "21": 1,
+    "22": 3,
+    "23": 2,
+    "24": 1,
+    "25": 3,
+    "27": 2,
+    "28": 1,
+    "30": 1,
+    "31": 1,
+    "32": 1,
+    "36": 2,
+    "37": 1,
+    "38": 2,
+    "40": 1,
+    "43": 1,
+    "46": 1,
+    "47": 3,
+    "50": 1,
+    "59": 1,
+    "61": 1,
+    "68": 1,
+    "114": 1
+   },
+   "n_sequence_like_stems": 76,
+   "frames_in_sequence_like_stems": 1406,
+   "largest_stems": [
+    {
+     "stem": "good_welding_nul_ttttt###_png",
+     "members": 114,
+     "longest_near_contiguous_run": 4,
+     "examples": [
+      "good_welding_nul_ttttt103_png_jpg.rf.af8106b34cc0db9bad6a90cd25bdd7fd.jpg",
+      "good_welding_nul_ttttt104_png_jpg.rf.8680b5802c89b68c3fccd88a414a3d6f.jpg",
+      "good_welding_nul_ttttt117_png_jpg.rf.069e478441ecb67297424d88c50c191f.jpg"
+     ]
+    },
+    {
+     "stem": "good_welding_nul###_JPG",
+     "members": 68,
+     "longest_near_contiguous_run": 5,
+     "examples": [
+      "good_welding_nul114_JPG_jpg.rf.9ea2b00eed19547002acfd7a6da78d94.jpg",
+      "good_welding_nul135_JPG_jpg.rf.f24e896edfa8875b06a3cbf7a630a6e9.jpg",
+      "good_welding_nul138_JPG_jpg.rf.e108eaf4a82ab6f3fb8daa86e3e6c717.jpg"
+     ]
+    },
+    {
+     "stem": "##",
+     "members": 61,
+     "longest_near_contiguous_run": 15,
+     "examples": [
+      "05_png.rf.bf900d97c2e25ab039f202db2d6da2da.jpg",
+      "12_jpeg.rf.57fe9756ae8dd454adf0ec2afe37ce65.jpg",
+      "13_jpeg.rf.d4920047c631607af91bf383d3bfdb29.jpg"
+     ]
+    },
+    {
+     "stem": "IMG##############",
+     "members": 59,
+     "longest_near_contiguous_run": 4,
+     "examples": [
+      "IMG20220529095019_jpg.rf.f8fbc2f9fadd35a6071a505fdd026c96.jpg",
+      "IMG20220529095109_jpg.rf.dbb6c2fd8b2273719fc4ec97963938af.jpg",
+      "IMG20220601140016_jpg.rf.ee12f26722804cb7d5d44c0cc7df13f1.jpg"
+     ]
+    },
+    {
+     "stem": "good_welding_nul_ttt###_png",
+     "members": 50,
+     "longest_near_contiguous_run": 4,
+     "examples": [
+      "good_welding_nul_ttt106_png_jpg.rf.de09f269dc80b36b058114127c32d1ef.jpg",
+      "good_welding_nul_ttt120_png_jpg.rf.30b6838c1384cb28691e2fc4febd24e8.jpg",
+      "good_welding_nul_ttt128_png_jpg.rf.2b4f2f39754fabb5e2e7d1a35ee42c26.jpg"
+     ]
+    },
+    {
+     "stem": "bad_weld_vid###_jpeg",
+     "members": 47,
+     "longest_near_contiguous_run": 6,
+     "examples": [
+      "bad_weld_vid176_jpeg_jpg.rf.b082ff632b5681f7c4d392ee74bbea8d.jpg",
+      "bad_weld_vid177_jpeg_jpg.rf.eee09e162c8c6598aed6e62c4c57e84e.jpg",
+      "bad_weld_vid178_jpeg_jpg.rf.ee6431b67276c86d71695f86ea7e6be6.jpg"
+     ]
+    },
+    {
+     "stem": "good_welding_nul_dq###_JPG",
+     "members": 47,
+     "longest_near_contiguous_run": 4,
+     "examples": [
+      "good_welding_nul_dq103_JPG_jpg.rf.b30b025ceb0c838bf3a83972cb6f00d3.jpg",
+      "good_welding_nul_dq104_JPG_jpg.rf.3bd31a9ff87c755c30d07a840bb7638e.jpg",
+      "good_welding_nul_dq106_JPG_jpg.rf.f40a95ad8b377a6e76dcd8ce5e9e8309.jpg"
+     ]
+    },
+    {
+     "stem": "good_welding_nul_tttt###_png",
+     "members": 47,
+     "longest_near_contiguous_run": 3,
+     "examples": [
+      "good_welding_nul_tttt104_png_jpg.rf.54df061272f96a7d4ef7861f99713e2f.jpg",
+      "good_welding_nul_tttt123_png_jpg.rf.c0d05a47ff9e0833473c6c3c45ea6538.jpg",
+      "good_welding_nul_tttt138_png_jpg.rf.45df86f723760f39d7783815ceb1f0b9.jpg"
+     ]
+    },
+    {
+     "stem": "good_welding_nul###",
+     "members": 46,
+     "longest_near_contiguous_run": 3,
+     "examples": [
+      "good_welding_nul438_jpg.rf.b8034b1bd88a19c9dbfa281185051adf.jpg",
+      "good_welding_nul452_jpg.rf.fac9bb11c717648ac711fe5f17795056.jpg",
+      "good_welding_nul456_jpg.rf.dadc6cbac42b20ac77909fbfebf6e168.jpg"
+     ]
+    },
+    {
+     "stem": "20230612_######",
+     "members": 43,
+     "longest_near_contiguous_run": 1,
+     "examples": [
+      "20230612_101037_jpg.rf.d047868b858987cf3cd7705b38e0e37f.jpg",
+      "20230612_101043_jpg.rf.a4ffc8f8e22d89564e5e9e739eae34a6.jpg",
+      "20230612_101104_jpg.rf.ae4032ba07532f50f1cf08d285c5e305.jpg"
+     ]
+    },
+    {
+     "stem": "Screenshot-2022-04-12-######_png",
+     "members": 40,
+     "longest_near_contiguous_run": 1,
+     "examples": [
+      "Screenshot-2022-04-12-223937_png_jpg.rf.acce3830b716521f9f2cbeba68c09cf8.jpg",
+      "Screenshot-2022-04-12-224647_png_jpg.rf.ec39aba07b421200ec73cfad56b5c625.jpg",
+      "Screenshot-2022-04-12-224757_png_jpg.rf.a95722cc6465f6923c5d09475b5df970.jpg"
+     ]
+    },
+    {
+     "stem": "bad_welding_nul###_JPG",
+     "members": 38,
+     "longest_near_contiguous_run": 3,
+     "examples": [
+      "bad_welding_nul130_JPG_jpg.rf.2f501f0fa6b7dcf57b9cda0eb6772eab.jpg",
+      "bad_welding_nul133_JPG_jpg.rf.8e2c40ff91091d6bd4e262dd38f1cc7e.jpg",
+      "bad_welding_nul137_JPG_jpg.rf.de1dec25d179ab2baa5df1f6bb607acf.jpg"
+     ]
+    },
+    {
+     "stem": "good_welding_nul_dm###_JPG",
+     "members": 38,
+     "longest_near_contiguous_run": 3,
+     "examples": [
+      "good_welding_nul_dm103_JPG_jpg.rf.bb475f712407398aaf0ba19fa7a7160d.jpg",
+      "good_welding_nul_dm116_JPG_jpg.rf.91a3fd5a4625195a179c8f91fe1c9c24.jpg",
+      "good_welding_nul_dm117_JPG_jpg.rf.b668e8a8b44e1c920a34d5c21f85e37f.jpg"
+     ]
+    },
+    {
+     "stem": "bad_welding_nul_t###",
+     "members": 37,
+     "longest_near_contiguous_run": 4,
+     "examples": [
+      "bad_welding_nul_t105_jpg.rf.1fff1387c45c51578f6ceedc9161e783.jpg",
+      "bad_welding_nul_t106_jpg.rf.dc0c32e650e47d4039418abcc02bcdaf.jpg",
+      "bad_welding_nul_t110_jpg.rf.e0a4258c4dd6876a0ad731cc7a8bf4bb.jpg"
+     ]
+    },
+    {
+     "stem": "IMG_####_JPEG",
+     "members": 36,
+     "longest_near_contiguous_run": 17,
+     "examples": [
+      "IMG_0080_JPEG_jpg.rf.de8c7dd2db5c8203b24a34049abcae3d.jpg",
+      "IMG_0081_JPEG_jpg.rf.f849dd3e6ad8fa635a6c1493ab140895.jpg",
+      "IMG_0108_JPEG_jpg.rf.c84a5ee60a5de324c4521286aad4591d.jpg"
+     ]
+    },
+    {
+     "stem": "images-##-_jpeg",
+     "members": 36,
+     "longest_near_contiguous_run": 7,
+     "examples": [
+      "images-10-_jpeg_jpg.rf.c051f64c74e4f54d384c80726061bc69.jpg",
+      "images-12-_jpeg_jpg.rf.e6d94537e6bea68083a27b6271a353af.jpg",
+      "images-17-_jpeg_jpg.rf.c9b93de6909398eb727f07bac3d89c4b.jpg"
+     ]
+    },
+    {
+     "stem": "good_welding_nul_t###",
+     "members": 32,
+     "longest_near_contiguous_run": 6,
+     "examples": [
+      "good_welding_nul_t100_jpg.rf.6054abf449fbbc2f35827c28259cb8bb.jpg",
+      "good_welding_nul_t102_jpg.rf.bbf7fe4af09ff12444565fdad83ed73e.jpg",
+      "good_welding_nul_t105_jpg.rf.75f878794962fa3a6b96bf9097e44939.jpg"
+     ]
+    },
+    {
+     "stem": "bad_welding_nul###",
+     "members": 31,
+     "longest_near_contiguous_run": 2,
+     "examples": [
+      "bad_welding_nul102_jpg.rf.e886dc350c3a0b5de0909b65ff40900b.jpg",
+      "bad_welding_nul106_jpg.rf.1a75347473d5e218d01df5d49d237080.jpg",
+      "bad_welding_nul107_jpg.rf.f7330b9925f88defd851cabc6a07a04f.jpg"
+     ]
+    },
+    {
+     "stem": "good_weld_vid####_jpeg",
+     "members": 30,
+     "longest_near_contiguous_run": 4,
+     "examples": [
+      "good_weld_vid1213_jpeg_jpg.rf.d39d7763e3694847a368f61836b31dcb.jpg",
+      "good_weld_vid1217_jpeg_jpg.rf.f60ce91830d187645fd419bbf35700c9.jpg",
+      "good_weld_vid1250_jpeg_jpg.rf.f4d3f70572bcaa34c0b41115b7cbbd15.jpg"
+     ]
+    },
+    {
+     "stem": "WhatsApp-Image-2025-08-26-at-11_35_##-AM",
+     "members": 28,
+     "longest_near_contiguous_run": 15,
+     "examples": [
+      "WhatsApp-Image-2025-08-26-at-11_35_10-AM_jpeg.rf.d513d4d6ace946c9a07432cc52b8c38d.jpg",
+      "WhatsApp-Image-2025-08-26-at-11_35_11-AM_jpeg.rf.708ba2dbe34047f820856a8d04210280.jpg",
+      "WhatsApp-Image-2025-08-26-at-11_35_12-AM_jpeg.rf.f8bce88c424367434a741d60a5063698.jpg"
+     ]
+    }
+   ]
+  },
+  "weld_dataset": {
+   "n_frames": 2800,
+   "n_distinct_stems": 1009,
+   "n_stems_with_multiple_members": 900,
+   "frames_without_a_digit_run": 0,
+   "members_per_stem_distribution": {
+    "1": 109,
+    "2": 888,
+    "3": 2,
+    "4": 1,
+    "5": 2,
+    "40": 1,
+    "42": 1,
+    "43": 2,
+    "185": 1,
+    "251": 1,
+    "291": 1
+   },
+   "n_sequence_like_stems": 9,
+   "frames_in_sequence_like_stems": 904,
+   "largest_stems": [
+    {
+     "stem": "26_###",
+     "members": 291,
+     "longest_near_contiguous_run": 10,
+     "examples": [
+      "26_100.jpg",
+      "26_101.jpg",
+      "26_102.jpg"
+     ]
+    },
+    {
+     "stem": "25_###",
+     "members": 251,
+     "longest_near_contiguous_run": 11,
+     "examples": [
+      "25_100.jpg",
+      "25_103.jpg",
+      "25_105.jpg"
+     ]
+    },
+    {
+     "stem": "27_###",
+     "members": 185,
+     "longest_near_contiguous_run": 11,
+     "examples": [
+      "27_100.jpg",
+      "27_101.jpg",
+      "27_102.jpg"
+     ]
+    },
+    {
+     "stem": "27_##",
+     "members": 43,
+     "longest_near_contiguous_run": 9,
+     "examples": [
+      "27_10.jpg",
+      "27_11.jpg",
+      "27_12.jpg"
+     ]
+    },
+    {
+     "stem": "28_###",
+     "members": 43,
+     "longest_near_contiguous_run": 7,
+     "examples": [
+      "28_103.jpg",
+      "28_106.jpg",
+      "28_107.jpg"
+     ]
+    },
+    {
+     "stem": "25_##",
+     "members": 42,
+     "longest_near_contiguous_run": 9,
+     "examples": [
+      "25_12.jpg",
+      "25_14.jpg",
+      "25_15.jpg"
+     ]
+    },
+    {
+     "stem": "26_##",
+     "members": 40,
+     "longest_near_contiguous_run": 8,
+     "examples": [
+      "26_16.jpg",
+      "26_19.jpg",
+      "26_20.jpg"
+     ]
+    },
+    {
+     "stem": "26_#",
+     "members": 5,
+     "longest_near_contiguous_run": 4,
+     "examples": [
+      "26_2.jpg",
+      "26_5.jpg",
+      "26_6.jpg"
+     ]
+    },
+    {
+     "stem": "29_###",
+     "members": 5,
+     "longest_near_contiguous_run": 1,
+     "examples": [
+      "29_121.jpg",
+      "29_144.jpg",
+      "29_255.jpg"
+     ]
+    },
+    {
+     "stem": "28_##",
+     "members": 4,
+     "longest_near_contiguous_run": 4,
+     "examples": [
+      "28_11.jpg",
+      "28_12.jpg",
+      "28_14.jpg"
+     ]
+    },
+    {
+     "stem": "25_#",
+     "members": 3,
+     "longest_near_contiguous_run": 2,
+     "examples": [
+      "25_2.jpg",
+      "25_4.jpg",
+      "25_9.jpg"
+     ]
+    },
+    {
+     "stem": "27_#",
+     "members": 3,
+     "longest_near_contiguous_run": 2,
+     "examples": [
+      "27_3.jpg",
+      "27_5.jpg",
+      "27_8.jpg"
+     ]
+    },
+    {
+     "stem": "200905_161420_0000000008_CAM1_NG_#",
+     "members": 2,
+     "longest_near_contiguous_run": 2,
+     "examples": [
+      "200905_161420_0000000008_CAM1_NG_0.jpg",
+      "200905_161420_0000000008_CAM1_NG_1.jpg"
+     ]
+    },
+    {
+     "stem": "200905_161511_0000000009_CAM1_NG_#",
+     "members": 2,
+     "longest_near_contiguous_run": 2,
+     "examples": [
+      "200905_161511_0000000009_CAM1_NG_0.jpg",
+      "200905_161511_0000000009_CAM1_NG_1.jpg"
+     ]
+    },
+    {
+     "stem": "200905_162344_0000000001_CAM1_NG_#",
+     "members": 2,
+     "longest_near_contiguous_run": 2,
+     "examples": [
+      "200905_162344_0000000001_CAM1_NG_0.jpg",
+      "200905_162344_0000000001_CAM1_NG_1.jpg"
+     ]
+    },
+    {
+     "stem": "200907_064553_0000000001_CAM1_NG_#",
+     "members": 2,
+     "longest_near_contiguous_run": 2,
+     "examples": [
+      "200907_064553_0000000001_CAM1_NG_0.jpg",
+      "200907_064553_0000000001_CAM1_NG_1.jpg"
+     ]
+    },
+    {
+     "stem": "200907_065005_0000000001_CAM1_NG_#",
+     "members": 2,
+     "longest_near_contiguous_run": 2,
+     "examples": [
+      "200907_065005_0000000001_CAM1_NG_0.jpg",
+      "200907_065005_0000000001_CAM1_NG_1.jpg"
+     ]
+    },
+    {
+     "stem": "200907_065946_0000000001_CAM1_NG_#",
+     "members": 2,
+     "longest_near_contiguous_run": 2,
+     "examples": [
+      "200907_065946_0000000001_CAM1_NG_0.jpg",
+      "200907_065946_0000000001_CAM1_NG_1.jpg"
+     ]
+    },
+    {
+     "stem": "200907_070823_0000000001_CAM1_NG_#",
+     "members": 2,
+     "longest_near_contiguous_run": 2,
+     "examples": [
+      "200907_070823_0000000001_CAM1_NG_0.jpg",
+      "200907_070823_0000000001_CAM1_NG_1.jpg"
+     ]
+    },
+    {
+     "stem": "200907_071105_0000000002_CAM1_NG_#",
+     "members": 2,
+     "longest_near_contiguous_run": 2,
+     "examples": [
+      "200907_071105_0000000002_CAM1_NG_0.jpg",
+      "200907_071105_0000000002_CAM1_NG_1.jpg"
+     ]
+    }
+   ]
+  },
+  "wijaya": {
+   "n_frames": 360,
+   "n_distinct_stems": 16,
+   "n_stems_with_multiple_members": 14,
+   "frames_without_a_digit_run": 0,
+   "members_per_stem_distribution": {
+    "1": 2,
+    "5": 1,
+    "8": 2,
+    "9": 3,
+    "10": 2,
+    "16": 1,
+    "28": 1,
+    "38": 1,
+    "44": 1,
+    "79": 1,
+    "85": 1
+   },
+   "n_sequence_like_stems": 14,
+   "frames_in_sequence_like_stems": 358,
+   "largest_stems": [
+    {
+     "stem": "SampleV2_2_mp4-##",
+     "members": 85,
+     "longest_near_contiguous_run": 80,
+     "examples": [
+      "SampleV2_2_mp4-10_jpg.rf.f645577d02c06916d8db77e65f188cb4.jpg",
+      "SampleV2_2_mp4-11_jpg.rf.3a6377c2d72912b0e46050bec0157d20.jpg",
+      "SampleV2_2_mp4-12_jpg.rf.7b2a980f45f9cc8efae97ad708530991.jpg"
+     ]
+    },
+    {
+     "stem": "SampleV2_1_mp4-##",
+     "members": 79,
+     "longest_near_contiguous_run": 54,
+     "examples": [
+      "SampleV2_1_mp4-11_jpg.rf.393a20f7e59bab179f6bb6ef2a5778e6.jpg",
+      "SampleV2_1_mp4-12_jpg.rf.5260d8ff5b05b3b605069516156f4e63.jpg",
+      "SampleV2_1_mp4-13_jpg.rf.a2f7aaf8a214bb4c7eae2e9a12a1298b.jpg"
+     ]
+    },
+    {
+     "stem": "SampleV1_1_mp4-##",
+     "members": 44,
+     "longest_near_contiguous_run": 30,
+     "examples": [
+      "SampleV1_1_mp4-23_jpg.rf.455d06f9614b59b445b58ca3431c919a.jpg",
+      "SampleV1_1_mp4-26_jpg.rf.088f0d49e2b5d6989ce6109368321ad2.jpg",
+      "SampleV1_1_mp4-27_jpg.rf.605e3a9e0f0d90ccf604412704947965.jpg"
+     ]
+    },
+    {
+     "stem": "SampleV3_1_mp4-##",
+     "members": 38,
+     "longest_near_contiguous_run": 24,
+     "examples": [
+      "SampleV3_1_mp4-10_jpg.rf.34c307e77e37bcf1e0103762edfbf528.jpg",
+      "SampleV3_1_mp4-11_jpg.rf.0e17429016ccf65ab354ee2c5e98c0cc.jpg",
+      "SampleV3_1_mp4-12_jpg.rf.d093de3b49be85eaa8bc364aa9d860c6.jpg"
+     ]
+    },
+    {
+     "stem": "SampleV1_2_mp4-##",
+     "members": 28,
+     "longest_near_contiguous_run": 17,
+     "examples": [
+      "SampleV1_2_mp4-11_jpg.rf.5f134b96af88c763698599b25ca83bf4.jpg",
+      "SampleV1_2_mp4-13_jpg.rf.8f23265a8cc93df16d7b34cf4dadc265.jpg",
+      "SampleV1_2_mp4-18_jpg.rf.5a48e852d1ab3554ba12f25662075d84.jpg"
+     ]
+    },
+    {
+     "stem": "SampleV3_2_mp4-##",
+     "members": 16,
+     "longest_near_contiguous_run": 8,
+     "examples": [
+      "SampleV3_2_mp4-10_jpg.rf.8602d9c2fc826b93a7a04a6d1ad1a608.jpg",
+      "SampleV3_2_mp4-11_jpg.rf.0269c7991b1981e197aee70530c41bd4.jpg",
+      "SampleV3_2_mp4-12_jpg.rf.070c342a13e68e977b76c6db0271ce46.jpg"
+     ]
+    },
+    {
+     "stem": "SampleV1_1_mp4-#",
+     "members": 10,
+     "longest_near_contiguous_run": 10,
+     "examples": [
+      "SampleV1_1_mp4-0_jpg.rf.65486f04c6e53e160a2abf2bb33d012f.jpg",
+      "SampleV1_1_mp4-2_jpg.rf.96d669f7893ab1ea8bd1558d80ba400f.jpg",
+      "SampleV1_1_mp4-3_jpg.rf.b1dbec2ffa2118c5e7db6130f8d17407.jpg"
+     ]
+    },
+    {
+     "stem": "SampleV2_2_mp4-###",
+     "members": 10,
+     "longest_near_contiguous_run": 10,
+     "examples": [
+      "SampleV2_2_mp4-102_jpg.rf.43de141aa12490bad697d426c77cc08c.jpg",
+      "SampleV2_2_mp4-103_jpg.rf.ec478400da093a4f54155f1959751c80.jpg",
+      "SampleV2_2_mp4-108_jpg.rf.37e8dcd76377b4916f9041a963025748.jpg"
+     ]
+    },
+    {
+     "stem": "SampleV1_2_mp4-#",
+     "members": 9,
+     "longest_near_contiguous_run": 9,
+     "examples": [
+      "SampleV1_2_mp4-0_jpg.rf.e70b76318edeaeeefc0e433bbb7a02c5.jpg",
+      "SampleV1_2_mp4-1_jpg.rf.3362515a6da7859a53aa1cc4de0d07ab.jpg",
+      "SampleV1_2_mp4-3_jpg.rf.44026c70834c8e6b603002aa4021f8cd.jpg"
+     ]
+    },
+    {
+     "stem": "SampleV2_2_mp4-#",
+     "members": 9,
+     "longest_near_contiguous_run": 9,
+     "examples": [
+      "SampleV2_2_mp4-2_jpg.rf.e950098b246d7b2102aaf2a7c95fff09.jpg",
+      "SampleV2_2_mp4-4_jpg.rf.3f5c5f58f48fea1a842b9c8646e2cd74.jpg",
+      "SampleV2_2_mp4-6_jpg.rf.221a068aaf4b182c0a9da0791a8220d1.jpg"
+     ]
+    },
+    {
+     "stem": "SampleV3_1_mp4-#",
+     "members": 9,
+     "longest_near_contiguous_run": 9,
+     "examples": [
+      "SampleV3_1_mp4-1_jpg.rf.7c113cf86807871998cc55e1522a02fe.jpg",
+      "SampleV3_1_mp4-3_jpg.rf.ad360ca6be015a49fad2ffb0c6adff49.jpg",
+      "SampleV3_1_mp4-0_jpg.rf.1d6bb718f5b356b490d3e25bf179a479.jpg"
+     ]
+    },
+    {
+     "stem": "SampleV2_1_mp4-#",
+     "members": 8,
+     "longest_near_contiguous_run": 6,
+     "examples": [
+      "SampleV2_1_mp4-1_jpg.rf.3b4e0f222cf8562493d1cf1d4d6fe727.jpg",
+      "SampleV2_1_mp4-2_jpg.rf.6e203ac5bd6bb03c907d2cd98e2b228d.jpg",
+      "SampleV2_1_mp4-3_jpg.rf.2a3336997d4e82495bae3d9a47c6802b.jpg"
+     ]
+    },
+    {
+     "stem": "SampleV3_2_mp4-#",
+     "members": 8,
+     "longest_near_contiguous_run": 8,
+     "examples": [
+      "SampleV3_2_mp4-0_jpg.rf.bce9413b838f7d45f50e6fb4fc094e89.jpg",
+      "SampleV3_2_mp4-1_jpg.rf.172388ee0673c075987975c7600bedfd.jpg",
+      "SampleV3_2_mp4-4_jpg.rf.f370e4b586881368eb90e5a653f9d650.jpg"
+     ]
+    },
+    {
+     "stem": "SampleV2_1_mp4-###",
+     "members": 5,
+     "longest_near_contiguous_run": 5,
+     "examples": [
+      "SampleV2_1_mp4-100_jpg.rf.d3e1952bee28fff0142e47b56e662938.jpg",
+      "SampleV2_1_mp4-101_jpg.rf.286ed8bf156c7975c11e5069b9812fe1.jpg",
+      "SampleV2_1_mp4-102_jpg.rf.b6e1ab2ee11bee4dd87cf96f36f60163.jpg"
+     ]
+    },
+    {
+     "stem": "ER8-#-",
+     "members": 1,
+     "longest_near_contiguous_run": 1,
+     "examples": [
+      "ER8-2-_jpg.rf.f5b1a85bceb5a46ea4a3a9b6b2a5f513.jpg"
+     ]
+    },
+    {
+     "stem": "good-tig-welds_##_jpeg",
+     "members": 1,
+     "longest_near_contiguous_run": 1,
+     "examples": [
+      "good-tig-welds_42_jpeg_jpg.rf.14ca30b1fa2f2ec062bd1626fbba2e11.jpg"
+     ]
+    }
+   ]
+  }
+ },
+ "f2_cross_split": {
+  "stems_with_multiple_frames": 1132,
+  "stems_spanning_multiple_splits": 464,
+  "fraction_of_multi_stems_spanning": 0.4098939929328622,
+  "test_patches_sharing_stem_with_train": {
+   "fraction": 0.8159147585581501,
+   "n": 3599,
+   "of": 4411
+  },
+  "val_patches_sharing_stem_with_train": {
+   "fraction": 0.686454652532391,
+   "n": 2914,
+   "of": 4245
+  },
+  "per_dataset": {
+   "final_welding": {
+    "test_patches": 2059,
+    "test_share_with_train": 0.7518212724623604,
+    "val_patches": 1987,
+    "val_share_with_train": 0.5098137896326119
+   },
+   "weld_dataset": {
+    "test_patches": 2244,
+    "test_share_with_train": 0.8658645276292335,
+    "val_patches": 2158,
+    "val_share_with_train": 0.8345690454124189
+   },
+   "wijaya": {
+    "test_patches": 108,
+    "test_share_with_train": 1.0,
+    "val_patches": 100,
+    "val_share_with_train": 1.0
+   }
+  }
+ },
+ "f4_grouping_headroom": {
+  "method": "source_frame is the union-find representative; dedup_report.json stores counts only, not membership",
+  "patches_from_non_representative_images": 0,
+  "source_frames_shared_by_multiple_images": 0,
+  "fraction_test_frames_with_perceptual_sibling_in_train": 0.0
+ },
+ "verdicts": {
+  "F2_sequence_leakage": {
+   "measured": 0.8159147585581501,
+   "threshold": 0.05,
+   "verdict": "CONFIRMED"
+  },
+  "F4_guard_consistency": {
+   "measured": 0.0,
+   "threshold": 0.0,
+   "verdict": "CONSISTENT"
+  }
+ },
+ "thresholds": {
+  "F2": 0.05,
+  "F4": 0.0
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "git_sha": "87db5fc73abcb0840318a85fc0730dc7351629c9",
+ "config": "configs/vision_train.yaml",
+ "config_sha256_16": "6786b79083b211a7",
+ "frame_sha256_16": "8e3c5f0576244d72",
+ "class_map_sha256_16": "500f40bc53e0cb75",
+ "seed": 42,
+ "fold": 0,
+ "device": "cuda",
+ "epochs_run": 29,
+ "class_weights": {
+  "V1": 0.04729382321238518,
+  "V2": 3.9283435344696045,
+  "V3": 0.012453634291887283,
+  "V4": 0.011909333989024162
+ },
+ "patch_counts_per_head": {
+  "train": {
+   "V1": 3987,
+   "V2": 48,
+   "V3": 15141,
+   "V4": 15833
+  },
+  "val": {
+   "V1": 498,
+   "V2": 6,
+   "V3": 1893,
+   "V4": 1979
+  },
+  "test": {
+   "V1": 499,
+   "V2": 6,
+   "V3": 1892,
+   "V4": 1979
+  }
+ },
+ "source_images_per_split": {
+  "train": 3242,
+  "val": 1334,
+  "test": 1332
+ },
+ "dedup": {
+  "exact_groups": 1098,
+  "exact_removed": 0,
+  "perceptual_groups": 2223,
+  "perceptual_removed": 21469,
+  "cross_dataset": 681,
+  "within_dataset": 1542
+ },
+ "test_macro_f1": 0.7075094454649634
+}

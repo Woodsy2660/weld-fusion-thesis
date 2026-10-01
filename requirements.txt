@@ -5,6 +5,8 @@ scikit-learn>=1.3.0
 xgboost>=2.0.0
 
 # Data processing
+pyyaml>=6.0            # configs/*.yaml + Roboflow data.yaml parsing
+ImageHash>=4.3.1       # perceptual dedup of source images (phash)
 numpy>=1.24.0
 pandas>=2.0.0
 opencv-python>=4.8.0

@@ -1,4 +1,18 @@
 """
+SUPERSEDED -- kept for reference only. Do not run.
+
+This was written against the originally planned layout (per-class folders under
+data/raw/vision/lohi_weld, wijaya_kaggle, final_welding), which does not match
+what is actually on disk. The real datasets are YOLO detection/segmentation
+exports under data/Vision/, and its CLASS_MAP names ("pores", "good welding",
+"crazing", ...) do not exist in any of them.
+
+The working pipeline is:
+    src/vision/convert_and_remap.py   annotations -> data/staged/
+    src/vision/merge_dedup_split.py   -> data/merged/ -> data/processed/vision/
+
+Original docstring follows.
+
 Step 1-3 of vision pipeline: Download datasets, remap class labels
 to {porosity, lack_of_fusion, crack, no_defect}, and split 80/10/10.
 

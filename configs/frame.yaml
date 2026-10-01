@@ -1,0 +1,73 @@
+# Dempster-Shafer frame of discernment and per-modality focal elements.
+#
+# SINGLE SOURCE OF TRUTH. No module may hardcode the head count or the
+# head-to-focal-element mapping; read it from here via
+# src/utils/frame.py:load_frame().
+
+# ---------------------------------------------------------------------------
+# Theta -- the frame of discernment. Unchanged.
+# ---------------------------------------------------------------------------
+classes:
+  N: "no defect / acceptable"
+  U: "geometric non-conformance to ISO 5817 - undercut, excess reinforcement, or misalignment beyond limits"
+  P: "porosity"
+  L: "lack of fusion / lack of penetration"
+  C: "crack"
+
+# ---------------------------------------------------------------------------
+# Vision focal elements -- THREE heads.
+#
+#   V1  {P}        surface-breaking porosity
+#   V3  {N,U}      surface geometric anomaly present, magnitude unmeasured
+#   V4  {N,U,L,C}  no conclusive surface evidence
+#
+# V2 {C} was REMOVED. It held 60 patches from 46 source frames and scored
+# precision 0.19 -- it was not supported by the data.
+#
+# The numbering deliberately skips V2. V3 and V4 keep their names so that every
+# existing artefact, test and contact sheet stays valid; renumbering would
+# silently invalidate all of them.
+#
+# V4 WIDENED from {N,U,L} to {N,U,L,C}, and this widening is forced. While a
+# crack head existed, V4 could assert "no conclusive surface evidence, and
+# definitely not a crack". With no crack head, vision can no longer support the
+# "not a crack" half, so C must re-enter the ignorance set. A three-head frame
+# that left V4 as {N,U,L} would emit evidence the modality cannot justify.
+#
+# Vision still NEVER predicts U alone: it can see that a bead deviates but
+# cannot measure the deviation against the ISO 5817 limit. Geometry does that,
+# which is why V3 is the compound {N,U} rather than the singleton {U}.
+#
+# Vision still NEVER predicts L alone, and now never predicts C alone either.
+# Both are subsurface or near-invisible at the surface, and both live only
+# inside V4.
+#
+# Head order below is the CLASSIFIER OUTPUT ORDER. V1 < V3 < V4 sorts
+# correctly, so directory order and this order agree; load_frame() asserts it.
+# ---------------------------------------------------------------------------
+vision_heads:
+  V1: ["P"]
+  V3: ["N", "U"]
+  V4: ["N", "U", "L", "C"]
+
+# ---------------------------------------------------------------------------
+# Focal elements the other modalities are entitled to commit mass to.
+# validate_modality_bpa() is parameterised by modality and reads these.
+#
+# geometry measures the bead profile against ISO 5817. It resolves U directly
+# -- the only modality that can -- and is blind to everything else, so its
+# ignorance head is {N,P,L,C}.
+#
+# ut resolves subsurface defects and separates L from C, which vision cannot.
+# It cannot distinguish a sound weld from a surface geometry problem, so {N,U}
+# is its compound.
+# ---------------------------------------------------------------------------
+geometry_heads:
+  G1: ["U"]
+  G2: ["N", "P", "L", "C"]
+
+ut_heads:
+  U1: ["P"]
+  U2: ["L"]
+  U3: ["C"]
+  U4: ["N", "U"]
