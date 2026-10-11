@@ -49,6 +49,9 @@ venv/
 env/
 .env
 
+# ===== CREDENTIALS =====
+kaggle.json
+
 # ===== JUPYTER =====
 .ipynb_checkpoints/
 *.ipynb_metadata
@@ -79,3 +82,7 @@ thesis/**/*.synctex.gz
 !results/
 !results/vision/*.npz
 !results/vision/*.json
+capture-kit/capture-env/
+
+# Capture kit virtual environment
+capture-kit/capture-env/

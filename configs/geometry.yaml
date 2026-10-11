@@ -1,29 +1,138 @@
 # Geometry modality configuration
+# FROZEN PARAMETERS — do not tune against classification results.
+# Each value is justified from ISO 5817:2023 or the physical setup.
+
 sensor:
-  type: realsense_d435  # or realsense_d415
+  type: realsense_d435i
   depth_resolution: [1280, 720]
   rgb_resolution: [1920, 1080]
-  working_distance_mm: 200
+  working_distance_mm: 300  # D435i MinZ is ~280mm at 1280x720
 
+# ---------------------------------------------------------------------------
+# Registration — datum hole detection and pose solve
+# ---------------------------------------------------------------------------
+registration:
+  # Datum hole positions in the coupon coordinate system (s, y) in mm.
+  # Origin hole at low-s end, axis hole at high-s end.
+  # Both holes in the same plate half (+y side), 20mm from the outer edge.
+  origin_hole:
+    s_mm: 15
+    y_mm: 50
+    diameter_mm: 6
+  axis_hole:
+    s_mm: 285
+    y_mm: 50
+    diameter_mm: 8  # Different diameter breaks end-for-end ambiguity
+
+  # Plate edge cross-check: if hole-derived and edge-derived origins disagree
+  # by more than this, flag the coupon for review.
+  edge_crosscheck_tolerance_mm: 2.0
+
+  # Minimum hole detection confidence (0-1). Below this, registration fails.
+  min_hole_confidence: 0.8
+
+# ---------------------------------------------------------------------------
+# Cell structure — matches UT index pitch
+# ---------------------------------------------------------------------------
+cells:
+  width_mm: 25              # Matches UT index pitch for 1:1 cell alignment
+  first_excluded_mm: 25     # Arc-start transient zone
+  last_excluded_mm: 25      # Arc-stop transient zone
+  coupon_length_mm: 300     # Nominal; actual measured per coupon
+
+# ---------------------------------------------------------------------------
+# Profile extraction — ISO 5817 undercut measurement
+# ---------------------------------------------------------------------------
 profile_extraction:
-  slice_interval_mm: 5
-  smoothing_kernel_size: 5
-  base_plate_detection: ransac
+  # Number of transverse profiles per cell. ISO 5817 judges undercut by its
+  # deepest point, so we sample multiple profiles and take a high quantile.
+  profiles_per_cell: 10
 
+  # Aggregation quantile for undercut depth across profiles.
+  # 0.95 = 95th percentile, capturing near-worst-case without being
+  # dominated by a single noisy pixel.
+  # Justification: ISO 5817 specifies "maximum depth of undercut" — this
+  # approximates the maximum while providing robustness to outliers.
+  aggregation_quantile: 0.95
+
+  # Smoothing kernel size (pixels) for profile noise reduction.
+  # Applied along each transverse slice before feature extraction.
+  smoothing_kernel_px: 5
+
+  # Undercut datum definition: the reference surface from which undercut
+  # depth is measured. ISO 5817 defines undercut as "a groove melted into
+  # the parent metal... at the weld toe".
+  # We fit a plane to the parent metal regions and measure depth below it.
+  #
+  # ROI for plane fit: distance from weld centreline (y) in mm.
+  # Must be on parent metal, outside the HAZ, but inside the plate edge.
+  plane_fit_roi:
+    y_inner_mm: 15    # Start of parent metal region (outside bead)
+    y_outer_mm: 40    # End of parent metal region (inside plate edge)
+
+  # Weld bead detection: the region around centreline where the bead sits.
+  # Undercut is measured at the transition between bead and parent metal.
+  bead_roi:
+    y_half_width_mm: 12  # Bead extends ±12mm from centreline (typical)
+
+  # Minimum valid depth pixels required in the plane-fit ROI.
+  # Below this, the cell maps to Θ (vacuous BPA).
+  # Justification: at 0.445 mm/px lateral, a 25mm cell is ~56 px wide.
+  # The plane-fit ROI spans ~50mm = ~112 px. 60% validity = 67 px minimum.
+  min_valid_fraction: 0.60
+
+# ---------------------------------------------------------------------------
+# Uncertainty budget — four terms
+# ---------------------------------------------------------------------------
+uncertainty:
+  # Quantization uncertainty: depth_units = 0.1mm, uniform distribution.
+  # u_quant = 0.1 / sqrt(12) = 0.029 mm
+  u_quant_mm: 0.029
+
+  # Calibration uncertainty: RMS residual from plane fit to flat reference.
+  # Measured via Depth Quality Tool; this is the default if not measured.
+  u_cal_mm_default: 0.030
+
+  # Alignment uncertainty: fixture repeatability from repeat-placement captures.
+  # This is measured, not assumed. Default is a conservative estimate.
+  u_align_mm_default: 0.020
+
+  # Noise floor: minimum achievable even with infinite averaging.
+  # Stereo matching has systematic errors that don't average out.
+  # Measured from split-half comparison on a flat target.
+  noise_floor_mm_default: 0.015
+
+# ---------------------------------------------------------------------------
+# ISO 5817:2023 acceptance criteria — Level B (stringent)
+# ---------------------------------------------------------------------------
 acceptance_criteria:
-  standard: iso_5817_2023
-  quality_level: B
+  standard: "ISO 5817:2023"
+  quality_level: "B"
   plate_thickness_mm: 10
-  limits:
-    undercut_max_mm: 0.5
-    undercut_ratio: 0.05  # h <= 0.05t
-    reinforcement_max_mm: 5.0
-    reinforcement_formula: "1 + 0.1b"  # h <= 1 + 0.1*width, max 5mm
-    misalignment_max_mm: 3.0
-    misalignment_ratio: 0.1  # h <= 0.1t + 0.2mm
 
-classes:
-  - porosity
-  - lack_of_fusion
-  - crack
-  - no_defect
+  # Undercut (imperfection 5011/5012): h <= 0.5mm for Level B, t >= 3mm.
+  # This is the ONLY geometric feature that drives m({U}).
+  # Reinforcement and misalignment are validation outputs, not Θ members.
+  undercut_limit_mm: 0.5
+
+  # Reinforcement (imperfection 502): h <= 1 + 0.1b, max 5mm for Level B.
+  # Validation output only — not used for BPA construction.
+  reinforcement_formula: "1 + 0.1b"
+  reinforcement_max_mm: 5.0
+
+  # Linear misalignment (imperfection 507): h <= 0.1t + 0.2mm for Level B.
+  # Validation output only — not used for BPA construction.
+  misalignment_formula: "0.1t + 0.2"
+  misalignment_max_mm: 3.0
+
+# ---------------------------------------------------------------------------
+# Tilt correction
+# ---------------------------------------------------------------------------
+tilt_correction:
+  # Apply tilt correction: d_true = Δz · cos(φ)
+  # φ is derived from the plane-fit normal vector.
+  enabled: true
+
+  # Maximum acceptable tilt angle (degrees). Above this, flag for review.
+  # At 5°, cos(5°) = 0.996, so the error is < 0.4%.
+  max_tilt_deg: 5.0
