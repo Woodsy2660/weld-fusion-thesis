@@ -39,9 +39,13 @@ sources:
                                      # false and keeps 60 patches of signal
                                      # for what "no conclusive evidence" looks
                                      # like. DECISION CONFIRMED 30 Sep 2026.
-    "Lack of Fusion":          V3    # surface-visible LOF is a geometric
-                                     # anomaly at the toe; vision cannot see
-                                     # internal LOF
+    "Lack of Fusion":          V4    # was V3 {N,U}. L is NOT an element of
+                                     # {N,U}, so the old mapping asserted a
+                                     # focal element that does not contain the
+                                     # symbol it is labelling. V4 {N,U,L,C} is
+                                     # the ignorance head and does contain L.
+                                     # Known-issue #3 in 00-START-HERE.md.
+                                     # FIXED 2026-10-11.
     Undercut:                  V3
     Irregular:                 V3
     "Excess-Reinforcement":    V3

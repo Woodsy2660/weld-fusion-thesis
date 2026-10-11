@@ -1,0 +1,129 @@
+{
+ "C11_top_r0": {
+  "capture": "/mnt/e/weld-fusion-thesis/data/raw/S1/C11_top_r0",
+  "n_depth_frames": 64,
+  "depth_units_mm": 0.09999999747378752,
+  "standoff_mm_measured_in_meta": 300.0,
+  "usb_type": "3.2",
+  "firmware": "5.17.3.10",
+  "sdk_version": "2.58.4",
+  "asic_temp_start_c": 36.0,
+  "asic_temp_end_c": 41.0,
+  "dropped_depth_frames": 49,
+  "post_processing_filters": [],
+  "valid_fraction_whole_frame": 0.26308502197265626,
+  "modal_depth_mm": 355.0,
+  "plate_candidate_points": 117304,
+  "extent_long_mm": 297.0082941740704,
+  "extent_transverse_mm": 150.50479273584966,
+  "median_depth_mm": 358.29999094858067,
+  "lateral_scale_mm_per_px": 0.5610766773702154,
+  "lateral_scale_if_300mm": 0.46978232616037247,
+  "camera_tilt_deg": 3.5057974647969163,
+  "bead_found": true,
+  "bead_transverse_position_mm": -5.03030662473077,
+  "bead_peak_height_above_plane_mm": 1.9874902371367398,
+  "roi_y_inner_mm": 15.0,
+  "roi_y_outer_mm": 40.0,
+  "planes": {
+   "A": {
+    "points": 23131,
+    "rms_mm": 0.9841046046466709,
+    "normal": [
+     0.02252537827593857,
+     0.08659248620453781,
+     0.9959891307973411
+    ]
+   },
+   "B": {
+    "points": 20473,
+    "rms_mm": 0.8663758989947083,
+    "normal": [
+     0.026746405343715515,
+     0.04544566651060265,
+     0.9986086927303389
+    ]
+   },
+   "BOTH": {
+    "points": 43604,
+    "rms_mm": 0.9498610888872763,
+    "normal": [
+     0.024823867773915403,
+     0.059784204346362536,
+     0.9979026127330339
+    ]
+   }
+  },
+  "angular_distortion_A_vs_B_deg": 2.3748294634054297,
+  "implied_deviation_at_70mm_edge_mm": 2.9030641965639132,
+  "pixels_valid_in_all_frames": 167907,
+  "median_per_pixel_std_mm": 0.4868101426744125,
+  "se_naive_mm": 0.060851267834301566,
+  "se_split_half_block_mm": 0.08571281033471223,
+  "se_split_half_interleaved_mm": 0.0764465605687974,
+  "achieved_reduction_factor_block": 5.67954942526558,
+  "achieved_reduction_factor_interleaved": 6.367979658631105,
+  "naive_reduction_factor": 8.0
+ },
+ "C11_root_r0": {
+  "capture": "/mnt/e/weld-fusion-thesis/data/raw/S1/C11_root_r0",
+  "n_depth_frames": 64,
+  "depth_units_mm": 0.09999999747378752,
+  "standoff_mm_measured_in_meta": 300.0,
+  "usb_type": "3.2",
+  "firmware": "5.17.3.10",
+  "sdk_version": "2.58.4",
+  "asic_temp_start_c": 37.0,
+  "asic_temp_end_c": 40.0,
+  "dropped_depth_frames": 49,
+  "post_processing_filters": [],
+  "valid_fraction_whole_frame": 0.28933386908637154,
+  "modal_depth_mm": 355.0,
+  "plate_candidate_points": 125967,
+  "extent_long_mm": 295.8762141873344,
+  "extent_transverse_mm": 212.7099111505966,
+  "median_depth_mm": 359.7999909106875,
+  "lateral_scale_mm_per_px": 0.5634255889416788,
+  "lateral_scale_if_300mm": 0.46978232616037247,
+  "camera_tilt_deg": 4.062148427941836,
+  "bead_found": true,
+  "bead_transverse_position_mm": -62.20820132570069,
+  "bead_peak_height_above_plane_mm": 0.31370574244081695,
+  "roi_y_inner_mm": 15.0,
+  "roi_y_outer_mm": 40.0,
+  "planes": {
+   "A": {
+    "points": 21868,
+    "rms_mm": 0.8360297229270336,
+    "normal": [
+     0.06955375440240193,
+     0.022394873181934664,
+     0.9973267994512608
+    ]
+   },
+   "B": {
+    "points": 0,
+    "rms_mm": null,
+    "normal": null,
+    "note": "too few points for a plane fit"
+   },
+   "BOTH": {
+    "points": 21868,
+    "rms_mm": 0.8360297229270336,
+    "normal": [
+     0.06955375440240193,
+     0.022394873181934664,
+     0.9973267994512608
+    ]
+   }
+  },
+  "pixels_valid_in_all_frames": 191305,
+  "median_per_pixel_std_mm": 0.5491493102266322,
+  "se_naive_mm": 0.06864366377832902,
+  "se_split_half_block_mm": 0.09729562254210578,
+  "se_split_half_interleaved_mm": 0.0787631230102761,
+  "achieved_reduction_factor_block": 5.644131728423667,
+  "achieved_reduction_factor_interleaved": 6.972162723346883,
+  "naive_reduction_factor": 8.0
+ }
+}

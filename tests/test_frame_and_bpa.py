@@ -208,3 +208,51 @@ def test_model_head_count_comes_from_the_frame():
     frame = load_frame()
     model = build_model(pretrained=False)
     assert model.fc.out_features == frame.num_heads == 3
+
+
+# ---------------------------------------------------------------------------
+# Known-issue #3 (00-START-HERE.md): Lack of Fusion was mapped to V3 {N,U}.
+# L is not an element of {N,U}. Fixed 2026-10-11; these pin it.
+# ---------------------------------------------------------------------------
+def test_L_is_in_V4_and_not_in_V3():
+    frame = load_frame()
+    assert "L" in frame.focal_element("V4")
+    assert "L" not in frame.focal_element("V3")
+
+
+def test_lack_of_fusion_routes_to_the_head_containing_L():
+    """
+    Derived from the frame, not hardcoded to 'V4': whatever head the mapping
+    points at must actually contain L, or it asserts a focal element that
+    excludes the symbol it is labelling.
+    """
+    frame = load_frame()
+    cmap = load_class_map(frame=frame)
+    head = cmap["final_welding"]["Lack of Fusion"]
+    assert head != DISCARD, "Lack of Fusion must not be discarded"
+    assert "L" in frame.focal_element(head), (
+        f"final_welding/Lack of Fusion -> {head} = "
+        f"{set(frame.focal_element(head))}, which does not contain L"
+    )
+
+
+def test_no_source_class_maps_to_a_head_excluding_its_own_symbol():
+    """
+    Generalises the above. Any source label naming a Theta symbol in its text
+    must map to a head containing that symbol.
+    """
+    frame = load_frame()
+    cmap = load_class_map(frame=frame)
+    hints = {"L": ("lack of fusion", "lack of penetration"),
+             "P": ("porosity", "pore"),
+             "C": ("crack",)}
+    for source, mapping in cmap.items():
+        for label, head in mapping.items():
+            if head == DISCARD:
+                continue
+            for sym, needles in hints.items():
+                if any(n in label.lower() for n in needles):
+                    assert sym in frame.focal_element(head), (
+                        f"{source}/{label} -> {head} = "
+                        f"{set(frame.focal_element(head))}, missing {sym}"
+                    )

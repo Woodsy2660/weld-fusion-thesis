@@ -19,14 +19,16 @@ Theta = {N, U, P, L, C}
   C  crack
 ```
 
-## Vision targets four focal elements, not four classes
+## Vision targets three focal elements, not classes
 
 ```
 V1  {P}        surface-breaking porosity
-V2  {C}        surface-breaking crack
 V3  {N,U}      surface geometric anomaly present, magnitude unmeasured
-V4  {N,U,L}    no conclusive surface evidence
+V4  {N,U,L,C}  no conclusive surface evidence
 ```
+
+V2 `{C}` was **removed** — it held 60 patches from 46 source frames and scored
+precision 0.19. The numbering skips V2 deliberately so existing artefacts stay valid.
 
 Two invariants, enforced by `src/bpa/construct.py:validate_modality_bpa()` and
 pinned by `tests/test_frame_and_bpa.py`:
@@ -48,20 +50,23 @@ it asked the camera to classify a defect it cannot observe.
 ## Vision data pipeline
 
 ```
-data/Vision/                          raw sources, read-only
-  FINAL WELDING DATASET/              Roboflow, 23,266 images, 15 classes
-  weld-dataset/                       LoHi-WELD source, 3,022 images, 4 classes
-  The Welding Defect Dataset/         Wijaya, 1,089 images, 3 classes
+data/                                         raw sources, read-only
+  weld-dataset/                               LoHi-WELD source, 4 classes
+  welding-defect-kaggle/The Welding Defect Dataset/   Wijaya, 3 classes
         |
         |  src/vision/convert_and_remap.py
         v
-data/processed/vision_patches/{V1,V2,V3,V4}/   per-instance crops
-data/processed/vision_patches/manifest.csv     provenance + split column
+data/processed/vision_patches/{V1,V3,V4}/     per-instance crops (V2 removed)
+data/processed/vision_patches/manifest.csv    provenance + split column
         |
         |  src/vision/merge_dedup_split.py
         v
-   split column written in place (grouped by source_image)
+data/merged/                                  deduplicated, split-assigned
 ```
+
+Note: The Roboflow "FINAL WELDING DATASET" (23,266 images) is referenced in the
+original plan but not present in the repository. The single-source retrain decision
+(see `weld-docs/docs/04-vision-module.md`) may supersede its use.
 
 ### Per-instance cropping, not whole-image dominant class
 

@@ -49,6 +49,9 @@ venv/
 env/
 .env
 
+# ===== CREDENTIALS =====
+kaggle.json
+
 # ===== JUPYTER =====
 .ipynb_checkpoints/
 *.ipynb_metadata
@@ -100,3 +103,6 @@ thesis/**/*.synctex.gz
 # from data/Vision/ plus convert_and_remap.py. Patch images stay out.
 data/processed/vision_patches/*/
 data/processed/vision_patches/**/*.jpg
+
+# Capture kit virtual environment (Windows; see capture-kit/requirements.txt)
+capture-kit/capture-env/

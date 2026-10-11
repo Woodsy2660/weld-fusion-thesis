@@ -1,0 +1,54 @@
+{
+ "task": "validation of geometry + vision pipelines against first real capture (C11, S1)",
+ "date": "2026-10-11",
+ "git_commit": "9f4160c867b17dcda91c04b5bf35cd9d0ddea04d",
+ "git_branch": "vision/sequence-leakage-audit",
+ "git_dirty": true,
+ "unmerged_paths": [
+  ".gitignore",
+  "configs/geometry.yaml",
+  "src/geometry/profile.py",
+  "src/geometry/rules.py"
+ ],
+ "seed": 0,
+ "tool": "capture-kit/diagnose_capture.py (written for this task; imports nothing from src/)",
+ "python": "3.12.3",
+ "platform": "Linux-6.18.40.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+ "packages": {
+  "numpy": "2.5.2",
+  "pillow": "12.3.0",
+  "matplotlib": "3.11.2"
+ },
+ "configs": {
+  "geometry.yaml": "UNPARSEABLE - unresolved merge conflict",
+  "frame.yaml": "0923b9e5df5a4c89",
+  "class_map.yaml": "b2851f89bb3eb12c"
+ },
+ "inputs": {
+  "C11_top_r0": {
+   "meta.json": "85987cc55afea976",
+   "depth_000.npy": "b4f1590c14e97969",
+   "depth_063.npy": "8ee89ea6e27f7ed2",
+   "color_000.png": "3ab99ee1db7a75f4",
+   "n_depth": 64,
+   "n_color": 10
+  },
+  "C11_root_r0": {
+   "meta.json": "2a447be3c2b9f35e",
+   "depth_000.npy": "7680a19f4e21a8d6",
+   "depth_063.npy": "815b76cccf5f6451",
+   "color_000.png": "8a0f656aba9f6bbd",
+   "n_depth": 64,
+   "n_color": 10
+  },
+  "REF_top_r0": {
+   "meta.json": "d0e381b6ca345b93",
+   "depth_000.npy": "483c07d16c75d69f",
+   "depth_063.npy": "54cc79070217232b",
+   "color_000.png": "25bf6eacc6dc8413",
+   "n_depth": 64,
+   "n_color": 10
+  }
+ },
+ "data_quarantine": "C11 S1 captures are a pipeline validation artefact. Not training, evaluation, calibration or specimen data. Must not appear in any split, fold or reported result."
+}

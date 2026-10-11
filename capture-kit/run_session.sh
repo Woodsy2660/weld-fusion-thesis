@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# Edit ORDER to a RANDOMISED coupon sequence before running.
+# Generate one with:  python -c "import random;c=[f'C{i:02d}' for i in range(1,16)];random.shuffle(c);print(' '.join(c))"
+set -euo pipefail
+
+SESSION="S1"
+STANDOFF="300.0"
+ORDER=(C11 C04 C15 C02 C09 C07 C13 C01 C06 C14 C03 C10 C05 C12 C08)   # <-- REPLACE
+REPEAT_COUPONS=(C11 C07 C05)   # 3 coupons get 2 extra re-placements each
+
+i=0
+echo ">>> session reference target (start)"
+python capture.py REF top "$SESSION" $((i++)) --standoff "$STANDOFF" --note "session start reference"
+read -rp "Reference captured. Load first coupon and press Enter..."
+
+for c in "${ORDER[@]}"; do
+  for face in top root; do
+    read -rp ">>> Load $c, $face face. Press Enter when seated..."
+    python capture.py "$c" "$face" "$SESSION" $((i++)) --standoff "$STANDOFF"
+  done
+done
+
+for c in "${REPEAT_COUPONS[@]}"; do
+  for r in 1 2; do
+    read -rp ">>> REPEATABILITY: re-place $c, top face (rep $r). Press Enter..."
+    python capture.py "$c" top "$SESSION" $((i++)) --rep "$r" --standoff "$STANDOFF" \
+        --note "repeat placement for u_align"
+  done
+done
+
+echo ">>> session reference target (end)"
+read -rp "Load reference target and press Enter..."
+python capture.py REF top "$SESSION" $((i++)) --standoff "$STANDOFF" --note "session end reference"
+
+echo
+echo ">>> running checks — DO NOT break down the rig yet"
+python check_captures.py "data/raw/$SESSION"
