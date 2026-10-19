@@ -1,0 +1,112 @@
+{
+  "capture_dir": "C:\\Users\\bwood\\OneDrive\\Desktop\\weld-fusion-thesis\\data\\raw\\S1\\C03_root_r0",
+  "coupon_id": "C03",
+  "face": "root",
+  "standoff_mm": 324.3,
+  "n_depth_frames": 64,
+  "registration_method": "seeded",
+  "seeds": {
+    "d6": {
+      "px_u": 1565,
+      "px_v": 135
+    },
+    "d8": {
+      "px_u": 478,
+      "px_v": 183
+    }
+  },
+  "rim_fit": {
+    "origin": {
+      "contrast_ratio": 13.149453215017008,
+      "n_edge_points": 72,
+      "free_fit_diameter_mm": 5.715471636155312,
+      "fixed_fit_residual": 7.3052886197339735,
+      "accepted": true
+    },
+    "axis": {
+      "contrast_ratio": 4.7555586255061435,
+      "n_edge_points": 72,
+      "free_fit_diameter_mm": 8.498234311291116,
+      "fixed_fit_residual": 19.622403849298763,
+      "accepted": true
+    }
+  },
+  "pose": {
+    "R": [
+      [
+        -0.9984768996159251,
+        0.05517137784548955,
+        0.0
+      ],
+      [
+        0.05517137784548955,
+        0.9984768996159251,
+        0.0
+      ],
+      [
+        0.0,
+        -0.0,
+        -1.0
+      ]
+    ],
+    "O": [
+      0.15623299805377508,
+      -0.1403042329675656,
+      0.32327851781131106
+    ],
+    "measured_baseline_mm": 255.405051711737,
+    "derived_face": "root",
+    "face_label": "root",
+    "face_match": true,
+    "y_crown_mean_mm": -1.1889219226169403,
+    "y_crown_slope": 0.0004549372492101652,
+    "y_crown_max_mm": 11.998878231945012,
+    "flags": [
+      "baseline_error_255.4mm",
+      "loose_gate_failed_255.4mm",
+      "baseline_tolerance_exceeded_255.4mm",
+      "y_crown_exceeded_12.00mm"
+    ]
+  },
+  "holes": {
+    "origin": {
+      "centre_px": [
+        135.1162567138672,
+        1565.1754150390625
+      ],
+      "free_fit_radius_px": 12.071805953979492,
+      "fixed_fit_residual_px": 7.3052886197339735,
+      "position_3d": [
+        0.13667490128414145,
+        -0.0891472686287169,
+        0.3195915989727906
+      ]
+    },
+    "axis": {
+      "centre_px": [
+        182.00758361816406,
+        478.53558349609375
+      ],
+      "free_fit_radius_px": 17.949356079101562,
+      "fixed_fit_residual_px": 19.622403849298763,
+      "position_3d": [
+        -0.11823483727681987,
+        -0.07506209399117494,
+        0.3269654366498315
+      ]
+    }
+  },
+  "measured_baseline_mm": 255.405051711737,
+  "y_crown": {
+    "y_crown_mean": -1.1889219226169403,
+    "y_crown_slope": 0.0004549372492101652,
+    "y_crown_max": 11.998878231945012,
+    "n_points": 121
+  },
+  "flags": [
+    "baseline_error_255.4mm",
+    "loose_gate_failed_255.4mm",
+    "baseline_tolerance_exceeded_255.4mm",
+    "y_crown_exceeded_12.00mm"
+  ]
+}

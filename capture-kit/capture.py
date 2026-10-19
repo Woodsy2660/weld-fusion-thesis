@@ -37,6 +37,7 @@ LASER_POWER    = 240.0       # set from the emitter A/B test — see SOP step 6
 EXPOSURE_US    = 200.0       # set from the exposure procedure — see SOP step 5
 WHITE_BALANCE  = 4500.0
 GAIN           = 64.0
+STANDOFF_TOLERANCE_MM = 10.0   # declared vs measured; beyond this, warn
 OUT_ROOT       = pathlib.Path(__file__).resolve().parent.parent / "data" / "raw"
 # ----------------------------------------------------------------------------
 
@@ -61,7 +62,7 @@ def main():
     ap.add_argument("session")
     ap.add_argument("order_index", type=int)
     ap.add_argument("--rep", type=int, default=0, help="repeat placement index")
-    ap.add_argument("--standoff", type=float, default=300.0, help="measured standoff mm")
+    ap.add_argument("--standoff", type=float, default=320.0, help="measured standoff mm")
     ap.add_argument("--note", default="")
     args = ap.parse_args()
 
@@ -76,6 +77,7 @@ def main():
     cfg.enable_stream(rs.stream.depth, DEPTH_W, DEPTH_H, rs.format.z16, DEPTH_FPS)
     cfg.enable_stream(rs.stream.color, COLOR_W, COLOR_H, rs.format.bgr8, COLOR_FPS)
     profile = pipe.start(cfg)
+    streaming = True
     dev = profile.get_device()
 
     try:
@@ -109,27 +111,49 @@ def main():
         for _ in range(N_WARMUP):
             pipe.wait_for_frames()
 
-        depth_nums, color_nums = [], []
-        n_d = n_c = 0
-        while n_d < N_DEPTH or n_c < N_COLOR:
+        # ---- acquire into RAM only; NO disk I/O inside this loop ----
+        # A 1920x1080 PNG encode costs 30-80 ms against a 33 ms frame
+        # interval, so writing here stalls the pipeline and the driver drops
+        # frames. The C11 session lost 49 of 113 device frames this way.
+        # Buffering costs 64 x 1.84 MB + 10 x 6.2 MB ~ 180 MB.
+        depth_buf, color_buf, depth_nums, color_nums = [], [], [], []
+        while len(depth_buf) < N_DEPTH or len(color_buf) < N_COLOR:
             frames = pipe.wait_for_frames()
-            if n_d < N_DEPTH:
+            if len(depth_buf) < N_DEPTH:
                 df = frames.get_depth_frame()
                 if df:
-                    np.save(outdir / "depth" / f"{n_d:03d}.npy",
-                            np.asanyarray(df.get_data()))
+                    depth_buf.append(np.asanyarray(df.get_data()).copy())
                     depth_nums.append(df.get_frame_number())
-                    n_d += 1
-            if n_c < N_COLOR:
+            if len(color_buf) < N_COLOR:
                 cf = frames.get_color_frame()
                 if cf:
-                    cv2.imwrite(str(outdir / "color" / f"{n_c:03d}.png"),
-                                np.asanyarray(cf.get_data()),
-                                [cv2.IMWRITE_PNG_COMPRESSION, 3])
+                    color_buf.append(np.asanyarray(cf.get_data()).copy())
                     color_nums.append(cf.get_frame_number())
-                    n_c += 1
 
         temp_end = ds.get_option(rs.option.asic_temperature)
+
+        # ---- standoff self-check, before anything is written ----
+        # meta.json recorded 300.0 for the C11 session because that is what
+        # was typed on the command line; the rig was actually at 358 mm. A
+        # declared value must never stand in for a measurement.
+        mid = depth_buf[0][300:420, 540:740].astype(float)
+        mid = mid[mid > 0]
+        measured_standoff = (float(np.median(mid)) * DEPTH_UNITS * 1000.0
+                             if mid.size else float("nan"))
+        if not (abs(measured_standoff - args.standoff) <= STANDOFF_TOLERANCE_MM):
+            print(f"!! WARNING: declared {args.standoff:.1f} mm, "
+                  f"measured {measured_standoff:.1f} mm - check the stand "
+                  f"before continuing")
+
+        # Streaming is finished; stop before touching the disk.
+        pipe.stop()
+        streaming = False
+
+        for i, a in enumerate(depth_buf):
+            np.save(outdir / "depth" / f"{i:03d}.npy", a)
+        for i, a in enumerate(color_buf):
+            cv2.imwrite(str(outdir / "color" / f"{i:03d}.png"), a,
+                        [cv2.IMWRITE_PNG_COMPRESSION, 1])
 
         dprof = profile.get_stream(rs.stream.depth).as_video_stream_profile()
         cprof = profile.get_stream(rs.stream.color).as_video_stream_profile()
@@ -147,6 +171,7 @@ def main():
             "repeat_index": args.rep,
             "timestamp_utc": datetime.now(timezone.utc).isoformat(),
             "standoff_mm_measured": args.standoff,
+            "standoff_mm_from_depth": measured_standoff,
             "operator_notes": args.note,
 
             "n_depth": N_DEPTH, "n_color": N_COLOR, "n_warmup": N_WARMUP,
@@ -176,13 +201,15 @@ def main():
         with open(outdir / "meta.json", "w") as f:
             json.dump(meta, f, indent=2)
 
-        print(f"OK  {outdir}  depth={n_d} color={n_c} dropped={dropped} "
+        print(f"OK  {outdir}  depth={len(depth_nums)} color={len(color_nums)} dropped={dropped} "
               f"temp {temp_start:.1f}->{temp_end:.1f}C")
         if dropped:
             print("  !! DROPPED FRAMES — check cable/port before continuing")
 
     finally:
-        pipe.stop()
+        # pipe.stop() already ran after acquisition on the success path.
+        if streaming:
+            pipe.stop()
 
 
 if __name__ == "__main__":

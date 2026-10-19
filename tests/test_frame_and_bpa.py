@@ -1,6 +1,10 @@
 """
 The frame is the single source of truth, and a modality may only put mass on
 the focal elements it declares. These tests pin both.
+
+NOTE: Tests target the 4-class EXPERIMENTAL frame (Theta = {N, U, P, L}).
+C was removed because no crack specimens could be fabricated. The 5-class
+frame is retained in frame_5class.yaml for analytical ceiling derivation.
 """
 import sys
 from pathlib import Path
@@ -29,17 +33,20 @@ def test_frame_declares_three_vision_heads():
 
 
 def test_focal_elements_match_the_thesis_definition():
+    """4-class experimental frame focal elements."""
     frame = load_frame()
     assert frame.focal_element("V1") == ["P"]
     assert set(frame.focal_element("V3")) == {"N", "U"}
-    # Widened from {N,U,L} when the crack head was removed: with no V2, vision
-    # can no longer assert "not a crack", so C re-enters the ignorance set.
-    assert set(frame.focal_element("V4")) == {"N", "U", "L", "C"}
+    # V4 is {N,U,L} in the 4-class experimental frame.
+    # It was {N,U,L,C} in the 5-class analytical frame, but C was removed
+    # because no crack specimens could be fabricated.
+    assert set(frame.focal_element("V4")) == {"N", "U", "L"}
     assert "V2" not in frame.vision_heads
 
 
-def test_theta_has_five_classes():
-    assert set(load_frame().classes) == {"N", "U", "P", "L", "C"}
+def test_theta_has_four_classes():
+    """4-class experimental frame: C removed (no crack specimens)."""
+    assert set(load_frame().classes) == {"N", "U", "P", "L"}
 
 
 def test_L_appears_only_inside_the_ignorance_element():
@@ -48,20 +55,19 @@ def test_L_appears_only_inside_the_ignorance_element():
     for head in frame.head_names:
         els = set(frame.focal_element(head))
         if "L" in els:
-            assert els == {"N", "U", "L", "C"}, (
+            # In 4-class frame, V4 = {N,U,L}
+            assert els == {"N", "U", "L"}, (
                 f"{head} contains L outside the ignorance element"
             )
 
 
-def test_C_appears_only_inside_the_ignorance_element():
-    """Since V2 was removed, C is in the same position as L."""
+def test_C_not_in_experimental_frame():
+    """C was removed from the 4-class experimental frame (no crack specimens)."""
     frame = load_frame()
+    assert "C" not in frame.classes
     for head in frame.head_names:
         els = set(frame.focal_element(head))
-        if "C" in els:
-            assert els == {"N", "U", "L", "C"}, (
-                f"{head} contains C outside the ignorance element"
-            )
+        assert "C" not in els, f"{head} contains C but C is not in Theta"
 
 
 def test_U_is_never_a_vision_singleton():
@@ -158,9 +164,7 @@ def test_validate_accepts_the_P_singleton_because_it_is_declared():
     declared focal elements", not "no singletons" -- guard against someone
     tightening it the wrong way.
 
-    {C} used to be accepted here too. It no longer is for vision, because V2
-    was removed; see tests/test_frame_algebra.py for the vision-rejects /
-    ut-accepts pair.
+    NOTE: C is no longer in the experimental frame at all (no crack specimens).
     """
     frame = load_frame()
     ok = {frozenset({"P"}): 0.95, frozenset(frame.classes): 0.05}
@@ -168,8 +172,9 @@ def test_validate_accepts_the_P_singleton_because_it_is_declared():
 
 
 def test_validate_rejects_undeclared_compound_element():
+    """Compound {P,L} is not a declared focal element for vision."""
     frame = load_frame()
-    bad = {frozenset({"P", "C"}): 0.95, frozenset(frame.classes): 0.05}
+    bad = {frozenset({"P", "L"}): 0.95, frozenset(frame.classes): 0.05}
     with pytest.raises(BPAValidationError):
         validate_modality_bpa(bad, frame=frame)
 
@@ -208,3 +213,54 @@ def test_model_head_count_comes_from_the_frame():
     frame = load_frame()
     model = build_model(pretrained=False)
     assert model.fc.out_features == frame.num_heads == 3
+
+
+# ---------------------------------------------------------------------------
+# Known-issue #3 (00-START-HERE.md): Lack of Fusion was mapped to V3 {N,U}.
+# L is not an element of {N,U}. Fixed 2026-10-11; these pin it.
+# ---------------------------------------------------------------------------
+def test_L_is_in_V4_and_not_in_V3():
+    frame = load_frame()
+    assert "L" in frame.focal_element("V4")
+    assert "L" not in frame.focal_element("V3")
+
+
+def test_lack_of_fusion_routes_to_the_head_containing_L():
+    """
+    Derived from the frame, not hardcoded to 'V4': whatever head the mapping
+    points at must actually contain L, or it asserts a focal element that
+    excludes the symbol it is labelling.
+    """
+    frame = load_frame()
+    cmap = load_class_map(frame=frame)
+    head = cmap["final_welding"]["Lack of Fusion"]
+    assert head != DISCARD, "Lack of Fusion must not be discarded"
+    assert "L" in frame.focal_element(head), (
+        f"final_welding/Lack of Fusion -> {head} = "
+        f"{set(frame.focal_element(head))}, which does not contain L"
+    )
+
+
+def test_no_source_class_maps_to_a_head_excluding_its_own_symbol():
+    """
+    Generalises the above. Any source label naming a Theta symbol in its text
+    must map to a head containing that symbol.
+
+    NOTE: C is excluded from checks because it's not in the 4-class frame.
+    Source classes containing "crack" should be mapped to DISCARD.
+    """
+    frame = load_frame()
+    cmap = load_class_map(frame=frame)
+    # Only check symbols that are in the experimental frame
+    hints = {"L": ("lack of fusion", "lack of penetration"),
+             "P": ("porosity", "pore")}
+    for source, mapping in cmap.items():
+        for label, head in mapping.items():
+            if head == DISCARD:
+                continue
+            for sym, needles in hints.items():
+                if any(n in label.lower() for n in needles):
+                    assert sym in frame.focal_element(head), (
+                        f"{source}/{label} -> {head} = "
+                        f"{set(frame.focal_element(head))}, missing {sym}"
+                    )

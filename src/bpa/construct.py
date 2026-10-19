@@ -6,14 +6,18 @@ focal elements in configs/frame.yaml, and those declarations encode what the
 sensor can physically resolve:
 
     V1  {P}      vision can see surface-breaking porosity
-    V2  {C}      vision can see a surface-breaking crack
     V3  {N,U}    vision sees a geometric deviation but cannot measure whether
                  it breaches the ISO 5817 limit -- geometry decides that
     V4  {N,U,L}  the surface shows nothing conclusive; L lives only here,
                  because lack of fusion is subsurface and vision cannot see it
 
-So vision may never place mass on {U} alone or {L} alone. It may place mass on
-{P} and {C}, which happen to be singletons, because those are declared heads.
+NOTE: V2 {C} was removed (precision 0.19, insufficient support). C is also
+removed from the experimental frame entirely because no crack specimens could
+be fabricated. The 5-class frame is retained in frame_5class.yaml for
+analytical ceiling derivation.
+
+Vision may never place mass on {U} alone or {L} alone. It may place mass on
+{P}, which happens to be a singleton, because that is a declared head.
 The invariant is "only declared focal elements", not "no singletons" --
 validate_modality_bpa() enforces exactly that.
 
@@ -47,15 +51,19 @@ def modality_focal_elements(frame, modality: str) -> dict:
     {head: frozenset} for any modality declared in configs/frame.yaml.
 
     Each modality's legal focal elements encode what that sensor can physically
-    resolve, which is why they differ:
+    resolve, which is why they differ.
 
-      vision    {P}, {N,U}, {N,U,L,C}     surface only; cannot measure U against
-                                          ISO 5817, cannot see L or C at all
-      geometry  {U}, {N,P,L,C}            profile only; resolves U and nothing
+    4-CLASS EXPERIMENTAL FRAME (Theta = {N, U, P, L}):
+      vision    {P}, {N,U}, {N,U,L}       surface only; cannot measure U against
+                                          ISO 5817, cannot see L at all
+      geometry  {U}, {N,P,L}              profile only; resolves U and nothing
                                           else
-      ut        {P}, {L}, {C}, {N,U}      subsurface; separates L from C, but
-                                          cannot tell a sound weld from a
-                                          surface geometry problem
+      ut        {P}, {L}, {N,U}           subsurface; cannot tell a sound weld
+                                          from a surface geometry problem
+
+    NOTE: C was removed from the experimental frame because no crack specimens
+    could be fabricated. The 5-class frame (frame_5class.yaml) is retained for
+    analytical ceiling derivation.
     """
     return {h: frozenset(v) for h, v in frame.heads_for(modality).items()}
 

@@ -1,5 +1,11 @@
 # Source annotation class -> vision focal element (see configs/frame.yaml).
 #
+# NOTE: The experimental frame is 4-class (Theta = {N, U, P, L}). C was removed
+# because no crack specimens could be fabricated. V4 is now {N,U,L}, not
+# {N,U,L,C}. Source classes containing "crack" are still mapped to V4 because
+# they represent "no conclusive evidence" - they're legitimate training images
+# for the ignorance head.
+#
 # Rationale (preserve):
 #
 # - V3 collects every surface-visible geometric anomaly. Vision flags that a
@@ -33,15 +39,18 @@ sources:
     Crack:                     V4    # was V2. The V2 {C} head was removed --
                                      # 60 patches from 46 frames, precision
                                      # 0.19, unsupported by the data. NOT
-                                     # discard: a crack patch is a legitimate
-                                     # member of the ignorance set {N,U,L,C},
-                                     # so mapping it to V4 asserts nothing
-                                     # false and keeps 60 patches of signal
-                                     # for what "no conclusive evidence" looks
-                                     # like. DECISION CONFIRMED 30 Sep 2026.
-    "Lack of Fusion":          V3    # surface-visible LOF is a geometric
-                                     # anomaly at the toe; vision cannot see
-                                     # internal LOF
+                                     # discard: crack images are legitimate
+                                     # training data for the V4 ignorance head.
+                                     # They show what "no conclusive evidence"
+                                     # looks like. DECISION CONFIRMED 30 Sep.
+                                     # NOTE: C removed from 4-class frame.
+    "Lack of Fusion":          V4    # was V3 {N,U}. L is NOT an element of
+                                     # {N,U}, so the old mapping asserted a
+                                     # focal element that does not contain the
+                                     # symbol it is labelling. V4 = {N,U,L} is
+                                     # the ignorance head and does contain L.
+                                     # Known-issue #3 in 00-START-HERE.md.
+                                     # FIXED 2026-10-11.
     Undercut:                  V3
     Irregular:                 V3
     "Excess-Reinforcement":    V3

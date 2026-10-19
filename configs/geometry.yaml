@@ -6,7 +6,8 @@ sensor:
   type: realsense_d435i
   depth_resolution: [1280, 720]
   rgb_resolution: [1920, 1080]
-  working_distance_mm: 300  # D435i MinZ is ~280mm at 1280x720
+  working_distance_mm: 320        # Measured standoff to weld surface
+  working_distance_tolerance_mm: 5  # Acceptable variation across weld bead
 
 # ---------------------------------------------------------------------------
 # Registration — datum hole detection and pose solve
@@ -69,6 +70,25 @@ profile_extraction:
   plane_fit_roi:
     y_inner_mm: 15    # Start of parent metal region (outside bead)
     y_outer_mm: 40    # End of parent metal region (inside plate edge)
+
+  # Datum construction within that band. CHANGED 2026-10-11 from an implicit
+  # median to a fitted line; see docs/DECISIONS.md.
+  #
+  # "median" (legacy): one level per side, the median of the 15-40 mm band.
+  #   That level represents the surface at y ~ 27.5 mm, but ISO 5817 measures
+  #   undercut depth at the weld toe, near y ~ 12 mm. Extrapolating a constant
+  #   across that 15.5 mm gap costs (local slope x 15.5 mm). C11 measured
+  #   2.37 deg between the plate halves -> 0.643 mm of datum error, larger
+  #   than the 0.5 mm Level B limit being measured.
+  #
+  # "linear" (default): fit depth = a*y + b over the same band, per side, per
+  #   transverse profile, and evaluate it at the toe. Removes the slope term.
+  #   Residual error is then set by surface curvature over the 25 mm band:
+  #   f'' * w^2 / 8 = 0.026 mm for the measured 1.5 mm p-p, 300 mm undulation.
+  #
+  # The band itself is unchanged and stays frozen: 15 mm clears the HAZ and the
+  # bead toe, 40 mm stays inside the 70 mm plate half-width with margin.
+  datum_mode: linear
 
   # Weld bead detection: the region around centreline where the bead sits.
   # Undercut is measured at the transition between bead and parent metal.

@@ -1,0 +1,70 @@
+{
+ "task": "sequence-leakage audit (F1-F5) and conditional re-grouping (G)",
+ "date": "2026-10-01",
+ "git_sha": "87db5fc73abcb0840318a85fc0730dc7351629c9",
+ "seed": 42,
+ "torch": "2.6.0+cu124",
+ "cuda": "12.4",
+ "config_sha256_16": {
+  "frame.yaml": "0923b9e5df5a4c89",
+  "class_map.yaml": "b2851f89bb3eb12c",
+  "vision_train.yaml": "210b90f11162ce40"
+ },
+ "checkpoints": {
+  "best_resnet50.pth": {
+   "path": "models/vision/best_resnet50.pth",
+   "sha256_16": "f20328250ed55f2d"
+  },
+  "best_resnet18.pth": {
+   "path": "models/vision/best_resnet18.pth",
+   "sha256_16": "187cd060f3075c0a"
+  },
+  "best_resnet50_v2.pth": {
+   "path": "models/vision/best_resnet50_v2.pth",
+   "sha256_16": "ab492b21e08106d2"
+  },
+  "best_resnet18_v2.pth": {
+   "path": "models/vision/best_resnet18_v2.pth",
+   "sha256_16": "364298512743957b"
+  }
+ },
+ "f5_verdicts": {
+  "F2_sequence_stem_share": {
+   "measured": 0.8159,
+   "threshold": 0.05,
+   "verdict": "CONFIRMED"
+  },
+  "F3_nn_cosine_below_0.05": {
+   "measured": 0.3283,
+   "measured_excluding_negatives": 0.2943,
+   "control_test_to_test": 0.3217,
+   "threshold": 0.02,
+   "verdict": "CONFIRMED"
+  },
+  "F4_perceptual_sibling_in_train": {
+   "measured": 0.0,
+   "threshold": 0.0,
+   "verdict": "CONSISTENT"
+  }
+ },
+ "grouping": {
+  "source_frame_groups": 5908,
+  "source_sequence_3_relations": {
+   "groups": 545,
+   "largest_group_frames": 2189,
+   "top3_share_of_patches": 0.839,
+   "train_groups_after_split": 3,
+   "max_test_drift_pp": 53.2,
+   "pairs_outside_bound": 26,
+   "usable": false
+  },
+  "source_sequence_stem_only": {
+   "groups": 1759,
+   "max_test_drift_pp": 19.5,
+   "pairs_outside_bound": 11,
+   "usable": true,
+   "used_for_task_H": true
+  }
+ },
+ "note": "Neither grouping met the Task A +/-5pp acceptance bound. Reported, not relaxed."
+}

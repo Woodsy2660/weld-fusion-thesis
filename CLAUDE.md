@@ -9,22 +9,25 @@ evidence under Dempster-Shafer theory.
 head count or the head-to-focal-element mapping — read it via
 `src/utils/frame.py:load_frame()`.
 
+**4-CLASS EXPERIMENTAL FRAME** (C removed — no crack specimens fabricated):
 ```
-Theta = {N, U, P, L, C}
+Theta = {N, U, P, L}
   N  no defect / acceptable
   U  geometric non-conformance to ISO 5817 — undercut, excess reinforcement,
      or misalignment beyond limits
   P  porosity
   L  lack of fusion / lack of penetration
-  C  crack
 ```
+
+The 5-class frame (with C) is retained in `configs/frame_5class.yaml` for
+analytical ceiling derivation.
 
 ## Vision targets three focal elements, not classes
 
 ```
 V1  {P}        surface-breaking porosity
 V3  {N,U}      surface geometric anomaly present, magnitude unmeasured
-V4  {N,U,L,C}  no conclusive surface evidence
+V4  {N,U,L}    no conclusive surface evidence
 ```
 
 V2 `{C}` was **removed** — it held 60 patches from 46 source frames and scored
@@ -40,7 +43,7 @@ pinned by `tests/test_frame_and_bpa.py`:
 - **Vision never predicts `L` alone.** Lack of fusion is subsurface and has no
   reliable surface signature. `L` appears only inside `V4`.
 
-`{P}` and `{C}` *are* singletons, and that is fine — they are declared heads.
+`{P}` *is* a singleton, and that is fine — it is a declared head.
 The invariant is "only declared focal elements", not "no singletons". Do not
 tighten the validator the wrong way.
 
@@ -130,9 +133,9 @@ discard.
 Two mappings are **PROVISIONAL** and need human confirmation
 (`python src/vision/review_samples.py` writes the contact sheets):
 
-- `weld_dataset/discontinuity` → V3. If these are cracks they belong in V2.
-- `final_welding/Crack` → V2. Surface-breaking cracks are uncommon in GMAW and
-  the instance count is high enough to suspect the label covers something else.
+- `weld_dataset/discontinuity` → V3. Confirmed 30 Sep 2026.
+- `final_welding/Crack` → V4. V2 was removed (precision 0.19). Crack images are
+  legitimate training data for the V4 ignorance head.
 
 `final_welding/cluster of porosity` → V1 was **added during implementation** —
 it is one of the 15 classes in that source's `data.yaml` but was absent from the

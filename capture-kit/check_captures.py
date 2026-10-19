@@ -13,6 +13,7 @@ import cv2
 # Acceptance thresholds — tune on the first coupon, then freeze.
 MIN_VALID_DEPTH_FRACTION = 0.60   # over the whole plate region
 MAX_SATURATED_FRACTION   = 0.001  # colour pixels at 255 in any channel
+MAX_STANDOFF_ERROR_MM = 10.0    # declared vs depth-derived
 MAX_DROPPED_FRAMES       = 0
 MAX_TEMP_RISE_C          = 6.0
 EXPECTED_DEPTH_UNITS     = 0.0001
@@ -66,6 +67,28 @@ def check_one(d: pathlib.Path):
     info["median_depth_mm"] = float(np.nanmedian(mean_depth))
     if not (250 < info["median_depth_mm"] < 360):
         issues.append(f"median depth {info['median_depth_mm']:.0f} mm — standoff wrong?")
+
+    # Declared vs measured standoff. The C11 session recorded 300.0 because
+    # that is what was typed on the command line while the rig sat at 360 mm;
+    # depth noise scales as z**2, so a 60 mm error is a 44% noise penalty that
+    # nothing downstream can recover. A declared value is not a measurement.
+    declared = meta.get("standoff_mm_measured")
+    measured = meta.get("standoff_mm_from_depth")
+    if measured is None:
+        # Captures taken before the self-check existed: recompute it here so
+        # the archive can still be audited.
+        mid = np.load(dfiles[0])[300:420, 540:740].astype(float)
+        mid = mid[mid > 0]
+        measured = (float(np.median(mid)) * meta["depth_units"] * 1000.0
+                    if mid.size else float("nan"))
+        info["standoff_recomputed"] = True
+    info["standoff_mm_declared"] = declared
+    info["standoff_mm_from_depth"] = measured
+    if declared is not None and np.isfinite(measured):
+        if abs(measured - declared) > MAX_STANDOFF_ERROR_MM:
+            issues.append(
+                f"standoff declared {declared:.1f} mm but measured "
+                f"{measured:.1f} mm ({measured - declared:+.1f})")
 
     img = cv2.imread(str(cfiles[0]))
     sat = float(np.mean(img.max(axis=2) >= 255))

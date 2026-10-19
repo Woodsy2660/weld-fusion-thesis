@@ -1,0 +1,18 @@
+# Capture-kit dependencies — WINDOWS ONLY.
+#
+# These are for the RealSense capture rig and must be installed into a Windows
+# virtual environment. The repo's WSL venv at ~/weldenv is Linux binaries and
+# cannot be used from PowerShell; it also has no librealsense backend.
+#
+# Verified against Windows Python 3.11.9:
+#   py -3.11 -m venv .venv-capture
+#   .\.venv-capture\Scripts\Activate.ps1
+#   pip install -r capture-kit\requirements.txt
+#
+# pyrealsense2 ships prebuilt wheels only for a limited set of CPython
+# versions. cp311 win_amd64 is available (2.58.4 at time of writing); 3.12+
+# may have no wheel and would need librealsense built from source.
+
+numpy>=1.24,<3
+opencv-python>=4.8
+pyrealsense2>=2.54

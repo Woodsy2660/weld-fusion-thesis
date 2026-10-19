@@ -25,7 +25,7 @@ data:
   patches_dir: data/processed/vision_patches
   image_size: 224
   batch_size: 64
-  num_workers: 8
+  num_workers: 0  # Set to 0 for Windows compatibility
 
 augmentation:
   # Collapsing the Roboflow augmented siblings removed variation that used to

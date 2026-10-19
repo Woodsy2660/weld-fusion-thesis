@@ -4,7 +4,7 @@
 set -euo pipefail
 
 SESSION="S1"
-STANDOFF="300.0"
+STANDOFF="320.0"
 ORDER=(C11 C04 C15 C02 C09 C07 C13 C01 C06 C14 C03 C10 C05 C12 C08)   # <-- REPLACE
 REPEAT_COUPONS=(C11 C07 C05)   # 3 coupons get 2 extra re-placements each
 

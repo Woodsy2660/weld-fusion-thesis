@@ -1,0 +1,20 @@
+{
+ "median": {
+  "residual_median_mm": 0.8484934504230175,
+  "undercut_min_mm": 0.0,
+  "undercut_median_mm": 0.0146942138671875,
+  "undercut_max_mm": 19.32380371093734,
+  "n_profiles": 35,
+  "n_undercut": 62,
+  "gate_failures": 11
+ },
+ "linear": {
+  "residual_median_mm": 0.7333092257097181,
+  "undercut_min_mm": 0.0,
+  "undercut_median_mm": 0.007683310960771905,
+  "undercut_max_mm": 59.478755805534774,
+  "n_profiles": 35,
+  "n_undercut": 63,
+  "gate_failures": 13
+ }
+}

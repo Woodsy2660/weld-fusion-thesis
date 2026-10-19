@@ -7,7 +7,25 @@
       "Bash(git checkout *)",
       "Bash(xargs -I{} ls -lh {})",
       "Bash(cd *)",
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "Bash(git pull:*)",
+      "Bash(ls:*)",
+      "Bash(~/weldenv/bin/python:*)",
+      "Bash(python3:*)",
+      "Bash(__NEW_LINE_08d4ef3b796ef5f2__ python3 /mnt/c/Users/bwood/OneDrive/Desktop/weld-fusion-thesis/capture-kit/check_captures.py /tmp/test_capture_check)",
+      "Bash(bash:*)",
+      "Bash(pwsh:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\ngeometry: complete depth pipeline with ISO 5817 exceedance BPA\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(PYTHONPATH=src:$PYTHONPATH python3:*)",
+      "Bash(/usr/bin/python3:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(python:*)",
+      "Bash(sudo apt install:*)",
+      "Bash(done)",
+      "Bash(du -sh:*)"
     ]
   }
 }

@@ -304,6 +304,10 @@ class ProfileMeasurement:
     n_valid: int                 # Valid pixels in this profile
     valid_fraction: float
 
+    # Local datum fit residual -- this profile's contribution to u_cal.
+    # Replaces the global plane RMS, which was never a valid per-cell figure.
+    datum_residual_rms_mm: float = float("nan")
+
 
 def extract_single_profile(
     depth_mm: np.ndarray,
@@ -393,10 +397,46 @@ def extract_single_profile(
             valid_fraction=0.0,
         )
 
-    datum_left = float(np.median(valid_left))
-    datum_right = float(np.median(valid_right))
+    # ---- per-side local reference, fitted and extrapolated to the toe ----
+    #
+    # A MEDIAN of the 15-40 mm parent band represents the surface at y ~ 27.5 mm,
+    # but undercut is measured at the toe near y ~ 12 mm. Extrapolating a
+    # constant across that 15.5 mm gap costs (local slope x 15.5 mm). On C11
+    # the two plate halves differ by 2.37 deg, which is 0.643 mm of error --
+    # larger than the 0.5 mm Level B limit the measurement exists to resolve.
+    #
+    # Fitting a LINE in (y, depth) over the same band and evaluating it at the
+    # toe removes the slope term. Residual error is then set by curvature over
+    # the 25 mm band, 0.026 mm for the measured 1.5 mm p-p / 300 mm undulation.
+    #
+    # datum_mode: "linear" (default) or "median" (legacy, for A/B comparison).
+    datum_mode = prof_cfg.get("datum_mode", "linear")
 
-    # Misalignment (hi-lo between plate halves)
+    y_left = np.array([row_to_y(row_left_inner + i)
+                       for i in range(len(left_parent))])[~np.isnan(left_parent)]
+    y_right = np.array([row_to_y(row_right_outer + i)
+                        for i in range(len(right_parent))])[~np.isnan(right_parent)]
+
+    def _fit_side(y, d):
+        """Return (ref_at_y_callable, residual_rms). Falls back to a level."""
+        if datum_mode == "median" or len(y) < 5 or np.ptp(y) < 1e-6:
+            lvl = float(np.median(d))
+            return (lambda yy: lvl), float(np.sqrt(np.mean((d - lvl) ** 2)))
+        a, b = np.polyfit(y, d, 1)
+        res = d - (a * y + b)
+        return (lambda yy: a * yy + b), float(np.sqrt(np.mean(res ** 2)))
+
+    ref_left, rms_left = _fit_side(y_left, valid_left)
+    ref_right, rms_right = _fit_side(y_right, valid_right)
+
+    # u_cal for this profile is the LOCAL fit residual, not a global plane RMS.
+    datum_residual_rms = float(np.mean([rms_left, rms_right]))
+
+    # Levels at the toe, which is what undercut is actually measured from.
+    datum_left = float(ref_left(-bead_half))
+    datum_right = float(ref_right(bead_half))
+
+    # Misalignment (hi-lo between plate halves), evaluated at the toes.
     misalignment = abs(datum_left - datum_right)
 
     # Average datum for undercut/reinforcement reference
@@ -480,6 +520,7 @@ def extract_single_profile(
         misalignment_mm=misalignment,
         n_valid=n_valid,
         valid_fraction=valid_fraction,
+        datum_residual_rms_mm=datum_residual_rms,
     )
 
 
@@ -509,6 +550,9 @@ class CellMeasurement:
 
     # Raw profile data
     profile_measurements: list[ProfileMeasurement]
+    # Local datum fit residual, median across this cell's profiles.
+    # This is the cell's u_cal; the global plane RMS was never valid per-cell.
+    datum_residual_rms_mm: float = float("nan")
 
 
 def extract_cell_measurements(
@@ -617,6 +661,12 @@ def extract_cell_measurements(
         n_profiles=n_profiles,
         n_valid_profiles=n_valid,
         valid_fraction=n_valid / n_profiles,
+        datum_residual_rms_mm=(
+            float(np.median([p.datum_residual_rms_mm for p in valid_profiles
+                             if not math.isnan(p.datum_residual_rms_mm)]))
+            if any(not math.isnan(p.datum_residual_rms_mm)
+                   for p in valid_profiles)
+            else float("nan")),
         tilt_angle_deg=plane_fit.tilt_angle_deg,
         profile_measurements=profiles,
     )

@@ -1,46 +1,47 @@
 # Dempster-Shafer frame of discernment and per-modality focal elements.
+# FOUR-CLASS EXPERIMENTAL FRAME.
 #
 # SINGLE SOURCE OF TRUTH. No module may hardcode the head count or the
 # head-to-focal-element mapping; read it from here via
 # src/utils/frame.py:load_frame().
+#
+# C (crack) is REMOVED from the experimental frame because:
+# - No crack surrogate specimens could be fabricated
+# - Vision V2 {C} was already deleted for lack of support (precision 0.19)
+# - Zero experimental samples exist for the C class
+#
+# The 5-class frame is retained in frame_5class.yaml for analytical ceiling
+# derivation. The proposition "V+G cannot isolate {L}" is proved there.
 
 # ---------------------------------------------------------------------------
-# Theta -- the frame of discernment. Unchanged.
+# Theta -- the frame of discernment. Four classes.
 # ---------------------------------------------------------------------------
 classes:
   N: "no defect / acceptable"
   U: "geometric non-conformance to ISO 5817 - undercut, excess reinforcement, or misalignment beyond limits"
   P: "porosity"
   L: "lack of fusion / lack of penetration"
-  C: "crack"
 
 # ---------------------------------------------------------------------------
 # Vision focal elements -- THREE heads.
 #
 #   V1  {P}        surface-breaking porosity
 #   V3  {N,U}      surface geometric anomaly present, magnitude unmeasured
-#   V4  {N,U,L,C}  no conclusive surface evidence
+#   V4  {N,U,L}    no conclusive surface evidence
 #
-# V2 {C} was REMOVED. It held 60 patches from 46 source frames and scored
-# precision 0.19 -- it was not supported by the data.
+# V2 {C} was removed earlier (precision 0.19, 60 patches from 46 frames).
+# The numbering deliberately skips V2 so existing artefacts stay valid.
 #
-# The numbering deliberately skips V2. V3 and V4 keep their names so that every
-# existing artefact, test and contact sheet stays valid; renumbering would
-# silently invalidate all of them.
-#
-# V4 WIDENED from {N,U,L} to {N,U,L,C}, and this widening is forced. While a
-# crack head existed, V4 could assert "no conclusive surface evidence, and
-# definitely not a crack". With no crack head, vision can no longer support the
-# "not a crack" half, so C must re-enter the ignorance set. A three-head frame
-# that left V4 as {N,U,L} would emit evidence the modality cannot justify.
+# V4 NARROWED from {N,U,L,C} to {N,U,L} because C is no longer in Theta.
+# This is not a claim that vision can exclude cracks -- it is a consequence
+# of the experimental frame having no crack class to place mass on.
 #
 # Vision still NEVER predicts U alone: it can see that a bead deviates but
 # cannot measure the deviation against the ISO 5817 limit. Geometry does that,
 # which is why V3 is the compound {N,U} rather than the singleton {U}.
 #
-# Vision still NEVER predicts L alone, and now never predicts C alone either.
-# Both are subsurface or near-invisible at the surface, and both live only
-# inside V4.
+# Vision still NEVER predicts L alone. Lack of fusion is subsurface and has
+# no reliable surface signature. L appears only inside V4.
 #
 # Head order below is the CLASSIFIER OUTPUT ORDER. V1 < V3 < V4 sorts
 # correctly, so directory order and this order agree; load_frame() asserts it.
@@ -48,7 +49,7 @@ classes:
 vision_heads:
   V1: ["P"]
   V3: ["N", "U"]
-  V4: ["N", "U", "L", "C"]
+  V4: ["N", "U", "L"]
 
 # ---------------------------------------------------------------------------
 # Focal elements the other modalities are entitled to commit mass to.
@@ -56,18 +57,18 @@ vision_heads:
 #
 # geometry measures the bead profile against ISO 5817. It resolves U directly
 # -- the only modality that can -- and is blind to everything else, so its
-# ignorance head is {N,P,L,C}.
+# ignorance head is {N,P,L}.
 #
-# ut resolves subsurface defects and separates L from C, which vision cannot.
+# ut resolves subsurface defects. With C removed from the frame, UT now has
+# three heads: U1={P}, U2={L}, U4={N,U}. U3={C} is removed.
 # It cannot distinguish a sound weld from a surface geometry problem, so {N,U}
 # is its compound.
 # ---------------------------------------------------------------------------
 geometry_heads:
   G1: ["U"]
-  G2: ["N", "P", "L", "C"]
+  G2: ["N", "P", "L"]
 
 ut_heads:
   U1: ["P"]
   U2: ["L"]
-  U3: ["C"]
   U4: ["N", "U"]

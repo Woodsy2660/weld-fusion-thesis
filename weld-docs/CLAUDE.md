@@ -54,42 +54,20 @@ is the fusion framework and its analysis, **not** any individual classifier.
 ## Repository layout
 
 ```
-configs/
-  frame.yaml            single source of truth for focal elements
-  class_map.yaml        source class → head mapping
-  vision_train.yaml     training hyperparameters
-  geometry.yaml         depth capture parameters
-  fusion.yaml           combination rule settings
-  ut_train.yaml         ultrasonic classifier settings
-
 src/
-  bpa/                  BPA construction and validation
-  fusion/               Dempster-Shafer combination rules
-  geometry/             depth profile extraction, ISO 5817 rules
-  ut/                   ultrasonic feature extraction, synthetic generation
-  utils/                frame loading, metrics
-  vision/               dataset, training, inference, calibration
-    diagnostics/        leakage audit, sequence grouping, geometry checks
-  weldfusion/           pipeline orchestration (scaffold, partially built)
-    pipeline/           phase1_batch.py, phase2_percell.py
-    output/             reconstruction.py
-
+  frame/          frame of discernment, focal elements, set algebra
+  vision/         dataset, training, inference, calibration
+  geometry/       depth capture, extraction, uncertainty, BPA
+  ut/     A-scan features, classifier, calibration
+  fusion/         discounting, Murphy, Dempster, pignistic
+  evaluation/     splits, metrics, ablation, significance tests
+  registration/   datum detection, pose solve, cell indexing
 data/
-  merged/               deduplicated, remapped patches ready for training
-  processed/
-    vision_patches/     per-instance crops with manifest.csv
-  weld-dataset/         LoHi-WELD source (read-only)
-  welding-defect-kaggle/  Wijaya source (read-only)
-
-results/
-  diagnostics/          leakage audit outputs, sequence stems
-  review/               sample contact sheets
-  vision/               logits, metrics, run manifests per fold
-
-tests/                  frame algebra, BPA invariants, split validation
-scripts/                batch preparation scripts
-docs/                   generated reports (vision_pipeline_report.md, etc.)
-weld-docs/docs/         project documentation (this folder)
+  raw/            immutable captures — never modify in place
+  labels/         versioned label CSVs
+  interim/        derived, reproducible
+results/          figures, tables, run manifests
+docs/             the documentation in this folder
 ```
 
 ---

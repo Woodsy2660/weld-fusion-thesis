@@ -1,0 +1,557 @@
+{
+  "timestamp": "2026-10-17T16:40:21.768240",
+  "n_captures": 36,
+  "n_passed": 0,
+  "n_failed": 36,
+  "results": [
+    {
+      "capture": "C01_root_r0",
+      "status": "warn",
+      "baseline_mm": 74.47362826283752,
+      "baseline_error_mm": 195.5263717371625,
+      "face_label": "root",
+      "face_derived": "root",
+      "face_match": true,
+      "y_crown_mean_mm": -1.5826773831178902,
+      "y_crown_max_mm": 11.995289680939496,
+      "n_points": 411659,
+      "flags": [
+        "baseline_error_74.5mm",
+        "d10_residual_173.32mm",
+        "y_crown_exceeded_12.00mm"
+      ]
+    },
+    {
+      "capture": "C01_top_r0",
+      "status": "warn",
+      "baseline_mm": 206.54348601475849,
+      "baseline_error_mm": 63.456513985241514,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": -1.0968951503340425,
+      "y_crown_max_mm": 11.956002865118684,
+      "n_points": 422362,
+      "flags": [
+        "baseline_error_206.5mm",
+        "d10_residual_90.37mm",
+        "y_crown_exceeded_11.96mm"
+      ]
+    },
+    {
+      "capture": "C02_root_r0",
+      "status": "warn",
+      "baseline_mm": 144.48120541633998,
+      "baseline_error_mm": 125.51879458366002,
+      "face_label": "root",
+      "face_derived": "root",
+      "face_match": true,
+      "y_crown_mean_mm": 0.1568293134315281,
+      "y_crown_max_mm": 11.996989069238401,
+      "n_points": 399986,
+      "flags": [
+        "baseline_error_144.5mm",
+        "d10_residual_223.22mm",
+        "y_crown_exceeded_12.00mm"
+      ]
+    },
+    {
+      "capture": "C02_top_r0",
+      "status": "warn",
+      "baseline_mm": 127.47203223355866,
+      "baseline_error_mm": 142.52796776644135,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": 0.9899237276344782,
+      "y_crown_max_mm": 11.996411898522348,
+      "n_points": 390944,
+      "flags": [
+        "baseline_error_127.5mm",
+        "d10_deproject_failed: Insufficient annulus points (0) for hole at (-13, 147)",
+        "y_crown_exceeded_12.00mm"
+      ]
+    },
+    {
+      "capture": "C03_root_r0",
+      "status": "warn",
+      "baseline_mm": 150.3319177979126,
+      "baseline_error_mm": 119.66808220208739,
+      "face_label": "root",
+      "face_derived": "root",
+      "face_match": true,
+      "y_crown_mean_mm": 1.4847368809151456,
+      "y_crown_max_mm": 11.988271233284763,
+      "n_points": 401585,
+      "flags": [
+        "baseline_error_150.3mm",
+        "d10_deproject_failed: No valid depth near hole at (334, 1492)",
+        "y_crown_exceeded_11.99mm"
+      ]
+    },
+    {
+      "capture": "C03_top_r0",
+      "status": "fail",
+      "error": "No valid depth near hole at (627, 1626)"
+    },
+    {
+      "capture": "C04_root_r0",
+      "status": "warn",
+      "baseline_mm": 146.5759390619595,
+      "baseline_error_mm": 123.4240609380405,
+      "face_label": "root",
+      "face_derived": "root",
+      "face_match": true,
+      "y_crown_mean_mm": 5.272404481914854,
+      "y_crown_max_mm": 11.99439609401794,
+      "n_points": 412622,
+      "flags": [
+        "baseline_error_146.6mm",
+        "d10_residual_159.55mm",
+        "y_crown_exceeded_11.99mm"
+      ]
+    },
+    {
+      "capture": "C04_top_r0",
+      "status": "warn",
+      "baseline_mm": 171.38381367079253,
+      "baseline_error_mm": 98.61618632920747,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": 2.9773903812714155,
+      "y_crown_max_mm": 11.71725800344689,
+      "n_points": 402105,
+      "flags": [
+        "baseline_error_171.4mm",
+        "y_crown_exceeded_11.72mm"
+      ]
+    },
+    {
+      "capture": "C05_root_r0",
+      "status": "warn",
+      "baseline_mm": 45.6250419110422,
+      "baseline_error_mm": 224.37495808895778,
+      "face_label": "root",
+      "face_derived": "root",
+      "face_match": true,
+      "y_crown_mean_mm": -1.7671833155096466,
+      "y_crown_max_mm": 11.995456909562895,
+      "n_points": 413042,
+      "flags": [
+        "baseline_error_45.6mm",
+        "d10_residual_130.25mm",
+        "y_crown_exceeded_12.00mm"
+      ]
+    },
+    {
+      "capture": "C05_top_r0",
+      "status": "warn",
+      "baseline_mm": 278.85977371352294,
+      "baseline_error_mm": 8.85977371352294,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": 0.2897991642402384,
+      "y_crown_max_mm": 11.998379930481283,
+      "n_points": 404914,
+      "flags": [
+        "baseline_error_278.9mm",
+        "d10_residual_160.56mm",
+        "y_crown_exceeded_12.00mm"
+      ]
+    },
+    {
+      "capture": "C05_top_r1",
+      "status": "warn",
+      "baseline_mm": 123.35657488229096,
+      "baseline_error_mm": 146.64342511770906,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": -4.234870565846548,
+      "y_crown_max_mm": 11.998507736175815,
+      "n_points": 407144,
+      "flags": [
+        "baseline_error_123.4mm",
+        "d10_residual_320.76mm",
+        "y_crown_exceeded_12.00mm"
+      ]
+    },
+    {
+      "capture": "C05_top_r2",
+      "status": "warn",
+      "baseline_mm": 171.17313195636365,
+      "baseline_error_mm": 98.82686804363635,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": -0.21043711436344772,
+      "y_crown_max_mm": 11.971669331792796,
+      "n_points": 407723,
+      "flags": [
+        "baseline_error_171.2mm",
+        "d10_residual_115.13mm",
+        "y_crown_exceeded_11.97mm"
+      ]
+    },
+    {
+      "capture": "C06_root_r0",
+      "status": "fail",
+      "error": "Missing datum holes: 0 origin, 0 axis"
+    },
+    {
+      "capture": "C06_top_r0",
+      "status": "warn",
+      "baseline_mm": 175.71703759120555,
+      "baseline_error_mm": 94.28296240879445,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": 1.3676398579255367,
+      "y_crown_max_mm": 11.961649019323092,
+      "n_points": 401054,
+      "flags": [
+        "baseline_error_175.7mm",
+        "d10_residual_167.05mm",
+        "y_crown_exceeded_11.96mm"
+      ]
+    },
+    {
+      "capture": "C07_root_r0",
+      "status": "warn",
+      "baseline_mm": 47.03154437363199,
+      "baseline_error_mm": 222.968455626368,
+      "face_label": "root",
+      "face_derived": "root",
+      "face_match": true,
+      "y_crown_mean_mm": -3.4651849743697634,
+      "y_crown_max_mm": 11.95917257202969,
+      "n_points": 410608,
+      "flags": [
+        "baseline_error_47.0mm",
+        "d10_residual_110.75mm",
+        "y_crown_exceeded_11.96mm"
+      ]
+    },
+    {
+      "capture": "C07_top_r0",
+      "status": "warn",
+      "baseline_mm": 140.10589943468804,
+      "baseline_error_mm": 129.89410056531196,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": -5.244614821190429,
+      "y_crown_max_mm": 11.998054656632226,
+      "n_points": 379990,
+      "flags": [
+        "baseline_error_140.1mm",
+        "d10_residual_154.42mm",
+        "y_crown_exceeded_12.00mm"
+      ]
+    },
+    {
+      "capture": "C07_top_r1",
+      "status": "warn",
+      "baseline_mm": 14.001371037591063,
+      "baseline_error_mm": 255.99862896240893,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": -0.2760241413221488,
+      "y_crown_max_mm": 11.99695570326152,
+      "n_points": 383281,
+      "flags": [
+        "baseline_error_14.0mm",
+        "d10_residual_46.95mm",
+        "y_crown_exceeded_12.00mm"
+      ]
+    },
+    {
+      "capture": "C07_top_r2",
+      "status": "warn",
+      "baseline_mm": 9.649856730562256,
+      "baseline_error_mm": 260.35014326943775,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": -0.48376336477622195,
+      "y_crown_max_mm": 11.98820319255305,
+      "n_points": 389599,
+      "flags": [
+        "baseline_error_9.6mm",
+        "d10_residual_52.82mm",
+        "y_crown_exceeded_11.99mm"
+      ]
+    },
+    {
+      "capture": "C08_root_r0",
+      "status": "warn",
+      "baseline_mm": 28.07187711145879,
+      "baseline_error_mm": 241.92812288854122,
+      "face_label": "root",
+      "face_derived": "root",
+      "face_match": true,
+      "y_crown_mean_mm": 2.193373200410002,
+      "y_crown_max_mm": 11.907439855074777,
+      "n_points": 416938,
+      "flags": [
+        "baseline_error_28.1mm",
+        "d10_residual_85.45mm",
+        "y_crown_exceeded_11.91mm"
+      ]
+    },
+    {
+      "capture": "C08_top_r0",
+      "status": "warn",
+      "baseline_mm": 207.19357977001007,
+      "baseline_error_mm": 62.806420229989925,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": -1.845485807300275,
+      "y_crown_max_mm": 11.976416771429456,
+      "n_points": 410476,
+      "flags": [
+        "baseline_error_207.2mm",
+        "d10_residual_91.90mm",
+        "y_crown_exceeded_11.98mm"
+      ]
+    },
+    {
+      "capture": "C09_root_r0",
+      "status": "warn",
+      "baseline_mm": 177.29168329501476,
+      "baseline_error_mm": 92.70831670498524,
+      "face_label": "root",
+      "face_derived": "root",
+      "face_match": true,
+      "y_crown_mean_mm": -4.00814582509417,
+      "y_crown_max_mm": 11.989474823105022,
+      "n_points": 402682,
+      "flags": [
+        "baseline_error_177.3mm",
+        "d10_residual_45.47mm",
+        "y_crown_exceeded_11.99mm"
+      ]
+    },
+    {
+      "capture": "C09_top_r0",
+      "status": "warn",
+      "baseline_mm": 16.185995307398333,
+      "baseline_error_mm": 253.81400469260166,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": 2.272334213604342,
+      "y_crown_max_mm": 11.792860714334038,
+      "n_points": 392335,
+      "flags": [
+        "baseline_error_16.2mm",
+        "d10_residual_296.32mm",
+        "y_crown_exceeded_11.79mm"
+      ]
+    },
+    {
+      "capture": "C10_root_r0",
+      "status": "fail",
+      "error": "No valid depth near hole at (31, 1705)"
+    },
+    {
+      "capture": "C10_top_r0",
+      "status": "warn",
+      "baseline_mm": 31.829157474040056,
+      "baseline_error_mm": 238.17084252595996,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": 5.439165446590067,
+      "y_crown_max_mm": 11.933628889699849,
+      "n_points": 393507,
+      "flags": [
+        "baseline_error_31.8mm",
+        "d10_residual_236.51mm",
+        "y_crown_exceeded_11.93mm"
+      ]
+    },
+    {
+      "capture": "C11_root_r0",
+      "status": "warn",
+      "baseline_mm": 130.5164116393335,
+      "baseline_error_mm": 139.4835883606665,
+      "face_label": "root",
+      "face_derived": "root",
+      "face_match": true,
+      "y_crown_mean_mm": 4.101192830504392,
+      "y_crown_max_mm": 11.992924033690526,
+      "n_points": 403879,
+      "flags": [
+        "baseline_error_130.5mm",
+        "d10_residual_151.21mm",
+        "y_crown_exceeded_11.99mm"
+      ]
+    },
+    {
+      "capture": "C11_top_r0",
+      "status": "warn",
+      "baseline_mm": 24.753262262274184,
+      "baseline_error_mm": 245.24673773772582,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": 3.664678041589099,
+      "y_crown_max_mm": 11.931334711905615,
+      "n_points": 388322,
+      "flags": [
+        "baseline_error_24.8mm",
+        "d10_residual_8.25mm",
+        "y_crown_exceeded_11.93mm"
+      ]
+    },
+    {
+      "capture": "C11_top_r1",
+      "status": "warn",
+      "baseline_mm": 10.43347643293147,
+      "baseline_error_mm": 259.56652356706854,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": -0.1310689410890324,
+      "y_crown_max_mm": 11.99702534599572,
+      "n_points": 397113,
+      "flags": [
+        "baseline_error_10.4mm",
+        "d10_residual_84.16mm",
+        "y_crown_exceeded_12.00mm"
+      ]
+    },
+    {
+      "capture": "C11_top_r2",
+      "status": "warn",
+      "baseline_mm": 145.98841042900003,
+      "baseline_error_mm": 124.01158957099997,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": -3.194587379190261,
+      "y_crown_max_mm": 11.998604695457395,
+      "n_points": 395762,
+      "flags": [
+        "baseline_error_146.0mm",
+        "d10_residual_38.48mm",
+        "y_crown_exceeded_12.00mm"
+      ]
+    },
+    {
+      "capture": "C12_root_r0",
+      "status": "fail",
+      "error": "Missing datum holes: 1 origin, 0 axis"
+    },
+    {
+      "capture": "C12_top_r0",
+      "status": "warn",
+      "baseline_mm": 125.13705467255882,
+      "baseline_error_mm": 144.8629453274412,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": 0.2298114984456991,
+      "y_crown_max_mm": 11.97416617999684,
+      "n_points": 407590,
+      "flags": [
+        "baseline_error_125.1mm",
+        "d10_residual_61.85mm",
+        "y_crown_exceeded_11.97mm"
+      ]
+    },
+    {
+      "capture": "C13_root_r0",
+      "status": "warn",
+      "baseline_mm": 78.68061281913006,
+      "baseline_error_mm": 191.31938718086994,
+      "face_label": "root",
+      "face_derived": "root",
+      "face_match": true,
+      "y_crown_mean_mm": 2.183085476703711,
+      "y_crown_max_mm": 11.999320098978535,
+      "n_points": 403522,
+      "flags": [
+        "baseline_error_78.7mm",
+        "d10_residual_138.74mm",
+        "y_crown_exceeded_12.00mm"
+      ]
+    },
+    {
+      "capture": "C13_top_r0",
+      "status": "warn",
+      "baseline_mm": 141.33627778282772,
+      "baseline_error_mm": 128.66372221717228,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": -3.125956928440534,
+      "y_crown_max_mm": 11.98671096771799,
+      "n_points": 399116,
+      "flags": [
+        "baseline_error_141.3mm",
+        "y_crown_exceeded_11.99mm"
+      ]
+    },
+    {
+      "capture": "C14_root_r0",
+      "status": "fail",
+      "error": "Insufficient annulus points (0) for hole at (813, 239)"
+    },
+    {
+      "capture": "C14_top_r0",
+      "status": "warn",
+      "baseline_mm": 237.82371831689414,
+      "baseline_error_mm": 32.176281683105856,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": 3.4918078650414386,
+      "y_crown_max_mm": 11.993135593047725,
+      "n_points": 407450,
+      "flags": [
+        "baseline_error_237.8mm",
+        "d10_residual_65.78mm",
+        "y_crown_exceeded_11.99mm"
+      ]
+    },
+    {
+      "capture": "C15_root_r0",
+      "status": "warn",
+      "baseline_mm": 55.28374802766079,
+      "baseline_error_mm": 214.7162519723392,
+      "face_label": "root",
+      "face_derived": "root",
+      "face_match": true,
+      "y_crown_mean_mm": -5.507385124043725,
+      "y_crown_max_mm": 11.988218075503047,
+      "n_points": 399083,
+      "flags": [
+        "baseline_error_55.3mm",
+        "y_crown_exceeded_11.99mm"
+      ]
+    },
+    {
+      "capture": "C15_top_r0",
+      "status": "warn",
+      "baseline_mm": 74.60082358557987,
+      "baseline_error_mm": 195.39917641442014,
+      "face_label": "top",
+      "face_derived": "cap",
+      "face_match": true,
+      "y_crown_mean_mm": 3.945346462318631,
+      "y_crown_max_mm": 11.993060724470425,
+      "n_points": 398128,
+      "flags": [
+        "baseline_error_74.6mm",
+        "d10_residual_72.65mm",
+        "y_crown_exceeded_11.99mm"
+      ]
+    }
+  ]
+}

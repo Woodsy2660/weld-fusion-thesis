@@ -1,0 +1,180 @@
+# Registration configuration
+# FROZEN PARAMETERS — do not tune against geometry or classification results.
+# These are fixed a priori. Tuning them against results is leakage.
+#
+# Commit this file before the first WC run. Record the commit hash in every
+# registration JSON.
+
+# ---------------------------------------------------------------------------
+# Coupon physical geometry
+# ---------------------------------------------------------------------------
+coupon:
+  length_mm: 300                 # Nominal; actual measured per coupon
+  plate_half_width_mm: 70        # Each half (datum side and weld side)
+  thickness_mm: 10               # Plate thickness (affects bore wall projection)
+
+# ---------------------------------------------------------------------------
+# Datum holes — drilled post-weld, all in the datum (+y) half
+# ---------------------------------------------------------------------------
+datum_holes:
+  origin:                        # Ø6 hole - defines the origin
+    s_mm: 15
+    y_mm: 50                     # 20 mm from plate edge (70 - 50 = 20)
+    diameter_mm: 6
+    radius_mm: 3
+  axis:                          # Ø8 hole - defines s-axis direction
+    s_mm: 285
+    y_mm: 50
+    diameter_mm: 8
+    radius_mm: 4
+  check:                         # Ø10 hole (optional) - for over-determined pose
+    s_mm: 150
+    y_mm: -50                    # On weld side, for residual check
+    diameter_mm: 10
+    radius_mm: 5
+
+  # Expected baseline (axis s - origin s)
+  baseline_mm: 270               # = 285 - 15
+
+# ---------------------------------------------------------------------------
+# Plate isolation (Task 1b B1)
+# ---------------------------------------------------------------------------
+plate_isolation:
+  # Height threshold: h > t/2 = 5 mm separates plate from board
+  height_threshold_mm: 5.0         # t/2 where t=10mm plate thickness
+
+  # Border band for board depth fitting (fraction of image)
+  border_fraction: 0.10
+
+  # Minimum valid border pixels before falling back to largest component
+  min_border_pixels: 5000
+
+  # Morphological close element size (to bridge weld bead)
+  close_element_mm: 3.0
+
+  # Padding to add around plate bounding box
+  bbox_padding_mm: 10.0
+
+  # Plate dimension tolerances for sanity check
+  plate_length_tolerance_mm: 6     # 300 ± 6 mm
+  plate_width_tolerance_mm: 6      # 140 ± 6 mm
+
+# ---------------------------------------------------------------------------
+# Hole detection — gradient-based rim search (Task 1b B4)
+# ---------------------------------------------------------------------------
+hole_detection:
+  # Search window radius around seed or candidate
+  window_radius_mm: 12.0
+
+  # Contrast ratio threshold for accepting a detection
+  # Score / median score in window must exceed this
+  contrast_threshold: 1.5
+
+  # Pair selection gate: separation 270 ± 10 mm
+  # Loose gate to avoid circular validation — the ±0.5 mm test is the real check
+  pair_gate_mm: 10.0
+
+  # Diameter classification tolerance
+  diameter_tolerance_pct: 15
+
+  # Minimum edge points for circle/ellipse fit
+  min_edge_points: 20
+
+  # Sub-pixel edge detection: gradient threshold
+  edge_gradient_threshold: 0.1
+
+  # LEGACY (adaptive threshold — not used in gradient-based detector)
+  adaptive_block_size_px: 51
+  adaptive_threshold_c: 10
+
+# ---------------------------------------------------------------------------
+# Deprojection and plane fitting (B3, B4)
+# ---------------------------------------------------------------------------
+deprojection:
+  # Annulus for local plane fit around each hole
+  # r + inner to r + outer mm
+  annulus_inner_mm: 2
+  annulus_outer_mm: 8
+
+  # Datum strip for refined normal (parent metal on datum half)
+  datum_strip_y_min_mm: 25       # Start (away from weld)
+  datum_strip_y_max_mm: 65       # End (away from edge)
+
+  # Hole exclusion radius in datum strip
+  hole_exclusion_radius_mm: 8
+
+  # RANSAC parameters for plane fitting
+  ransac_iterations: 100
+  ransac_inlier_threshold_mm: 0.5
+
+  # Axis refinement convergence threshold
+  axis_convergence_deg: 0.001
+
+# ---------------------------------------------------------------------------
+# Validation thresholds (B6)
+# ---------------------------------------------------------------------------
+validation:
+  # Baseline tolerance
+  baseline_tolerance_mm: 0.5     # 270 ± 0.5 mm
+
+  # Maximum y_crown deviation before flagging
+  max_y_crown_mm: 3
+
+  # Minimum hole detection confidence
+  min_hole_confidence: 0.8
+
+  # Ø10 in-plane residual tolerance (it lies on the distorted half)
+  d10_residual_mm: 1.0
+
+# ---------------------------------------------------------------------------
+# Point cloud extraction (B5)
+# ---------------------------------------------------------------------------
+point_cloud:
+  # Minimum valid frames per pixel for inclusion
+  min_valid_frames: 32           # Half of 64
+
+  # ROI exclusion: discs around datum holes
+  # Uses radii from datum_holes section
+
+  # ROI exclusion: plate edge zone
+  edge_exclusion_y_mm: 65        # |y| > 65 mm excluded
+
+# ---------------------------------------------------------------------------
+# Orthorectified raster (B5)
+# ---------------------------------------------------------------------------
+ortho_raster:
+  # Grid resolution
+  resolution_mm_per_px: 0.25     # 0.25 mm/px -> 1200 × 560 px
+
+  # Grid extent
+  s_min_mm: 0
+  s_max_mm: 300
+  y_min_mm: -70
+  y_max_mm: 70
+
+  # Derived dimensions (for reference)
+  # width_px: 1200                # (300 - 0) / 0.25
+  # height_px: 560                # (70 - (-70)) / 0.25
+
+# ---------------------------------------------------------------------------
+# Profile extraction (B5)
+# ---------------------------------------------------------------------------
+profile_extraction:
+  # Default half-width for profile slices
+  default_half_width_mm: 0.25
+
+  # Bead crown search region
+  crown_search_y_half_mm: 12
+
+  # Profile sampling step for bead centreline check
+  crown_check_step_mm: 5
+
+# ---------------------------------------------------------------------------
+# Cell boundaries — from labels CSV, not recomputed
+# ---------------------------------------------------------------------------
+cells:
+  width_mm: 25                   # Matches UT index pitch
+  first_excluded_mm: 25          # Arc-start transient
+  last_excluded_mm: 25           # Arc-stop transient
+
+  # NOTE: Use s_start_mm / s_end_mm from labels CSV, never recompute

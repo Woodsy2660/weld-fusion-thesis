@@ -1,0 +1,37 @@
+capture_id,n_seeds,status,baseline_mm,baseline_error_mm,baseline_pass,face_derived,face_label,face_match,y_crown_max_mm,n_flags,flags
+C01_root_r0,2,flagged,261.04,-8.96,False,root,root,True,11.96,3,baseline_error_261.0mm; baseline_tolerance_exceeded_261.0mm; y_crown_exceeded_11.96mm
+C01_top_r0,2,flagged,256.53,-13.47,False,cap,top,True,11.99,4,baseline_error_256.5mm; loose_gate_failed_256.5mm; baseline_tolerance_exceeded_256.5mm; y_crown_exceeded_11.99mm
+C02_root_r0,2,flagged,254.78,-15.22,False,root,root,True,11.99,4,baseline_error_254.8mm; loose_gate_failed_254.8mm; baseline_tolerance_exceeded_254.8mm; y_crown_exceeded_11.99mm
+C02_top_r0,2,flagged,257.74,-12.26,False,cap,top,True,11.98,4,baseline_error_257.7mm; loose_gate_failed_257.7mm; baseline_tolerance_exceeded_257.7mm; y_crown_exceeded_11.98mm
+C03_root_r0,2,flagged,255.41,-14.59,False,root,root,True,12.0,4,baseline_error_255.4mm; loose_gate_failed_255.4mm; baseline_tolerance_exceeded_255.4mm; y_crown_exceeded_12.00mm
+C03_top_r0,2,flagged,255.78,-14.22,False,cap,top,True,11.93,4,baseline_error_255.8mm; loose_gate_failed_255.8mm; baseline_tolerance_exceeded_255.8mm; y_crown_exceeded_11.93mm
+C04_root_r0,2,flagged,256.99,-13.01,False,root,root,True,12.0,4,baseline_error_257.0mm; loose_gate_failed_257.0mm; baseline_tolerance_exceeded_257.0mm; y_crown_exceeded_12.00mm
+C04_top_r0,2,flagged,261.37,-8.63,False,cap,top,True,11.96,3,baseline_error_261.4mm; baseline_tolerance_exceeded_261.4mm; y_crown_exceeded_11.96mm
+C05_root_r0,2,flagged,255.57,-14.43,False,root,root,True,12.0,4,baseline_error_255.6mm; loose_gate_failed_255.6mm; baseline_tolerance_exceeded_255.6mm; y_crown_exceeded_12.00mm
+C05_top_r0,2,flagged,256.24,-13.76,False,cap,top,True,11.98,4,baseline_error_256.2mm; loose_gate_failed_256.2mm; baseline_tolerance_exceeded_256.2mm; y_crown_exceeded_11.98mm
+C05_top_r1,2,flagged,256.73,-13.27,False,cap,top,True,11.96,4,baseline_error_256.7mm; loose_gate_failed_256.7mm; baseline_tolerance_exceeded_256.7mm; y_crown_exceeded_11.96mm
+C05_top_r2,2,flagged,257.38,-12.62,False,cap,top,True,11.99,4,baseline_error_257.4mm; loose_gate_failed_257.4mm; baseline_tolerance_exceeded_257.4mm; y_crown_exceeded_11.99mm
+C06_root_r0,2,flagged,257.36,-12.64,False,root,root,True,11.99,4,baseline_error_257.4mm; loose_gate_failed_257.4mm; baseline_tolerance_exceeded_257.4mm; y_crown_exceeded_11.99mm
+C06_top_r0,2,flagged,256.34,-13.66,False,cap,top,True,12.0,4,baseline_error_256.3mm; loose_gate_failed_256.3mm; baseline_tolerance_exceeded_256.3mm; y_crown_exceeded_12.00mm
+C07_root_r0,2,flagged,254.59,-15.41,False,root,root,True,11.96,4,baseline_error_254.6mm; loose_gate_failed_254.6mm; baseline_tolerance_exceeded_254.6mm; y_crown_exceeded_11.96mm
+C07_top_r0,2,flagged,257.88,-12.12,False,cap,top,True,11.91,4,baseline_error_257.9mm; loose_gate_failed_257.9mm; baseline_tolerance_exceeded_257.9mm; y_crown_exceeded_11.91mm
+C07_top_r1,2,flagged,256.96,-13.04,False,cap,top,True,11.68,4,baseline_error_257.0mm; loose_gate_failed_257.0mm; baseline_tolerance_exceeded_257.0mm; y_crown_exceeded_11.68mm
+C07_top_r2,2,flagged,255.05,-14.95,False,cap,top,True,11.95,4,baseline_error_255.1mm; loose_gate_failed_255.1mm; baseline_tolerance_exceeded_255.1mm; y_crown_exceeded_11.95mm
+C08_root_r0,2,flagged,257.32,-12.68,False,root,root,True,11.98,4,baseline_error_257.3mm; loose_gate_failed_257.3mm; baseline_tolerance_exceeded_257.3mm; y_crown_exceeded_11.98mm
+C08_top_r0,2,flagged,251.54,-18.46,False,cap,top,True,11.96,4,baseline_error_251.5mm; loose_gate_failed_251.5mm; baseline_tolerance_exceeded_251.5mm; y_crown_exceeded_11.96mm
+C09_root_r0,2,flagged,255.23,-14.77,False,root,root,True,12.0,4,baseline_error_255.2mm; loose_gate_failed_255.2mm; baseline_tolerance_exceeded_255.2mm; y_crown_exceeded_12.00mm
+C09_top_r0,2,flagged,592.38,322.38,False,cap,top,True,11.95,4,baseline_error_592.4mm; loose_gate_failed_592.4mm; baseline_tolerance_exceeded_592.4mm; y_crown_exceeded_11.95mm
+C10_root_r0,2,flagged,258.83,-11.17,False,root,root,True,11.93,4,baseline_error_258.8mm; loose_gate_failed_258.8mm; baseline_tolerance_exceeded_258.8mm; y_crown_exceeded_11.93mm
+C10_top_r0,2,flagged,255.92,-14.08,False,cap,top,True,11.89,4,baseline_error_255.9mm; loose_gate_failed_255.9mm; baseline_tolerance_exceeded_255.9mm; y_crown_exceeded_11.89mm
+C11_root_r0,2,flagged,253.39,-16.61,False,root,root,True,12.0,4,baseline_error_253.4mm; loose_gate_failed_253.4mm; baseline_tolerance_exceeded_253.4mm; y_crown_exceeded_12.00mm
+C11_top_r0,2,flagged,255.32,-14.68,False,cap,top,True,11.99,4,baseline_error_255.3mm; loose_gate_failed_255.3mm; baseline_tolerance_exceeded_255.3mm; y_crown_exceeded_11.99mm
+C11_top_r1,2,flagged,256.15,-13.85,False,cap,top,True,11.99,4,baseline_error_256.1mm; loose_gate_failed_256.1mm; baseline_tolerance_exceeded_256.1mm; y_crown_exceeded_11.99mm
+C11_top_r2,2,flagged,258.36,-11.64,False,cap,top,True,11.96,4,baseline_error_258.4mm; loose_gate_failed_258.4mm; baseline_tolerance_exceeded_258.4mm; y_crown_exceeded_11.96mm
+C12_root_r0,2,flagged,256.32,-13.68,False,root,root,True,11.97,4,baseline_error_256.3mm; loose_gate_failed_256.3mm; baseline_tolerance_exceeded_256.3mm; y_crown_exceeded_11.97mm
+C12_top_r0,2,flagged,256.38,-13.62,False,cap,top,True,11.99,4,baseline_error_256.4mm; loose_gate_failed_256.4mm; baseline_tolerance_exceeded_256.4mm; y_crown_exceeded_11.99mm
+C13_root_r0,2,flagged,258.06,-11.94,False,root,root,True,11.99,4,baseline_error_258.1mm; loose_gate_failed_258.1mm; baseline_tolerance_exceeded_258.1mm; y_crown_exceeded_11.99mm
+C13_top_r0,2,flagged,256.47,-13.53,False,cap,top,True,11.95,4,baseline_error_256.5mm; loose_gate_failed_256.5mm; baseline_tolerance_exceeded_256.5mm; y_crown_exceeded_11.95mm
+C14_root_r0,2,flagged,255.6,-14.4,False,root,root,True,11.99,4,baseline_error_255.6mm; loose_gate_failed_255.6mm; baseline_tolerance_exceeded_255.6mm; y_crown_exceeded_11.99mm
+C14_top_r0,2,flagged,255.99,-14.01,False,cap,top,True,11.97,4,baseline_error_256.0mm; loose_gate_failed_256.0mm; baseline_tolerance_exceeded_256.0mm; y_crown_exceeded_11.97mm
+C15_root_r0,2,flagged,256.36,-13.64,False,root,root,True,11.92,4,baseline_error_256.4mm; loose_gate_failed_256.4mm; baseline_tolerance_exceeded_256.4mm; y_crown_exceeded_11.92mm
+C15_top_r0,2,flagged,257.32,-12.68,False,cap,top,True,11.96,4,baseline_error_257.3mm; loose_gate_failed_257.3mm; baseline_tolerance_exceeded_257.3mm; y_crown_exceeded_11.96mm

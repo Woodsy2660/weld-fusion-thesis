@@ -5,8 +5,9 @@ disagree, this document is correct and the code is a bug.
 
 ## Frame of discernment
 
+**EXPERIMENTAL FRAME (4-class):**
 ```
-Θ = {N, U, P, L, C}
+Θ = {N, U, P, L}
 ```
 
 | Symbol | Meaning |
@@ -15,13 +16,16 @@ disagree, this document is correct and the code is a bug.
 | U | Undercut exceeding the ISO 5817 limit (rejectable) |
 | P | Porosity |
 | L | Lack of fusion (planar, sidewall) |
-| C | Crack (surrogate — see `03-data-and-labels.md`) |
+
+**NOTE:** C (crack) was removed from the experimental frame because no crack
+surrogate specimens could be fabricated. The 5-class frame is retained in
+`configs/frame_5class.yaml` for analytical ceiling derivation.
 
 **L means lack of fusion only.** Lack of penetration is *not* represented: the
 specimens are single pass, which makes root condition a constant rather than a
 controlled variable. Do not write "LoF/LoP" anywhere.
 
-Θ has 5 elements, so 2^Θ has 32 subsets. Mass is assigned only over the focal
+Θ has 4 elements, so 2^Θ has 16 subsets. Mass is assigned only over the focal
 elements declared below, plus Θ itself.
 
 ## Per-modality focal elements
@@ -35,20 +39,20 @@ central design idea of the thesis, not an implementation convenience.
 |---|---|---|
 | V1 | `{P}` | Surface-breaking porosity is directly visible |
 | V3 | `{N,U}` | Surface-only condition; cannot see inside |
-| V4 | `{N,U,L,C}` | Cannot exclude a subsurface planar defect |
+| V4 | `{N,U,L}` | Cannot exclude a subsurface planar defect |
 | — | `Θ` | Ignorance (low confidence, occlusion, missing data) |
 
 Vision **never** assigns `{U}` alone (it cannot measure depth to the ISO limit) and
-**never** assigns `{C}` alone (the corpora support no crack claim in either
-direction). A head that was originally planned for `{C}` was removed; `{C}` is
-absorbed into V4's ignorance.
+**never** assigns `{L}` alone (lack of fusion is subsurface and has no reliable
+surface signature). A head that was originally planned for `{C}` was removed
+(precision 0.19, insufficient support).
 
 ### Geometry
 
 | Focal element | Interpretation |
 |---|---|
 | `{U}` | Measured undercut exceeds the ISO 5817 limit |
-| `{N,P,L,C}` | Profile conforms; says nothing about internals |
+| `{N,P,L}` | Profile conforms; says nothing about internals |
 | `Θ` | Insufficient valid depth pixels in the cell |
 
 ### Ultrasonic
@@ -57,41 +61,48 @@ absorbed into V4's ignorance.
 |---|---|
 | `{P}` | Volumetric scatterer signature |
 | `{L}` | Planar reflector at a fusion face |
-| `{C}` | Planar reflector with crack-like response |
 | `{N,U}` | No subsurface indication; blind to surface profile |
 | `Θ` | No coupling, no scan at this cell |
 
+**NOTE:** U3 = `{C}` was removed from the experimental frame because C is not in Θ.
+
 ## The design property
 
+**4-class experimental frame:**
 ```
-{N,U,L,C} ∩ {N,P,L,C} ∩ {N,U} = {N}
+{N,U,L} ∩ {N,P,L} ∩ {N,U} = {N}
 ```
 
 Only the three-way conjunction isolates the sound-weld hypothesis. No pair does.
 This is why the system needs three modalities and not two, and the argument is
 structural — it holds regardless of how good any classifier is.
 
-## Proposition: the two-modality ceiling
+## Proposition: V+G cannot isolate {L}
 
-**Statement.** Vision and geometry together reach exactly `{N}`, `{U}` and `{P}`.
-They cannot separate L from C.
+**Statement.** Vision and geometry together cannot isolate L (lack of fusion).
+Every focal element containing L also contains N, therefore:
+- BetP(L) ≤ BetP(N) for any V+G BPA
+- L can never be the unique pignistic winner from V+G alone
 
-**Proof sketch.** Every vision focal element contains L if and only if it contains C
-(`{P}` contains neither; `{N,U}` contains neither; `{N,U,L,C}` contains both; Θ
-contains both). The same holds for every geometric focal element (`{U}` neither,
-`{N,P,L,C}` both, Θ both). This property is closed under intersection: if A contains
-L iff it contains C, and B does likewise, then A ∩ B does too. Therefore no
-conjunction of vision and geometric focal elements yields a focal element containing
-exactly one of L or C. The residual after combination is `{N,L,C}` or `{L,C}`, never
-`{L}` or `{C}`.
+**Proof sketch.** Every vision focal element containing L also contains N:
+- V1 = `{P}` — neither L nor N
+- V3 = `{N,U}` — N but not L
+- V4 = `{N,U,L}` — both N and L
 
-**Implication.** Ultrasonic testing is not an incremental improvement to L/C
-discrimination — it is the only thing that provides it. This argument survives even
-if the UT data turns out thin.
+Every geometry focal element containing L also contains N:
+- G1 = `{U}` — neither L nor N
+- G2 = `{N,P,L}` — both N and L
 
-**Wording caution.** Do not write that L and C "remain fused as `{L,C}`" — the
-residual is often `{N,L,C}`. The correct phrasing is: *no conjunction yields a focal
-element containing exactly one of L or C.*
+This property (L ⟹ N) is closed under intersection and Dempster combination.
+Therefore Bel({L}) ≤ Bel({N}), Pl({L}) ≤ Pl({N}), and BetP(L) ≤ BetP(N).
+
+**Implication.** Ultrasonic testing is required to isolate L because only UT has
+U2 = `{L}` as a singleton focal element. This is not a classifier limitation — it
+is a fundamental property of the sensing modalities.
+
+**Note on the 5-class frame.** The ceiling proposition also holds for the 5-class
+analytical frame: V4 = `{N,U,L,C}` and G2 = `{N,P,L,C}` both contain L and N
+together, and both contain C and N together. V+G cannot isolate L or C.
 
 ## Core mathematics
 

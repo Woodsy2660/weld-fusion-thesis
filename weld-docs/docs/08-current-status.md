@@ -1,6 +1,6 @@
 # 08 — Current status
 
-**Last updated: 2026-10-09. Update this file whenever you finish a piece of work.**
+**Last updated: 2026-10-17. Update this file whenever you finish a piece of work.**
 
 ## Overall
 
@@ -22,7 +22,7 @@ Roughly four weeks remain, of which the last week is writing only.
 | Ultrasonic | **Blocked on instrument** | Prep work can and should proceed now |
 | Fusion | **Specified, untested end to end** | Phase 2 implementable; needs real BPAs to validate |
 | Evaluation | **Partially built** | Splits and metrics exist; clustered bootstrap and ceiling calculator outstanding |
-| Registration | **Not built** | Datum holes being drilled; pose solve and cell indexer needed |
+| Registration | **Pipeline built, detection needs tuning** | Geometry correct (synthetic tests pass); hole detection picks up spatter |
 
 ## Done
 
@@ -88,3 +88,111 @@ These will read badly against the actual results if not fixed:
   every coupon identically — selectively cleaning some would confound surface
   condition with capture order, which correlates with coupon, which is the fold group.
 - **Experimental freeze 1 November.** After that, writing only.
+
+---
+
+## 2026-10-11 — First real capture validated against the pipelines
+
+`results/validation_C11/REPORT.md`. Verdict: the geometry pipeline does **not** yet
+produce trustworthy per-cell BPAs from real data.
+
+**Blocked.** Four files carry unresolved merge conflicts (`configs/geometry.yaml`,
+`src/geometry/profile.py`, `src/geometry/rules.py`, `.gitignore`). `src.geometry` does
+not import. Validation Parts B (pipeline) and C (two-face consistency) could not run.
+
+**Measured, from an independent diagnostic that imports nothing from `src/`:**
+
+| | C11 top | C11 root | expected |
+|---|---|---|---|
+| standoff (mm) | 358.3 | 359.8 | 300 |
+| single-frame noise (mm) | 0.487 | 0.549 | 0.214 |
+| averaging reduction over 64 frames | 5.68× | 5.64× | 8× |
+| parent-plane RMS (mm) | 0.95 | 0.84 | 0.030 |
+| inter-plate angular distortion | 2.37° | n/a | < 0.5° |
+
+**Next, in order:** resolve the merge; set the real standoff in `run_session.ps1` (the
+300.0 is an untouched placeholder); capture the repeat placements so `u_align` becomes
+measured; run the step block to re-anchor the uncertainty budget.
+
+**Vision plumbing:** three-head frame confirmed, `{C}` head genuinely absent.
+`final_welding/Lack of Fusion → V3` still wrong, must be V4. Cell-crop and inference
+checks blocked with Part B.
+
+---
+
+## 2026-10-11 (later) — Post-C11 fixes
+
+`results/fixes_post_C11/REPORT.md`. Phase 1 complete bar one hardware check; Phase 2
+blocked; Phase 3 partially blocked.
+
+| | |
+|---|---|
+| merge conflicts resolved | 4 files, 87 tests pass |
+| capture buffering | implemented, **unverified — needs the camera** |
+| standoff self-check | working; C11 measured 360 mm against a declared 300 |
+| L → V4 | fixed and tested |
+| datum → per-side linear fit | implemented, **A/B could not run** |
+
+**Blocking the geometry modality:** `extract_single_profile` hardcodes the weld
+centreline to the image centre row and takes no pose, so it cannot be run on a real
+capture without registration. This blocks the datum validation, per-cell `u_cal`, and
+the synthetic test. Registration (original validation Part B) is now the critical path.
+
+**Second bug:** `compute_depth_stack` computes split-half SE over the whole frame —
+8.056 mm against 0.0857 mm restricted to always-valid pixels. Feeds `noise_floor_mm`.
+
+Budget at 300 mm with a local datum: u_noise 0.0602 (measured), u_quant 0.0289,
+u_cal 0.0257 (predicted), u_align 0.020 (placeholder) → **u_total 0.0759 mm, 6.59 : 1**.
+
+---
+
+## 2026-10-17 — Registration pipeline implemented, hole detection needs calibration
+
+**What was built:**
+
+- `src/geometry/registration_v2.py` — complete pose-aware registration pipeline
+- `configs/registration.yaml` — frozen registration parameters (committed before data)
+- `tests/test_registration_synthetic.py` — 8 synthetic tests, all pass
+- Pure-numpy fallback deprojection (works without pyrealsense2)
+
+**Design decisions recorded in DECISIONS.md:**
+
+1. **Rim-fitting, not opening-centroid** — validated: opening centroid bias is e/2 toward
+   camera nadir, unacceptable at ~1.3 mm for Ø6 at 15° off-axis.
+2. **Coupon coordinate frame physically fixed** — origin at Ø6 rim centre, s toward Ø8,
+   y toward datum holes, z outward normal.
+3. **Profile extraction on point clouds** — `extract_single_profile()` deprecated;
+   `PointCloud.extract_profile(s_mm)` replaces it.
+
+**Synthetic tests verify the geometry:**
+
+| Test | Result |
+|---|---|
+| Opening centroid bias matches e/2 | Pass |
+| Rim fit recovers true centre | < 0.02 mm error |
+| Baseline accurate to 0.5 mm | Pass |
+| End-for-end invariant | Pass |
+| Root face handled | Pass |
+
+**Validation on real captures:**
+
+Ran on 36 captures. All have warnings or failures.
+
+| Status | Count | Cause |
+|---|---|---|
+| Fail (missing holes) | 5 | No candidates matched diameter |
+| Warn (baseline wrong) | 31 | Spurious holes detected |
+
+**Root cause:** Adaptive thresholding (`block_size=51, C=10`) picks up every dark region
+(weld spatter, shadows, oxide). C11_top_r0: 333 candidates, 17 classified as "holes".
+
+**Next steps:**
+
+1. Review diagnostic images: `results/diagnostics/hole_detection/*.png`
+2. Add shape quality filter (circularity, solidity)
+3. Add position constraints (datum holes at y > 20 mm from centre)
+4. Consider Canny → Hough circles instead of blob-based detection
+5. Use colour information (machined bore walls are bright)
+
+**Not blocked:** The geometry math is correct (synthetic tests prove it). Only detection
+calibration remains.

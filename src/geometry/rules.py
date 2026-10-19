@@ -4,8 +4,12 @@ ISO 5817 exceedance-based BPA construction for geometry modality.
 The geometry modality resolves exactly one thing: whether the measured
 undercut exceeds the ISO 5817 limit. It outputs a BPA over two focal elements:
 
-    G1: {U}        measured undercut exceeds the limit (non-conforming)
-    G2: {N,P,L,C}  profile conforms — says nothing about internal defects
+    G1: {U}       measured undercut exceeds the limit (non-conforming)
+    G2: {N,P,L}   profile conforms — says nothing about internal defects
+
+NOTE: G2 was {N,P,L,C} in the 5-class analytical frame. It is now {N,P,L} in
+the 4-class experimental frame because crack surrogates could not be fabricated.
+The code reads focal elements from configs/frame.yaml and does not hardcode them.
 
 Reinforcement and misalignment are measured and reported as validation outputs,
 but they do NOT drive m({U}). Only undercut does.
@@ -30,6 +34,8 @@ from typing import Any
 
 import yaml
 from scipy.stats import norm
+
+from src.utils.frame import load_frame
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -101,13 +107,17 @@ class GeometryMeasurement:
 
 @dataclass
 class GeometryBPA:
-    """BPA for geometry modality over focal elements {U} and {N,P,L,C}.
+    """BPA for geometry modality over focal elements G1={U} and G2={N,P,L}.
 
     If insufficient valid pixels, this is a vacuous BPA (m(Θ) = 1).
+
+    NOTE: Field name m_NPLC is historical (from 5-class frame). It represents
+    the "conforming" focal element, which is now {N,P,L} in the experimental
+    frame. The actual focal elements are read from configs/frame.yaml.
     """
     cell_id: str
     m_U: float                   # Mass on {U} — non-conforming
-    m_NPLC: float                # Mass on {N,P,L,C} — conforming
+    m_NPLC: float                # Mass on G2 — conforming (read from frame)
     is_vacuous: bool             # True if insufficient data
 
     # Supporting data
@@ -130,13 +140,24 @@ class GeometryBPA:
             "u_total_mm": self.u_total_mm,
         }
 
-    def as_bpa_dict(self) -> dict[frozenset[str], float]:
-        """Return as a proper BPA dict for fusion."""
+    def as_bpa_dict(self, frame=None) -> dict[frozenset[str], float]:
+        """Return as a proper BPA dict for fusion.
+
+        Focal elements are read from configs/frame.yaml, not hardcoded.
+        """
+        frame = frame or load_frame()
+        theta = frozenset(frame.classes)
+        geometry_heads = frame.heads_for("geometry")
+
         if self.is_vacuous:
-            return {frozenset({"N", "U", "P", "L", "C"}): 1.0}
+            return {theta: 1.0}
+
+        # G1 is {U}, G2 is the conforming focal element (read from frame)
+        g1_set = frozenset(geometry_heads["G1"])
+        g2_set = frozenset(geometry_heads["G2"])
         return {
-            frozenset({"U"}): self.m_U,
-            frozenset({"N", "P", "L", "C"}): self.m_NPLC,
+            g1_set: self.m_U,
+            g2_set: self.m_NPLC,
         }
 
 
@@ -239,16 +260,22 @@ def build_cell_bpa(
     )
 
 
-def validate_geometry_bpa(bpa: GeometryBPA) -> bool:
+def validate_geometry_bpa(bpa: GeometryBPA, frame=None) -> bool:
     """
     Validate that a geometry BPA satisfies the required invariants.
 
     - Masses sum to 1 (or BPA is vacuous with m(Θ) = 1)
     - No mass on singletons other than {U}
     - No mass on sets outside the declared focal elements
+
+    Focal elements are read from configs/frame.yaml.
     """
     if bpa.is_vacuous:
         return True
+
+    frame = frame or load_frame()
+    geometry_heads = frame.heads_for("geometry")
+    g2_set = frozenset(geometry_heads["G2"])
 
     total = bpa.m_U + bpa.m_NPLC
     if abs(total - 1.0) > 1e-9:
@@ -258,7 +285,7 @@ def validate_geometry_bpa(bpa: GeometryBPA) -> bool:
         raise ValueError(f"m({{U}}) = {bpa.m_U} outside [0, 1]")
 
     if not (0.0 <= bpa.m_NPLC <= 1.0):
-        raise ValueError(f"m({{N,P,L,C}}) = {bpa.m_NPLC} outside [0, 1]")
+        raise ValueError(f"m({set(g2_set)}) = {bpa.m_NPLC} outside [0, 1]")
 
     return True
 
