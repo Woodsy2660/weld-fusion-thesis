@@ -6,6 +6,12 @@ Task 1b Part B1: Create plate mask from height above support, not distance from 
 Key insight: The plate sits on a support board. The plate top is at h ≈ 10mm above
 the board, while the board is at h ≈ 0. A threshold at h > t/2 = 5mm separates them
 with margin on both sides.
+
+SCOPE: this module produces a plate MASK and nothing else. The board model is a
+single constant depth (RANSAC over a scalar), not a plane -- adequate for a
+5 mm threshold at the measured 1.5-2.8 deg tilt, and deliberately not a datum.
+No measured height may reference the board; the plate-only datum lives in
+src/geometry/measure.py.
 """
 
 from __future__ import annotations
@@ -45,7 +51,8 @@ def fit_board_depth_ransac(
     ransac_iterations: int = 100,
     inlier_threshold_mm: float = 2.0,
 ) -> tuple[float, int]:
-    """Fit the board (support surface) depth using RANSAC on border pixels.
+    """Fit the board (support surface) as ONE CONSTANT DEPTH using RANSAC over
+    the depths of border pixels. Not a plane: there is no normal and no tilt.
 
     The border band is the outer fraction of the image, where we expect to see
     the support board rather than the plate.
@@ -74,7 +81,7 @@ def fit_board_depth_ransac(
         # Not enough valid border pixels
         return float('nan'), n_valid
 
-    # RANSAC to find dominant plane (single depth value)
+    # RANSAC over a scalar: the dominant constant depth, not a plane
     best_depth = np.median(border_depths)
     best_inliers = 0
 

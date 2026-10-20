@@ -7,6 +7,54 @@ Format: date, decision, reasoning, what it supersedes.
 
 ---
 
+## 2026-10-19 — Public-corpus split: one searched grouped holdout, not cross-validation
+
+**Decision.** `final_welding` is split once into train/val/test, grouped on
+`source_sequence`, by `src/vision/partition_search.py`: 500 random grouped
+partitions with the dominant session (`IMG_3620`–`IMG_3694`, 39% of patches) pinned
+to train, filtered to val/test share 10% ± 1.5 pp and ≥ 25 V1 sequences in test,
+then the one minimising max(JSD train–test, JSD train–val) over the Overlap /
+Irregular / Burn Through / Spatters mix. Selected: candidate 70, 79.7 / 10.1 / 10.3,
+JSD 0.071 / 0.086.
+
+**Reasoning.** The corpus is initialisation for the real-coupon model, not a thesis
+result; 10-fold CV (20 runs for the A/B comparison) is not justified.
+"Cross-validation" refers only to the real-data k = 4 coupon-grouped folds. The
+default split drew 90.6 / 5.0 / 4.4 with 13 V1 test sequences. Minimising train–test
+divergence alone left val 47% Irregular (JSD 0.204), which biases checkpoint
+selection, hence minimax. The defect-mix residual is recorded, not driven to zero:
+it is a proxy for the shift onto real coupons.
+
+**Supersedes** the `merge_dedup_split.py` 8/1/1 assignment for training.
+
+---
+
+## 2026-10-19 — `source_sequence` built from stems only; embedding relation dropped
+
+**Decision.** `build_sequence_groups.py --skip-embedding`. `sequence_stem` now
+strips Roboflow tile suffixes (`_block_i_j`) so tiles of one photograph share a stem.
+
+**Reasoning.** Embedding adjacency (cosine < 0.05, union-find) on features from the
+task-trained `best_resnet50.pth` chained 502 frames with 499 unrelated filename stems
+into one group holding 66.8% of `final_welding` patches. Features from a classifier
+trained on these labels cluster by class, not by sequence, and single-linkage
+chaining does the rest. Cost: the phash recall gap the embedding relation was meant
+to close (recall 0.1892) is open again; recorded as a limitation.
+
+**Refines** 2026-09-22 (still grouped on `source_sequence`).
+
+---
+
+## 2026-10-19 — `weld_dataset` and `wijaya` stay excluded from vision training
+
+**Decision.** Kept in the manifest with `split = excluded`; not added to train.
+
+**Reasoning.** Label-taxonomy incompatibility, not lost provenance — stem grouping
+works on both. LOSO showed the label spaces do not transfer (held-out macro-F1 0.43
+and 0.22 against chance 0.3023, ECE up to 0.68). Confirms 2026-10-06.
+
+---
+
 ## 2026-10-17 — Pair selection uses loose gate (±10 mm), not closest-to-270
 
 **Decision.** Hole pair selection accepts any pair with separation 270 ± 10 mm. The final

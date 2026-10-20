@@ -1,0 +1,51 @@
+{
+ "git_sha": "2730000aff0db51e77a2405e6654a13615285052",
+ "architecture": "resnet18",
+ "torch": "2.6.0+cu124",
+ "cuda": "12.4",
+ "device": "cuda",
+ "seed": 42,
+ "config": "configs/vision_train.yaml",
+ "config_sha256_16": "1efdf476224bb29a",
+ "frame_sha256_16": "04c8d7987a51255e",
+ "class_map_sha256_16": "ab100f457e6cc8b5",
+ "checkpoint": "models/vision/best_resnet18_ft-layer2.pth",
+ "checkpoint_sha256_16": "cc72ba3232e2f112",
+ "trainable_parameters": 10494979,
+ "total_parameters": 11178051,
+ "freeze_through": "layer2",
+ "class_weights": {
+  "V1": 2.068741798400879,
+  "V3": 0.45060086250305176,
+  "V4": 0.4806577265262604
+ },
+ "patch_counts_per_head": {
+  "train": {
+   "V1": 1658,
+   "V3": 7612,
+   "V4": 7136
+  },
+  "val": {
+   "V1": 453,
+   "V3": 589,
+   "V4": 1033
+  },
+  "test": {
+   "V1": 174,
+   "V3": 729,
+   "V4": 1211
+  }
+ },
+ "source_frames_per_split": {
+  "train": 1990,
+  "val": 400,
+  "test": 358
+ },
+ "split_approach": "partition_search(candidate 70 of 500, groups=source_sequence, dominant group pinned to train)",
+ "split_composition_drift_pp": {
+  "V1": 3.4,
+  "V3": 21.7,
+  "V4": 20.8
+ },
+ "test_macro_f1_three_head": 0.7466526306113774
+}

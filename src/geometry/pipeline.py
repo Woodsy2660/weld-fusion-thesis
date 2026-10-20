@@ -138,12 +138,21 @@ def compute_uncertainty_budget(
     )
 
 
+def weld_axis_centre_rows(weld_axis_px, width: int) -> np.ndarray:
+    """Centreline row for every column, from two (u, v) depth-image points on
+    the weld axis (configs/weld_axis_seeds.csv, mapped to depth pixels)."""
+    (u1, v1), (u2, v2) = weld_axis_px
+    cols = np.arange(width)
+    return v1 + (v2 - v1) * (cols - u1) / (u2 - u1)
+
+
 def process_face(
     depth_mm: np.ndarray,
     face: str,
     pose: CouponPose,
     cell_bounds: list[CellBounds],
     config: dict | None = None,
+    centre_rows: np.ndarray | None = None,
 ) -> FaceResult:
     """
     Process a single coupon face: plane fit, tilt correction, profile extraction.
@@ -163,24 +172,22 @@ def process_face(
     y_inner = prof_cfg["plane_fit_roi"]["y_inner_mm"]
     y_outer = prof_cfg["plane_fit_roi"]["y_outer_mm"]
 
-    # Create mask for parent metal regions (for plane fit)
+    # Parent-metal mask for the plane fit. Same convention as
+    # profile.extract_single_profile: the weld runs ALONG the columns (rows = y
+    # across the weld, cols = s along it). The previous mask assumed a vertical
+    # weld (a column band about w // 2 on every row), contradicting the
+    # extractor and the captures. The centreline row per column comes from the
+    # weld-axis seeds; the centre-row default exists only for synthetic data.
     h, w = depth_mm.shape
+    if centre_rows is None:
+        centre_rows = np.full(w, h // 2, dtype=float)
     parent_mask = np.zeros((h, w), dtype=bool)
-
-    # Convert y bounds to columns for each row
-    for row in range(h):
-        # Find centre column for this row (approximate)
-        centre_col = w // 2
-
-        # Left parent metal region
-        col_left_outer = max(0, centre_col - int(y_outer / pose.scale_mm_per_px))
-        col_left_inner = max(0, centre_col - int(y_inner / pose.scale_mm_per_px))
-        parent_mask[row, col_left_outer:col_left_inner] = True
-
-        # Right parent metal region
-        col_right_inner = min(w, centre_col + int(y_inner / pose.scale_mm_per_px))
-        col_right_outer = min(w, centre_col + int(y_outer / pose.scale_mm_per_px))
-        parent_mask[row, col_right_inner:col_right_outer] = True
+    inner = int(y_inner / pose.scale_mm_per_px)
+    outer = int(y_outer / pose.scale_mm_per_px)
+    for col in range(w):
+        c = int(round(centre_rows[col]))
+        parent_mask[max(0, c - outer):max(0, c - inner), col] = True
+        parent_mask[min(h, c + inner):min(h, c + outer), col] = True
 
     # Fit plane to parent metal
     plane_fit = fit_plane_ransac(
@@ -216,6 +223,7 @@ def process_face(
             pose.scale_mm_per_px,
             plane_fit,
             config,
+            centre_rows=centre_rows,
         )
         cell_measurements.append(meas)
 

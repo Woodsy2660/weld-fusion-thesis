@@ -5,9 +5,9 @@
   "val": 0.1,
   "test": 0.1
  },
- "approach": "StratifiedGroupKFold(n_splits=10, groups=source_frame)",
+ "approach": "partition_search(candidate 70 of 500, groups=source_sequence, dominant group pinned to train)",
  "group_key": "source_sequence",
- "n_groups": 1759,
+ "n_groups": 646,
  "heads": [
   "V1",
   "V3",
@@ -24,143 +24,41 @@
   "V4": [
    "N",
    "U",
-   "L",
-   "C"
+   "L"
   ]
  },
  "patches_per_head": {
-  "V1": 4984,
-  "V3": 18926,
-  "V4": 19851
+  "V1": 2285,
+  "V3": 8930,
+  "V4": 9380
  },
  "patches_per_split": {
-  "train": {
-   "V3": 15002,
-   "V4": 16135,
-   "V1": 3931
-  },
-  "val": {
-   "V3": 2209,
-   "V4": 1454,
-   "V1": 463
-  },
-  "test": {
-   "V3": 1715,
-   "V4": 2262,
-   "V1": 590
-  }
+  "train": 16406,
+  "test": 2114,
+  "val": 2075
  },
  "frames_per_split": {
-  "val": 176,
-  "train": 1408,
-  "test": 175
+  "test": 358,
+  "train": 1990,
+  "val": 400
  },
  "class_weights": {
-  "V1": 1.9809669879036442,
-  "V3": 0.5216706894067296,
-  "V4": 0.4973623226896259
+  "V1": 2.0687,
+  "V3": 0.4506,
+  "V4": 0.4807
  },
- "imbalance_ratio": 3.9829454253611556,
+ "imbalance_ratio": 4.59,
  "acceptance": {
-  "share_threshold": 0.02,
-  "drift_bound_pp": 5.0,
-  "pairs_checked": 16,
-  "pairs_outside_bound": 11,
-  "failures": [
-   {
-    "head": "V1",
-    "label": "weld_dataset/pore",
-    "split": "test",
-    "corpus_share": 0.5415329052969502,
-    "split_share": 0.4491525423728814,
-    "drift_pp": -9.238036292406882
-   },
-   {
-    "head": "V1",
-    "label": "final_welding/Porosity",
-    "split": "test",
-    "corpus_share": 0.4343900481540931,
-    "split_share": 0.5440677966101695,
-    "drift_pp": 10.967774845607636
-   },
-   {
-    "head": "V3",
-    "label": "weld_dataset/discontinuity",
-    "split": "val",
-    "corpus_share": 0.3549614287223925,
-    "split_share": 0.19737437754640108,
-    "drift_pp": -15.758705117599142
-   },
-   {
-    "head": "V3",
-    "label": "weld_dataset/discontinuity",
-    "split": "test",
-    "corpus_share": 0.3549614287223925,
-    "split_share": 0.5504373177842565,
-    "drift_pp": 19.5475889061864
-   },
-   {
-    "head": "V3",
-    "label": "final_welding/Overlap",
-    "split": "test",
-    "corpus_share": 0.3255838529007714,
-    "split_share": 0.2227405247813411,
-    "drift_pp": -10.284332811943031
-   },
-   {
-    "head": "V3",
-    "label": "final_welding/Lack of Fusion",
-    "split": "val",
-    "corpus_share": 0.17320088766775865,
-    "split_share": 0.32367587143503845,
-    "drift_pp": 15.04749837672798
-   },
-   {
-    "head": "V3",
-    "label": "final_welding/Lack of Fusion",
-    "split": "test",
-    "corpus_share": 0.17320088766775865,
-    "split_share": 0.09037900874635568,
-    "drift_pp": -8.282187892140296
-   },
-   {
-    "head": "V4",
-    "label": "weld_dataset/stain",
-    "split": "val",
-    "corpus_share": 0.36683290514331773,
-    "split_share": 0.265474552957359,
-    "drift_pp": -10.135835218595874
-   },
-   {
-    "head": "V4",
-    "label": "weld_dataset/stain",
-    "split": "test",
-    "corpus_share": 0.36683290514331773,
-    "split_share": 0.4792219274977896,
-    "drift_pp": 11.238902235447185
-   },
-   {
-    "head": "V4",
-    "label": "final_welding/Spatters",
-    "split": "test",
-    "corpus_share": 0.14200795929676086,
-    "split_share": 0.07029177718832891,
-    "drift_pp": -7.171618210843195
-   },
-   {
-    "head": "V4",
-    "label": "weld_dataset/deposit",
-    "split": "val",
-    "corpus_share": 0.1322351518815173,
-    "split_share": 0.07634112792297111,
-    "drift_pp": -5.589402395854619
-   }
-  ],
   "max_test_drift_pp": {
-   "V1": 10.967774845607636,
-   "V3": 19.5475889061864,
-   "V4": 11.238902235447185
-  }
+   "V1": 3.4,
+   "V3": 21.7,
+   "V4": 20.8
+  },
+  "note": "defect-type residual recorded, not optimised to zero"
  },
- "head_reresolution": {}
+ "head_reresolution": {},
+ "sources": [
+  "final_welding"
+ ],
+ "partition_search": "results/vision/partition_search.json"
 }

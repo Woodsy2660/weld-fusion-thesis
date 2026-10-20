@@ -252,7 +252,7 @@ def test_no_source_class_maps_to_a_head_excluding_its_own_symbol():
     frame = load_frame()
     cmap = load_class_map(frame=frame)
     # Only check symbols that are in the experimental frame
-    hints = {"L": ("lack of fusion", "lack of penetration"),
+    hints = {"L": ("lack of fusion",),
              "P": ("porosity", "pore")}
     for source, mapping in cmap.items():
         for label, head in mapping.items():

@@ -15,11 +15,11 @@ classes:
   N: "no defect / acceptable"
   U: "geometric non-conformance to ISO 5817 - undercut, excess reinforcement, or misalignment beyond limits"
   P: "porosity"
-  L: "lack of fusion / lack of penetration"
+  L: "lack of fusion"
   C: "crack"
 
 # ---------------------------------------------------------------------------
-# Vision focal elements -- THREE heads.
+# Vision focal elements -- one three-way softmax classifier.
 #
 #   V1  {P}        surface-breaking porosity
 #   V3  {N,U}      surface geometric anomaly present, magnitude unmeasured

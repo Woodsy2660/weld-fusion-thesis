@@ -315,6 +315,7 @@ def extract_single_profile(
     s_mm: float,
     scale_mm_per_px: float,
     config: dict,
+    centre_row: float | None = None,
 ) -> ProfileMeasurement:
     """
     Extract measurements from a single transverse profile.
@@ -343,7 +344,10 @@ def extract_single_profile(
     # Extract column (transverse profile) - all y values at this s position
     profile = depth_mm[:, col].copy()
     n_rows = len(profile)
-    centre_row = n_rows // 2
+    # Weld centreline row at this column, from configs/weld_axis_seeds.csv via
+    # pipeline.weld_axis_centre_rows(). The image-centre default exists only
+    # for synthetic data built with the weld on the centre row.
+    centre_row = n_rows // 2 if centre_row is None else int(round(centre_row))
 
     # Smooth profile
     if smooth_k > 1:
@@ -565,6 +569,7 @@ def extract_cell_measurements(
     scale_mm_per_px: float,
     plane_fit: PlaneFit,
     config: dict | None = None,
+    centre_rows: np.ndarray | None = None,
 ) -> CellMeasurement:
     """
     Extract measurements for a single cell from multiple transverse profiles.
@@ -601,7 +606,8 @@ def extract_cell_measurements(
         s_mm = s_centre_mm + (col - (col_start_clamped + col_end_clamped) / 2) * scale_mm_per_px
 
         prof = extract_single_profile(
-            depth_mm, col, s_mm, scale_mm_per_px, config
+            depth_mm, col, s_mm, scale_mm_per_px, config,
+            centre_row=None if centre_rows is None else centre_rows[col],
         )
         profiles.append(prof)
 

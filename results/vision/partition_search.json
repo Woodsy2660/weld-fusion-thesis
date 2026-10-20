@@ -1,0 +1,148 @@
+{
+ "group_key": "source_sequence",
+ "sources": [
+  "final_welding"
+ ],
+ "seed": 42,
+ "n_candidates": 500,
+ "n_feasible": 394,
+ "pinned_group": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/IMG_3620_block_0_0_png_jpg.rf.b196a25d5a3243218c5ed1223edc9a44.jpg",
+ "pinned_patches": 8033,
+ "target_share": 0.1,
+ "share_tol": 0.015,
+ "v1_test_floor": 25,
+ "mix_labels": [
+  "Overlap",
+  "Irregular",
+  "Burn Through",
+  "Spatters"
+ ],
+ "selection": "minimax over jsd_train_test, jsd_train_val",
+ "feasible_worst_jsd_quantiles": {
+  "0": 0.0857112707779174,
+  "0.25": 0.2014544110825679,
+  "0.5": 0.24462101976473066,
+  "0.75": 0.29087667524855537,
+  "1": 0.5084523357485478
+ },
+ "current": {
+  "train_share": 0.9055596018451081,
+  "val_share": 0.05001213886865744,
+  "test_share": 0.04442825928623452,
+  "sequences": {
+   "V1": {
+    "train": 152,
+    "val": 17,
+    "test": 13
+   },
+   "V3": {
+    "train": 284,
+    "val": 35,
+    "test": 30
+   },
+   "V4": {
+    "train": 517,
+    "val": 64,
+    "test": 64
+   }
+  },
+  "min_sequences_per_head_per_split": 13,
+  "mix_counts": {
+   "train": {
+    "Overlap": 5987,
+    "Irregular": 1025,
+    "Burn Through": 967,
+    "Spatters": 2642
+   },
+   "val": {
+    "Overlap": 107,
+    "Irregular": 92,
+    "Burn Through": 36,
+    "Spatters": 27
+   },
+   "test": {
+    "Overlap": 68,
+    "Irregular": 77,
+    "Burn Through": 46,
+    "Spatters": 150
+   }
+  },
+  "jsd_train_test": 0.1070705704935307,
+  "jsd_train_val": 0.09033955533139845,
+  "max_test_drift_pp": {
+   "V1": 0.5,
+   "V3": 35.0,
+   "V4": 6.2
+  },
+  "feasible": false
+ },
+ "selected": {
+  "train_share": 0.7966011167759165,
+  "val_share": 0.10075260985676135,
+  "test_share": 0.10264627336732217,
+  "sequences": {
+   "V1": {
+    "train": 114,
+    "val": 34,
+    "test": 34
+   },
+   "V3": {
+    "train": 222,
+    "val": 79,
+    "test": 48
+   },
+   "V4": {
+    "train": 416,
+    "val": 132,
+    "test": 97
+   }
+  },
+  "min_sequences_per_head_per_split": 34,
+  "mix_counts": {
+   "train": {
+    "Overlap": 5582,
+    "Irregular": 902,
+    "Burn Through": 651,
+    "Spatters": 2495
+   },
+   "val": {
+    "Overlap": 218,
+    "Irregular": 178,
+    "Burn Through": 154,
+    "Spatters": 184
+   },
+   "test": {
+    "Overlap": 362,
+    "Irregular": 114,
+    "Burn Through": 244,
+    "Spatters": 140
+   }
+  },
+  "jsd_train_test": 0.07109604450596414,
+  "jsd_train_val": 0.0857112707779174,
+  "max_test_drift_pp": {
+   "V1": 3.4,
+   "V3": 21.7,
+   "V4": 20.8
+  },
+  "feasible": true,
+  "candidate": 70
+ },
+ "leakage_intersections": {
+  "source_sequence": {
+   "train&val": 0,
+   "train&test": 0,
+   "val&test": 0
+  },
+  "source_frame": {
+   "train&val": 0,
+   "train&test": 0,
+   "val&test": 0
+  },
+  "source_image": {
+   "train&val": 0,
+   "train&test": 0,
+   "val&test": 0
+  }
+ }
+}

@@ -33,7 +33,7 @@ elements declared below, plus Θ itself.
 A modality assigns mass **only** over sets it can physically resolve. This is the
 central design idea of the thesis, not an implementation convenience.
 
-### Vision — three heads
+### Vision — three-way softmax classifier
 
 | Head | Focal element | Interpretation |
 |---|---|---|

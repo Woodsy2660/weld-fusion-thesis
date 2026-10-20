@@ -22,6 +22,13 @@ Two things happen here.
    other way. Every per-head metric computed on that split was an average over
    the wrong weights.
 
+This produces ONE grouped train/val/test HOLDOUT, not cross-validation.
+StratifiedGroupKFold is used only as a partitioner: its ten folds are pooled
+into 8 train / 1 val / 1 test and only that single assignment is trained on.
+The public corpus is initialisation for the real-coupon model, not a thesis
+result. "Cross-validation" in this project means only the real-data k=4
+coupon-grouped folds.
+
 Usage:
     python src/vision/merge_dedup_split.py [--seed 42] [--dry-run]
 """
@@ -131,12 +138,13 @@ def _frame_key(rows_for_frame):
 
 def stratified_group_split(rows, seed):
     """
-    Approach 1: sklearn StratifiedGroupKFold over source frames.
+    Approach 1: sklearn StratifiedGroupKFold over GROUP_KEY groups.
 
-    groups = source_frame (the hard constraint: a frame never splits)
+    groups = GROUP_KEY, source_frame by default (a group never splits)
     y      = the frame's dominant (source_dataset, source_label)
 
-    10 folds; one becomes test, one val, the remaining eight train.
+    10 folds; one becomes test, one val, the remaining eight train. This is
+    a single holdout -- the other nine rotations are never trained.
     """
     import numpy as np
     from sklearn.model_selection import StratifiedGroupKFold
@@ -174,7 +182,7 @@ def stratified_group_split(rows, seed):
 
     for r in rows:
         r["split"] = assignment[_group_of(r)]
-    return rows, assignment, "StratifiedGroupKFold(n_splits=10, groups=source_frame)"
+    return rows, assignment, f"StratifiedGroupKFold(n_splits={N_FOLDS}, groups={GROUP_KEY})"
 
 
 def greedy_composition_split(rows, seed):
@@ -371,6 +379,10 @@ def write_composition_report(table, frame, approach, failures, checked, path,
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--sources", nargs="+", default=None,
+                    help="source_dataset values to split; all others are kept "
+                         "in the manifest with split=excluded (DECISIONS "
+                         "2026-10-06: vision trains on final_welding alone)")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--patches-dir", default="data/processed/vision_patches")
     ap.add_argument("--force-greedy", action="store_true",
@@ -413,6 +425,20 @@ def main():
         print(f"  {len(dropped)} patches now map to discard and were removed")
     if not changed and not dropped:
         print("\nHead re-resolution: no changes (manifest already matches config)")
+
+    excluded = []
+    if args.sources:
+        present = {r["source_dataset"] for r in rows}
+        unknown = set(args.sources) - present
+        if unknown:
+            sys.exit(f"ERROR: --sources {sorted(unknown)} not in manifest; "
+                     f"present: {sorted(present)}")
+        excluded = [r for r in rows if r["source_dataset"] not in args.sources]
+        rows = [r for r in rows if r["source_dataset"] in args.sources]
+        for r in excluded:
+            r["split"] = "excluded"
+        print(f"\nSources: {args.sources} -- {len(rows)} patches split, "
+              f"{len(excluded)} marked split=excluded")
 
     n_frames = len({_group_of(r) for r in rows})
     print(f"\nGrouping key: {GROUP_KEY}")
@@ -551,7 +577,7 @@ def main():
         with open(manifest_path, "w", newline="") as f:
             w = csv.DictWriter(f, fieldnames=cols)
             w.writeheader()
-            w.writerows(rows)
+            w.writerows(rows + excluded)
         print(f"\nManifest rewritten: {manifest_path.relative_to(REPO_ROOT)}")
 
         report = REPO_ROOT / args.composition_out

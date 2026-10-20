@@ -145,7 +145,7 @@ def validate_modality_bpa(bpa, frame=None, modality="vision", tol=1e-6):
     PARAMETERISED BY MODALITY. The same focal element can be legal for one
     sensor and illegal for another: {C} is a legitimate UT head, because
     ultrasonic testing resolves cracks, but is rejected for vision, which since
-    the three-head frame change has no crack head at all.
+    the three-way vision classifier has no crack output at all.
 
     The rule is "only this modality's declared focal elements", NOT "no
     singletons" -- {P} remains a legal vision singleton, and {U} a legal

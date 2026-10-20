@@ -1,18 +1,23 @@
 """
 ISO 5817 exceedance-based BPA construction for geometry modality.
 
-The geometry modality resolves exactly one thing: whether the measured
-undercut exceeds the ISO 5817 limit. It outputs a BPA over two focal elements:
+The geometry modality resolves exactly one thing: whether the bead profile
+breaches an ISO 5817 limit. configs/frame.yaml defines U as the DISJUNCTION
+undercut OR excess reinforcement OR linear misalignment, so all three drive
+the BPA over two focal elements:
 
-    G1: {U}       measured undercut exceeds the limit (non-conforming)
+    G1: {U}       some measurand exceeds its limit (non-conforming)
     G2: {N,P,L}   profile conforms — says nothing about internal defects
+
+m({U}) = max_k P_k over the three exceedance probabilities. The three share one
+datum, so their errors are positively correlated; max is the union probability
+under full dependence and a lower bound otherwise, whereas the independent-union
+form 1 - prod(1 - P_k) would overstate it. (Changed 2026-10-20; previously
+undercut alone drove m({U}), contradicting the frame.)
 
 NOTE: G2 was {N,P,L,C} in the 5-class analytical frame. It is now {N,P,L} in
 the 4-class experimental frame because crack surrogates could not be fabricated.
 The code reads focal elements from configs/frame.yaml and does not hardcode them.
-
-Reinforcement and misalignment are measured and reported as validation outputs,
-but they do NOT drive m({U}). Only undercut does.
 
 The exceedance probability accounts for measurement uncertainty:
 
@@ -124,8 +129,11 @@ class GeometryBPA:
     governing_undercut_mm: float # The undercut value that drove this BPA
     governing_face: str          # Which face had the governing undercut
     governing_toe: str           # Which toe had the governing undercut
-    exceedance_prob: float       # P(true undercut > limit)
+    exceedance_prob: float       # m({U}) = max of the three below
     u_total_mm: float            # Combined uncertainty used
+    exceedance_by_measurand: dict | None = None   # {measurand: P}
+    limits_mm: dict | None = None                 # {measurand: limit}
+    governing_measurand: str = "undercut"
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -138,6 +146,9 @@ class GeometryBPA:
             "governing_toe": self.governing_toe,
             "exceedance_prob": self.exceedance_prob,
             "u_total_mm": self.u_total_mm,
+            "exceedance_by_measurand": self.exceedance_by_measurand,
+            "limits_mm": self.limits_mm,
+            "governing_measurand": self.governing_measurand,
         }
 
     def as_bpa_dict(self, frame=None) -> dict[frozenset[str], float]:
@@ -165,6 +176,19 @@ def load_config(config_path: Path = CONFIG_PATH) -> dict:
     """Load geometry configuration."""
     with open(config_path) as f:
         return yaml.safe_load(f)
+
+
+def iso_limits(criteria: dict, t_mm: float, b_mm: float) -> dict:
+    """Level-B limits as min(coefficient form, cap), from configs/geometry.yaml."""
+    return {
+        "undercut": min(criteria["undercut_coef_t"] * t_mm,
+                        criteria["undercut_max_mm"]),
+        "reinforcement": min(criteria["reinforcement_base_mm"]
+                             + criteria["reinforcement_coef_b"] * b_mm,
+                             criteria["reinforcement_max_mm"]),
+        "misalignment": min(criteria["misalignment_coef_t"] * t_mm,
+                            criteria["misalignment_max_mm"]),
+    }
 
 
 def exceedance_probability(
@@ -216,7 +240,7 @@ def build_cell_bpa(
         GeometryBPA for fusion.
     """
     config = config or load_config()
-    limit_mm = config["acceptance_criteria"]["undercut_limit_mm"]
+    criteria = config["acceptance_criteria"]
     min_valid = config["profile_extraction"]["min_valid_fraction"]
 
     # Check for sufficient data
@@ -235,17 +259,21 @@ def build_cell_bpa(
             u_total_mm=uncertainty.u_total,
         )
 
-    # Find governing undercut (maximum across all valid measurements)
+    # Governing value per measurand: worst case across faces and toes.
     governing = max(valid_measurements, key=lambda m: m.undercut_mm)
+    width = max(m.bead_width_mm for m in valid_measurements)
+    limits = iso_limits(criteria, criteria["plate_thickness_mm"], width)
+    worst = {
+        "undercut": governing.undercut_mm,
+        "reinforcement": max(m.reinforcement_mm for m in valid_measurements),
+        "misalignment": max(m.misalignment_mm for m in valid_measurements),
+    }
+    by = {k: exceedance_probability(worst[k], limits[k], uncertainty.u_total)
+          for k in limits}
+    gov_k = max(by, key=by.get)
+    p_exceed = by[gov_k]
 
-    # Compute exceedance probability
-    p_exceed = exceedance_probability(
-        measured_mm=governing.undercut_mm,
-        limit_mm=limit_mm,
-        u_total_mm=uncertainty.u_total,
-    )
-
-    # Build BPA: m({U}) = P(exceed), m({N,P,L,C}) = 1 - P(exceed)
+    # Build BPA: m({U}) = max_k P_k, m(G2) = 1 - m({U}).
     # No ignorance floor here — that comes from Shafer discounting downstream.
     return GeometryBPA(
         cell_id=governing.cell_id,
@@ -257,6 +285,9 @@ def build_cell_bpa(
         governing_toe=governing.toe,
         exceedance_prob=p_exceed,
         u_total_mm=uncertainty.u_total,
+        exceedance_by_measurand=by,
+        limits_mm=limits,
+        governing_measurand=gov_k,
     )
 
 
@@ -329,11 +360,9 @@ def assess_validation_outputs(
     max_misal = max((m.misalignment_mm for m in measurements), default=0.0)
     max_width = max((m.bead_width_mm for m in measurements), default=16.0)
 
-    # Reinforcement limit: h <= 1 + 0.1b, max 5mm
-    reinf_limit = min(criteria["reinforcement_max_mm"], 1.0 + 0.1 * max_width)
-
-    # Misalignment limit: h <= 0.1t + 0.2mm
-    misal_limit = min(criteria["misalignment_max_mm"], 0.1 * t + 0.2)
+    limits = iso_limits(criteria, t, max_width)
+    reinf_limit = limits["reinforcement"]
+    misal_limit = limits["misalignment"]
 
     return ValidationOutput(
         cell_id=measurements[0].cell_id if measurements else "unknown",

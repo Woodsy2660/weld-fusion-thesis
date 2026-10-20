@@ -785,6 +785,39 @@ def deproject_hole_centre(
 # B4: Pose solve
 # ---------------------------------------------------------------------------
 
+def fit_plate_normal(depth_mm, plate_mask, depth_intr, depth_to_colour,
+                     tol_mm=1.0, iters=300, max_points=40000, seed=0):
+    """Unit normal of the plate surface in the COLOUR frame, oriented toward
+    the camera, from RANSAC + SVD over deprojected plate-mask pixels.
+    Returns None if fewer than 1000 valid points."""
+    rows, cols = np.nonzero(plate_mask & np.isfinite(depth_mm) & (depth_mm > 0))
+    if len(rows) < 1000:
+        return None
+    rng = np.random.default_rng(seed)
+    if len(rows) > max_points:
+        pick = rng.choice(len(rows), max_points, replace=False)
+        rows, cols = rows[pick], cols[pick]
+    z = depth_mm[rows, cols]
+    P = np.column_stack([(cols - depth_intr.ppx) / depth_intr.fx * z,
+                         (rows - depth_intr.ppy) / depth_intr.fy * z, z])
+    Rdc = np.array(depth_to_colour.rotation).reshape(3, 3)
+    tdc = np.array(depth_to_colour.translation) * 1000.0
+    P = P @ Rdc.T + tdc
+    best = None
+    for _ in range(iters):
+        q = P[rng.choice(len(P), 3, replace=False)]
+        n = np.cross(q[1] - q[0], q[2] - q[0])
+        if np.linalg.norm(n) < 1e-9:
+            continue
+        n /= np.linalg.norm(n)
+        inl = np.abs((P - q[0]) @ n) < tol_mm
+        if best is None or inl.sum() > best.sum():
+            best = inl
+    Q = P[best]
+    n = np.linalg.svd(Q - Q.mean(0), full_matrices=False)[2][-1]
+    return n if n @ Q.mean(0) < 0 else -n
+
+
 def solve_coupon_pose(
     origin_hole: DetectedHole,
     axis_hole: DetectedHole,
@@ -838,10 +871,17 @@ def solve_coupon_pose(
     if abs(baseline - expected_baseline) > val_cfg["baseline_tolerance_mm"]:
         flags.append(f"baseline_error_{baseline:.1f}mm")
 
-    # Initial normal (camera-facing)
-    # For now, use approximate normal pointing along camera z
-    # This will be refined from the datum strip
-    n_cam = np.array([0, 0, 1])  # Approximate: plate faces camera
+    # Plate normal, FITTED (2026-10-20). Previously n_cam was hardcoded to
+    # camera +z, i.e. pointing AWAY from the camera, and never refined; with the
+    # face branch below that left z_hat into the scene on every top capture.
+    # n_cam stays "away from camera" so the s/y construction is unchanged; the
+    # fitted tilt (1.5-2.8 deg measured) now enters it.
+    n_fit = fit_plate_normal(depth_mm, plate_mask, depth_intr, depth_to_colour)
+    if n_fit is None:
+        flags.append("plate_normal_fit_failed_using_camera_z")
+        n_cam = np.array([0.0, 0.0, 1.0])
+    else:
+        n_cam = -n_fit  # n_fit points toward the camera
 
     # S-axis: from origin to axis hole, projected onto plane
     d = P8 - P6
@@ -863,8 +903,13 @@ def solve_coupon_pose(
     # ... (simplified for now - use face_label with verification)
     derived_face = face_label  # Will be verified by weld-side extent check
 
+    # z_hat is OUTWARD FROM THE VISIBLE FACE (toward the camera) on both faces,
+    # so coupon z is height for either capture. y_hat keeps the datum holes at
+    # +y on both faces. The root capture is a mirror view, so these cannot also
+    # share a handedness: the frame is right-handed for root and mirror-handed
+    # for top. Only R.T is ever used to invert it; do not assume det(R) = +1.
     if derived_face == "cap" or derived_face == "top":
-        z_hat = n_cam
+        z_hat = -n_cam
         y_hat = y_cam
         derived_face = "cap"
     else:

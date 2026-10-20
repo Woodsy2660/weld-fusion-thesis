@@ -5,16 +5,17 @@
 A BPA over the vision focal elements, per cell:
 
 ```
-{P}            V1 head
-{N,U}          V3 head
-{N,U,L,C}      V4 head
+{P}            V1 output
+{N,U}          V3 output
+{N,U,L}        V4 output
 Θ              ignorance
 ```
 
-Three heads. A fourth head for `{C}` existed in an earlier design and was **removed**
-— the corpora support no crack claim in either direction, so C is absorbed into V4.
+A three-way softmax classifier (one output per element, single cross-entropy).
+A fourth `{C}` output existed in an earlier design and was **removed**; C has
+since left the experimental frame entirely (see `configs/frame.yaml`).
 
-Softmax over the three heads, temperature-scaled, then mapped to mass. Mass on Θ
+Softmax over the three outputs, temperature-scaled, then mapped to mass. Mass on Θ
 comes from low confidence, occlusion, or a cell with insufficient valid pixels.
 
 ## The leakage finding — the most important thing in this module
@@ -87,7 +88,7 @@ matters more than n.
 Two stages (an earlier three-stage plan was cut for schedule):
 
 1. **Baseline.** `final_welding` only, stratified split grouped on `source_sequence`,
-   three heads, class weights from the train split. This is the number that goes in
+   three-way classifier, class weights from the train split. This is the number that goes in
    the thesis.
 2. **Initialisation ablation.** ImageNet-init vs public-weld-pretrained-init, both
    fine-tuned on the **real coupon images**. This is a result either way: if the

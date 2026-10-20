@@ -16,7 +16,7 @@ Theta = {N, U, P, L}
   U  geometric non-conformance to ISO 5817 — undercut, excess reinforcement,
      or misalignment beyond limits
   P  porosity
-  L  lack of fusion / lack of penetration
+  L  lack of fusion
 ```
 
 The 5-class frame (with C) is retained in `configs/frame_5class.yaml` for
@@ -150,13 +150,17 @@ weights normalised to mean 1.
 
 - **Model selection is on macro-F1, not accuracy.** With a ~40:1 head imbalance,
   accuracy would happily select a model that never predicts V2.
-- **Raw validation logits are persisted** to `results/vision/logits_fold{k}.npz`.
+- **Raw validation logits are persisted** to `results/vision/logits_val_{tag}.parquet`
+  (test: `logits_test_{tag}.parquet`), with manifest join keys.
   Temperature scaling is fitted downstream on these, and BPA construction
   consumes the calibrated probabilities. Without them the fusion stage cannot
   run — cheap to write, expensive to discover missing.
 - Training **fails loudly** if any declared head has zero training patches.
   Never silently fit fewer heads than the frame declares.
-- `results/vision/run_manifest_fold{k}.json` records git SHA, config hashes,
+- Public-corpus training uses **one grouped holdout** (train/val/test), not
+  cross-validation. "Cross-validation" means only the real-data k=4
+  coupon-grouped folds.
+- `results/vision/run_manifest_{tag}.json` records git SHA, config hashes,
   seed, class weights, patch counts per head and dedup counts.
 
 ## Do not

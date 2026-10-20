@@ -16,7 +16,7 @@ Roughly four weeks remain, of which the last week is writing only.
 
 | Module | State | Notes |
 |---|---|---|
-| Frame / focal elements | **Done** | Three-head vision frame settled; ceiling proposition proved |
+| Frame / focal elements | **Done** | Three-way vision classifier settled; ceiling proposition proved |
 | Vision | **Needs retrain** | Leakage finding complete; L→V4 remap outstanding; single-source retrain not yet run |
 | Geometry | **Hardware ready, no data** | D435i configured at 300 mm; step block not yet made |
 | Ultrasonic | **Blocked on instrument** | Prep work can and should proceed now |
@@ -114,7 +114,7 @@ not import. Validation Parts B (pipeline) and C (two-face consistency) could not
 300.0 is an untouched placeholder); capture the repeat placements so `u_align` becomes
 measured; run the step block to re-anchor the uncertainty budget.
 
-**Vision plumbing:** three-head frame confirmed, `{C}` head genuinely absent.
+**Vision plumbing:** three-way classifier confirmed, `{C}` head genuinely absent.
 `final_welding/Lack of Fusion → V3` still wrong, must be V4. Cell-crop and inference
 checks blocked with Part B.
 

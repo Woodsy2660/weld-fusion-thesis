@@ -43,7 +43,7 @@ From `configs/frame.yaml`, the single source of truth. No module hardcodes the h
   U  geometric non-conformance to ISO 5817 — undercut, excess
      reinforcement, or misalignment beyond limits
   P  porosity
-  L  lack of fusion / lack of penetration
+  L  lack of fusion
   C  crack
 ```
 

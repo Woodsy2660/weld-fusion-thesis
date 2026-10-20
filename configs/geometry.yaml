@@ -122,6 +122,21 @@ uncertainty:
   # Measured from split-half comparison on a flat target.
   noise_floor_mm_default: 0.015
 
+  # MEASURED repeatability (2026-10-20), C05_top r0/r1/r2 re-placement repeats,
+  # 10 cells, pooled SD across repeats, local-fit extractor + weld-axis seeds
+  # (scripts/geometry_repeatability.py). These replace the four-term budget
+  # above (RSS 0.049 mm; the 0.083 mm figure quoted elsewhere has no source in
+  # this repo) as the honest u per measurand. NOT yet used for BPAs:
+  # use_for_bpa stays false until LIMITATIONS.md L2 (bead reads as a trench) is
+  # resolved, because the undercut and reinforcement values are contaminated
+  # by it. Misalignment is plate-only and unaffected.
+  measured_repeatability:
+    use_for_bpa: false
+    source: "results/geometry/_diagnostics/repeatability_C05_top_axisseeds.json"
+    undercut_mm: 0.586
+    reinforcement_mm: 0.493
+    misalignment_mm: 0.275
+
 # ---------------------------------------------------------------------------
 # ISO 5817:2023 acceptance criteria — Level B (stringent)
 # ---------------------------------------------------------------------------
@@ -130,19 +145,21 @@ acceptance_criteria:
   quality_level: "B"
   plate_thickness_mm: 10
 
-  # Undercut (imperfection 5011/5012): h <= 0.5mm for Level B, t >= 3mm.
-  # This is the ONLY geometric feature that drives m({U}).
-  # Reinforcement and misalignment are validation outputs, not Θ members.
-  undercut_limit_mm: 0.5
-
-  # Reinforcement (imperfection 502): h <= 1 + 0.1b, max 5mm for Level B.
-  # Validation output only — not used for BPA construction.
-  reinforcement_formula: "1 + 0.1b"
+  # Level B, t > 3 mm (corrected 2026-10-20 per supervisor/author review of
+  # ISO 5817 Table 1; the previous misalignment form 0.2 + 0.1t is the
+  # 0.5-3 mm thickness band and gave 1.2 mm instead of 1.0 mm at t = 10).
+  # limit = min(coef * x, cap). U in configs/frame.yaml is the DISJUNCTION of
+  # all three, so all three drive m({U}) (rules.build_cell_bpa).
+  #
+  # Undercut (5011/5012): h <= 0.05 t, max 0.5 mm  -> 0.5 mm at t = 10
+  undercut_coef_t: 0.05
+  undercut_max_mm: 0.5
+  # Excess weld metal (502): h <= 1 mm + 0.1 b, max 5 mm
+  reinforcement_base_mm: 1.0
+  reinforcement_coef_b: 0.1
   reinforcement_max_mm: 5.0
-
-  # Linear misalignment (imperfection 507): h <= 0.1t + 0.2mm for Level B.
-  # Validation output only — not used for BPA construction.
-  misalignment_formula: "0.1t + 0.2"
+  # Linear misalignment (507), plates: h <= 0.1 t, max 3 mm -> 1.0 mm at t = 10
+  misalignment_coef_t: 0.1
   misalignment_max_mm: 3.0
 
 # ---------------------------------------------------------------------------

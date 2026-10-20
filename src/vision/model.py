@@ -75,11 +75,19 @@ def set_frozen_through(model, stage):
 
 
 def load_model(path, num_heads=None, device="cpu", frame=None,
-               architecture="resnet50"):
-    """Load a trained checkpoint, sizing the head from the frame."""
+               architecture=None):
+    """Load a trained checkpoint, sizing the head from the frame.
+
+    architecture=None detects it from the checkpoint: ResNet-50 bottleneck
+    blocks have a conv3, ResNet-18 basic blocks do not. Callers that omitted
+    the argument previously got resnet50 and failed on resnet18 checkpoints.
+    """
+    state = torch.load(path, map_location=device)
+    if architecture is None:
+        architecture = ("resnet50" if "layer1.0.conv3.weight" in state
+                        else "resnet18")
     model = build_model(num_heads=num_heads, pretrained=False, frame=frame,
                         architecture=architecture)
-    state = torch.load(path, map_location=device)
     model.load_state_dict(state)
     model.eval()
     return model

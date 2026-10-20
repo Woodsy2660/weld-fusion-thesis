@@ -40,7 +40,7 @@ def sets_for(frame, modality):
 
 
 # ---------------------------------------------------------------------------
-# The three-head vision frame
+# The three-way vision classifier
 # ---------------------------------------------------------------------------
 def test_vision_has_three_heads_and_no_V2(frame):
     assert frame.head_names == ["V1", "V3", "V4"]

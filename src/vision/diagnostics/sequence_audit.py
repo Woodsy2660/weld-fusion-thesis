@@ -37,6 +37,10 @@ sys.path.insert(0, str(REPO_ROOT))
 RF_SPLIT = re.compile(r"\.rf\.", re.IGNORECASE)
 EXT_TOKEN = re.compile(r"_(jpg|jpeg|png|bmp|JPG|JPEG|PNG)$")
 FINAL_DIGITS = re.compile(r"(\d+)(?!.*\d)")
+# Roboflow tiling: IMG_3688_block_0_0_png is one tile of IMG_3688. Without this
+# the final-digit rule keys on the tile column, so tiles of one photograph get
+# different stems and can straddle the split.
+TILE_TOKEN = re.compile(r"_block_\d+_\d+(_(png|jpe?g|bmp))?$", re.IGNORECASE)
 
 SEQ_MIN_MEMBERS = 3
 SEQ_MAX_GAP = 2
@@ -58,6 +62,7 @@ def sequence_stem(source_image):
     name = RF_SPLIT.split(name)[0]          # drop .rf.<hash>.<ext>
     name = Path(name).stem                  # drop a plain extension
     name = EXT_TOKEN.sub("", name)          # drop the Roboflow "_jpg" token
+    name = TILE_TOKEN.sub("", name)         # tiles share their photo's stem
 
     m = None
     for m in FINAL_DIGITS.finditer(name):

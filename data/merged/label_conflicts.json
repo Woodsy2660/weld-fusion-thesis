@@ -2248,7 +2248,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/886d6ca3-1b242175-download_1_jpeg_jpg.rf.2d635c12920e749d47d1fdd20f4a92b8.jpg",
     "heads": {
-     "V2": 1
+     "V4": 1
     }
    },
    {
@@ -2860,7 +2860,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/IMG20220609081234_jpg.rf.9d223431f4327dc116258ea0a405e112.jpg",
     "heads": {
-     "V2": 1
+     "V4": 1
     }
    },
    {
@@ -3032,7 +3032,8 @@
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/IMG_20230131_114439_jpg.rf.ba3e96776c7cef2e51248b3ac5a4a5fd.jpg",
     "heads": {
      "V1": 1,
-     "V3": 2
+     "V3": 1,
+     "V4": 1
     }
    }
   ]
@@ -4077,14 +4078,16 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/IMG_3625_block_2_2_png_jpg.rf.3b6833a142b1f3c05ec096aeb6a0e294.jpg",
     "heads": {
-     "V3": 34
+     "V3": 26,
+     "V4": 8
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/IMG_3625_block_2_2_png_jpg.rf.9ff0598c67dbe3e9e129e2a52d6a62ea.jpg",
     "heads": {
      "V1": 8,
-     "V3": 39
+     "V3": 29,
+     "V4": 10
     }
    }
   ]
@@ -4378,13 +4381,15 @@
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/IMG_3628_block_1_0_png_jpg.rf.2677c38055a34eb0d1a487f8c6be53c1.jpg",
     "heads": {
      "V1": 2,
-     "V3": 74
+     "V3": 21,
+     "V4": 53
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/IMG_3628_block_1_0_png_jpg.rf.4fce4ea6623ae8282516b90683ce2e90.jpg",
     "heads": {
-     "V3": 73
+     "V3": 15,
+     "V4": 58
     }
    }
   ]
@@ -4701,14 +4706,16 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/IMG_3630_block_1_2_png_jpg.rf.319f85186317139f066e75a85d00783b.jpg",
     "heads": {
-     "V3": 87
+     "V3": 27,
+     "V4": 60
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/IMG_3630_block_1_2_png_jpg.rf.4b67fd060a44ca407832a75e55885b56.jpg",
     "heads": {
      "V1": 2,
-     "V3": 77
+     "V3": 31,
+     "V4": 46
     }
    }
   ]
@@ -5869,7 +5876,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/IMG_3685_block_1_2_png_jpg.rf.460513a539fa4c42697c718ed56737a8.jpg",
     "heads": {
-     "V3": 2
+     "V3": 1,
+     "V4": 1
     }
    },
    {
@@ -7537,7 +7545,8 @@
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/IMG_3729_block_1_1_png_jpg.rf.858468160466a2cd7b30a352f4f54145.jpg",
     "heads": {
      "V1": 3,
-     "V3": 5
+     "V3": 4,
+     "V4": 1
     }
    }
   ]
@@ -8406,9 +8415,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Not-perfect-welding-images_10_jpeg_jpg.rf.bf6fa4668333a78ac9f9af1b2c5a8879.jpg",
     "heads": {
-     "V2": 1,
      "V3": 2,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -8439,7 +8447,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/Not-perfect-welding-images_13_jpeg_jpg.rf.82168ed1d1f14643fb505cabc26111b7.jpg",
     "heads": {
-     "V3": 1
+     "V4": 1
     }
    }
   ]
@@ -8537,9 +8545,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/SampleV1_1_mp4-3_jpg.rf.f790ff25b03f211c9ff2bbe466495565.jpg",
     "heads": {
-     "V2": 4,
      "V3": 1,
-     "V4": 2
+     "V4": 6
     }
    },
    {
@@ -8565,8 +8572,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/SampleV1_1_mp4-57_jpg.rf.a85419e42eefa45fdc02df94c48b5729.jpg",
     "heads": {
-     "V2": 3,
-     "V4": 2
+     "V4": 5
     }
    },
    {
@@ -8591,9 +8597,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/SampleV1_2_mp4-38_jpg.rf.a6c6aa8f691d3f3db54974b41a7b9a7b.jpg",
     "heads": {
-     "V2": 3,
      "V3": 1,
-     "V4": 2
+     "V4": 5
     }
    },
    {
@@ -8619,9 +8624,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/SampleV2_1_mp4-102_jpg.rf.5e1b8bdf702ae8ffc94e18e0cd4fcea4.jpg",
     "heads": {
-     "V2": 2,
      "V3": 1,
-     "V4": 2
+     "V4": 4
     }
    },
    {
@@ -8647,8 +8651,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/SampleV2_1_mp4-15_jpg.rf.dc71bf9c949dbc0a439c3f45ab168dab.jpg",
     "heads": {
-     "V2": 2,
-     "V3": 1
+     "V3": 1,
+     "V4": 2
     }
    },
    {
@@ -8674,9 +8678,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/SampleV2_1_mp4-20_jpg.rf.b66de759ba577c99000799390e824d80.jpg",
     "heads": {
-     "V2": 3,
      "V3": 2,
-     "V4": 1
+     "V4": 4
     }
    },
    {
@@ -8702,8 +8705,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/SampleV2_1_mp4-24_jpg.rf.8f548e9063d61053a54724bce54cc645.jpg",
     "heads": {
-     "V2": 1,
-     "V3": 2
+     "V3": 2,
+     "V4": 1
     }
    },
    {
@@ -8804,8 +8807,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/SampleV2_1_mp4-63_jpg.rf.ed36b394bdbc3c0a1bc3fdda6fb5f6c8.jpg",
     "heads": {
-     "V2": 4,
-     "V4": 3
+     "V4": 7
     }
    },
    {
@@ -8830,9 +8832,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/SampleV3_1_mp4-35_jpg.rf.218626b82a01cc900840f0ebe80f10ae.jpg",
     "heads": {
-     "V2": 1,
      "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -8858,9 +8859,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/SampleV3_1_mp4-37_jpg.rf.453b65b3211ce050fca0f861de79ebd9.jpg",
     "heads": {
-     "V2": 1,
      "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -8936,9 +8936,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/SampleV3_1_mp4-52_jpg.rf.1176c66c7f9639431a08e3691edc8054.jpg",
     "heads": {
-     "V2": 2,
      "V3": 5,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -8964,8 +8963,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/SampleV3_2_mp4-18_jpg.rf.072dc0457fbe31493edadbf4bbd1d13b.jpg",
     "heads": {
-     "V2": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -8990,9 +8988,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/SampleV3_2_mp4-28_jpg.rf.f9cb6564c403aac1c3b6edacfe68ff82.jpg",
     "heads": {
-     "V2": 1,
      "V3": 3,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -9018,8 +9015,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/SampleV3_2_mp4-3_jpg.rf.d496fc46a009a3253edf9b897a5eb735.jpg",
     "heads": {
-     "V2": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -9071,16 +9067,13 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Screenshot-2022-12-05-223424_jpeg_jpg.rf.0c4c76fc87454ba505883bd30bcab148.jpg",
     "heads": {
-     "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/Screenshot-2022-12-05-223424_jpeg_jpg.rf.cc9c0c30cb7535b6d8e5c693559ff63a.jpg",
     "heads": {
-     "V2": 1,
-     "V3": 1,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -9169,8 +9162,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Screenshot-2022-12-05-223616_jpeg_jpg.rf.152a2b60b405856f0312448db6818a63.jpg",
     "heads": {
-     "V2": 1,
-     "V3": 1
+     "V3": 1,
+     "V4": 1
     }
    },
    {
@@ -9195,9 +9188,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Screenshot-2022-12-05-223730_jpeg_jpg.rf.6256bad2de089ff5d872e28d826fbf74.jpg",
     "heads": {
-     "V2": 1,
      "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -9229,8 +9221,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/Screenshot-2022-12-05-223834_jpeg_jpg.rf.32c6bb633059c3106780370c8df1d70a.jpg",
     "heads": {
-     "V2": 1,
-     "V3": 1
+     "V3": 1,
+     "V4": 1
     }
    },
    {
@@ -9305,8 +9297,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Screenshot-2022-12-05-224158_jpeg_jpg.rf.ee60b1876682e24e78a34d8589292ca2.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -9330,15 +9321,13 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Screenshot-2022-12-05-224230_jpeg_jpg.rf.1fb028081e0f6552698b76f9ec3dd615.jpg",
     "heads": {
-     "V2": 3,
-     "V4": 1
+     "V4": 4
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Screenshot-2022-12-05-224230_jpeg_jpg.rf.e06f619bdf4d0a85c62cd21d70797330.jpg",
     "heads": {
-     "V3": 5,
-     "V4": 1
+     "V4": 6
     }
    }
   ]
@@ -9362,7 +9351,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/Screenshot-2022-12-05-224319_jpeg_jpg.rf.f0cb75d7498b5a0d5ec2a9044b83421e.jpg",
     "heads": {
-     "V2": 1
+     "V4": 1
     }
    }
   ]
@@ -9497,8 +9486,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/Screenshot-2022-12-05-225802_jpeg_jpg.rf.0fdbb6e2ec69f642740e0e1db38e9a3e.jpg",
     "heads": {
-     "V2": 1,
-     "V4": 1
+     "V4": 2
     }
    }
   ]
@@ -9601,9 +9589,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Screenshot-2022-12-05-230257_jpeg_jpg.rf.4f3a07744f876a166e5392a35760c6b9.jpg",
     "heads": {
-     "V2": 2,
-     "V3": 2,
-     "V4": 1
+     "V4": 5
     }
    },
    {
@@ -9628,9 +9614,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Screenshot-2022-12-05-230348_jpeg_jpg.rf.9eb85a1273583b9778367be2a4c0048c.jpg",
     "heads": {
-     "V2": 2,
      "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -9712,9 +9697,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Screenshot-2022-12-05-231053_jpeg_jpg.rf.85e471252c944a378d0c96adbd097e1b.jpg",
     "heads": {
-     "V2": 1,
      "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -9740,9 +9724,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Screenshot-2022-12-05-231119_jpeg_jpg.rf.184d4311ccdd65bc693f2a75ef0a493b.jpg",
     "heads": {
-     "V2": 1,
      "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -9773,7 +9756,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Screenshot-2022-12-05-231137_jpeg_jpg.rf.b0df5b5627672060d78fac1c0c984957.jpg",
     "heads": {
-     "V2": 1
+     "V4": 1
     }
    },
    {
@@ -10272,13 +10255,13 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/test/images/Screenshot-2023-02-08-103645_png_jpg.rf.2bfd49c676d7a29f8ee077d6d277a9ab.jpg",
     "heads": {
-     "V3": 5
+     "V4": 5
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Screenshot-2023-02-08-103645_png_jpg.rf.7aaeb19cd7746bedca8876f7bb6d66d1.jpg",
     "heads": {
-     "V3": 10
+     "V4": 10
     }
    }
   ]
@@ -10423,8 +10406,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Slag-inclusion-welding-images_14_jpeg_jpg.rf.d9ae955d75af376014aeced3349d19a9.jpg",
     "heads": {
-     "V2": 1,
-     "V3": 1
+     "V3": 1,
+     "V4": 1
     }
    },
    {
@@ -10454,8 +10437,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Slag-inclusion-welding-images_17_jpeg_jpg.rf.2a89f520089ea22ffcb6b67cad10b4f5.jpg",
     "heads": {
-     "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -10480,15 +10462,14 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Slag-inclusion-welding-images_17_jpeg_jpg.rf.9dbf7d36e9760cbff34d0877de3d08b5.jpg",
     "heads": {
-     "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/Slag-inclusion-welding-images_17_jpeg_jpg.rf.a8ef9044986008b31b72be402ee62147.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V3": 1,
+     "V4": 2
     }
    }
   ]
@@ -10506,15 +10487,15 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Slag-inclusion-welding-images_7_jpeg_jpg.rf.fccc77c290fd8ec08f6a9a1ac443558a.jpg",
     "heads": {
-     "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/Slag-inclusion-welding-images_7_jpeg_jpg.rf.be8318697c4f7ab8b39c6289651785a3.jpg",
     "heads": {
      "V1": 1,
-     "V3": 7
+     "V3": 1,
+     "V4": 6
     }
    }
   ]
@@ -10558,9 +10539,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Spatters-welding-images_16_jpeg_jpg.rf.6cc0a303c3e5a74d96753db3c21ee5ac.jpg",
     "heads": {
-     "V2": 2,
-     "V3": 2,
-     "V4": 1
+     "V4": 5
     }
    },
    {
@@ -10694,8 +10673,8 @@
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Spatters-welding-images_30_jpeg_jpg.rf.758729784c4ba508a44b7979cee053bd.jpg",
     "heads": {
      "V1": 1,
-     "V3": 35,
-     "V4": 1
+     "V3": 32,
+     "V4": 4
     }
    },
    {
@@ -10721,16 +10700,13 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Spatters-welding-images_8_jpeg_jpg.rf.7ea55ed603ad80276f612729d78f83bb.jpg",
     "heads": {
-     "V2": 1,
-     "V3": 1,
-     "V4": 1
+     "V4": 3
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/Spatters-welding-images_8_jpeg_jpg.rf.cd6f379c0f524c37aa1f07d5791aed25.jpg",
     "heads": {
-     "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -11041,7 +11017,7 @@
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid176_jpeg_jpg.rf.9d488f77df7c5a742ac5a8dcc95c0783.jpg",
     "heads": {
      "V1": 2,
-     "V3": 1
+     "V4": 1
     }
    }
   ]
@@ -11059,15 +11035,15 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid176_jpeg_jpg.rf.f55429d65f97976f45037bb9f75f9652.jpg",
     "heads": {
-     "V3": 3,
-     "V4": 1
+     "V4": 4
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/bad_weld_vid176_jpeg_jpg.rf.0577e52786a4726970e1016ad5fbe818.jpg",
     "heads": {
      "V1": 1,
-     "V3": 10
+     "V3": 6,
+     "V4": 4
     }
    }
   ]
@@ -11092,7 +11068,7 @@
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid177_jpeg_jpg.rf.c7a0e504dcabf239c3441062ad1fd246.jpg",
     "heads": {
      "V1": 1,
-     "V3": 1
+     "V4": 1
     }
    }
   ]
@@ -11111,8 +11087,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid178_jpeg_jpg.rf.6ff1fd9135517fa9a5c83b4af485d4ff.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -11136,41 +11111,15 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid180_jpeg_jpg.rf.5a76eae4375b91ab58d0990d3615cd7f.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid180_jpeg_jpg.rf.88460c26c0f07fa8ec5e52800c325c28.jpg",
     "heads": {
      "V1": 1,
-     "V3": 12
-    }
-   }
-  ]
- },
- {
-  "members": [
-   "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid183_jpeg_jpg.rf.41edb2ea188523186cc3be0d65e8d701.jpg",
-   "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid183_jpeg_jpg.rf.ebec4fa0300364bb968334de9771ae40.jpg"
-  ],
-  "sources": [
-   "final_welding"
-  ],
-  "basis": "md5_identical_with_differing_labels",
-  "head_compositions": [
-   {
-    "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid183_jpeg_jpg.rf.41edb2ea188523186cc3be0d65e8d701.jpg",
-    "heads": {
-     "V3": 2,
-     "V4": 1
-    }
-   },
-   {
-    "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid183_jpeg_jpg.rf.ebec4fa0300364bb968334de9771ae40.jpg",
-    "heads": {
-     "V2": 2,
-     "V4": 1
+     "V3": 9,
+     "V4": 3
     }
    }
   ]
@@ -11189,8 +11138,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid183_jpeg_jpg.rf.be25ca9c5f4da373f1c668b9e9738411.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -11214,7 +11162,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/test/images/bad_weld_vid198_jpeg_jpg.rf.a94db2f2f488be94d0965a731bc5ad04.jpg",
     "heads": {
-     "V3": 3
+     "V3": 2,
+     "V4": 1
     }
    },
    {
@@ -11238,7 +11187,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid199_jpeg_jpg.rf.502fca561199e35d37c977cf0c6790ed.jpg",
     "heads": {
-     "V3": 2
+     "V3": 1,
+     "V4": 1
     }
    },
    {
@@ -11321,16 +11271,15 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/test/images/bad_weld_vid261_jpeg_jpg.rf.6ca736c375975c6a52ef7b3000c79276.jpg",
     "heads": {
-     "V3": 4,
-     "V4": 1
+     "V3": 2,
+     "V4": 3
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid261_jpeg_jpg.rf.ef1ca1bbf15d9363f8ae1ad32d505f08.jpg",
     "heads": {
-     "V2": 2,
-     "V3": 4,
-     "V4": 1
+     "V3": 2,
+     "V4": 5
     }
    },
    {
@@ -11356,7 +11305,8 @@
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/test/images/bad_weld_vid262_jpeg_jpg.rf.c8d0c827a8b2bcaff09e6b818dc9f92a.jpg",
     "heads": {
      "V1": 1,
-     "V3": 4
+     "V3": 2,
+     "V4": 2
     }
    },
    {
@@ -11380,7 +11330,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid278_jpeg_jpg.rf.b7a86d8a9d3a6b4cd168fb1eff8726a2.jpg",
     "heads": {
-     "V3": 1
+     "V4": 1
     }
    },
    {
@@ -11484,7 +11434,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid320_jpeg_jpg.rf.338b53bc08529c4531deb96a1c80da4a.jpg",
     "heads": {
-     "V3": 2
+     "V3": 1,
+     "V4": 1
     }
    },
    {
@@ -11571,7 +11522,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid368_jpeg_jpg.rf.f158c4477a5080cc82b87cb5495d3306.jpg",
     "heads": {
-     "V2": 1
+     "V4": 1
     }
    }
   ]
@@ -11621,7 +11572,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/bad_weld_vid375_jpeg_jpg.rf.d3fe48f6e36f6c5b168c6f73460f1adb.jpg",
     "heads": {
-     "V2": 1
+     "V4": 1
     }
    }
   ]
@@ -11640,9 +11591,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid376_jpeg_jpg.rf.3881670c27546dadfd98d9e725161efb.jpg",
     "heads": {
-     "V2": 1,
      "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -11675,9 +11625,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/bad_weld_vid377_jpeg_jpg.rf.7240fb45fef4e6bfc7fc9032d5bf1c2e.jpg",
     "heads": {
-     "V2": 1,
      "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -11761,7 +11710,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid395_jpeg_jpg.rf.6c75e933c4d0e918429c98619039953a.jpg",
     "heads": {
-     "V3": 3
+     "V3": 1,
+     "V4": 2
     }
    }
   ]
@@ -11862,16 +11812,13 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid448_jpeg_jpg.rf.8b75f63104e2bf046ab604788e40d61e.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid448_jpeg_jpg.rf.e42827917b6f450f931c9a962f182903.jpg",
     "heads": {
-     "V2": 2,
-     "V3": 2,
-     "V4": 1
+     "V4": 5
     }
    },
    {
@@ -11922,16 +11869,14 @@
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid456_jpeg_jpg.rf.72f8cfc6c4aa315836904ab5fd81ee75.jpg",
     "heads": {
      "V1": 1,
-     "V2": 2,
-     "V3": 6,
-     "V4": 1
+     "V3": 2,
+     "V4": 7
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/bad_weld_vid456_jpeg_jpg.rf.4d89f68f174838fea8024dbc2fd598ea.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -11955,15 +11900,13 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid457_jpeg_jpg.rf.6cc6a8bf2f52c3049cd9a72e339dd238.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid457_jpeg_jpg.rf.fc61a73cea4ff490ba88f44f1eb54fad.jpg",
     "heads": {
-     "V3": 3,
-     "V4": 1
+     "V4": 4
     }
    }
   ]
@@ -12006,8 +11949,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid474_jpeg_jpg.rf.cee26d9a6237fef4605f5083650c5906.jpg",
     "heads": {
-     "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -12056,7 +11998,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid560_jpeg_jpg.rf.35a6eca079db94ef14a7290393d93772.jpg",
     "heads": {
-     "V3": 1
+     "V4": 1
     }
    },
    {
@@ -12082,16 +12024,13 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid560_jpeg_jpg.rf.aa4f7bf8c7ed2b18d46535d43895ddc9.jpg",
     "heads": {
-     "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid560_jpeg_jpg.rf.d0a12a44b8761b01909f60edf5fa6b59.jpg",
     "heads": {
-     "V2": 1,
-     "V3": 1,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -12117,16 +12056,13 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid565_jpeg_jpg.rf.2bc29b4cd407b5b988ee8f8a41aac21a.jpg",
     "heads": {
-     "V2": 1,
-     "V3": 1,
-     "V4": 1
+     "V4": 3
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid565_jpeg_jpg.rf.526bd04d12bc4ac6c3d8bb93367b27df.jpg",
     "heads": {
-     "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -12151,8 +12087,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid577_jpeg_jpg.rf.011836bc4cf25457b57737bcd9d350e3.jpg",
     "heads": {
-     "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -12209,9 +12144,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid686_jpeg_jpg.rf.9b6457429ea09457a3b9cca0c7ea56a5.jpg",
     "heads": {
-     "V2": 1,
      "V3": 1,
-     "V4": 2
+     "V4": 3
     }
    },
    {
@@ -12311,8 +12245,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid693_jpeg_jpg.rf.31d566a0e1b799e707bf9c2583c072b7.jpg",
     "heads": {
-     "V2": 1,
-     "V4": 2
+     "V4": 3
     }
    },
    {
@@ -12522,7 +12455,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid88_jpeg_jpg.rf.317a5431fce86cb5f41acb237c5243dd.jpg",
     "heads": {
-     "V3": 1
+     "V4": 1
     }
    }
   ]
@@ -12545,6 +12478,30 @@
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/bad_weld_vid93_jpeg_jpg.rf.a357c02da167130b9de54218d022e893.jpg",
+    "heads": {
+     "V4": 1
+    }
+   }
+  ]
+ },
+ {
+  "members": [
+   "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid97_jpeg_jpg.rf.1e15b0dabb9d051cf2b31898be74d931.jpg",
+   "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid97_jpeg_jpg.rf.290df2a50205e10af1dd0216908fbd77.jpg"
+  ],
+  "sources": [
+   "final_welding"
+  ],
+  "basis": "md5_identical_with_differing_labels",
+  "head_compositions": [
+   {
+    "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid97_jpeg_jpg.rf.1e15b0dabb9d051cf2b31898be74d931.jpg",
+    "heads": {
+     "V4": 1
+    }
+   },
+   {
+    "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/bad_weld_vid97_jpeg_jpg.rf.290df2a50205e10af1dd0216908fbd77.jpg",
     "heads": {
      "V3": 1
     }
@@ -12572,8 +12529,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/bad_weld_vid98_jpeg_jpg.rf.fc58982fe62cb731f9fbb6f1b4bd5e31.jpg",
     "heads": {
-     "V2": 1,
-     "V3": 1
+     "V3": 1,
+     "V4": 1
     }
    },
    {
@@ -12603,7 +12560,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/badly-welded-rusty-metal-bad-weld-corner-132405924_jpeg_jpg.rf.27e97084937ca485bfe31f8ad67af26f.jpg",
     "heads": {
-     "V3": 3
+     "V3": 1,
+     "V4": 2
     }
    }
   ]
@@ -12934,7 +12892,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/crack-welding-images_11_jpeg_jpg.rf.1d51c89b7ac3ecdbcf6470d5a574cb84.jpg",
     "heads": {
-     "V2": 1
+     "V4": 1
     }
    },
    {
@@ -12964,7 +12922,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/crack-welding-images_11_jpeg_jpg.rf.f5cca27d93bf0b78838797ceb6c23d7e.jpg",
     "heads": {
-     "V2": 1
+     "V4": 1
     }
    }
   ]
@@ -12982,9 +12940,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/crack-welding-images_12_jpeg_jpg.rf.8297894d54197e2a052295c49667e30d.jpg",
     "heads": {
-     "V2": 1,
      "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -13010,8 +12967,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/crack-welding-images_9_jpeg_jpg.rf.57a4b8a902eee52439f12bc192c485c5.jpg",
     "heads": {
-     "V2": 1,
-     "V3": 1
+     "V3": 1,
+     "V4": 1
     }
    },
    {
@@ -13337,8 +13294,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/download_jpeg_jpg.rf.9ef999c4a80c6bd9412a906b13b94ea3.jpg",
     "heads": {
-     "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -14120,8 +14076,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/good-stick-welds_45_jpeg_jpg.rf.6424726a5d0bc3d6998a17347ba33ea4.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 2
+     "V3": 1,
+     "V4": 3
     }
    },
    {
@@ -16453,7 +16409,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/hrjnhimages_jpeg_jpg.rf.ae45f2160640dce0dd3f98052cd03b12.jpg",
     "heads": {
-     "V3": 1
+     "V4": 1
     }
    },
    {
@@ -16502,8 +16458,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/imagertrty4s_jpeg_jpg.rf.f8d3dd3a330e225cca3bffa7df82beb8.jpg",
     "heads": {
-     "V2": 1,
-     "V3": 1
+     "V3": 1,
+     "V4": 1
     }
    },
    {
@@ -16528,8 +16484,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/imageruus_jpeg_jpg.rf.d021b35329c709ab3eb6527127d81713.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -16553,14 +16508,14 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/images-1-_jpeg_jpg.rf.4966329e52539dbb0cb30f239e4c8b83.jpg",
     "heads": {
-     "V3": 1
+     "V4": 1
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/images-1-_jpeg_jpg.rf.59b003ecab15273fb0b57ac14554b3c8.jpg",
     "heads": {
      "V1": 1,
-     "V3": 23
+     "V4": 23
     }
    }
   ]
@@ -16658,7 +16613,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/images-12-_jpeg_jpg.rf.5c21a0829e581b067e15c8b214cfb5da.jpg",
     "heads": {
-     "V2": 1
+     "V4": 1
     }
    },
    {
@@ -16808,16 +16763,13 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/imagesEFWEFW_jpeg_jpg.rf.371d7940bdb2bd0e965e44e2085486d5.jpg",
     "heads": {
-     "V2": 1,
-     "V3": 1,
-     "V4": 1
+     "V4": 3
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/imagesEFWEFW_jpeg_jpg.rf.b2153633e4203bba6d4fa7b575919d0e.jpg",
     "heads": {
-     "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -16842,40 +16794,13 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/images_jpeg_jpg.rf.139ee5e414a63c15fda4feb622f9bce1.jpg",
     "heads": {
-     "V3": 4,
-     "V4": 2
+     "V4": 6
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/The Welding Defect Dataset/train/images/images_jpeg_jpg.rf.4f491b9d8e5149fe6d2957f862b1c850.jpg",
     "heads": {
      "discard": 6
-    }
-   }
-  ]
- },
- {
-  "members": [
-   "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/images_jpeg_jpg.rf.b5613cf999922daa741cea550b5ed608.jpg",
-   "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/images_jpeg_jpg.rf.cc942d64832bdf2a14221b685f30d615.jpg"
-  ],
-  "sources": [
-   "final_welding"
-  ],
-  "basis": "md5_identical_with_differing_labels",
-  "head_compositions": [
-   {
-    "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/images_jpeg_jpg.rf.b5613cf999922daa741cea550b5ed608.jpg",
-    "heads": {
-     "V3": 4,
-     "V4": 2
-    }
-   },
-   {
-    "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/images_jpeg_jpg.rf.cc942d64832bdf2a14221b685f30d615.jpg",
-    "heads": {
-     "V2": 4,
-     "V4": 2
     }
    }
   ]
@@ -16894,14 +16819,16 @@
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/images_jpg.rf.c91141fd8e4ac2beae90c7511ab6f0d4.jpg",
     "heads": {
      "V1": 1,
-     "V3": 22
+     "V3": 4,
+     "V4": 18
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/download_jpeg_jpg.rf.4fb019241a4a6044cf7152a471f1530c.jpg",
     "heads": {
      "V1": 1,
-     "V3": 27
+     "V3": 10,
+     "V4": 17
     }
    }
   ]
@@ -16975,7 +16902,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/imagesery4y_jpeg_jpg.rf.682ff910ea642ff9399df266f3558eb0.jpg",
     "heads": {
-     "V2": 1
+     "V4": 1
     }
    },
    {
@@ -17025,9 +16952,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/imagesyj_jpeg_jpg.rf.37ac2941749b09bd01312bb41108bcc3.jpg",
     "heads": {
-     "V2": 1,
-     "V3": 1,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -17155,14 +17080,13 @@
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/imagkvyfes_jpeg_jpg.rf.5d0afa0ec789f4de02fbef4b01f74437.jpg",
     "heads": {
      "V1": 1,
-     "V2": 3,
-     "V3": 8
+     "V4": 11
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/imagkvyfes_jpeg_jpg.rf.2d97ffdda0f2d221dad8ce1475783474.jpg",
     "heads": {
-     "V3": 3
+     "V4": 3
     }
    },
    {
@@ -17187,8 +17111,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/imagwddweeves_jpeg_jpg.rf.8350309f451794124d5d1beb02ea2c43.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -17239,8 +17162,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/istockphoto-1006281428-612x612_jpeg_jpg.rf.cef6dfe50e9705d7e2d57b5327dc54be.jpg",
     "heads": {
-     "V2": 1,
-     "V3": 1
+     "V3": 1,
+     "V4": 1
     }
    },
    {
@@ -17295,7 +17218,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/istockphoto-1006281462-612x612_jpeg_jpg.rf.83eac2891ecdbac2dee77fe0c2f0ff5f.jpg",
     "heads": {
-     "V2": 1
+     "V4": 1
     }
    },
    {
@@ -17394,7 +17317,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/istockphoto-1008822990-612x612_jpeg_jpg.rf.530c00725baa2443bfb0a10c3f21dc60.jpg",
     "heads": {
-     "V3": 1
+     "V4": 1
     }
    },
    {
@@ -17476,8 +17399,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/istockphoto-1191620549-612x612_jpeg_jpg.rf.56eb53f94bf7c92840ca93336d360534.jpg",
     "heads": {
-     "V2": 2,
-     "V3": 2
+     "V3": 2,
+     "V4": 2
     }
    },
    {
@@ -17991,8 +17914,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/poor-Welding-Images_28_jpeg_jpg.rf.fd7a7d088c36cea3ae941e22d9603224.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    }
   ]
@@ -18012,8 +17934,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/poor-Welding-Images_30_jpeg_jpg.rf.f396dbe8a50edcdd06852782c15467d2.jpg",
     "heads": {
-     "V2": 1,
-     "V3": 1
+     "V3": 1,
+     "V4": 1
     }
    },
    {
@@ -18069,9 +17991,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/poor-Welding-Images_43_jpeg_jpg.rf.03c6470f3bed56f3481643586947a9e1.jpg",
     "heads": {
-     "V2": 2,
-     "V3": 2,
-     "V4": 1
+     "V4": 5
     }
    },
    {
@@ -18109,32 +18029,6 @@
  },
  {
   "members": [
-   "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/poor-Welding-Images_7_jpeg_jpg.rf.b373d870f3d270d30dc034b77b9c2281.jpg",
-   "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/poor-Welding-Images_7_jpeg_jpg.rf.d82426bb396e24a4a7512a40846cab21.jpg"
-  ],
-  "sources": [
-   "final_welding"
-  ],
-  "basis": "md5_identical_with_differing_labels",
-  "head_compositions": [
-   {
-    "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/poor-Welding-Images_7_jpeg_jpg.rf.b373d870f3d270d30dc034b77b9c2281.jpg",
-    "heads": {
-     "V3": 1,
-     "V4": 1
-    }
-   },
-   {
-    "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/poor-Welding-Images_7_jpeg_jpg.rf.d82426bb396e24a4a7512a40846cab21.jpg",
-    "heads": {
-     "V2": 1,
-     "V4": 1
-    }
-   }
-  ]
- },
- {
-  "members": [
    "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/poor-Welding-Images_7_jpeg_jpg.rf.d01c16f787cb27d3eab16c8f5482d627.jpg",
    "/mnt/e/weld-fusion-thesis/data/vision/The Welding Defect Dataset/train/images/poor-Welding-Images_7_jpeg_jpg.rf.1f002b9b02de3c4bb8e4854ab7c362af.jpg"
   ],
@@ -18147,8 +18041,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/poor-Welding-Images_7_jpeg_jpg.rf.d01c16f787cb27d3eab16c8f5482d627.jpg",
     "heads": {
-     "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -18396,7 +18289,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/received_580465386895084_jpeg_jpg.rf.203a3c6b24c0982fd83359e8ffe3a412.jpg",
     "heads": {
-     "V3": 2
+     "V4": 2
     }
    },
    {
@@ -18446,13 +18339,13 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/surface-porosity-1-_jpg.rf.1aa42c0e8d06200a14a42736a7465427.jpg",
     "heads": {
-     "V3": 8
+     "V4": 8
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/surface-porosity-1-_jpg.rf.3c4a83718621f3870e1ab560353e419d.jpg",
     "heads": {
-     "V3": 13
+     "V4": 13
     }
    }
   ]
@@ -18527,14 +18420,15 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/weld-defect-work-was-carried-out-using-semi-automatic-arc-welding-mig-welding-weld-defect-work-was-carried-out-using-semi-242005547_jpeg_jpg.rf.07d4d0c10c0606c69a5d13942e678dc2.jpg",
     "heads": {
-     "V3": 3
+     "V3": 2,
+     "V4": 1
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/weld-defect-work-was-carried-out-using-semi-automatic-arc-welding-mig-welding-weld-defect-work-was-carried-out-using-semi-242005547_jpeg_jpg.rf.7f69d34a8ccf2f4013eec4e586535299.jpg",
     "heads": {
-     "V2": 1,
-     "V3": 8
+     "V3": 2,
+     "V4": 7
     }
    },
    {
@@ -18622,8 +18516,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/weld-defect-work-was-carried-out-using-semi-automatic-arc-welding-mig-welding-weld-defect-work-was-carried-out-using-semi-242006161_jpeg_jpg.rf.850fbe8d09b63d6f7ec636c4bb7e019e.jpg",
     "heads": {
-     "V3": 6,
-     "V4": 1
+     "V4": 7
     }
    },
    {
@@ -18673,8 +18566,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/train/images/weld-defect-work-was-carried-out-using-semi-automatic-arc-welding-mig-welding-weld-defect-work-was-carried-out-using-semi-242007435_jpeg_jpg.rf.b6f4abc9ccbd712581095d6d631c25cb.jpg",
     "heads": {
-     "V3": 6,
-     "V4": 1
+     "V4": 7
     }
    },
    {
@@ -19215,9 +19107,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/Not-perfect-welding-images_17_jpeg_jpg.rf.263f2deb0aa3ae31bd448d9170bb6505.jpg",
     "heads": {
-     "V2": 2,
-     "V3": 4,
-     "V4": 1
+     "V4": 7
     }
    },
    {
@@ -19267,9 +19157,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/SampleV2_1_mp4-104_jpg.rf.0c8699df7fad332e742eb613822c42cd.jpg",
     "heads": {
-     "V2": 3,
      "V3": 3,
-     "V4": 3
+     "V4": 6
     }
    },
    {
@@ -19295,9 +19184,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/SampleV3_1_mp4-36_jpg.rf.3e987d6997199539a79447ac223f681c.jpg",
     "heads": {
-     "V2": 1,
      "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -19323,8 +19211,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/SampleV3_2_mp4-23_jpg.rf.e5da098f165edc9b1ed5ae7e0406741c.jpg",
     "heads": {
-     "V2": 2,
-     "V4": 2
+     "V4": 4
     }
    },
    {
@@ -19349,9 +19236,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/SampleV3_2_mp4-29_jpg.rf.ea47a4b7a77fa51c779c84e3836e7679.jpg",
     "heads": {
-     "V2": 1,
      "V3": 1,
-     "V4": 1
+     "V4": 2
     }
    },
    {
@@ -19377,8 +19263,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/SampleV3_2_mp4-9_jpg.rf.a4690ee1e2a4a302279b3b32fe680952.jpg",
     "heads": {
-     "V2": 3,
-     "V4": 1
+     "V4": 4
     }
    },
    {
@@ -19403,8 +19288,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/Screenshot-2022-12-05-224230_jpeg_jpg.rf.0b25538462bb2f45008e047cfb3ed0c0.jpg",
     "heads": {
-     "V3": 3,
-     "V4": 1
+     "V4": 4
     }
    },
    {
@@ -19611,8 +19495,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/Spatters-welding-images_22_jpeg_jpg.rf.699faeec48b3b1ca06d150379490e153.jpg",
     "heads": {
-     "V3": 3,
-     "V4": 1
+     "V4": 4
     }
    },
    {
@@ -19662,8 +19545,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/bad_weld_vid179_jpeg_jpg.rf.21e76c7c61c94ff81b053951342ad144.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -19688,8 +19570,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/bad_weld_vid181_jpeg_jpg.rf.f4fc9e55ce028dbf69e074a295c439a5.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -19739,9 +19620,8 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/bad_weld_vid262_jpeg_jpg.rf.904f5de824eac1d17f16afcbd2ca77f6.jpg",
     "heads": {
-     "V2": 2,
-     "V3": 4,
-     "V4": 1
+     "V3": 2,
+     "V4": 5
     }
    },
    {
@@ -19898,9 +19778,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/bad_weld_vid452_jpeg_jpg.rf.ed036c5960ec5dff7585d0f6655965ae.jpg",
     "heads": {
-     "V2": 2,
-     "V3": 2,
-     "V4": 1
+     "V4": 5
     }
    },
    {
@@ -19925,8 +19803,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/bad_weld_vid472_jpeg_jpg.rf.71affc14e2b1c44926887a2a7103550c.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -20030,17 +19907,15 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/badly-welded-corner-rusty-old-metal-bad-weld-how-not-to-cook-132406262_jpeg_jpg.rf.36a3b7245f59648fae79b238ece25196.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/badly-welded-corner-rusty-old-metal-bad-weld-how-not-to-cook-132406262_jpeg_jpg.rf.fd76c39972a1c1de2d5095a11e512ad8.jpg",
     "heads": {
      "V1": 1,
-     "V2": 2,
-     "V3": 17,
-     "V4": 1
+     "V3": 9,
+     "V4": 11
     }
    },
    {
@@ -21044,8 +20919,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/imagSCes_jpeg_jpg.rf.de19db0e940d941431a1114982a149e0.jpg",
     "heads": {
-     "V3": 5,
-     "V4": 1
+     "V4": 6
     }
    },
    {
@@ -21126,14 +21000,13 @@
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/test/images/istockphoto-1006281470-612x612_jpeg_jpg.rf.e883cfcfda150b504dc6a19287508358.jpg",
     "heads": {
      "V1": 1,
-     "V2": 2,
-     "V3": 4
+     "V4": 6
     }
    },
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/istockphoto-1006281470-612x612_jpeg_jpg.rf.fb7ccc348050d0b31f2e29d0f506e38f.jpg",
     "heads": {
-     "V3": 2
+     "V4": 2
     }
    },
    {
@@ -21389,8 +21262,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/overlap-welding-images_26_jpeg_jpg.rf.751dd828527a755bf802cddc7faafd60.jpg",
     "heads": {
-     "V3": 7,
-     "V4": 1
+     "V4": 8
     }
    },
    {
@@ -21440,8 +21312,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/poor-Welding-Images_52_jpeg_jpg.rf.7245fbf1412493ac28a98012dec72051.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -21466,8 +21337,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/valid/images/poor-Welding-Images_9_jpeg_jpg.rf.50f2d6326e5c3d08cd95d7746dc9925b.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {
@@ -21744,8 +21614,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/test/images/Screenshot-2022-12-05-223445_jpeg_jpg.rf.c257743bfa2e5b0355af135a19abd5b3.jpg",
     "heads": {
-     "V3": 3,
-     "V4": 1
+     "V4": 4
     }
    },
    {
@@ -22657,8 +22526,7 @@
    {
     "image": "/mnt/e/weld-fusion-thesis/data/vision/FINAL WELDING DATASET/test/images/porosity-worm-hole-weld-defect-welding-process-flux-cored-arc-fcaw-204492534_jpeg_jpg.rf.c62a55236fcc0ac849a329d7c26230ce.jpg",
     "heads": {
-     "V3": 2,
-     "V4": 1
+     "V4": 3
     }
    },
    {

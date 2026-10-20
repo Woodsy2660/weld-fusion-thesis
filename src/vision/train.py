@@ -2,10 +2,10 @@
 Train the vision focal-element classifier.
 
 The head count and the head->focal-element mapping come from configs/frame.yaml.
-Nothing here hardcodes either, and the frame is now three heads: V1 {P},
-V3 {N,U}, V4 {N,U,L,C}.
+Nothing here hardcodes either. The model is a three-way softmax classifier
+whose outputs map to V1 {P}, V3 {N,U}, V4 {N,U,L}.
 
-Every macro metric is a THREE-HEAD macro. All three heads are supported by the
+Every macro metric is a THREE-CLASS macro. All three outputs are supported by the
 data, so unlike fold 0 the macro average is a meaningful number.
 
 Logits are persisted as PARQUET carrying the join keys -- patch_path,
@@ -125,6 +125,16 @@ def main():
     ap.add_argument("--config", default="configs/vision_train.yaml")
     ap.add_argument("--arch", default=None,
                     help="override model.architecture (resnet50 | resnet18)")
+    ap.add_argument("--freeze-through", default=None,
+                    help="override model.freeze_through (conv1 | layer1 | "
+                         "layer2 | layer3 | layer4), so each run is "
+                         "reproducible from the command line")
+    ap.add_argument("--snapshot-epochs", type=int, nargs="*", default=[],
+                    help="also save checkpoint + val/test logits at these "
+                         "epochs (reporting only; never used for selection)")
+    ap.add_argument("--stop-after", type=int, default=None,
+                    help="stop after this epoch WITHOUT changing the cosine "
+                         "T_max, so the schedule matches a full run")
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--tag", default=None,
                     help="suffix for artefact names; defaults to the arch")
@@ -136,7 +146,10 @@ def main():
         cfg = yaml.safe_load(f)
 
     arch = args.arch or cfg["model"]["architecture"]
-    tag = args.tag or arch
+    if args.freeze_through is not None:
+        cfg["model"]["freeze_through"] = args.freeze_through
+    tag = args.tag or (f"{arch}_ft-{args.freeze_through}"
+                       if args.freeze_through else arch)
     torch.manual_seed(args.seed)
     np.random.seed(args.seed)
 
@@ -161,7 +174,8 @@ def main():
     trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
     total_p = sum(p.numel() for p in model.parameters())
     print(f"Backbone: {arch}, frozen through {freeze_through!r} for the whole "
-          f"run -- {trainable:,}/{total_p:,} parameters trainable")
+          f"run -- {trainable:,}/{total_p:,} parameters trainable, "
+          f"{total_p - trainable:,} frozen")
 
     weights = None
     if cfg["training"].get("class_weights") == "inverse_frequency":
@@ -201,17 +215,34 @@ def main():
                                           optimizer, device)
         va_loss, va_acc, va_logits, va_labels = evaluate(
             model, loaders["val"], criterion, device)
-        f1, _ = macro_f1(va_labels, va_logits.argmax(1), frame.head_names)
+        f1, va_m = macro_f1(va_labels, va_logits.argmax(1), frame.head_names)
+        va_f1_per_head = {h: float(va_m["report"][h]["f1-score"])
+                          for h in frame.head_names if h in va_m["report"]}
 
         print(f"Epoch {epoch+1}/{epochs} lr={lr:.2e} | "
               f"train {tr_loss:.4f}/{tr_acc:.4f} | "
-              f"val {va_loss:.4f}/{va_acc:.4f} | macro-F1 {f1:.4f}")
+              f"val {va_loss:.4f}/{va_acc:.4f} | macro-F1 {f1:.4f} | "
+              + " ".join(f"{h} {v:.3f}" for h, v in va_f1_per_head.items()))
         history.append({"epoch": epoch + 1, "lr": lr, "train_loss": tr_loss,
                         "train_acc": tr_acc, "val_loss": va_loss,
-                        "val_acc": va_acc, "val_macro_f1_three_head": f1})
+                        "val_acc": va_acc, "val_macro_f1_three_head": f1,
+                        "val_f1_per_head": va_f1_per_head})
 
         if scheduler is not None:
             scheduler.step()
+
+        if epoch + 1 in args.snapshot_epochs:
+            snap = f"{tag}_ep{epoch + 1}"
+            torch.save(model.state_dict(), save_dir / f"snapshot_{snap}.pth")
+            logits_frame(datasets["val"], va_logits, va_labels, frame, "val"
+                         ).to_parquet(results_dir / f"logits_val_{snap}.parquet",
+                                      index=False)
+            _, _, sn_logits, sn_labels = evaluate(model, loaders["test"],
+                                                  criterion, device)
+            logits_frame(datasets["test"], sn_logits, sn_labels, frame, "test"
+                         ).to_parquet(results_dir / f"logits_test_{snap}.parquet",
+                                      index=False)
+            print(f"Snapshot  : epoch {epoch + 1} -> logits_{{val,test}}_{snap}.parquet")
 
         if f1 > best_f1:
             best_f1, best_epoch, patience = f1, epoch + 1, 0
@@ -224,7 +255,11 @@ def main():
                 print(f"Early stopping at epoch {epoch+1}")
                 break
 
-    print(f"\nBest validation macro-F1 (three-head): {best_f1:.4f} "
+        if args.stop_after and epoch + 1 >= args.stop_after:
+            print(f"Stopping after epoch {epoch+1} (--stop-after)")
+            break
+
+    print(f"\nBest validation macro-F1 (three-class): {best_f1:.4f} "
           f"at epoch {best_epoch}")
     best_val.to_parquet(results_dir / f"logits_val_{tag}.parquet", index=False)
     print(f"Val logits : results/vision/logits_val_{tag}.parquet")
@@ -241,7 +276,7 @@ def main():
 
     print(f"\nTEST RESULTS -- {arch}")
     print("=" * 78)
-    print(f"three-head macro-F1 {f1_test:.4f}   accuracy {te_acc:.4f}")
+    print(f"three-class macro-F1 {f1_test:.4f}   accuracy {te_acc:.4f}")
     print(f"{'head':<7}{'focal':<14}{'precision':>10}{'recall':>10}"
           f"{'f1':>10}{'support':>10}")
     print("-" * 78)
