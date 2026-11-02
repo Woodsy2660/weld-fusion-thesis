@@ -18,7 +18,7 @@
 # ---------------------------------------------------------------------------
 classes:
   N: "no defect / acceptable"
-  U: "geometric non-conformance to ISO 5817 - undercut, excess reinforcement, or misalignment beyond limits"
+  U: "geometric non-conformance to ISO 5817 - undercut (5011/5012), excess weld metal (502), incompletely filled groove (511), or linear misalignment (507) beyond Level B limits"
   P: "porosity"
   L: "lack of fusion"
 

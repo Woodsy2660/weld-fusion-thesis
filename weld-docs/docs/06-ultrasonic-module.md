@@ -45,41 +45,60 @@ The feature extractor must unfold this. **Leg number is itself a feature** — s
 For t = 10 mm at 60°: half-skip surface distance = t·tan θ = 17.3 mm; full skip =
 34.6 mm. Working band is roughly 15–50 mm from the weld centreline.
 
-## Feature vector — nine features
+## Feature vector — seven features (revised 2026-10-23)
 
-```
-peak_amplitude_db
-time_of_flight_us
-signal_width_6db_us
-snr_db
-geometry_echo_db        replaces "backwall" — no backwall exists in angle-beam
-echo_count
-flaw_depth_mm           after unfolding
-flaw_offset_mm
-leg_number
-```
+**The original spec assumed waveform access. The EPOCH 650 CSV export contains
+only gate readings — no waveform array.** The following features are therefore
+**unavailable**:
 
-`geometry_echo_db` is a common error source: a normal-beam pipeline would use a
-backwall echo, but angle-beam inspection has no backwall. Use the geometry echo.
+| Original feature | Status | Reason |
+|---|---|---|
+| `signal_width_6db_us` | unavailable | requires waveform |
+| `snr_db` | unavailable | requires waveform or noise measurement |
+| `echo_count` | unavailable | one reading per cell, so always 0 or 1 |
+| `geometry_echo_db` | unavailable | no separate geometry echo logged |
+| `backwall_echo_db` | **invalid** | angle-beam has no backwall — delete any reference |
 
-## Classifier
+**Available features from EPOCH 650 gate readings:**
 
-Random Forest. Isotonic regression for calibration, fitted on inner validation folds
-only. Nested GroupKFold grouped by `coupon_id`.
+| Feature | Source column | Null value | Notes |
+|---|---|---|---|
+| `located` | presence of `Gate1 SoundPath` | 0 | 1 if indication present |
+| `amplitude_pct` | `Gate1 Current Amplitude` | 0 | % FSH, not dB |
+| `soundpath_mm` | `Gate1 SoundPath` | 0 | equivalent to ToF × velocity/2 |
+| `depth_mm` | `Gate1 Depth to Reflector` | 0 | after instrument unfolding |
+| `surface_distance_mm` | `Gate1 Surface Distance` | 0 | from beam index point |
+| `saturated` | amplitude >= 100 | 0 | indicates clipping |
+| `dist_from_root_mm` | `abs(soundpath - 20.0)` | 0 | root-band ambiguity feature |
 
-**XGBoost has been cut** from scope — cite as future work.
+**Why the root-band feature:** At 60° in 10 mm plate the half-skip soundpath is
+`t/cos(60°) = 20.0 mm`. This is simultaneously the leg 1 / leg 2 boundary, the
+root-face depth, and where root protrusion sits. Indications near 20 mm are
+ambiguous by construction, so the distance from that band is given explicitly.
 
-Expected class counts at 25 mm cells:
+## Classifier (revised 2026-10-23)
 
-| Focal element | Approx. count |
+**Multinomial logistic regression** with standardisation and `class_weight="balanced"`.
+At n=150 with 7 features and effective sample size ~27 (after coupon clustering),
+a deep model would overfit badly. k=4 coupon-grouped folds from the label file.
+
+**XGBoost and Random Forest have been cut** from scope for the UT modality — cite
+as future work. The small sample size makes logistic regression the appropriate
+choice.
+
+**Do not use isotonic regression for calibration** — with 150 points across three
+classes it will overfit. Use temperature scaling if ECE > 0.15, fitted within
+training folds only.
+
+Actual class counts (4-class experimental frame, C removed):
+
+| Focal element | Count |
 |---|---|
-| `{N,U}` | 112 |
-| `{L}` | 32 |
-| `{P}` | 28 |
-| `{C}` | 16 |
+| `{N,U}` | 93 |
+| `{L}` | 31 |
+| `{P}` | 26 |
 
-Thin but trainable for a Random Forest on nine features. The `{C}` arm is the weak
-one — report it as attemptable, not conclusive.
+Total: 150 cells from 15 coupons.
 
 ## Export risk and the capture fallback
 

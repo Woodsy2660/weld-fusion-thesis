@@ -64,6 +64,7 @@ class PatchDataset(Dataset):
 
     def __getitem__(self, i):
         row = self.rows[i]
+
         with Image.open(self.root / row["patch_path"]) as im:
             img = im.convert("RGB")
         if self.transform:

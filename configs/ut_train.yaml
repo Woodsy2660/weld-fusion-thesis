@@ -1,37 +1,38 @@
 # UT modality training configuration
+#
+# UPDATED 2026-10-23: Feature list corrected to match EPOCH 650 CSV export.
+# The original spec assumed waveform access; the export contains only gate
+# readings. See 06-ultrasonic-module.md for the full audit.
+
 model:
-  primary: random_forest
-  comparison: xgboost
+  # XGBoost was cut from scope — cite as future work
+  primary: logistic_regression  # Multinomial LR, appropriate for n=150
 
-random_forest:
-  n_estimators: 200
-  max_depth: null
-  min_samples_split: 5
-  min_samples_leaf: 2
+logistic_regression:
+  solver: lbfgs
+  max_iter: 1000
   class_weight: balanced
-
-xgboost:
-  n_estimators: 200
-  max_depth: 6
-  learning_rate: 0.1
-  subsample: 0.8
-  colsample_bytree: 0.8
+  # Standardisation applied in pipeline, not here
 
 evaluation:
-  cv_folds: 5
+  cv_folds: 4  # Use existing fold column grouped by coupon
   stratified: true
   scoring: f1_macro
 
+# Features available from EPOCH 650 gate readings
+# UNAVAILABLE: signal_width_6db_us, snr_db, echo_count (require waveform)
+# INVALID: backwall_echo_db (angle-beam has no backwall)
 features:
-  - peak_amplitude_db
-  - time_of_flight_us
-  - signal_width_6db_us
-  - snr_db
-  - backwall_echo_db
-  - echo_count
+  - located              # 1 if Gate1 SoundPath present, else 0
+  - amplitude_pct        # Gate1 Current Amplitude (% FSH, not dB)
+  - soundpath_mm         # Gate1 SoundPath
+  - depth_mm             # Gate1 Depth to Reflector
+  - surface_distance_mm  # Gate1 Surface Distance (from beam index point)
+  - saturated            # 1 if amplitude >= 100%, else 0
+  - dist_from_root_mm    # abs(soundpath - 20.0) when located; root-band ambiguity
 
-classes:
-  - porosity
-  - lack_of_fusion
-  - crack
-  - no_defect
+# Focal elements for the 4-class experimental frame (C removed)
+focal_elements:
+  - "{P}"      # Porosity
+  - "{L}"      # Lack of fusion
+  - "{N,U}"    # No defect / geometric non-conformance (UT cannot distinguish)

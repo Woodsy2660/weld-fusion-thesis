@@ -454,12 +454,21 @@ def extract_single_profile(
     bead = profile[row_bead_right:row_bead_left]  # Slice from smaller to larger row
     valid_bead = ~np.isnan(bead)
 
-    # Reinforcement: max height above datum (remember: smaller depth = higher surface)
+    # Reinforcement: signed height relative to datum
     # Height above datum = datum - depth (positive if surface is closer to camera)
+    # Positive = proud/excess weld metal (502)
+    # Negative = concave/incompletely filled groove (511)
     if valid_bead.any():
         height_above_datum = datum_avg - bead
-        reinforcement = float(np.nanmax(height_above_datum))
-        reinforcement = max(0, reinforcement)
+        # Return the SIGNED extremum: max for proud, min for concave
+        # The governing value is whichever has larger |deviation|
+        max_height = float(np.nanmax(height_above_datum))
+        min_height = float(np.nanmin(height_above_datum))
+        # Report the extremum with larger absolute value (worst case)
+        if abs(max_height) >= abs(min_height):
+            reinforcement = max_height
+        else:
+            reinforcement = min_height
     else:
         reinforcement = float("nan")
 

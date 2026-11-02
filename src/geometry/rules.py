@@ -179,13 +179,24 @@ def load_config(config_path: Path = CONFIG_PATH) -> dict:
 
 
 def iso_limits(criteria: dict, t_mm: float, b_mm: float) -> dict:
-    """Level-B limits as min(coefficient form, cap), from configs/geometry.yaml."""
+    """Level-B limits as min(coefficient form, cap), from configs/geometry.yaml.
+
+    Reinforcement is two-sided:
+        h > 0: Excess weld metal (502) - limit = 1 + 0.1b, max 5mm
+        h < 0: Incompletely filled groove (511) - limit = 0.05t, max 0.5mm
+
+    The appropriate limit is selected by sign when computing exceedance.
+    """
     return {
         "undercut": min(criteria["undercut_coef_t"] * t_mm,
                         criteria["undercut_max_mm"]),
-        "reinforcement": min(criteria["reinforcement_base_mm"]
-                             + criteria["reinforcement_coef_b"] * b_mm,
-                             criteria["reinforcement_max_mm"]),
+        # Excess weld metal (502): h > 0
+        "reinforcement_excess": min(criteria["reinforcement_base_mm"]
+                                    + criteria["reinforcement_coef_b"] * b_mm,
+                                    criteria["reinforcement_max_mm"]),
+        # Incompletely filled groove (511): h < 0
+        "reinforcement_underfill": min(criteria.get("underfill_coef_t", 0.05) * t_mm,
+                                       criteria.get("underfill_max_mm", 0.5)),
         "misalignment": min(criteria["misalignment_coef_t"] * t_mm,
                             criteria["misalignment_max_mm"]),
     }
@@ -243,6 +254,22 @@ def build_cell_bpa(
     criteria = config["acceptance_criteria"]
     min_valid = config["profile_extraction"]["min_valid_fraction"]
 
+    # Determine per-measurand uncertainty from measured repeatability or budget
+    unc_cfg = config.get("uncertainty", {})
+    meas_rep = unc_cfg.get("measured_repeatability", {})
+    if meas_rep.get("use_for_bpa", False):
+        # Use measured repeatability per measurand (honest empirical values)
+        u_undercut = meas_rep.get("undercut_mm", uncertainty.u_total)
+        u_reinforcement = meas_rep.get("reinforcement_mm", uncertainty.u_total)
+        u_misalignment = meas_rep.get("misalignment_mm", uncertainty.u_total)
+        u_reported = u_misalignment  # Report the governing measurand's u
+    else:
+        # Use four-term budget (legacy, unsourced)
+        u_undercut = uncertainty.u_total
+        u_reinforcement = uncertainty.u_total
+        u_misalignment = uncertainty.u_total
+        u_reported = uncertainty.u_total
+
     # Check for sufficient data
     valid_measurements = [m for m in measurements if m.valid_fraction >= min_valid]
     if not valid_measurements:
@@ -256,22 +283,56 @@ def build_cell_bpa(
             governing_face="",
             governing_toe="",
             exceedance_prob=float("nan"),
-            u_total_mm=uncertainty.u_total,
+            u_total_mm=u_reported,
         )
 
     # Governing value per measurand: worst case across faces and toes.
     governing = max(valid_measurements, key=lambda m: m.undercut_mm)
     width = max(m.bead_width_mm for m in valid_measurements)
     limits = iso_limits(criteria, criteria["plate_thickness_mm"], width)
+
+    # Get signed reinforcement (min for most negative, max for most positive)
+    all_reinf = [m.reinforcement_mm for m in valid_measurements]
+    max_reinf = max(all_reinf)  # Most positive (excess weld metal 502)
+    min_reinf = min(all_reinf)  # Most negative (underfill 511)
+
+    # Select limit and value based on sign (worst case)
+    # For h > 0: excess weld metal exceeds limit if h > limit_excess
+    # For h < 0: underfill exceeds limit if |h| > limit_underfill
+    p_excess = exceedance_probability(max_reinf, limits["reinforcement_excess"],
+                                      u_reinforcement) if max_reinf > 0 else 0.0
+    p_underfill = exceedance_probability(abs(min_reinf), limits["reinforcement_underfill"],
+                                         u_reinforcement) if min_reinf < 0 else 0.0
+
     worst = {
         "undercut": governing.undercut_mm,
-        "reinforcement": max(m.reinforcement_mm for m in valid_measurements),
+        "reinforcement_502": max_reinf if max_reinf > 0 else 0.0,
+        "reinforcement_511": abs(min_reinf) if min_reinf < 0 else 0.0,
         "misalignment": max(m.misalignment_mm for m in valid_measurements),
     }
-    by = {k: exceedance_probability(worst[k], limits[k], uncertainty.u_total)
-          for k in limits}
-    gov_k = max(by, key=by.get)
-    p_exceed = by[gov_k]
+
+    # Per-measurand exceedance probabilities
+    # NOTE: Undercut is EXCLUDED from the U disjunction (measured repeatability
+    # 0.586 mm exceeds 0.5 mm Level B limit; S/U ratio 0.85:1 is unsupportable).
+    # It is still recorded for completeness but does not contribute to m({U}).
+    by_all = {
+        "undercut": exceedance_probability(worst["undercut"], limits["undercut"],
+                                           u_undercut),
+        "reinforcement_502": p_excess,
+        "reinforcement_511": p_underfill,
+        "misalignment": exceedance_probability(worst["misalignment"], limits["misalignment"],
+                                               u_misalignment),
+    }
+
+    # Only these measurands contribute to the BPA (undercut excluded)
+    by_active = {
+        "reinforcement_502": by_all["reinforcement_502"],
+        "reinforcement_511": by_all["reinforcement_511"],
+        "misalignment": by_all["misalignment"],
+    }
+
+    gov_k = max(by_active, key=by_active.get)
+    p_exceed = by_active[gov_k]
 
     # Build BPA: m({U}) = max_k P_k, m(G2) = 1 - m({U}).
     # No ignorance floor here — that comes from Shafer discounting downstream.
@@ -284,8 +345,8 @@ def build_cell_bpa(
         governing_face=governing.face,
         governing_toe=governing.toe,
         exceedance_prob=p_exceed,
-        u_total_mm=uncertainty.u_total,
-        exceedance_by_measurand=by,
+        u_total_mm=u_reported,
+        exceedance_by_measurand=by_all,
         limits_mm=limits,
         governing_measurand=gov_k,
     )
@@ -361,7 +422,8 @@ def assess_validation_outputs(
     max_width = max((m.bead_width_mm for m in measurements), default=16.0)
 
     limits = iso_limits(criteria, t, max_width)
-    reinf_limit = limits["reinforcement"]
+    # Reinforcement limit depends on sign: use excess limit for positive
+    reinf_limit = limits["reinforcement_excess"]
     misal_limit = limits["misalignment"]
 
     return ValidationOutput(

@@ -25,7 +25,24 @@
       "Bash(python:*)",
       "Bash(sudo apt install:*)",
       "Bash(done)",
-      "Bash(du -sh:*)"
+      "Bash(du -sh:*)",
+      "Bash(~/weldenv/bin/pip install:*)",
+      "Bash(source ~/weldenv/bin/activate)",
+      "Bash(head:*)",
+      "Bash(PYTHONPATH=/mnt/c/Users/bwood/OneDrive/Desktop/weld-fusion-thesis python3:*)",
+      "Bash(pip3 install:*)",
+      "Bash(for c in C01 C03 C05 C07 C13)",
+      "Bash(do)",
+      "Bash(while ps:*)",
+      "Bash(do sleep 5)",
+      "Bash(do sleep 10)",
+      "Bash(do sleep 30)",
+      "Bash(do sleep 60)",
+      "Bash(do sleep 120)",
+      "Bash(sort:*)",
+      "Bash(pip3 list:*)",
+      "Bash(git -C /mnt/c/Users/bwood/OneDrive/Desktop/weld-fusion-thesis status --short src/ scripts/)",
+      "Bash(/home/bwood/weldenv/bin/python:*)"
     ]
   }
 }

@@ -58,7 +58,9 @@ profile_extraction:
 
   # Smoothing kernel size (pixels) for profile noise reduction.
   # Applied along each transverse slice before feature extraction.
-  smoothing_kernel_px: 5
+  # Changed from 5 to 3 (2026-10-20): 5px attenuates a 1.5mm undercut by 20%,
+  # biasing toward false negatives. 3px balances attenuation vs noise.
+  smoothing_kernel_px: 3
 
   # Undercut datum definition: the reference surface from which undercut
   # depth is measured. ISO 5817 defines undercut as "a groove melted into
@@ -131,7 +133,7 @@ uncertainty:
   # resolved, because the undercut and reinforcement values are contaminated
   # by it. Misalignment is plate-only and unaffected.
   measured_repeatability:
-    use_for_bpa: false
+    use_for_bpa: true
     source: "results/geometry/_diagnostics/repeatability_C05_top_axisseeds.json"
     undercut_mm: 0.586
     reinforcement_mm: 0.493
@@ -154,10 +156,14 @@ acceptance_criteria:
   # Undercut (5011/5012): h <= 0.05 t, max 0.5 mm  -> 0.5 mm at t = 10
   undercut_coef_t: 0.05
   undercut_max_mm: 0.5
-  # Excess weld metal (502): h <= 1 mm + 0.1 b, max 5 mm
+  # Excess weld metal (502): h > 0, limit = 1 mm + 0.1 b, max 5 mm
   reinforcement_base_mm: 1.0
   reinforcement_coef_b: 0.1
   reinforcement_max_mm: 5.0
+  # Incompletely filled groove (511): h < 0, limit = 0.05 t, max 0.5 mm -> 0.5 mm at t = 10
+  # Signed reinforcement selects the applicable limit: h > 0 uses 502, h < 0 uses 511.
+  underfill_coef_t: 0.05
+  underfill_max_mm: 0.5
   # Linear misalignment (507), plates: h <= 0.1 t, max 3 mm -> 1.0 mm at t = 10
   misalignment_coef_t: 0.1
   misalignment_max_mm: 3.0

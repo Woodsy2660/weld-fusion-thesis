@@ -1,0 +1,81 @@
+# Dempster-Shafer frame with GEOMETRY V2: Asymmetry-based BPA construction.
+#
+# This is a WORKAROUND configuration that extends the geometry modality to
+# capture plate asymmetry signal, which discriminates LOF from other conditions.
+#
+# CHANGES FROM frame.yaml:
+#   - geometry_heads adds G3: ["L", "U"] for high asymmetry detection
+#   - Original G1 {U} and G2 {N,P,L} are preserved unchanged
+#
+# RATIONALE:
+#   The centerline depth feature has SNR=0.23 (noise overwhelms signal),
+#   justifying alpha_G=1.0 in the original frame. However, plate asymmetry
+#   shows SNR=1.75 with Cohen's d=1.22 for LOF detection.
+#
+#   Asymmetry cannot distinguish LOF from misalignment because both cause
+#   one-sided plate tilt. Therefore, high asymmetry maps to {L,U} -- the
+#   compound element that correctly represents this epistemic limitation.
+#
+# THESIS SECTION: See Chapter 5, Section 5.3 "Geometry Modality Workaround"
+
+# ---------------------------------------------------------------------------
+# Theta -- unchanged from experimental frame
+# ---------------------------------------------------------------------------
+classes:
+  N: "no defect / acceptable"
+  U: "geometric non-conformance to ISO 5817 - undercut (5011/5012), excess weld metal (502), incompletely filled groove (511), or linear misalignment (507) beyond Level B limits"
+  P: "porosity"
+  L: "lack of fusion"
+
+# ---------------------------------------------------------------------------
+# Vision focal elements -- unchanged
+# ---------------------------------------------------------------------------
+vision_heads:
+  V1: ["P"]
+  V3: ["N", "U"]
+  V4: ["N", "U", "L"]
+
+# ---------------------------------------------------------------------------
+# Geometry focal elements -- EXTENDED with G3 for asymmetry
+#
+# G1: {U}     Profile exceedance (reinforcement_502, reinforcement_511, misalignment)
+# G2: {N,P,L} Profile conforms -- no geometric non-conformance detected
+# G3: {L,U}   High plate asymmetry detected -- suggests LOF OR misalignment
+#
+# G3 is a COMPOUND element because:
+#   - LOF causes asymmetric heat input, tilting one plate side
+#   - Linear misalignment (U) also causes plate height difference
+#   - The depth sensor cannot distinguish between these causes
+#
+# BPA construction selects G1, G2, or G3 based on:
+#   1. If ISO 5817 exceedance P > threshold: m({U}) from G1
+#   2. Elif plate asymmetry > 3.5mm: m({L,U}) from G3
+#   3. Elif plate asymmetry > 2.0mm: partial m({L,U}) from G3
+#   4. Else: m({N,P,L}) from G2
+# ---------------------------------------------------------------------------
+geometry_heads:
+  G1: ["U"]
+  G2: ["N", "P", "L"]
+  G3: ["L", "U"]
+
+# ---------------------------------------------------------------------------
+# UT focal elements -- unchanged
+# ---------------------------------------------------------------------------
+ut_heads:
+  U1: ["P"]
+  U2: ["L"]
+  U4: ["N", "U"]
+
+# ---------------------------------------------------------------------------
+# Geometry V2 asymmetry thresholds (mm)
+# Derived from band analysis of 15 coupons:
+#   LOF mean asymmetry: 4.46mm (n=3)
+#   Non-LOF mean: 2.60mm (n=12)
+#   Cohen's d = 1.22 (large effect)
+# ---------------------------------------------------------------------------
+geometry_v2:
+  asymmetry_high_mm: 3.5    # High confidence LOF/misalignment
+  asymmetry_mod_mm: 2.0     # Moderate confidence
+  mass_high: 0.6            # m({L,U}) for high asymmetry
+  mass_mod: 0.3             # m({L,U}) for moderate asymmetry
+  uncertainty_floor: 0.1    # m(Theta) reserved for all BPAs
