@@ -1,0 +1,4 @@
+Measurand,Component,Predicted_mm,Measured_mm,Ratio,d_lim_over_u,Active
+Undercut,---,0.083,1.279,15.4,0.4,No
+Excess weld,---,0.083,0.883,10.6,2.8,No
+Misalignment,---,0.083,0.569,6.9,1.8,Yes
