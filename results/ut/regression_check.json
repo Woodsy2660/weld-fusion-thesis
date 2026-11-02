@@ -1,0 +1,40 @@
+{
+  "all_passed": true,
+  "results": {
+    "f1_macro": {
+      "expected": "0.82 \u00b1 0.05",
+      "actual": 0.8208187134502923,
+      "passed": true
+    },
+    "alpha": {
+      "expected": "0.24 \u00b1 0.05",
+      "actual": 0.24055830183192806,
+      "passed": true
+    },
+    "baseline_f1": {
+      "expected": "0.255 \u00b1 0.02",
+      "actual": 0.2551440329218107,
+      "passed": true
+    },
+    "n_samples": {
+      "expected": 150,
+      "actual": 150,
+      "passed": true
+    },
+    "n_classes": {
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    },
+    "bpa_validation": {
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    "ece": {
+      "expected": "< 0.15",
+      "actual": 0.10804785828401538,
+      "passed": true
+    }
+  }
+}
