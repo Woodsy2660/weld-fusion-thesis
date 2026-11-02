@@ -1,0 +1,8 @@
+{
+  "rho_ICC": 0.531,
+  "design_effect": 5.78,
+  "n_eff": 26.0,
+  "formula": "deff = 1 + (k-1)*rho, n_eff = n/deff",
+  "k_avg_cluster_size": 10,
+  "n_total": 150
+}

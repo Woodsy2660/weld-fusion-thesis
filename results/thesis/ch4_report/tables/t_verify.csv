@@ -1,0 +1,7 @@
+Modality,Check,Outcome
+Vision,Split leakage,Grouped by source image
+Vision,NN audit (ResNet-50),32.8\% below 0.05 threshold
+Vision,ECE calibration,0.397 $\to$ 0.082
+Geometry,Measured $u$ (mm),"mis=0.275, uc=0.586, rf=0.493"
+Geometry,$d_{{\mathrm{{lim}}}}/u$,"mis=3.64, uc=0.85 (inactive), rf=5.27"
+UT,Mapping correlation,"$r=0.97$, $n=15$, $p< 0.01$"

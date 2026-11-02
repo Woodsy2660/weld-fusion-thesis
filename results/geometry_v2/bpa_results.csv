@@ -1,0 +1,16 @@
+coupon,condition,true_class,asymmetry_mm,decision,m_U,m_NPL,m_LU,m_Theta,pred_lof_high,pred_lof_any,actual_lof
+C01,Porosity,P,4.62,asymmetry_high,0.0,0.0,0.6,0.4,True,True,False
+C02,Porosity,P,2.91,asymmetry_mod,0.0,0.0,0.3,0.7,False,True,False
+C03,Sound,N,1.78,conforming,0.0,0.9,0.0,0.1,False,False,False
+C04,Sound,N,0.74,conforming,0.0,0.9,0.0,0.1,False,False,False
+C05,Undercut,U,1.6,conforming,0.0,0.9,0.0,0.1,False,False,False
+C06,Undercut,U,1.41,conforming,0.0,0.9,0.0,0.1,False,False,False
+C07,LOF,L,5.31,asymmetry_high,0.0,0.0,0.6,0.4,True,True,True
+C08,LOF,L,4.36,asymmetry_high,0.0,0.0,0.6,0.4,True,True,True
+C09,Sound,N,4.65,asymmetry_high,0.0,0.0,0.6,0.4,True,True,False
+C10,Porosity,P,4.31,asymmetry_high,0.0,0.0,0.6,0.4,True,True,False
+C11,Sound,N,0.74,conforming,0.0,0.9,0.0,0.1,False,False,False
+C12,Undercut,U,0.62,conforming,0.0,0.9,0.0,0.1,False,False,False
+C13,Misaligned,N,4.41,asymmetry_high,0.0,0.0,0.6,0.4,True,True,False
+C14,LOF,L,3.72,asymmetry_high,0.0,0.0,0.6,0.4,True,True,True
+C15,Sound,N,3.35,asymmetry_mod,0.0,0.0,0.3,0.7,False,True,False

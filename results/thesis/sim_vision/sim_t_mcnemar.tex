@@ -1,0 +1,12 @@
+% Simulated: exploratory, not a declared comparison. Continuity-corrected McNemar test of U $\to$ V+U. b is correct only under V+U. c is correct only under U. The median row is the replicate whose V+U Dempster macro-F1 is closest to the median. The mean row evaluates the same statistic on the mean counts.
+\begin{tabular}{llrrrr}
+\toprule
+Version & Aggregate & $b$ & $c$ & $\chi^2$ & $p$ \\
+\midrule
+Measured & single & 0 & 0 & --- & --- \\
+Ideal (sim) & median replicate & 8 & 4 & 0.75 & 0.3865 \\
+Ideal (sim) & mean over replicates & 8.92 & 4.46 & 0.89 & 0.3442 \\
+Perfect (sim) & median replicate & 20 & 0 & 18.05 & $2.15\times 10^{-5}$ \\
+Perfect (sim) & mean over replicates & 20.00 & 0.00 & 18.05 & $2.15\times 10^{-5}$ \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,17 @@
+% Source: configs/geometry.yaml, results/geometry/_diagnostics/repeatability_*.json
+\begin{table}[htbp]
+\centering
+\caption{Predicted versus measured uncertainty.}
+\label{tab:uncertainty}
+\begin{tabular}{@{}llrrrl@{}}
+\toprule
+Measurand & Component & Predicted & Measured & Ratio & Status \\
+\midrule
+Geometry & u\_noise & 0.068 & --- & --- & --- \\
+         & u\_quant & 0.029 & --- & --- & --- \\
+         & u\_cal   & 0.030 & --- & --- & --- \\
+         & u\_align & 0.020 & --- & --- & Placeholder \\
+         & \textbf{Total} & \textbf{0.083} & \textbf{0.275} & 3.3 & Measured governs \\
+\bottomrule
+\end{tabular}
+\end{table}

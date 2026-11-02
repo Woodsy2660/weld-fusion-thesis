@@ -1,0 +1,85 @@
+{
+  "modality": "vision",
+  "partition": "coupon_kfold",
+  "n_folds": 4,
+  "n_samples": 150,
+  "n_classes": 3,
+  "classes": ["{P}", "{N,U}", "{N,U,L}"],
+  "class_counts": {
+    "{P}": 26,
+    "{N,U}": 43,
+    "{N,U,L}": 81
+  },
+  "metrics": {
+    "macro_f1_mean": 0.32421095140880174,
+    "macro_f1_std": 0.0300374006723657,
+    "per_fold_f1": [0.30526315789473685, 0.2901960784313726, 0.3321123321123321, 0.36927223719676544],
+    "accuracy_mean": 0.4229166666666667
+  },
+  "baselines": {
+    "trivial_f1": 0.2338,
+    "trivial_definition": "most_frequent",
+    "trivial_interpretation": "always predict majority class {N,U,L}",
+    "trivial_source": "scripts/finetune_coupon_kfold.py:291",
+    "trivial_computed": false,
+    "zeroshot_f1": 0.2934
+  },
+  "calibration": {
+    "ece_pre": 0.4223387968540192,
+    "ece_post": 0.13595029680869447,
+    "temperature": 9.999994023633219,
+    "method": "temperature_scaling",
+    "source": "calibration_results.json"
+  },
+  "alpha_derivation": {
+    "f1_macro": 0.32421095140880174,
+    "f1_trivial": 0.2338,
+    "skill": 0.11799915349621735,
+    "alpha": 0.8820008465037826,
+    "formula": "alpha = 1 - (F1_macro - F1_trivial) / (1 - F1_trivial)",
+    "interpretation": "88.2% mass assigned to Theta (ignorance)"
+  },
+  "confusion_matrices": {
+    "fold_1": [[0, 2, 8], [0, 3, 7], [1, 4, 15]],
+    "fold_2": [[0, 8, 2], [0, 8, 2], [6, 8, 6]],
+    "fold_3": [[1, 0, 2], [5, 4, 4], [4, 4, 6]],
+    "fold_4": [[3, 0, 0], [2, 0, 8], [6, 3, 18]]
+  },
+  "leakage_status": {
+    "public_corpus_old_split": {
+      "sequence_leakage_pct": 81.59,
+      "grouping": "source_frame",
+      "status": "CONFIRMED_LEAK"
+    },
+    "public_corpus_new_split": {
+      "sequence_leakage_pct": 0,
+      "grouping": "source_sequence",
+      "status": "FIXED"
+    },
+    "coupon_kfold": {
+      "sequence_leakage_pct": 0,
+      "grouping": "coupon_id",
+      "status": "N/A_INDEPENDENT_SPECIMENS"
+    }
+  },
+  "sensitivity": {
+    "trivial_values": [0.200, 0.2338, 0.257, 0.300],
+    "alpha_values": [0.845, 0.882, 0.910, 0.965],
+    "note": "±0.03 in F1_trivial produces roughly ±3-4pp in alpha"
+  },
+  "provenance": {
+    "kfold_results": "results/vision/coupon_eval/kfold_results.json",
+    "alpha_derivation": "results/vision/coupon_eval/alpha_derivation.json",
+    "calibration": "results/vision/coupon_eval/calibration_results.json",
+    "labels": "data/labels_v1_2026-10-17.csv",
+    "train_script": "scripts/finetune_coupon_kfold.py",
+    "reconciliation": "results/vision/coupon_eval/RECONCILIATION.md"
+  },
+  "audit_date": "2026-10-25",
+  "audit_passed": true,
+  "faults_found": [
+    "trivial_baseline hardcoded instead of computed",
+    "0.305 cited as mean in some contexts (is fold 1, not mean)",
+    "0.14 ECE cited in some contexts (rounded from 0.136)"
+  ]
+}

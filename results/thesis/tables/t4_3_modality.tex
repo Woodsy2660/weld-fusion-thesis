@@ -1,0 +1,15 @@
+% Source: results/vision/coupon_eval/calibration_v2.json, results/geometry/alpha_derivation.json, results/ut/metrics_ut.json
+\begin{table}[htbp]
+\centering
+\caption{Per-modality classification results.}
+\label{tab:modality}
+\begin{tabular}{@{}lllrrrl@{}}
+\toprule
+Modality & Estimator & F1 & Trivial & Coverage & ECE & $\alpha$ \\
+\midrule
+Vision & mean-of-folds & 0.324 $\pm$ 0.030 & 0.257 & 100\% & 0.082 & 0.909 \\
+Geometry & pooled & 0.204 & 0.426 & 26\% & --- & 1.000 \\
+Ultrasonic & mean-of-folds & 0.821 $\pm$ 0.036 & 0.255 & 100\% & 0.108 & 0.241 \\
+\bottomrule
+\end{tabular}
+\end{table}

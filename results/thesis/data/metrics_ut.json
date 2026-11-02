@@ -1,0 +1,54 @@
+{
+  "modality": "ultrasonic",
+  "model": "logistic_regression",
+  "n_samples": 150,
+  "n_features": 7,
+  "n_classes": 3,
+  "classes": [
+    "{L}",
+    "{N,U}",
+    "{P}"
+  ],
+  "focal_elements": [
+    "{L}",
+    "{N,U}",
+    "{P}",
+    "Theta"
+  ],
+  "cv_folds": 4,
+  "f1_macro": 0.8208187134502923,
+  "f1_macro_mean": 0.8197126757299136,
+  "f1_macro_std": 0.03593823465663279,
+  "accuracy": 0.8666666666666667,
+  "f1_per_class": {
+    "{L}": 0.8666666666666667,
+    "{N,U}": 0.9157894736842105,
+    "{P}": 0.68
+  },
+  "confusion_matrix": [
+    [
+      26,
+      4,
+      1
+    ],
+    [
+      0,
+      87,
+      6
+    ],
+    [
+      3,
+      6,
+      17
+    ]
+  ],
+  "baseline_most_frequent_f1": 0.2551440329218107,
+  "baseline_stratified_f1": 0.28241153955439674,
+  "ece": 0.10804785828401538,
+  "calibration_applied": false,
+  "calibration_method": "none",
+  "temperature": 1.0,
+  "alpha": 0.24055830183192806,
+  "skill": 0.7594416981680719,
+  "alpha_formula": "alpha = 1 - (F1_macro - F1_trivial) / (1 - F1_trivial)"
+}

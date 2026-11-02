@@ -1,0 +1,64 @@
+{
+  "mapping_check": {
+    "method": "Pearson correlation: observed indications vs expected defect cells per coupon",
+    "n_coupons": 12,
+    "r": 0.9792,
+    "p_value": 0.0,
+    "r_critical_0.05": 0.576,
+    "significant": true,
+    "note": "Replaces unscripted r=0.977 from methodology",
+    "per_coupon": {
+      "C01": {
+        "observed": 7,
+        "expected": 10
+      },
+      "C02": {
+        "observed": 9,
+        "expected": 10
+      },
+      "C04": {
+        "observed": 1,
+        "expected": 0
+      },
+      "C05": {
+        "observed": 1,
+        "expected": 0
+      },
+      "C07": {
+        "observed": 9,
+        "expected": 10
+      },
+      "C08": {
+        "observed": 8,
+        "expected": 10
+      },
+      "C10": {
+        "observed": 6,
+        "expected": 7
+      },
+      "C11": {
+        "observed": 1,
+        "expected": 0
+      },
+      "C12": {
+        "observed": 1,
+        "expected": 0
+      },
+      "C13": {
+        "observed": 4,
+        "expected": 4
+      },
+      "C14": {
+        "observed": 4,
+        "expected": 3
+      },
+      "C15": {
+        "observed": 2,
+        "expected": 3
+      }
+    }
+  },
+  "exports_checked": 1,
+  "exports_rejected": 0,
+  "max_depth_error_mm": "NOT AVAILABLE - instrument depth vs SA*cos(60) not stored"
+}

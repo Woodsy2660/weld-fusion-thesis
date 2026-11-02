@@ -1,0 +1,38 @@
+{
+  "per_fold_f1": {
+    "vision": [
+      0.30526315789473685,
+      0.2901960784313726,
+      0.3321123321123321,
+      0.36927223719676544
+    ],
+    "geometry": {
+      "1": 0.16666666666666669,
+      "2": 0.25,
+      "3": 0.2,
+      "4": 0.1818181818181818
+    },
+    "ut": "NOT AVAILABLE - stored as mean only"
+  },
+  "geometry_u_calls": {
+    "total": 39,
+    "by_measurand": {
+      "misalignment": 39
+    },
+    "by_true_label": {
+      "P": 8,
+      "N": 11,
+      "U": 10,
+      "L": 10
+    }
+  },
+  "vision_seed_spread": {
+    "v1_between_seed_std": 0.037604198434397,
+    "v2_between_seed_std": 0.03731506842762097,
+    "alpha_range": {
+      "min": 0.7029638993428695,
+      "median": 0.798230162759864,
+      "max": 0.8224061864962995
+    }
+  }
+}

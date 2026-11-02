@@ -1,0 +1,7 @@
+{
+  "pre_calibration_ece": 0.4223387968540192,
+  "post_calibration_ece": 0.13595029680869447,
+  "optimal_temperature": 9.999994023633219,
+  "mean_confidence": 0.7778807779153188,
+  "mean_accuracy": 0.4266666666666667
+}

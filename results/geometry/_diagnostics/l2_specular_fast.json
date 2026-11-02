@@ -1,0 +1,378 @@
+{
+  "test_a": {
+    "results": [
+      {
+        "capture": "C01_root_r0",
+        "bead_invalid": 0.32204122340425534,
+        "plate_invalid": 0.3959375,
+        "ratio": 0.8133637844464223
+      },
+      {
+        "capture": "C01_top_r0",
+        "bead_invalid": 0.27764295212765955,
+        "plate_invalid": 0.37240625,
+        "ratio": 0.745537842417144
+      },
+      {
+        "capture": "C02_root_r0",
+        "bead_invalid": 0.3821974734042553,
+        "plate_invalid": 0.3306015625,
+        "ratio": 1.1560667484874798
+      },
+      {
+        "capture": "C02_top_r0",
+        "bead_invalid": 0.32180851063829785,
+        "plate_invalid": 0.3329810049019608,
+        "ratio": 0.966447052236651
+      },
+      {
+        "capture": "C03_root_r0",
+        "bead_invalid": 0.32283909574468084,
+        "plate_invalid": 0.3847578125,
+        "ratio": 0.8390709304822259
+      },
+      {
+        "capture": "C03_top_r0",
+        "bead_invalid": 0.36751994680851063,
+        "plate_invalid": 0.419891237745098,
+        "ratio": 0.8752741514258979
+      },
+      {
+        "capture": "C04_root_r0",
+        "bead_invalid": 0.36058843085106385,
+        "plate_invalid": 0.4614200367647059,
+        "ratio": 0.7814754499595786
+      },
+      {
+        "capture": "C04_top_r0",
+        "bead_invalid": 0.38430851063829785,
+        "plate_invalid": 0.44155943627450983,
+        "ratio": 0.8703437840231771
+      },
+      {
+        "capture": "C05_root_r0",
+        "bead_invalid": 0.31868351063829786,
+        "plate_invalid": 0.3647265625,
+        "ratio": 0.8737600805762477
+      },
+      {
+        "capture": "C05_top_r0",
+        "bead_invalid": 0.2733377659574468,
+        "plate_invalid": 0.377328125,
+        "ratio": 0.7244033716210441
+      },
+      {
+        "capture": "C06_root_r0",
+        "bead_invalid": 0.28585438829787235,
+        "plate_invalid": 0.3846660539215686,
+        "ratio": 0.7431235103375058
+      },
+      {
+        "capture": "C06_top_r0",
+        "bead_invalid": 0.3041057180851064,
+        "plate_invalid": 0.38550091911764706,
+        "ratio": 0.7888586070849276
+      },
+      {
+        "capture": "C07_root_r0",
+        "bead_invalid": 0.30819481382978725,
+        "plate_invalid": 0.4013828125,
+        "ratio": 0.7678326132357429
+      },
+      {
+        "capture": "C07_top_r0",
+        "bead_invalid": 0.3785405585106383,
+        "plate_invalid": 0.40157015931372547,
+        "ratio": 0.9426511152062587
+      },
+      {
+        "capture": "C08_root_r0",
+        "bead_invalid": 0.2895279255319149,
+        "plate_invalid": 0.370546875,
+        "ratio": 0.7813530353802469
+      },
+      {
+        "capture": "C08_top_r0",
+        "bead_invalid": 0.3592087765957447,
+        "plate_invalid": 0.4127297794117647,
+        "ratio": 0.8703243490394615
+      },
+      {
+        "capture": "C09_root_r0",
+        "bead_invalid": 0.31560837765957445,
+        "plate_invalid": 0.337671875,
+        "ratio": 0.9346599495725678
+      },
+      {
+        "capture": "C09_top_r0",
+        "bead_invalid": 0.3148936170212766,
+        "plate_invalid": 0.33135723039215687,
+        "ratio": 0.9503146095487466
+      },
+      {
+        "capture": "C10_root_r0",
+        "bead_invalid": 0.3419714095744681,
+        "plate_invalid": 0.3682421875,
+        "ratio": 0.928658967339173
+      },
+      {
+        "capture": "C10_top_r0",
+        "bead_invalid": 0.2766954787234043,
+        "plate_invalid": 0.4382421875,
+        "ratio": 0.6313757246919645
+      },
+      {
+        "capture": "C11_root_r0",
+        "bead_invalid": 0.35287566489361705,
+        "plate_invalid": 0.48182444852941175,
+        "ratio": 0.7323739299046313
+      },
+      {
+        "capture": "C11_top_r0",
+        "bead_invalid": 0.363297193877551,
+        "plate_invalid": 0.45286458333333335,
+        "ratio": 0.8022203706094283
+      },
+      {
+        "capture": "C12_root_r0",
+        "bead_invalid": 0.2825132978723404,
+        "plate_invalid": 0.3705422794117647,
+        "ratio": 0.762432018070461
+      },
+      {
+        "capture": "C12_top_r0",
+        "bead_invalid": 0.32691156914893615,
+        "plate_invalid": 0.3807291666666667,
+        "ratio": 0.8586459818959745
+      },
+      {
+        "capture": "C13_root_r0",
+        "bead_invalid": 0.31968085106382976,
+        "plate_invalid": 0.435265625,
+        "ratio": 0.7344500293673082
+      },
+      {
+        "capture": "C13_top_r0",
+        "bead_invalid": 0.3124002659574468,
+        "plate_invalid": 0.42433363970588234,
+        "ratio": 0.7362137637119232
+      },
+      {
+        "capture": "C14_root_r0",
+        "bead_invalid": 0.2719913563829787,
+        "plate_invalid": 0.38690625,
+        "ratio": 0.7029903403808512
+      },
+      {
+        "capture": "C14_top_r0",
+        "bead_invalid": 0.27652925531914896,
+        "plate_invalid": 0.3783203125,
+        "ratio": 0.730939487472402
+      },
+      {
+        "capture": "C15_root_r0",
+        "bead_invalid": 0.30241023936170214,
+        "plate_invalid": 0.32740625,
+        "ratio": 0.9236544487519774
+      },
+      {
+        "capture": "C15_top_r0",
+        "bead_invalid": 0.2975232712765957,
+        "plate_invalid": 0.3816482843137255,
+        "ratio": 0.7795745022451701
+      }
+    ],
+    "conclusion": "Invalid rates comparable \u2192 specular dropout NOT dominant"
+  },
+  "test_b": {
+    "results": [
+      {
+        "capture": "C01_root_r0",
+        "signed_reinf_mm": -0.399993896484375,
+        "bead_median_mm": 326.3999938964844,
+        "plate_median_mm": 326.0
+      },
+      {
+        "capture": "C01_top_r0",
+        "signed_reinf_mm": 0.5,
+        "bead_median_mm": 325.6000061035156,
+        "plate_median_mm": 326.1000061035156
+      },
+      {
+        "capture": "C02_root_r0",
+        "signed_reinf_mm": -1.0,
+        "bead_median_mm": 326.8999938964844,
+        "plate_median_mm": 325.8999938964844
+      },
+      {
+        "capture": "C02_top_r0",
+        "signed_reinf_mm": 0.20001220703125,
+        "bead_median_mm": 323.6999816894531,
+        "plate_median_mm": 323.8999938964844
+      },
+      {
+        "capture": "C03_root_r0",
+        "signed_reinf_mm": 0.100006103515625,
+        "bead_median_mm": 326.79998779296875,
+        "plate_median_mm": 326.8999938964844
+      },
+      {
+        "capture": "C03_top_r0",
+        "signed_reinf_mm": 0.29998779296875,
+        "bead_median_mm": 325.1000061035156,
+        "plate_median_mm": 325.3999938964844
+      },
+      {
+        "capture": "C04_root_r0",
+        "signed_reinf_mm": 2.20001220703125,
+        "bead_median_mm": 325.3999938964844,
+        "plate_median_mm": 327.6000061035156
+      },
+      {
+        "capture": "C04_top_r0",
+        "signed_reinf_mm": 2.29998779296875,
+        "bead_median_mm": 323.3999938964844,
+        "plate_median_mm": 325.6999816894531
+      },
+      {
+        "capture": "C05_root_r0",
+        "signed_reinf_mm": -0.5,
+        "bead_median_mm": 327.3999938964844,
+        "plate_median_mm": 326.8999938964844
+      },
+      {
+        "capture": "C05_top_r0",
+        "signed_reinf_mm": 0.79998779296875,
+        "bead_median_mm": 325.3999938964844,
+        "plate_median_mm": 326.1999816894531
+      },
+      {
+        "capture": "C06_root_r0",
+        "signed_reinf_mm": 0.600006103515625,
+        "bead_median_mm": 324.79998779296875,
+        "plate_median_mm": 325.3999938964844
+      },
+      {
+        "capture": "C06_top_r0",
+        "signed_reinf_mm": 0.800018310546875,
+        "bead_median_mm": 324.79998779296875,
+        "plate_median_mm": 325.6000061035156
+      },
+      {
+        "capture": "C07_root_r0",
+        "signed_reinf_mm": 0.399993896484375,
+        "bead_median_mm": 327.0,
+        "plate_median_mm": 327.3999938964844
+      },
+      {
+        "capture": "C07_top_r0",
+        "signed_reinf_mm": 0.0999755859375,
+        "bead_median_mm": 327.0,
+        "plate_median_mm": 327.0999755859375
+      },
+      {
+        "capture": "C08_root_r0",
+        "signed_reinf_mm": 0.500030517578125,
+        "bead_median_mm": 326.1999816894531,
+        "plate_median_mm": 326.70001220703125
+      },
+      {
+        "capture": "C08_top_r0",
+        "signed_reinf_mm": 0.899993896484375,
+        "bead_median_mm": 325.8999938964844,
+        "plate_median_mm": 326.79998779296875
+      },
+      {
+        "capture": "C09_root_r0",
+        "signed_reinf_mm": 0.0,
+        "bead_median_mm": 326.5,
+        "plate_median_mm": 326.5
+      },
+      {
+        "capture": "C09_top_r0",
+        "signed_reinf_mm": 0.20001220703125,
+        "bead_median_mm": 325.1999816894531,
+        "plate_median_mm": 325.3999938964844
+      },
+      {
+        "capture": "C10_root_r0",
+        "signed_reinf_mm": -0.5999755859375,
+        "bead_median_mm": 327.29998779296875,
+        "plate_median_mm": 326.70001220703125
+      },
+      {
+        "capture": "C10_top_r0",
+        "signed_reinf_mm": 1.800018310546875,
+        "bead_median_mm": 325.4999694824219,
+        "plate_median_mm": 327.29998779296875
+      },
+      {
+        "capture": "C11_root_r0",
+        "signed_reinf_mm": 2.5,
+        "bead_median_mm": 323.6999816894531,
+        "plate_median_mm": 326.1999816894531
+      },
+      {
+        "capture": "C11_top_r0",
+        "signed_reinf_mm": 0.4000244140625,
+        "bead_median_mm": 321.79998779296875,
+        "plate_median_mm": 322.20001220703125
+      },
+      {
+        "capture": "C12_root_r0",
+        "signed_reinf_mm": 0.0,
+        "bead_median_mm": 325.0,
+        "plate_median_mm": 325.0
+      },
+      {
+        "capture": "C12_top_r0",
+        "signed_reinf_mm": -0.4000244140625,
+        "bead_median_mm": 324.79998779296875,
+        "plate_median_mm": 324.39996337890625
+      },
+      {
+        "capture": "C13_root_r0",
+        "signed_reinf_mm": 0.29998779296875,
+        "bead_median_mm": 326.1000061035156,
+        "plate_median_mm": 326.3999938964844
+      },
+      {
+        "capture": "C13_top_r0",
+        "signed_reinf_mm": 0.5999755859375,
+        "bead_median_mm": 324.8999938964844,
+        "plate_median_mm": 325.4999694824219
+      },
+      {
+        "capture": "C14_root_r0",
+        "signed_reinf_mm": 0.20001220703125,
+        "bead_median_mm": 325.6999816894531,
+        "plate_median_mm": 325.8999938964844
+      },
+      {
+        "capture": "C14_top_r0",
+        "signed_reinf_mm": 0.399993896484375,
+        "bead_median_mm": 325.3999938964844,
+        "plate_median_mm": 325.79998779296875
+      },
+      {
+        "capture": "C15_root_r0",
+        "signed_reinf_mm": -0.20001220703125,
+        "bead_median_mm": 326.0,
+        "plate_median_mm": 325.79998779296875
+      },
+      {
+        "capture": "C15_top_r0",
+        "signed_reinf_mm": 1.100006103515625,
+        "bead_median_mm": 322.5999755859375,
+        "plate_median_mm": 323.6999816894531
+      }
+    ],
+    "conclusion": "22 proud captures exist. If visually convex, sensor is correct."
+  },
+  "test_c": {
+    "r": 0.21700030406663162,
+    "p": 0.2493845041176913,
+    "n": 30,
+    "conclusion": "Weak/no correlation \u2192 dips are likely real under-fill"
+  }
+}

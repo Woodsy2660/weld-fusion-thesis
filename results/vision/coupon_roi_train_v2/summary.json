@@ -1,0 +1,41 @@
+{
+  "version": "v2_enhanced_augmentation",
+  "n_folds": 4,
+  "n_samples": 150,
+  "class_distribution": {
+    "{P}": 26,
+    "{N,U,L}": 81,
+    "{N,U}": 43
+  },
+  "enhancements": [
+    "MixUp (alpha=0.4)",
+    "RandAugment/AutoAugment",
+    "Label smoothing (0.1)",
+    "Dropout (0.3)",
+    "AdamW with weight decay (0.01)",
+    "Early stopping (patience=15)"
+  ],
+  "metrics": {
+    "macro_f1_mean": 0.45682834609933726,
+    "macro_f1_std": 0.12214007009931177,
+    "macro_f1_per_fold": [
+      0.44290123456790126,
+      0.6553376906318084,
+      0.40350877192982454,
+      0.32556568726781493
+    ],
+    "accuracy_mean": 0.58125
+  },
+  "alpha_derivation": {
+    "f1_macro": 0.45682834609933726,
+    "f1_trivial": 0.3333333333333333,
+    "skill": 0.12349501276600394,
+    "alpha": 0.8147574808509941,
+    "evidence_retained": 0.1852425191490059
+  },
+  "comparison": {
+    "v1_alpha": 0.85,
+    "v2_alpha": 0.8147574808509941,
+    "improvement": 0.03524251914900589
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "n_decided": 39,
+  "f1_pooled": 0.2040816326530612,
+  "trivial_baseline": 0.4265,
+  "alpha_G": 1.0,
+  "clamped": true,
+  "per_fold_f1": {
+    "1": 0.16666666666666669,
+    "2": 0.25,
+    "3": 0.2,
+    "4": 0.1818181818181818
+  },
+  "estimator": "pooled",
+  "note": "Geometry predicts all {U} due to misalignment exceedance; F1 < trivial, alpha clamped to 1.0"
+}

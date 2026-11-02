@@ -1,0 +1,13 @@
+% Simulated: per-outcome precision, recall, F1 and support for vision. Ideal is simulated at q = 0.7, s = 0.6.
+\begin{tabular}{llcccc}
+\toprule
+Version & Outcome & Precision & Recall & $F_1$ & Support \\
+\midrule
+Measured & $\{P\}$ & 0.143 & 0.154 & 0.148 & 26 \\
+Measured & $\{N,U\}$ & 0.341 & 0.349 & 0.345 & 43 \\
+Measured & $\{N,U,L\}$ & 0.577 & 0.556 & 0.566 & 81 \\
+Ideal (sim) & $\{P\}$ & $0.593 \pm 0.082$ & $0.729 \pm 0.114$ & $0.649 \pm 0.079$ & $16.0 \pm 0.0$ \\
+Ideal (sim) & $\{N,U\}$ & $0.809 \pm 0.047$ & $0.787 \pm 0.043$ & $0.797 \pm 0.037$ & $43.0 \pm 0.0$ \\
+Ideal (sim) & $\{N,U,L\}$ & $0.895 \pm 0.027$ & $0.867 \pm 0.028$ & $0.881 \pm 0.022$ & $91.0 \pm 0.0$ \\
+\bottomrule
+\end{tabular}

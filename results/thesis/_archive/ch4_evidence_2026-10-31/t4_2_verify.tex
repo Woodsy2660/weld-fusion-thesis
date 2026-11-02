@@ -1,0 +1,16 @@
+\begin{tabular}{lll}
+\toprule
+Modality & Check & Outcome \\
+\midrule
+Vision & Split leakage (shared source images) & See diagnostics \\
+Vision & LOSO fold F1 range & 0.211--0.610 \\
+Vision & NN cosine < 0.05 (public corpus) & 32.8\% overall, 29.4\% defects only (ResNet50) \\
+Vision & ECE before → after (T fitted) & 0.397 → 0.082, T=100.0 (AT BOUND) \\
+Geometry & Measured u vs predicted u_c & mis=0.275, uc=0.586, rf=0.493 mm vs u_c=0.049 mm \\
+Geometry & Active measurands (d_lim/u > 1) & Misalignment (3.6:1), Undercut (0.85:1 - invalid, L2) \\
+Geometry & Plausibility check 0--2 mm & NOT IMPLEMENTED \\
+Ultrasonic & Exports matching settings & N/A \\
+Ultrasonic & Max |depth - SA·cos60°| & NOT AVAILABLE (depth check not stored) \\
+Ultrasonic & Mapping check (amplitude vs P/L) & r = 0.732, mean 54\% (P/L) vs 10.5\% (N/U) \\
+\bottomrule
+\end{tabular}

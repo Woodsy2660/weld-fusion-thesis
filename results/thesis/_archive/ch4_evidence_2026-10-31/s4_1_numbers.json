@@ -1,0 +1,209 @@
+{
+  "source_files": {
+    "labels_v2": "data/labels_v2_2026-10-26.csv",
+    "geometry_summary": "results/geometry/summary.csv",
+    "ut_features": "results/ut/features.csv",
+    "vision_manifest": "data/processed/coupon_cell_patches/manifest.csv"
+  },
+  "label_distribution_v2": {
+    "N": 63,
+    "U": 30,
+    "P": 26,
+    "L": 31,
+    "total": 150
+  },
+  "geometry_coverage": {
+    "total_measured": 39,
+    "total_vacuous": 111,
+    "per_fold": {
+      "fold_1": 10,
+      "fold_2": 12,
+      "fold_3": 8,
+      "fold_4": 9
+    }
+  },
+  "geometry_by_cell_index": {
+    "fractions": {
+      "index_0": {
+        "measured": 0,
+        "total": 15,
+        "fraction": 0.0
+      },
+      "index_1": {
+        "measured": 6,
+        "total": 15,
+        "fraction": 0.4
+      },
+      "index_2": {
+        "measured": 12,
+        "total": 15,
+        "fraction": 0.8
+      },
+      "index_3": {
+        "measured": 10,
+        "total": 15,
+        "fraction": 0.6667
+      },
+      "index_4": {
+        "measured": 6,
+        "total": 15,
+        "fraction": 0.4
+      },
+      "index_5": {
+        "measured": 3,
+        "total": 15,
+        "fraction": 0.2
+      },
+      "index_6": {
+        "measured": 2,
+        "total": 15,
+        "fraction": 0.1333
+      },
+      "index_7": {
+        "measured": 0,
+        "total": 15,
+        "fraction": 0.0
+      },
+      "index_8": {
+        "measured": 0,
+        "total": 15,
+        "fraction": 0.0
+      },
+      "index_9": {
+        "measured": 0,
+        "total": 15,
+        "fraction": 0.0
+      }
+    },
+    "coupons_with_zero_measured": [
+      "C04",
+      "C13"
+    ]
+  },
+  "geometry_by_label": {
+    "counts": {
+      "N": {
+        "measured": 11,
+        "vacuous": 52
+      },
+      "U": {
+        "measured": 10,
+        "vacuous": 20
+      },
+      "P": {
+        "measured": 8,
+        "vacuous": 18
+      },
+      "L": {
+        "measured": 10,
+        "vacuous": 21
+      }
+    },
+    "percentages": {
+      "N": 17.5,
+      "U": 33.3,
+      "P": 30.8,
+      "L": 32.3
+    },
+    "chi_squared": {
+      "statistic": 4.165,
+      "df": 3,
+      "p_value": 0.2442,
+      "expected_counts": {
+        "N_measured": 16.38,
+        "N_vacuous": 46.62,
+        "U_measured": 7.8,
+        "U_vacuous": 22.2,
+        "P_measured": 6.76,
+        "P_vacuous": 19.24,
+        "L_measured": 8.06,
+        "L_vacuous": 22.94
+      },
+      "expected_below_5": "none"
+    }
+  },
+  "ut_data": {
+    "total_readings": 150,
+    "epoch_id_range": [
+      79,
+      229
+    ],
+    "cells_with_gated_indication": 53,
+    "saturated_count": 2,
+    "dropped_reading": {
+      "note": "ID 089 was an extra reading beyond cell 09 on WC-07",
+      "source": "src/ut/features.py:90-123"
+    }
+  },
+  "vision_data": {
+    "cells_with_patch": 150,
+    "cells_without_patch": "none"
+  },
+  "capture_metadata": {
+    "captures_per_coupon": "NOT AVAILABLE - capture metadata not stored in results",
+    "standoff_range": "NOT AVAILABLE - capture metadata not stored in results"
+  },
+  "f4_1_selected_cells": {
+    "selection_rule": "first geometry-measured cell in coupon then cell order",
+    "cells": {
+      "N": "C03-02",
+      "U": "C05-02",
+      "P": "C01-02",
+      "L": "C07-02"
+    },
+    "cell_details": {
+      "N": {
+        "cell_id": "C03-02",
+        "geometry": {
+          "exceedance_prob": 1.0,
+          "governing_measurand": "misalignment",
+          "is_vacuous": false
+        },
+        "ut": {
+          "amplitude_pct": 12.56,
+          "located": false,
+          "soundpath_mm": null
+        }
+      },
+      "U": {
+        "cell_id": "C05-02",
+        "geometry": {
+          "exceedance_prob": 1.0,
+          "governing_measurand": "misalignment",
+          "is_vacuous": false
+        },
+        "ut": {
+          "amplitude_pct": 4.79,
+          "located": false,
+          "soundpath_mm": null
+        }
+      },
+      "P": {
+        "cell_id": "C01-02",
+        "geometry": {
+          "exceedance_prob": 1.0,
+          "governing_measurand": "misalignment",
+          "is_vacuous": false
+        },
+        "ut": {
+          "amplitude_pct": 22.05,
+          "located": true,
+          "soundpath_mm": 11.68
+        }
+      },
+      "L": {
+        "cell_id": "C07-02",
+        "geometry": {
+          "exceedance_prob": 0.9986888749266744,
+          "governing_measurand": "misalignment",
+          "is_vacuous": false
+        },
+        "ut": {
+          "amplitude_pct": 81.9,
+          "located": true,
+          "soundpath_mm": 21.86
+        }
+      }
+    }
+  }
+}

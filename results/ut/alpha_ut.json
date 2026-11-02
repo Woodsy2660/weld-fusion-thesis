@@ -1,0 +1,15 @@
+{
+  "alpha": 0.24055830183192806,
+  "skill": 0.7594416981680719,
+  "f1_macro": 0.8208187134502923,
+  "f1_trivial": 0.2551440329218107,
+  "formula": "alpha = 1 - (F1_macro - F1_trivial) / (1 - F1_trivial)",
+  "focal_elements": [
+    "{L}",
+    "{N,U}",
+    "{P}",
+    "Theta"
+  ],
+  "n_samples": 150,
+  "validation_passed": true
+}

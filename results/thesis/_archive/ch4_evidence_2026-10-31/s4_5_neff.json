@@ -1,0 +1,12 @@
+{
+  "method": "One-way ANOVA on per-cell correctness for V+G+U",
+  "n_cells": 150,
+  "n_coupons": 15,
+  "cells_per_coupon": 10.0,
+  "icc_rho": 0.5307,
+  "design_effect": 5.78,
+  "design_effect_formula": "1 + (n_per_coupon - 1) * rho = 1 + 9 * rho",
+  "n_eff": 26.0,
+  "assumed_deff": 5.5,
+  "assumed_n_eff": 27
+}

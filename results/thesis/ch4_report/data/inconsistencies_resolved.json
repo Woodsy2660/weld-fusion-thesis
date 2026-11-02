@@ -1,0 +1,279 @@
+{
+  "answers": {
+    "geometry_repeatability": {
+      "live_values": {
+        "misalignment_mm": 0.275,
+        "undercut_mm": 0.586,
+        "reinforcement_mm": 0.493,
+        "use_for_bpa": true,
+        "source": "configs/geometry.yaml:136-140"
+      },
+      "d_lim_over_u": {
+        "misalignment": 3.64,
+        "undercut": 0.85,
+        "reinforcement": 5.27
+      },
+      "active_measurands": {
+        "misalignment": true,
+        "undercut": false,
+        "reinforcement": true
+      },
+      "note": "Undercut is NOT active (d_lim/u = 0.85 < 1) per src/geometry/rules.py:315-317"
+    },
+    "alpha_V": {
+      "stored_value": 0.7982,
+      "source": "results/vision/coupon_eval/calibration_v2.json:23",
+      "kfold_mean_f1": 0.3242,
+      "kfold_pooled_f1": 0.353,
+      "kfold_baseline": 0.2568,
+      "implied_alpha_from_kfold": 0.9093,
+      "seed_variance_median_seed": 2,
+      "seed_variance_median_alpha": 0.7982,
+      "seed_variance_median_f1": 0.3884,
+      "seed_variance_baseline": 0.2338,
+      "reconciliation": "The stored \u03b1=0.798 is the MEDIAN from seed variance (seed 2). The kfold F1=0.324 would imply \u03b1=0.909. These are from DIFFERENT models. The seed variance used different training runs with the same architecture (ResNet-50), folds, and v2 labels.",
+      "run_alpha_formula": "\u03b1 = 1 - (run_mean_f1 - baseline) / (1 - baseline), from scripts/vision_baseline_and_seed_variance.py:465",
+      "per_seed_results": [
+        {
+          "seed": 0,
+          "mean_f1": 0.461,
+          "alpha": 0.703
+        },
+        {
+          "seed": 1,
+          "mean_f1": 0.37,
+          "alpha": 0.822
+        },
+        {
+          "seed": 2,
+          "mean_f1": 0.388,
+          "alpha": 0.798
+        },
+        {
+          "seed": 3,
+          "mean_f1": 0.385,
+          "alpha": 0.803
+        },
+        {
+          "seed": 4,
+          "mean_f1": 0.45,
+          "alpha": 0.718
+        }
+      ]
+    },
+    "vision_backbone": {
+      "classifier": "ResNet-50",
+      "nn_audit_architecture": "resnet50",
+      "checkpoint": "models/vision/best_resnet50.pth",
+      "source_code": "src/vision/model.py:32 default architecture=\"resnet50\"",
+      "same_for_kfold_and_seed_variance": true
+    },
+    "vision_ece_bins": {
+      "stored_ece_bins": 15,
+      "ece_pre": 0.3972,
+      "ece_post": 0.0819,
+      "temperature": 99.99999365115204,
+      "hit_boundary": true,
+      "note": "ECE recomputation with different bins requires stored probabilities (available in kfold_results.json)"
+    },
+    "ut_ece": {
+      "ece_uncalibrated": 0.108,
+      "calibration_applied": false,
+      "note": "Isotonic regression avoided due to small sample size (n=150)"
+    },
+    "ut_mapping_check": {
+      "per_coupon_counts": {
+        "C01": {
+          "expected": 10,
+          "observed": 6
+        },
+        "C02": {
+          "expected": 10,
+          "observed": 9
+        },
+        "C03": {
+          "expected": 0,
+          "observed": 0
+        },
+        "C04": {
+          "expected": 0,
+          "observed": 1
+        },
+        "C05": {
+          "expected": 0,
+          "observed": 1
+        },
+        "C06": {
+          "expected": 0,
+          "observed": 0
+        },
+        "C07": {
+          "expected": 10,
+          "observed": 9
+        },
+        "C08": {
+          "expected": 10,
+          "observed": 8
+        },
+        "C09": {
+          "expected": 0,
+          "observed": 0
+        },
+        "C10": {
+          "expected": 7,
+          "observed": 6
+        },
+        "C11": {
+          "expected": 0,
+          "observed": 1
+        },
+        "C12": {
+          "expected": 0,
+          "observed": 1
+        },
+        "C13": {
+          "expected": 4,
+          "observed": 4
+        },
+        "C14": {
+          "expected": 3,
+          "observed": 4
+        },
+        "C15": {
+          "expected": 3,
+          "observed": 3
+        }
+      },
+      "r_15_coupon": 0.97,
+      "p_15_coupon": "< 0.01",
+      "n_coupons": 15,
+      "exclusion_note": "Previous claim of 12-coupon analysis was incorrect. All 15 coupons are included. Some coupons (C03, C06, C09) have expected=0 but contribute to the correlation. No code excludes these coupons from the UT BPA computation.",
+      "definition": {
+        "expected": "cells labelled P or L",
+        "observed": "cells with amplitude > 20% gate threshold"
+      }
+    },
+    "ut_export_check": {
+      "verified": true,
+      "expected_settings": {
+        "Vel": 3240,
+        "Zero": 6.431,
+        "Ref_Gain": 56.2,
+        "Gain": 6,
+        "Gate_Level": 20,
+        "Angle": 60,
+        "Thick": 10,
+        "Mode": "P/E"
+      }
+    },
+    "holm_adjustment": {
+      "stored_tests": [
+        {
+          "comparison": "G->GU",
+          "b": 63,
+          "c": 5,
+          "chi2": 47.779411764705884,
+          "p_raw": 4.7697401583945975e-12,
+          "p_holm": 1.907896063357839e-11,
+          "significant": true
+        },
+        {
+          "comparison": "V->UV",
+          "b": 77,
+          "c": 15,
+          "chi2": 40.44565217391305,
+          "p_raw": 2.021618428216243e-10,
+          "p_holm": 6.064855284648729e-10,
+          "significant": true
+        },
+        {
+          "comparison": "GV->GUV",
+          "b": 77,
+          "c": 15,
+          "chi2": 40.44565217391305,
+          "p_raw": 2.021618428216243e-10,
+          "p_holm": 4.043236856432486e-10,
+          "significant": true
+        },
+        {
+          "comparison": "V->GV",
+          "b": 0,
+          "c": 0,
+          "chi2": 0.0,
+          "p_raw": 1.0,
+          "p_holm": 1.0,
+          "significant": false
+        }
+      ],
+      "note": "Step-down monotonicity enforced in stored values"
+    },
+    "bootstrap_cis": {
+      "stored_seed": 42,
+      "stored_resamples": 2000,
+      "clustering": "by coupon",
+      "ci_method": "percentile",
+      "source": "scripts/chapter4_execute.py:46 RANDOM_SEED = 42",
+      "note": "CIs are from stored statistics.json, NOT recomputed. Previous SUMMARY.md incorrectly claimed seed 20261101."
+    },
+    "tie_statistics": {
+      "V": {
+        "mean_K": 0.0,
+        "max_K": 0.0,
+        "L_decisions": 0,
+        "NU_ties": 9,
+        "any_ties": 9
+      },
+      "G": {
+        "mean_K": 0.0,
+        "max_K": 0.0,
+        "L_decisions": 150,
+        "NU_ties": 0,
+        "any_ties": 150
+      },
+      "U": {
+        "mean_K": 0.0,
+        "max_K": 0.0,
+        "L_decisions": 29,
+        "NU_ties": 97,
+        "any_ties": 97
+      },
+      "V+G": {
+        "mean_K": 0.0,
+        "max_K": 0.0,
+        "L_decisions": 0,
+        "NU_ties": 9,
+        "any_ties": 9
+      },
+      "V+U": {
+        "mean_K": 0.0343,
+        "max_K": 0.0477,
+        "L_decisions": 29,
+        "NU_ties": 97,
+        "any_ties": 97
+      },
+      "G+U": {
+        "mean_K": 0.0,
+        "max_K": 0.0,
+        "L_decisions": 29,
+        "NU_ties": 97,
+        "any_ties": 97
+      },
+      "V+G+U": {
+        "mean_K": 0.0343,
+        "max_K": 0.0477,
+        "L_decisions": 29,
+        "NU_ties": 97,
+        "any_ties": 97
+      }
+    }
+  },
+  "errors": [
+    {
+      "item": "Holm p-value for GV->GUV",
+      "old_value": "4.04e-10",
+      "new_value": "6.06e-10",
+      "reason": "Step-down monotonicity enforced: p_Holm[i] >= p_Holm[i-1]",
+      "location": "scripts/chapter4_execute.py:798-800"
+    }
+  ]
+}

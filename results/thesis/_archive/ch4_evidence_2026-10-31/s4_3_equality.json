@@ -1,0 +1,22 @@
+{
+  "G_vs_vacuous": {
+    "note": "G alone produces m({U})=1 for measured cells, vacuous otherwise",
+    "cells_different": 39,
+    "decisions_identical": false
+  },
+  "VG_vs_V": {
+    "note": "V+G same as V because G outputs vacuous for unmeasured cells",
+    "cells_different": 39,
+    "decisions_identical": "See McNemar V->GV (b=0, c=0)"
+  },
+  "GU_vs_U": {
+    "note": "G+U differs from U for measured cells where G provides {U}",
+    "cells_different": 39,
+    "decisions_identical": "See McNemar G->GU"
+  },
+  "VGU_vs_VU": {
+    "note": "V+G+U vs V+U - G adds evidence for measured cells",
+    "cells_different": 39,
+    "decisions_identical": "See McNemar GV->GUV"
+  }
+}

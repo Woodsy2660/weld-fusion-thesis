@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "version": "canonical_v1",
+    "created": "2026-10-29",
+    "seeds_declared": [0, 1, 2, 3, 4],
+    "seeds_reported": [0, 1, 2, 3, 4],
+    "seeds_failed": [],
+    "configurations": ["V1", "V2"]
+  },
+
+  "baseline": {
+    "value": 0.2338,
+    "definition": "majority-class macro-F1 via sklearn.dummy.DummyClassifier(strategy='most_frequent')",
+    "label_convention": "Overfill→{N,U}, Misaligned→{N,U}, as per manifest.csv"
+  },
+
+  "distribution": {
+    "{P}": 26,
+    "{N,U}": 43,
+    "{N,U,L}": 81,
+    "total": 150
+  },
+
+  "macro_f1": {
+    "v1": {
+      "per_seed_means": [0.400, 0.489, 0.396, 0.384, 0.413],
+      "mean": 0.417,
+      "std": 0.038,
+      "matrix_5x4": [
+        [0.495, 0.372, 0.474, 0.259],
+        [0.712, 0.556, 0.508, 0.182],
+        [0.364, 0.593, 0.364, 0.263],
+        [0.304, 0.550, 0.396, 0.285],
+        [0.435, 0.429, 0.490, 0.300]
+      ]
+    },
+    "v2": {
+      "per_seed_means": [0.461, 0.370, 0.388, 0.385, 0.450],
+      "mean": 0.411,
+      "std": 0.037,
+      "matrix_5x4": [
+        [0.472, 0.678, 0.339, 0.357],
+        [0.426, 0.432, 0.265, 0.356],
+        [0.393, 0.610, 0.211, 0.339],
+        [0.218, 0.495, 0.467, 0.359],
+        [0.450, 0.638, 0.398, 0.315]
+      ]
+    }
+  },
+
+  "per_class_f1": {
+    "v2": {
+      "{P}": {
+        "mean": 0.147,
+        "std": 0.167,
+        "note": "Porosity detection highly variable; coupon-specific"
+      },
+      "{N,U}": {
+        "mean": 0.418,
+        "std": 0.189
+      },
+      "{N,U,L}": {
+        "mean": 0.594,
+        "std": 0.108
+      }
+    }
+  },
+
+  "alpha": {
+    "v1": {
+      "per_seed": [0.783, 0.666, 0.788, 0.804, 0.766],
+      "mean": 0.761,
+      "min": 0.666,
+      "max": 0.804
+    },
+    "v2": {
+      "per_seed": [0.703, 0.822, 0.798, 0.803, 0.718],
+      "mean": 0.769,
+      "min": 0.703,
+      "max": 0.822
+    }
+  },
+
+  "evidence_retained": {
+    "v1": {
+      "mean": 0.239,
+      "range": [0.196, 0.334]
+    },
+    "v2": {
+      "mean": 0.231,
+      "range": [0.178, 0.297]
+    }
+  },
+
+  "calibration": {
+    "note": "ECE computation not implemented in current pipeline",
+    "ece_pre_calibration": null,
+    "ece_post_calibration": null,
+    "temperature_per_seed": null,
+    "binning_scheme": "equal_width",
+    "n_bins": 10
+  },
+
+  "variance_analysis": {
+    "between_seed_std": {
+      "v1": 0.038,
+      "v2": 0.037
+    },
+    "between_fold_std_avg": {
+      "v1": 0.116,
+      "v2": 0.115
+    },
+    "v2_minus_v1_paired": {
+      "mean_difference": -0.006,
+      "std_difference": 0.062
+    },
+    "resolvable": false,
+    "resolvability_statement": "The V1-V2 difference (-0.006) is NOT resolvable against the between-seed variation (V1: 0.038, V2: 0.037). No configuration comparison is resolvable at this sample size."
+  },
+
+  "porosity_diagnosis": {
+    "finding": "Porosity detection failure is coupon-specific, not seed-dependent",
+    "fold_1_coupon": "C01",
+    "fold_1_mean_f1": 0.173,
+    "fold_2_coupon": "C02",
+    "fold_2_mean_f1": 0.487,
+    "support_both_folds": 10,
+    "persists_across_seeds": true,
+    "explanation": "C02 is consistently learnable while C01 is not, despite identical support. This indicates coupon-specific appearance not addressable by augmentation."
+  },
+
+  "alpha_sensitivity": {
+    "alpha_min": 0.703,
+    "alpha_median": 0.798,
+    "alpha_max": 0.822,
+    "fused_decisions_changed": "Not computed - fusion system not available in current context",
+    "note": "High alpha values (70-82% discounting) mean vision contributes 18-30% of evidence. Dominant modalities are geometry and ultrasonic."
+  },
+
+  "provenance": {
+    "training_script": "scripts/vision_baseline_and_seed_variance.py",
+    "results_file": "results/vision/seed_variance_results.json",
+    "manifest": "data/processed/coupon_cell_patches/manifest.csv",
+    "code_path": "REPO_ROOT/scripts/vision_baseline_and_seed_variance.py:task0_fix_baseline()"
+  }
+}

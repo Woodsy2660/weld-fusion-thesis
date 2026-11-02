@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-11-01T16:17:27.259566",
+  "script_seed": 20261101,
+  "stored_bootstrap_seed": 42,
+  "bootstrap_resamples": 2000,
+  "files": {
+    "inconsistencies_resolved.json": "Full answers to A-C",
+    "t_data.tex": "Per-fold data distribution",
+    "t_verify.tex": "Verification outcomes",
+    "t_modality.tex": "Per-modality performance",
+    "t_ablation.tex": "Ablation study results",
+    "t_recall.tex": "Per-class recall by condition",
+    "t_elements.tex": "Per-outcome metrics",
+    "t_mcnemar.tex": "McNemar test results",
+    "f_ut_readings.pdf": "UT readings (all 150)",
+    "f_ablation_f1.pdf": "Ablation F1 bar chart",
+    "f_confusion.pdf": "Confusion matrices (3 panels)",
+    "f_recall_heatmap.pdf": "Per-class recall heatmap",
+    "f_coupon_strip.pdf": "WC-14 four-row strip",
+    "f_geom_coverage.pdf": "Geometry coverage grid",
+    "geometry_diagnostics.json": "Geometry diagnostics G2-G6",
+    "geom_worked_example.md": "Hypothetical Dempster examples"
+  },
+  "source_hashes": {
+    "configs/geometry.yaml": "af9d8dd2035287263b09cf82a176716d1d5c78dd",
+    "results/vision/coupon_eval/calibration_v2.json": "aa2587e181a9e5cc199499597318b4a2c6598266",
+    "results/vision/seed_variance_results.json": "7c98624c6f6edb316dde664c0076197eb28d46b9",
+    "results/ut/metrics_cv.json": "68497a943a2765e9db5ad3b6a9bea5f745abdd05",
+    "results/fusion/statistics.json": "cdd8391a0844d9ef3af4da6c2922b4c9e75f6972",
+    "results/fusion/fusion_results.json": "8c9e803796858fd83a810f8a073a161b7fd19a00",
+    "data/labels_v2_2026-10-26.csv": "97ee4f67452d8d4d37ddd3cae6d73704df05dfa2",
+    "scripts/chapter4_execute.py": "8c0f258360db669231f9e3ca927a1b454a2282c2"
+  }
+}

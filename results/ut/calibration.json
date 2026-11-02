@@ -1,0 +1,15 @@
+{
+  "ece_before": 0.10804785828401538,
+  "ece_after": 0.10804785828401538,
+  "calibration_applied": false,
+  "temperature": 1.0,
+  "ece_threshold": 0.15,
+  "n_samples": 150,
+  "classes": [
+    "{L}",
+    "{N,U}",
+    "{P}"
+  ],
+  "method": "none",
+  "note": "Isotonic regression avoided due to small sample size (n=150)"
+}

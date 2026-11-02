@@ -1,0 +1,5 @@
+Comparison,b,c,chi2,p_raw,p_Holm,Significant
+G $\to$ G+U,63,5,47.78,4.77e-12,1.91e-11,Yes
+V $\to$ V+U,77,15,40.45,2.02e-10,6.06e-10,Yes
+V+G $\to$ V+G+U,77,15,40.45,2.02e-10,4.04e-10,Yes
+V $\to$ V+G,0,0,N/A,N/A,N/A,No

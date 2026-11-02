@@ -1,0 +1,76 @@
+{
+  "governing_measurand_counts": {
+    "misalignment": 39
+  },
+  "misalignment_stats_mm": {
+    "min": 0.7719500141784861,
+    "median": 3.750028216528178,
+    "mean": 4.136995534151052,
+    "p95": 7.842077425339567,
+    "max": 10.077132972495402
+  },
+  "per_coupon_worst_cell": {
+    "C01": {
+      "cell_id": "C01-03",
+      "misalignment_mm": 2.3155405127705877
+    },
+    "C02": {
+      "cell_id": "C02-04",
+      "misalignment_mm": 9.678461688246433
+    },
+    "C03": {
+      "cell_id": "C03-02",
+      "misalignment_mm": 4.750425378525037
+    },
+    "C05": {
+      "cell_id": "C05-02",
+      "misalignment_mm": 1.917618301298222
+    },
+    "C06": {
+      "cell_id": "C06-03",
+      "misalignment_mm": 7.638034729461023
+    },
+    "C07": {
+      "cell_id": "C07-03",
+      "misalignment_mm": 4.117905748827488
+    },
+    "C08": {
+      "cell_id": "C08-05",
+      "misalignment_mm": 4.251549837059721
+    },
+    "C09": {
+      "cell_id": "C09-03",
+      "misalignment_mm": 6.58317525068486
+    },
+    "C10": {
+      "cell_id": "C10-02",
+      "misalignment_mm": 5.71013284784325
+    },
+    "C11": {
+      "cell_id": "C11-01",
+      "misalignment_mm": 0.7719500141784861
+    },
+    "C12": {
+      "cell_id": "C12-03",
+      "misalignment_mm": 2.7493032046531303
+    },
+    "C14": {
+      "cell_id": "C14-05",
+      "misalignment_mm": 3.524436580542155
+    },
+    "C15": {
+      "cell_id": "C15-01",
+      "misalignment_mm": 10.077132972495402
+    }
+  },
+  "n_U_calls": 39,
+  "U_call_true_labels": {
+    "N": 11,
+    "U": 10,
+    "L": 10,
+    "P": 8
+  },
+  "per_fold_f1": "N/A (geometry is deterministic, no CV)",
+  "n_measured_cells": 39,
+  "n_vacuous_cells": 111
+}

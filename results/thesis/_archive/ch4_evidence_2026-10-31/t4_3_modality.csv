@@ -1,0 +1,4 @@
+Modality,F1_estimator,Cells,Macro_F1,Trivial,ECE,Alpha
+Vision,4-fold CV,150,0.324 ± 0.030,0.257,0.082,0.798
+Geometry,Pooled,39,N/A (exceedance-based),N/A,N/A,1.00
+Ultrasonic,4-fold CV,150,0.820 ± 0.036,0.255,NOT AVAILABLE,0.241

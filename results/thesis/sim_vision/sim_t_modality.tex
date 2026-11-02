@@ -1,0 +1,10 @@
+% Simulated: vision-module quality. Measured is the real sensor (macro-F1 is the mean and population SD over the four folds). Ideal (q = 0.7, s = 0.6) and Perfect (q = 1, s = 1) are simulated: each other entry is the mean and population SD over 50 replicates.
+\begin{tabular}{lcccccc}
+\toprule
+Vision & Macro-$F_1$ & Pooled $F_1$ & $\{P\}$ recall & $\{P\}$ precision & ECE & $\alpha_V$ \\
+\midrule
+Measured & $0.324 \pm 0.030$ & 0.353 & 0.154 & 0.143 & 0.082 & 0.909 \\
+Ideal (sim) & $0.754 \pm 0.044$ & $0.776 \pm 0.036$ & $0.729 \pm 0.114$ & $0.593 \pm 0.082$ & $0.082 \pm 0.021$ & $0.331 \pm 0.059$ \\
+Perfect (sim) & $1.000 \pm 0.000$ & $1.000 \pm 0.000$ & $1.000 \pm 0.000$ & $1.000 \pm 0.000$ & $0.020 \pm 0.000$ & $0.000 \pm 0.000$ \\
+\bottomrule
+\end{tabular}

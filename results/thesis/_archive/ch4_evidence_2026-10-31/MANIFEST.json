@@ -1,0 +1,112 @@
+{
+  "generated_at": "2026-10-31",
+  "scripts": [
+    "scripts/generate_chapter4_evidence.py",
+    "scripts/generate_chapter4_figures.py"
+  ],
+  "sources": {
+    "labels": "data/labels_v2_2026-10-26.csv",
+    "geometry": "results/geometry/summary.csv",
+    "ut_bpa": "results/ut/bpa_ut.csv",
+    "ut_metrics": "results/ut/metrics_cv.json",
+    "ut_alpha": "results/ut/alpha_ut.json",
+    "vision_cal": "results/vision/coupon_eval/calibration_v2.json",
+    "seed_variance": "results/vision/seed_variance_results.json",
+    "fusion_stats": "results/fusion/statistics.json",
+    "geometry_config": "configs/geometry.yaml"
+  },
+  "files": {
+    "t4_2_verify.tex": {
+      "description": "T4.2 Verification checks table",
+      "source": "computed from vision_cal, seed_variance, geometry_config"
+    },
+    "t4_2_verify.csv": {
+      "description": "T4.2 Verification checks CSV"
+    },
+    "t4_3_modality.tex": {
+      "description": "T4.3 Modality results table",
+      "source": "vision_cal, ut_metrics, ut_alpha, geometry summary"
+    },
+    "t4_3_modality.csv": {
+      "description": "T4.3 Modality results CSV"
+    },
+    "t4_3_per_element_f1.json": {
+      "description": "Per-element F1 by modality",
+      "source": "vision_cal, ut_metrics"
+    },
+    "s4_2_geometry.json": {
+      "description": "Geometry detailed statistics",
+      "source": "geometry/summary.csv, labels_v2"
+    },
+    "t4_4_ablation.tex": {
+      "description": "T4.4 Ablation table (Dempster + Murphy)",
+      "source": "fusion/statistics.json"
+    },
+    "t4_4_ablation.csv": {
+      "description": "T4.4 Ablation CSV"
+    },
+    "t4_5_mcnemar.tex": {
+      "description": "T4.5 McNemar test results",
+      "source": "fusion/statistics.json"
+    },
+    "t4_5_mcnemar.csv": {
+      "description": "T4.5 McNemar CSV"
+    },
+    "s4_3_equality.json": {
+      "description": "BPA equality test results",
+      "source": "inferred from fusion_stats"
+    },
+    "s4_4_neff.json": {
+      "description": "Effective sample size calculation",
+      "source": "fusion/statistics.json (ICC)"
+    },
+    "f4_2_coupon_strip.pdf": {
+      "description": "F4.2 Coupon strip (C14)",
+      "source": "labels_v2, geometry, ut_bpa"
+    },
+    "f4_2_coupon_strip.png": {
+      "description": "F4.2 Coupon strip PNG"
+    },
+    "f4_3_confusion.pdf": {
+      "description": "F4.3 Confusion matrices by modality",
+      "source": "vision_cal, ut_metrics, geometry"
+    },
+    "f4_3_confusion.png": {
+      "description": "F4.3 Confusion matrices PNG"
+    },
+    "f4_4_recall_heatmap.pdf": {
+      "description": "F4.4 Recall heatmap (placeholder)",
+      "source": "NOT AVAILABLE - requires per-cell predictions"
+    },
+    "f4_4_recall_heatmap.png": {
+      "description": "F4.4 Recall heatmap PNG (placeholder)"
+    },
+    "f4_5_ablation_f1.pdf": {
+      "description": "F4.5 Ablation F1 bar chart with CI",
+      "source": "fusion/statistics.json"
+    },
+    "f4_5_ablation_f1.png": {
+      "description": "F4.5 Ablation F1 PNG"
+    },
+    "SUMMARY.md": {
+      "description": "Summary document with all headline numbers"
+    }
+  },
+  "not_available": [
+    {"item": "UT depth vs SA*cos60 check", "reason": "Depth verification not stored"},
+    {"item": "Geometry plausibility check", "reason": "Not implemented in pipeline"}
+  ],
+  "gap_closures": {
+    "alpha_V_provenance": "Fusion used 0.798 from calibration_v2.json (matches t4_3_modality)",
+    "f4_4_recall": "Available from fusion_results.json (150 cells with decision/true_class)",
+    "nn_audit": "32.8% below 0.05 (public corpus, ResNet50); defects only: 29.4%",
+    "ut_mapping": "Pearson r = 0.732 (amplitude vs P/L), mean 54% (P/L) vs 10.5% (N/U)"
+  },
+  "contradictions": [
+    {
+      "expected": "alpha_V = 0.909",
+      "actual": "alpha_V = 0.798",
+      "status": "DIFFERS - corrected to median from seed variance study"
+    }
+  ]
+}

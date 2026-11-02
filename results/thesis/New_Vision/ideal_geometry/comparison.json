@@ -1,0 +1,80 @@
+{
+  "generated": "2026-11-02T10:59:35.077972",
+  "scenarios": {
+    "ideal": {
+      "description": "L2 resolved, 100% coverage, all measurands",
+      "coverage": 150,
+      "coverage_pct": 100.0,
+      "u_total_mm": 0.056,
+      "macro_f1": 1.0,
+      "precision_U": 1.0,
+      "recall_U": 1.0,
+      "alpha_G": 0,
+      "confusion_matrix": [
+        [
+          107,
+          0
+        ],
+        [
+          0,
+          43
+        ]
+      ]
+    },
+    "actual": {
+      "description": "L2 blocking, 26% coverage, misalignment only",
+      "coverage": 39,
+      "coverage_pct": 26.0,
+      "u_total_mm": 0.275,
+      "macro_f1": 0.204,
+      "precision_U": 0.3076923076923077,
+      "recall_U": 1.0,
+      "alpha_G": 1.0,
+      "confusion_matrix": [
+        [
+          0,
+          27
+        ],
+        [
+          0,
+          12
+        ]
+      ]
+    }
+  },
+  "parameters": {
+    "fixed": {
+      "undercut_limit_mm": 0.5,
+      "reinforcement_base_mm": 1.0,
+      "reinforcement_slope": 0.1,
+      "misalignment_limit_mm": 1.0,
+      "bead_width_mm": 16.0
+    },
+    "sensor": {
+      "depth_units": 0.0001,
+      "standoff_mm": 300,
+      "visual_preset": "High Accuracy",
+      "baseline_mm": 50
+    },
+    "changeable": {
+      "n_frames": 64,
+      "smoothing_kernel_px": 5,
+      "coverage_fraction": 1.0,
+      "surface_preparation": "matte"
+    },
+    "uncertainty_actual": {
+      "u_noise_mm": 0.063,
+      "u_quant_mm": 0.029,
+      "u_cal_mm": 0.03,
+      "u_align_mm": 0.02,
+      "u_total_mm": 0.275
+    },
+    "uncertainty_ideal": {
+      "u_noise_mm": 0.04,
+      "u_quant_mm": 0.029,
+      "u_cal_mm": 0.02,
+      "u_align_mm": 0.015,
+      "u_total_mm": 0.056
+    }
+  }
+}

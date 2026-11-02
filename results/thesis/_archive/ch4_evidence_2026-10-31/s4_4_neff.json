@@ -1,0 +1,10 @@
+{
+  "rho_icc": 0.5306767868437697,
+  "cells_per_coupon": 10,
+  "n_coupons": 15,
+  "n_total": 150,
+  "design_effect_formula": "1 + (n_cluster - 1) * rho = 1 + 9 * rho",
+  "design_effect": 5.776091081593927,
+  "n_eff": 25.96911957950066,
+  "source": "One-way ANOVA on per-cell correctness (V+G+U) grouped by coupon"
+}

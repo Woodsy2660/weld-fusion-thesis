@@ -1,0 +1,14 @@
+{
+  "G+U vs U": {
+    "cells_with_betp_diff_gt_1e9": 0,
+    "decisions_identical": true
+  },
+  "V+G vs V": {
+    "cells_with_betp_diff_gt_1e9": 0,
+    "decisions_identical": true
+  },
+  "V+G+U vs V+U": {
+    "cells_with_betp_diff_gt_1e9": 0,
+    "decisions_identical": true
+  }
+}

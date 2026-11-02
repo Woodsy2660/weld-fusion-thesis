@@ -1,0 +1,266 @@
+{
+  "generated": "2026-11-02T11:05:38.159954",
+  "description": "Fusion results with ideal geometry (L2 resolved, \u03b1_G = 0.000)",
+  "alpha_values": {
+    "vision": 0.404,
+    "geometry_ideal": 0.0,
+    "geometry_actual": 1.0,
+    "ut": 0.241
+  },
+  "fusion_metrics": {
+    "V_only": {
+      "accuracy": 0.42,
+      "macro_f1": 0.14788732394366197,
+      "per_class": {
+        "N": {
+          "precision": 0.42,
+          "recall": 1.0,
+          "f1": 0.5915492957746479,
+          "support": 63
+        },
+        "U": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 30
+        },
+        "P": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 26
+        },
+        "L": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 31
+        }
+      }
+    },
+    "G_ideal": {
+      "accuracy": 0.5333333333333333,
+      "macro_f1": 0.3525382755842063,
+      "per_class": {
+        "N": {
+          "precision": 0.4672897196261682,
+          "recall": 0.7936507936507936,
+          "f1": 0.5882352941176471,
+          "support": 63
+        },
+        "U": {
+          "precision": 0.6976744186046512,
+          "recall": 1.0,
+          "f1": 0.8219178082191781,
+          "support": 30
+        },
+        "P": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 26
+        },
+        "L": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 31
+        }
+      }
+    },
+    "U_only": {
+      "accuracy": 0.5933333333333334,
+      "macro_f1": 0.4822916666666667,
+      "per_class": {
+        "N": {
+          "precision": 0.5463917525773195,
+          "recall": 0.8412698412698413,
+          "f1": 0.6625,
+          "support": 63
+        },
+        "U": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 30
+        },
+        "P": {
+          "precision": 0.4166666666666667,
+          "recall": 0.38461538461538464,
+          "f1": 0.4,
+          "support": 26
+        },
+        "L": {
+          "precision": 0.896551724137931,
+          "recall": 0.8387096774193549,
+          "f1": 0.8666666666666666,
+          "support": 31
+        }
+      }
+    },
+    "VG_ideal": {
+      "accuracy": 0.5333333333333333,
+      "macro_f1": 0.3525382755842063,
+      "per_class": {
+        "N": {
+          "precision": 0.4672897196261682,
+          "recall": 0.7936507936507936,
+          "f1": 0.5882352941176471,
+          "support": 63
+        },
+        "U": {
+          "precision": 0.6976744186046512,
+          "recall": 1.0,
+          "f1": 0.8219178082191781,
+          "support": 30
+        },
+        "P": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 26
+        },
+        "L": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 31
+        }
+      }
+    },
+    "VU": {
+      "accuracy": 0.5933333333333334,
+      "macro_f1": 0.4822916666666667,
+      "per_class": {
+        "N": {
+          "precision": 0.5463917525773195,
+          "recall": 0.8412698412698413,
+          "f1": 0.6625,
+          "support": 63
+        },
+        "U": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 30
+        },
+        "P": {
+          "precision": 0.4166666666666667,
+          "recall": 0.38461538461538464,
+          "f1": 0.4,
+          "support": 26
+        },
+        "L": {
+          "precision": 0.896551724137931,
+          "recall": 0.8387096774193549,
+          "f1": 0.8666666666666666,
+          "support": 31
+        }
+      }
+    },
+    "GU_ideal": {
+      "accuracy": 0.7066666666666667,
+      "macro_f1": 0.6971916560620804,
+      "per_class": {
+        "N": {
+          "precision": 0.6779661016949152,
+          "recall": 0.6349206349206349,
+          "f1": 0.6557377049180327,
+          "support": 63
+        },
+        "U": {
+          "precision": 0.6976744186046512,
+          "recall": 1.0,
+          "f1": 0.8219178082191781,
+          "support": 30
+        },
+        "P": {
+          "precision": 0.5263157894736842,
+          "recall": 0.38461538461538464,
+          "f1": 0.4444444444444444,
+          "support": 26
+        },
+        "L": {
+          "precision": 0.896551724137931,
+          "recall": 0.8387096774193549,
+          "f1": 0.8666666666666666,
+          "support": 31
+        }
+      }
+    },
+    "VGU_ideal": {
+      "accuracy": 0.7066666666666667,
+      "macro_f1": 0.6971916560620804,
+      "per_class": {
+        "N": {
+          "precision": 0.6779661016949152,
+          "recall": 0.6349206349206349,
+          "f1": 0.6557377049180327,
+          "support": 63
+        },
+        "U": {
+          "precision": 0.6976744186046512,
+          "recall": 1.0,
+          "f1": 0.8219178082191781,
+          "support": 30
+        },
+        "P": {
+          "precision": 0.5263157894736842,
+          "recall": 0.38461538461538464,
+          "f1": 0.4444444444444444,
+          "support": 26
+        },
+        "L": {
+          "precision": 0.896551724137931,
+          "recall": 0.8387096774193549,
+          "f1": 0.8666666666666666,
+          "support": 31
+        }
+      }
+    }
+  },
+  "comparison": [
+    {
+      "configuration": "V",
+      "actual_f1": 0,
+      "ideal_f1": 0.14788732394366197,
+      "delta_f1": 0.14788732394366197
+    },
+    {
+      "configuration": "G",
+      "actual_f1": 0.204,
+      "ideal_f1": 0.3525382755842063,
+      "delta_f1": 0.14853827558420632
+    },
+    {
+      "configuration": "U",
+      "actual_f1": 0,
+      "ideal_f1": 0.4822916666666667,
+      "delta_f1": 0.4822916666666667
+    },
+    {
+      "configuration": "V+G",
+      "actual_f1": 0.0,
+      "ideal_f1": 0.3525382755842063,
+      "delta_f1": 0.3525382755842063
+    },
+    {
+      "configuration": "V+U",
+      "actual_f1": 0.0,
+      "ideal_f1": 0.4822916666666667,
+      "delta_f1": 0.4822916666666667
+    },
+    {
+      "configuration": "G+U",
+      "actual_f1": 0.0,
+      "ideal_f1": 0.6971916560620804,
+      "delta_f1": 0.6971916560620804
+    },
+    {
+      "configuration": "V+G+U",
+      "actual_f1": 0.0,
+      "ideal_f1": 0.6971916560620804,
+      "delta_f1": 0.6971916560620804
+    }
+  ]
+}

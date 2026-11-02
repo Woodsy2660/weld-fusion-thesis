@@ -1,0 +1,268 @@
+{
+  "measurands_by_label": {
+    "P": {
+      "count": 8,
+      "median_misalignment": 7.07,
+      "cells": [
+        "C01-02",
+        "C01-03",
+        "C01-06",
+        "C02-01",
+        "C02-02",
+        "C02-03",
+        "C02-04",
+        "C10-02"
+      ]
+    },
+    "N": {
+      "count": 11,
+      "median_misalignment": 4.977,
+      "cells": [
+        "C03-02",
+        "C03-03",
+        "C09-02",
+        "C09-03",
+        "C09-04",
+        "C11-01",
+        "C12-03",
+        "C15-01",
+        "C15-02",
+        "C15-03",
+        "C15-04"
+      ]
+    },
+    "U": {
+      "count": 10,
+      "median_misalignment": 2.36,
+      "cells": [
+        "C05-02",
+        "C05-03",
+        "C06-01",
+        "C06-02",
+        "C06-03",
+        "C06-06",
+        "C12-01",
+        "C12-02",
+        "C14-04",
+        "C14-05"
+      ]
+    },
+    "L": {
+      "count": 10,
+      "median_misalignment": 3.27,
+      "cells": [
+        "C07-02",
+        "C07-03",
+        "C07-05",
+        "C08-02",
+        "C08-03",
+        "C08-04",
+        "C08-05",
+        "C10-04",
+        "C14-01",
+        "C14-02"
+      ]
+    }
+  },
+  "coverage": {
+    "C01": [
+      false,
+      false,
+      true,
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "C02": [
+      false,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "C03": [
+      false,
+      false,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "C04": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "C05": [
+      false,
+      false,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "C06": [
+      false,
+      true,
+      true,
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "C07": [
+      false,
+      false,
+      true,
+      true,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "C08": [
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "C09": [
+      false,
+      false,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "C10": [
+      false,
+      false,
+      true,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "C11": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "C12": [
+      false,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "C13": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "C14": [
+      false,
+      true,
+      true,
+      false,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "C15": [
+      false,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "total_measured": 39,
+  "total_cells": 150,
+  "raw_depth_available": {
+    "count": 15,
+    "example_frames": 64,
+    "note": "Raw D435i depth frames stored as .npy arrays in data/raw/S1/*/depth/"
+  },
+  "worked_example": {
+    "note": "See data/geom_worked_example.md for hypothetical geometry BPA worked examples",
+    "cells": [
+      "C03-02 (true=N)",
+      "C05-02 (true=U)"
+    ]
+  },
+  "exploratory": {
+    "finding": "All 39 measured cells have misalignment as governing measurand",
+    "cells_with_non_misalignment_governing": 0,
+    "note": "Undercut d_lim/u = 0.85 < 1, so undercut never governs"
+  }
+}
