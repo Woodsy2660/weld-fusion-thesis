@@ -1,0 +1,5 @@
+Comparison,b,c,chi2,p_raw,p_holm,sig_at_0.05
+V->GV,0,0,identical,N/A,N/A,undefined
+V->UV,77,15,40.45,2.02e-10,6.06e-10,Yes
+G->GU,63,5,47.78,4.77e-12,1.91e-11,Yes
+GV->GUV,77,15,40.45,2.02e-10,4.04e-10,Yes

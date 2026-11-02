@@ -1,0 +1,77 @@
+{
+  "generated": "2026-10-26",
+  "label_convention": "v2 (Overfill/Misaligned -> N)",
+  "bootstrap_resamples": 2000,
+  "alpha_values": {
+    "vision": 0.909296351710439,
+    "geometry": 1.0,
+    "ultrasonic": 0.87
+  },
+  "estimators": {
+    "vision": "mean_of_folds",
+    "geometry": "pooled",
+    "ultrasonic": "mean_of_folds"
+  },
+  "tables": {
+    "t4_1_completeness.tex": {
+      "sources": [
+        "data/labels_v2_2026-10-26.csv",
+        "results/geometry/summary.csv"
+      ]
+    },
+    "t4_2_uncertainty.tex": {
+      "sources": [
+        "configs/geometry.yaml",
+        "results/geometry/_diagnostics/repeatability_*.json"
+      ]
+    },
+    "t4_3_modality.tex": {
+      "sources": [
+        "results/vision/coupon_eval/calibration_v2.json",
+        "results/geometry/alpha_derivation.json",
+        "results/ut/metrics_ut.json"
+      ]
+    },
+    "t4_4_fusion.tex": {
+      "sources": [
+        "results/fusion/fusion_results.json",
+        "results/fusion/statistics.json"
+      ]
+    },
+    "t4_5_significance.tex": {
+      "sources": [
+        "results/fusion/statistics.json"
+      ]
+    }
+  },
+  "figures": {
+    "f4_1_ut_amplitude.pdf": {
+      "sources": [
+        "results/ut/features.csv"
+      ]
+    },
+    "f4_2_confusion.pdf": {
+      "sources": [
+        "results/vision/coupon_eval/calibration_v2.json",
+        "results/geometry/summary.csv",
+        "results/ut/metrics_ut.json"
+      ]
+    },
+    "f4_3_geometry_coverage.pdf": {
+      "sources": [
+        "results/geometry/summary.csv",
+        "data/labels_v2_2026-10-26.csv"
+      ]
+    },
+    "f4_4_ablation.pdf": {
+      "sources": [
+        "results/fusion/statistics.json"
+      ]
+    },
+    "f4_5_conflict.pdf": {
+      "sources": [
+        "results/fusion/fusion_results.json"
+      ]
+    }
+  }
+}
