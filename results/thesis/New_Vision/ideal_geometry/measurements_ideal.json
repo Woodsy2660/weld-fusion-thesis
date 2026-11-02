@@ -1,0 +1,1052 @@
+{
+  "C01-00": {
+    "undercut_mm": 0.24182803953736515,
+    "reinforcement_mm": 1.225010755222667,
+    "misalignment_mm": 0.26501759102147154,
+    "governing": "undercut",
+    "p_exceedance": 2.01127746984886e-06
+  },
+  "C01-01": {
+    "undercut_mm": 0.11696322144464683,
+    "reinforcement_mm": 1.9364712141640124,
+    "misalignment_mm": 0.5060196924537468,
+    "governing": "undercut",
+    "p_exceedance": 3.9612757518625585e-12
+  },
+  "C01-02": {
+    "undercut_mm": 0.3176538703114536,
+    "reinforcement_mm": 1.2869388326294162,
+    "misalignment_mm": 0.3531530918111623,
+    "governing": "undercut",
+    "p_exceedance": 0.0005646089287204004
+  },
+  "C01-03": {
+    "undercut_mm": 0.05893916583142111,
+    "reinforcement_mm": 1.4186379748036033,
+    "misalignment_mm": 0.4032131728620174,
+    "governing": "undercut",
+    "p_exceedance": 1.6653345369377348e-15
+  },
+  "C01-04": {
+    "undercut_mm": 0.05796079090515909,
+    "reinforcement_mm": 1.3988376506866484,
+    "misalignment_mm": 0.4899306626677139,
+    "governing": "undercut",
+    "p_exceedance": 1.4432899320127035e-15
+  },
+  "C01-05": {
+    "undercut_mm": 0.21348244418096501,
+    "reinforcement_mm": 1.4204406220406967,
+    "misalignment_mm": 0.45355941032554525,
+    "governing": "undercut",
+    "p_exceedance": 1.5572357470183817e-07
+  },
+  "C01-06": {
+    "undercut_mm": 0.292829137003348,
+    "reinforcement_mm": 1.206498759678061,
+    "misalignment_mm": 0.5834915510996848,
+    "governing": "undercut",
+    "p_exceedance": 0.00010802096106155012
+  },
+  "C01-07": {
+    "undercut_mm": 0.2594418184964681,
+    "reinforcement_mm": 1.5402505165179918,
+    "misalignment_mm": 0.19328769988706895,
+    "governing": "undercut",
+    "p_exceedance": 8.70786165074744e-06
+  },
+  "C01-08": {
+    "undercut_mm": 0.33716392166203435,
+    "reinforcement_mm": 1.5365945451126268,
+    "misalignment_mm": 0.15564750602808874,
+    "governing": "undercut",
+    "p_exceedance": 0.0018199801864385856
+  },
+  "C01-09": {
+    "undercut_mm": 0.0790149130500392,
+    "reinforcement_mm": 2.04749436634746,
+    "misalignment_mm": 0.46223561882013464,
+    "governing": "undercut",
+    "p_exceedance": 2.7922109069322687e-14
+  },
+  "C02-00": {
+    "undercut_mm": 0.29213848198231407,
+    "reinforcement_mm": 1.929731786693818,
+    "misalignment_mm": 0.4217368548728204,
+    "governing": "undercut",
+    "p_exceedance": 0.000102890071239925
+  },
+  "C02-01": {
+    "undercut_mm": 0.3419347291938112,
+    "reinforcement_mm": 1.5785343772083535,
+    "misalignment_mm": 0.43122437876393616,
+    "governing": "undercut",
+    "p_exceedance": 0.002381841843822896
+  },
+  "C02-02": {
+    "undercut_mm": 0.29882139927589846,
+    "reinforcement_mm": 1.8185197523642462,
+    "misalignment_mm": 0.6170241401864663,
+    "governing": "undercut",
+    "p_exceedance": 0.00016377603552203412
+  },
+  "C02-03": {
+    "undercut_mm": 0.2232056435770286,
+    "reinforcement_mm": 1.9045718362149235,
+    "misalignment_mm": 0.12749463019339732,
+    "governing": "undercut",
+    "p_exceedance": 3.851285901301793e-07
+  },
+  "C02-04": {
+    "undercut_mm": 0.11836948269546406,
+    "reinforcement_mm": 1.4893879636021072,
+    "misalignment_mm": 0.1478751861541765,
+    "governing": "undercut",
+    "p_exceedance": 4.7187254104130716e-12
+  },
+  "C02-05": {
+    "undercut_mm": 0.11983726590830905,
+    "reinforcement_mm": 1.3010014294097292,
+    "misalignment_mm": 0.26678416186605525,
+    "governing": "undercut",
+    "p_exceedance": 5.660527602202592e-12
+  },
+  "C02-06": {
+    "undercut_mm": 0.24070533327932003,
+    "reinforcement_mm": 1.5648321789700843,
+    "misalignment_mm": 0.32210858027012956,
+    "governing": "undercut",
+    "p_exceedance": 1.8260175138617996e-06
+  },
+  "C02-07": {
+    "undercut_mm": 0.11285210923144631,
+    "reinforcement_mm": 1.4669778220491134,
+    "misalignment_mm": 0.6619927526274964,
+    "governing": "misalignment",
+    "p_exceedance": 7.906713062055815e-10
+  },
+  "C02-08": {
+    "undercut_mm": 0.24441061557397809,
+    "reinforcement_mm": 1.8091310056669883,
+    "misalignment_mm": 0.2026831889188582,
+    "governing": "undercut",
+    "p_exceedance": 2.508254269617538e-06
+  },
+  "C02-09": {
+    "undercut_mm": 0.26873803938510477,
+    "reinforcement_mm": 1.3634024937619285,
+    "misalignment_mm": 0.32767326505458866,
+    "governing": "undercut",
+    "p_exceedance": 1.816359333151052e-05
+  },
+  "C03-00": {
+    "undercut_mm": 0.34685700519097856,
+    "reinforcement_mm": 1.839999759854093,
+    "misalignment_mm": 0.4341698462647877,
+    "governing": "undercut",
+    "p_exceedance": 0.0031218923524084508
+  },
+  "C03-01": {
+    "undercut_mm": 0.2553842752969624,
+    "reinforcement_mm": 2.04285192018981,
+    "misalignment_mm": 0.5655999469277468,
+    "governing": "undercut",
+    "p_exceedance": 6.265517103032359e-06
+  },
+  "C03-02": {
+    "undercut_mm": 0.11871442158923132,
+    "reinforcement_mm": 1.2321002439040378,
+    "misalignment_mm": 0.28927182883544916,
+    "governing": "undercut",
+    "p_exceedance": 4.925226892993351e-12
+  },
+  "C03-03": {
+    "undercut_mm": 0.1303222627927108,
+    "reinforcement_mm": 1.4109828435863265,
+    "misalignment_mm": 0.6657458286010326,
+    "governing": "misalignment",
+    "p_exceedance": 1.1948450007182032e-09
+  },
+  "C03-04": {
+    "undercut_mm": 0.31291028794180065,
+    "reinforcement_mm": 1.514677880798478,
+    "misalignment_mm": 0.49326319917692807,
+    "governing": "undercut",
+    "p_exceedance": 0.0004175549467352324
+  },
+  "C03-05": {
+    "undercut_mm": 0.16868957031819926,
+    "reinforcement_mm": 2.1145475897405435,
+    "misalignment_mm": 0.37531111155243924,
+    "governing": "undercut",
+    "p_exceedance": 1.6467455732360747e-09
+  },
+  "C03-06": {
+    "undercut_mm": 0.12946404994941574,
+    "reinforcement_mm": 1.4466275076939834,
+    "misalignment_mm": 0.4368208804978905,
+    "governing": "undercut",
+    "p_exceedance": 1.8363643938812402e-11
+  },
+  "C03-07": {
+    "undercut_mm": 0.12882248255688059,
+    "reinforcement_mm": 1.7845859902235406,
+    "misalignment_mm": 0.6386937301614861,
+    "governing": "misalignment",
+    "p_exceedance": 5.5229099071851806e-11
+  },
+  "C03-08": {
+    "undercut_mm": 0.16982015154211916,
+    "reinforcement_mm": 1.4193207591572834,
+    "misalignment_mm": 0.6985225638970661,
+    "governing": "misalignment",
+    "p_exceedance": 3.652041780100035e-08
+  },
+  "C03-09": {
+    "undercut_mm": 0.20285788810293937,
+    "reinforcement_mm": 1.2909094121737938,
+    "misalignment_mm": 0.12826982525484074,
+    "governing": "undercut",
+    "p_exceedance": 5.599495978003688e-08
+  },
+  "C04-00": {
+    "undercut_mm": 0.08289473910519775,
+    "reinforcement_mm": 1.82744604170309,
+    "misalignment_mm": 0.5752476186177784,
+    "governing": "undercut",
+    "p_exceedance": 4.729550084903167e-14
+  },
+  "C04-01": {
+    "undercut_mm": 0.17664799003990522,
+    "reinforcement_mm": 1.2635277061519572,
+    "misalignment_mm": 0.328971571903922,
+    "governing": "undercut",
+    "p_exceedance": 3.867285713887725e-09
+  },
+  "C04-02": {
+    "undercut_mm": 0.34883641407202903,
+    "reinforcement_mm": 1.729114345099137,
+    "misalignment_mm": 0.6826470265681709,
+    "governing": "undercut",
+    "p_exceedance": 0.003473755980749338
+  },
+  "C04-03": {
+    "undercut_mm": 0.3082339106703494,
+    "reinforcement_mm": 1.2114810219428196,
+    "misalignment_mm": 0.5324330916161167,
+    "governing": "undercut",
+    "p_exceedance": 0.00030808557109474055
+  },
+  "C04-04": {
+    "undercut_mm": 0.25451311070797245,
+    "reinforcement_mm": 1.7369703304087953,
+    "misalignment_mm": 0.2600951139715257,
+    "governing": "undercut",
+    "p_exceedance": 5.834170058727217e-06
+  },
+  "C04-05": {
+    "undercut_mm": 0.24228853957394242,
+    "reinforcement_mm": 1.3115521735958764,
+    "misalignment_mm": 0.360859150401463,
+    "governing": "undercut",
+    "p_exceedance": 2.0923628389901694e-06
+  },
+  "C04-06": {
+    "undercut_mm": 0.18611711189876196,
+    "reinforcement_mm": 2.15381592752108,
+    "misalignment_mm": 0.6255117642269163,
+    "governing": "undercut",
+    "p_exceedance": 1.0409648143472339e-08
+  },
+  "C04-07": {
+    "undercut_mm": 0.12901671522532723,
+    "reinforcement_mm": 1.7005861130502984,
+    "misalignment_mm": 0.20719112831807884,
+    "governing": "undercut",
+    "p_exceedance": 1.739752786278359e-11
+  },
+  "C04-08": {
+    "undercut_mm": 0.3237883518034461,
+    "reinforcement_mm": 2.070518569836767,
+    "misalignment_mm": 0.27906687486917975,
+    "governing": "undercut",
+    "p_exceedance": 0.0008258005364304988
+  },
+  "C04-09": {
+    "undercut_mm": 0.24168484845980154,
+    "reinforcement_mm": 1.8089702114381723,
+    "misalignment_mm": 0.19170356112978088,
+    "governing": "undercut",
+    "p_exceedance": 1.986684116050963e-06
+  },
+  "C05-00": {
+    "undercut_mm": 0.9632180701512171,
+    "reinforcement_mm": 1.5303536721951776,
+    "misalignment_mm": 0.30028594806397174,
+    "governing": "undercut",
+    "p_exceedance": 1.0
+  },
+  "C05-01": {
+    "undercut_mm": 0.7706762291504672,
+    "reinforcement_mm": 1.0194767423858324,
+    "misalignment_mm": 0.7645493081323085,
+    "governing": "undercut",
+    "p_exceedance": 0.9999993292473986
+  },
+  "C05-02": {
+    "undercut_mm": 1.1508000723948832,
+    "reinforcement_mm": 1.0579251664941876,
+    "misalignment_mm": 0.7390047996020203,
+    "governing": "undercut",
+    "p_exceedance": 1.0
+  },
+  "C05-03": {
+    "undercut_mm": 1.1263443776206916,
+    "reinforcement_mm": 1.0856534520678789,
+    "misalignment_mm": 0.5429952316583069,
+    "governing": "undercut",
+    "p_exceedance": 1.0
+  },
+  "C05-04": {
+    "undercut_mm": 0.6478793381309034,
+    "reinforcement_mm": 1.1283914644997628,
+    "misalignment_mm": 0.5376411890493656,
+    "governing": "undercut",
+    "p_exceedance": 0.9958632829149898
+  },
+  "C05-05": {
+    "undercut_mm": 0.8346724660646153,
+    "reinforcement_mm": 1.265056628940059,
+    "misalignment_mm": 0.7362165205426288,
+    "governing": "undercut",
+    "p_exceedance": 0.9999999988586459
+  },
+  "C05-06": {
+    "undercut_mm": 0.8704572153733501,
+    "reinforcement_mm": 1.729931069089976,
+    "misalignment_mm": 0.40057553169484794,
+    "governing": "undercut",
+    "p_exceedance": 0.999999999981461
+  },
+  "C05-07": {
+    "undercut_mm": 0.8547504200287749,
+    "reinforcement_mm": 1.9951493566608947,
+    "misalignment_mm": 0.6249390288197267,
+    "governing": "undercut",
+    "p_exceedance": 0.9999999998811977
+  },
+  "C05-08": {
+    "undercut_mm": 0.834591568789829,
+    "reinforcement_mm": 1.2246973370315573,
+    "misalignment_mm": 0.46904278107372765,
+    "governing": "undercut",
+    "p_exceedance": 0.9999999988484861
+  },
+  "C05-09": {
+    "undercut_mm": 0.9498507261627455,
+    "reinforcement_mm": 1.230114732596577,
+    "misalignment_mm": 0.4101086922257797,
+    "governing": "undercut",
+    "p_exceedance": 0.9999999999999996
+  },
+  "C06-00": {
+    "undercut_mm": 0.6151574702422173,
+    "reinforcement_mm": 1.905420013006128,
+    "misalignment_mm": 0.7298177001268733,
+    "governing": "undercut",
+    "p_exceedance": 0.9801272123242549
+  },
+  "C06-01": {
+    "undercut_mm": 0.6128866983348474,
+    "reinforcement_mm": 1.2380046343689952,
+    "misalignment_mm": 0.6344888891481403,
+    "governing": "undercut",
+    "p_exceedance": 0.9780913262318605
+  },
+  "C06-02": {
+    "undercut_mm": 0.8169047640658068,
+    "reinforcement_mm": 1.5710430933252844,
+    "misalignment_mm": 0.5363355131558971,
+    "governing": "undercut",
+    "p_exceedance": 0.9999999923877274
+  },
+  "C06-03": {
+    "undercut_mm": 1.1676506439564283,
+    "reinforcement_mm": 1.8074969977666435,
+    "misalignment_mm": 0.39520495718093884,
+    "governing": "undercut",
+    "p_exceedance": 1.0
+  },
+  "C06-04": {
+    "undercut_mm": 0.6048066178341563,
+    "reinforcement_mm": 1.467024668036675,
+    "misalignment_mm": 0.6645379247299252,
+    "governing": "undercut",
+    "p_exceedance": 0.9693653316297746
+  },
+  "C06-05": {
+    "undercut_mm": 1.0286951362333763,
+    "reinforcement_mm": 1.984165211365966,
+    "misalignment_mm": 0.34920893557597943,
+    "governing": "undercut",
+    "p_exceedance": 1.0
+  },
+  "C06-06": {
+    "undercut_mm": 0.7823018361085047,
+    "reinforcement_mm": 1.2486563339202856,
+    "misalignment_mm": 0.39510445422040574,
+    "governing": "undercut",
+    "p_exceedance": 0.999999768573349
+  },
+  "C06-07": {
+    "undercut_mm": 0.963475059115442,
+    "reinforcement_mm": 1.421881639834404,
+    "misalignment_mm": 0.4392725723334702,
+    "governing": "undercut",
+    "p_exceedance": 1.0
+  },
+  "C06-08": {
+    "undercut_mm": 0.8035716436553969,
+    "reinforcement_mm": 1.8613491047618305,
+    "misalignment_mm": 0.575162656224924,
+    "governing": "undercut",
+    "p_exceedance": 0.9999999703538203
+  },
+  "C06-09": {
+    "undercut_mm": 0.6022566073275127,
+    "reinforcement_mm": 1.9992824684127266,
+    "misalignment_mm": 0.7180137925399759,
+    "governing": "undercut",
+    "p_exceedance": 0.9660756858716513
+  },
+  "C07-00": {
+    "undercut_mm": 0.34069887718542535,
+    "reinforcement_mm": 2.1263669830081278,
+    "misalignment_mm": 0.6092174406485832,
+    "governing": "undercut",
+    "p_exceedance": 0.002222922259832727
+  },
+  "C07-01": {
+    "undercut_mm": 0.09989333318117422,
+    "reinforcement_mm": 1.6856411254507186,
+    "misalignment_mm": 0.228248379519509,
+    "governing": "undercut",
+    "p_exceedance": 4.5075054799781356e-13
+  },
+  "C07-02": {
+    "undercut_mm": 0.17031208776483578,
+    "reinforcement_mm": 1.2586353999721789,
+    "misalignment_mm": 0.32738387138614966,
+    "governing": "undercut",
+    "p_exceedance": 1.962967066670984e-09
+  },
+  "C07-03": {
+    "undercut_mm": 0.34559265313391774,
+    "reinforcement_mm": 1.465203058172152,
+    "misalignment_mm": 0.5704423611691416,
+    "governing": "undercut",
+    "p_exceedance": 0.002914273972016934
+  },
+  "C07-04": {
+    "undercut_mm": 0.18650251020174297,
+    "reinforcement_mm": 1.623007485990163,
+    "misalignment_mm": 0.6743905845158039,
+    "governing": "undercut",
+    "p_exceedance": 1.0831347541095937e-08
+  },
+  "C07-05": {
+    "undercut_mm": 0.3486268068478141,
+    "reinforcement_mm": 1.7557683234056183,
+    "misalignment_mm": 0.5310449651777956,
+    "governing": "undercut",
+    "p_exceedance": 0.0034348788550004894
+  },
+  "C07-06": {
+    "undercut_mm": 0.09643904758221925,
+    "reinforcement_mm": 1.4967078254945643,
+    "misalignment_mm": 0.6812256189814953,
+    "governing": "misalignment",
+    "p_exceedance": 6.263310758924945e-09
+  },
+  "C07-07": {
+    "undercut_mm": 0.2237540872448769,
+    "reinforcement_mm": 1.7421952013742743,
+    "misalignment_mm": 0.5487853362274384,
+    "governing": "undercut",
+    "p_exceedance": 4.0495807374085757e-07
+  },
+  "C07-08": {
+    "undercut_mm": 0.06714958187224493,
+    "reinforcement_mm": 1.7841775944589713,
+    "misalignment_mm": 0.4017102297517081,
+    "governing": "undercut",
+    "p_exceedance": 5.384581669432009e-15
+  },
+  "C07-09": {
+    "undercut_mm": 0.3058159676144856,
+    "reinforcement_mm": 1.3574327279394833,
+    "misalignment_mm": 0.6764673419646702,
+    "governing": "undercut",
+    "p_exceedance": 0.00026259150747742765
+  },
+  "C08-00": {
+    "undercut_mm": 0.07403343957217606,
+    "reinforcement_mm": 1.3858249609807232,
+    "misalignment_mm": 0.4570210638700166,
+    "governing": "undercut",
+    "p_exceedance": 1.4099832412739488e-14
+  },
+  "C08-01": {
+    "undercut_mm": 0.25256376608122705,
+    "reinforcement_mm": 1.4352038950009312,
+    "misalignment_mm": 0.1719319683682745,
+    "governing": "undercut",
+    "p_exceedance": 4.969317988656741e-06
+  },
+  "C08-02": {
+    "undercut_mm": 0.3170861942388312,
+    "reinforcement_mm": 1.4462153477886248,
+    "misalignment_mm": 0.4567114921200647,
+    "governing": "undercut",
+    "p_exceedance": 0.0005447791780054945
+  },
+  "C08-03": {
+    "undercut_mm": 0.23581445309963095,
+    "reinforcement_mm": 1.6192249153358724,
+    "misalignment_mm": 0.45020337357473483,
+    "governing": "undercut",
+    "p_exceedance": 1.193221103590325e-06
+  },
+  "C08-04": {
+    "undercut_mm": 0.20683481465958764,
+    "reinforcement_mm": 2.1347062577364273,
+    "misalignment_mm": 0.22255551965412185,
+    "governing": "undercut",
+    "p_exceedance": 8.245108668036849e-08
+  },
+  "C08-05": {
+    "undercut_mm": 0.26485754023682445,
+    "reinforcement_mm": 1.438685952615846,
+    "misalignment_mm": 0.3374715080747527,
+    "governing": "undercut",
+    "p_exceedance": 1.3406444127839201e-05
+  },
+  "C08-06": {
+    "undercut_mm": 0.2515070668879914,
+    "reinforcement_mm": 1.4999970797987623,
+    "misalignment_mm": 0.2897063177631124,
+    "governing": "undercut",
+    "p_exceedance": 4.553153800546106e-06
+  },
+  "C08-07": {
+    "undercut_mm": 0.2755593477243206,
+    "reinforcement_mm": 1.2725431144931574,
+    "misalignment_mm": 0.37497131357115165,
+    "governing": "undercut",
+    "p_exceedance": 3.063457086438515e-05
+  },
+  "C08-08": {
+    "undercut_mm": 0.3495363322563327,
+    "reinforcement_mm": 2.1960964478550946,
+    "misalignment_mm": 0.1439564326597798,
+    "governing": "undercut",
+    "p_exceedance": 0.0036064537467459523
+  },
+  "C08-09": {
+    "undercut_mm": 0.11394629368011212,
+    "reinforcement_mm": 1.4652004147504014,
+    "misalignment_mm": 0.6599556267962254,
+    "governing": "misalignment",
+    "p_exceedance": 6.307659394799714e-10
+  },
+  "C09-00": {
+    "undercut_mm": 0.31425925210593186,
+    "reinforcement_mm": 2.079270242484543,
+    "misalignment_mm": 0.32171625324333036,
+    "governing": "undercut",
+    "p_exceedance": 0.0004552753783590435
+  },
+  "C09-01": {
+    "undercut_mm": 0.0973240497071696,
+    "reinforcement_mm": 2.033744954639807,
+    "misalignment_mm": 0.5221239550524226,
+    "governing": "undercut",
+    "p_exceedance": 3.224642775023767e-13
+  },
+  "C09-02": {
+    "undercut_mm": 0.23350332971778504,
+    "reinforcement_mm": 2.1872330636315045,
+    "misalignment_mm": 0.4923857906264396,
+    "governing": "undercut",
+    "p_exceedance": 9.734031016228606e-07
+  },
+  "C09-03": {
+    "undercut_mm": 0.23267774299321545,
+    "reinforcement_mm": 3.03106694579065,
+    "misalignment_mm": 0.7694650019635519,
+    "governing": "reinforcement",
+    "p_exceedance": 0.9999999999999931
+  },
+  "C09-04": {
+    "undercut_mm": 0.12308573408382045,
+    "reinforcement_mm": 3.1583348840288243,
+    "misalignment_mm": 0.3535179888547088,
+    "governing": "reinforcement",
+    "p_exceedance": 1.0
+  },
+  "C09-05": {
+    "undercut_mm": 0.24352243742775959,
+    "reinforcement_mm": 3.819155388794755,
+    "misalignment_mm": 0.40179865616372645,
+    "governing": "reinforcement",
+    "p_exceedance": 1.0
+  },
+  "C09-06": {
+    "undercut_mm": 0.15279678032608188,
+    "reinforcement_mm": 4.026915552241815,
+    "misalignment_mm": 0.5442659260746883,
+    "governing": "reinforcement",
+    "p_exceedance": 1.0
+  },
+  "C09-07": {
+    "undercut_mm": 0.18471515451274528,
+    "reinforcement_mm": 4.371998329757666,
+    "misalignment_mm": 0.4383401119861258,
+    "governing": "reinforcement",
+    "p_exceedance": 1.0
+  },
+  "C09-08": {
+    "undercut_mm": 0.25422384460392544,
+    "reinforcement_mm": 2.985031648222276,
+    "misalignment_mm": 0.6185566886506898,
+    "governing": "reinforcement",
+    "p_exceedance": 0.9999999999969127
+  },
+  "C09-09": {
+    "undercut_mm": 0.18553738379613588,
+    "reinforcement_mm": 3.389026533115393,
+    "misalignment_mm": 0.30483484980416997,
+    "governing": "reinforcement",
+    "p_exceedance": 1.0
+  },
+  "C10-00": {
+    "undercut_mm": 0.07257315802213012,
+    "reinforcement_mm": 2.083106393300143,
+    "misalignment_mm": 0.6423571429359358,
+    "governing": "misalignment",
+    "p_exceedance": 8.487405223078781e-11
+  },
+  "C10-01": {
+    "undercut_mm": 0.2136770867616567,
+    "reinforcement_mm": 2.0345950198860168,
+    "misalignment_mm": 0.44950573989387643,
+    "governing": "undercut",
+    "p_exceedance": 1.5861743329903533e-07
+  },
+  "C10-02": {
+    "undercut_mm": 0.0944281356702448,
+    "reinforcement_mm": 1.3274455192821388,
+    "misalignment_mm": 0.2849550099580802,
+    "governing": "undercut",
+    "p_exceedance": 2.204902926905561e-13
+  },
+  "C10-03": {
+    "undercut_mm": 0.31969444662277696,
+    "reinforcement_mm": 1.9961223048880419,
+    "misalignment_mm": 0.6164215492005416,
+    "governing": "undercut",
+    "p_exceedance": 0.0006415300148737146
+  },
+  "C10-04": {
+    "undercut_mm": 0.31967739095794234,
+    "reinforcement_mm": 1.410076538339754,
+    "misalignment_mm": 0.24971784353375465,
+    "governing": "undercut",
+    "p_exceedance": 0.00064084882363169
+  },
+  "C10-05": {
+    "undercut_mm": 0.08083808650153569,
+    "reinforcement_mm": 1.9801162418714429,
+    "misalignment_mm": 0.6304808208706053,
+    "governing": "misalignment",
+    "p_exceedance": 2.0758950114441177e-11
+  },
+  "C10-06": {
+    "undercut_mm": 0.17191321694963502,
+    "reinforcement_mm": 1.8206615101507129,
+    "misalignment_mm": 0.1927320029993228,
+    "governing": "undercut",
+    "p_exceedance": 2.332627313528235e-09
+  },
+  "C10-07": {
+    "undercut_mm": 0.3289643047081023,
+    "reinforcement_mm": 2.064605696219964,
+    "misalignment_mm": 0.6857236197585777,
+    "governing": "undercut",
+    "p_exceedance": 0.001128274661188866
+  },
+  "C10-08": {
+    "undercut_mm": 0.29323151598211905,
+    "reinforcement_mm": 2.0814162046633244,
+    "misalignment_mm": 0.11487181713891324,
+    "governing": "undercut",
+    "p_exceedance": 0.00011112001290630724
+  },
+  "C10-09": {
+    "undercut_mm": 0.27096934152652463,
+    "reinforcement_mm": 1.5321854679464286,
+    "misalignment_mm": 0.6584895316289953,
+    "governing": "undercut",
+    "p_exceedance": 2.1584177145872463e-05
+  },
+  "C11-00": {
+    "undercut_mm": 0.29067054168114165,
+    "reinforcement_mm": 2.0640640283752796,
+    "misalignment_mm": 0.5864495899446334,
+    "governing": "undercut",
+    "p_exceedance": 9.273536985077158e-05
+  },
+  "C11-01": {
+    "undercut_mm": 0.1300417128783416,
+    "reinforcement_mm": 1.9873745091354713,
+    "misalignment_mm": 0.1648573758417743,
+    "governing": "undercut",
+    "p_exceedance": 1.9689194719063607e-11
+  },
+  "C11-02": {
+    "undercut_mm": 0.3116500348718269,
+    "reinforcement_mm": 2.058593251337782,
+    "misalignment_mm": 0.23346023052739867,
+    "governing": "undercut",
+    "p_exceedance": 0.0003849544448504827
+  },
+  "C11-03": {
+    "undercut_mm": 0.2949759816790787,
+    "reinforcement_mm": 1.6603032346789421,
+    "misalignment_mm": 0.2831145204031603,
+    "governing": "undercut",
+    "p_exceedance": 0.00012554618794863304
+  },
+  "C11-04": {
+    "undercut_mm": 0.2886036497458585,
+    "reinforcement_mm": 1.4275954874077703,
+    "misalignment_mm": 0.11419866082087092,
+    "governing": "undercut",
+    "p_exceedance": 8.002475139023968e-05
+  },
+  "C11-05": {
+    "undercut_mm": 0.1079389364983126,
+    "reinforcement_mm": 1.5282619511977065,
+    "misalignment_mm": 0.6186117652181717,
+    "governing": "misalignment",
+    "p_exceedance": 4.862887870160648e-12
+  },
+  "C11-06": {
+    "undercut_mm": 0.3400667312145083,
+    "reinforcement_mm": 1.4791249927218715,
+    "misalignment_mm": 0.4848890431645766,
+    "governing": "undercut",
+    "p_exceedance": 0.0021454052011830593
+  },
+  "C11-07": {
+    "undercut_mm": 0.7689801586377156,
+    "reinforcement_mm": 1.9811496871982601,
+    "misalignment_mm": 0.5681078662393609,
+    "governing": "undercut",
+    "p_exceedance": 0.9999992193179024
+  },
+  "C11-08": {
+    "undercut_mm": 1.2747861536411709,
+    "reinforcement_mm": 1.1785678161724635,
+    "misalignment_mm": 0.7812671578807777,
+    "governing": "undercut",
+    "p_exceedance": 1.0
+  },
+  "C11-09": {
+    "undercut_mm": 0.8577798241031802,
+    "reinforcement_mm": 1.1084025472147112,
+    "misalignment_mm": 0.5172818792823222,
+    "governing": "undercut",
+    "p_exceedance": 0.9999999999164723
+  },
+  "C12-00": {
+    "undercut_mm": 1.0073479672243466,
+    "reinforcement_mm": 1.511423059669478,
+    "misalignment_mm": 0.4925977166723636,
+    "governing": "undercut",
+    "p_exceedance": 1.0
+  },
+  "C12-01": {
+    "undercut_mm": 1.016368029128826,
+    "reinforcement_mm": 1.2547225061385818,
+    "misalignment_mm": 0.6543926419170853,
+    "governing": "undercut",
+    "p_exceedance": 1.0
+  },
+  "C12-02": {
+    "undercut_mm": 0.6631756692826766,
+    "reinforcement_mm": 1.7194299991448454,
+    "misalignment_mm": 0.6709750389197382,
+    "governing": "undercut",
+    "p_exceedance": 0.9982150000825509
+  },
+  "C12-03": {
+    "undercut_mm": 0.25118855132989987,
+    "reinforcement_mm": 1.5642214717812641,
+    "misalignment_mm": 0.1419842866757861,
+    "governing": "undercut",
+    "p_exceedance": 4.434388379437326e-06
+  },
+  "C12-04": {
+    "undercut_mm": 0.24927130547338172,
+    "reinforcement_mm": 1.5302000360425965,
+    "misalignment_mm": 0.2883493870350158,
+    "governing": "undercut",
+    "p_exceedance": 3.7796827753178164e-06
+  },
+  "C12-05": {
+    "undercut_mm": 0.3044045838519006,
+    "reinforcement_mm": 1.9197542630139504,
+    "misalignment_mm": 0.2801933609267585,
+    "governing": "undercut",
+    "p_exceedance": 0.00023901429428374588
+  },
+  "C12-06": {
+    "undercut_mm": 0.14278539866259599,
+    "reinforcement_mm": 1.608392908619217,
+    "misalignment_mm": 0.34144023223463477,
+    "governing": "undercut",
+    "p_exceedance": 8.922174110637116e-11
+  },
+  "C12-07": {
+    "undercut_mm": 0.12545755981183065,
+    "reinforcement_mm": 3.4120926853063844,
+    "misalignment_mm": 0.5102231668864541,
+    "governing": "reinforcement",
+    "p_exceedance": 1.0
+  },
+  "C12-08": {
+    "undercut_mm": 0.2231029831902761,
+    "reinforcement_mm": 4.357226350465653,
+    "misalignment_mm": 0.45047493728278265,
+    "governing": "reinforcement",
+    "p_exceedance": 1.0
+  },
+  "C12-09": {
+    "undercut_mm": 0.10008118793945751,
+    "reinforcement_mm": 3.7133822706061004,
+    "misalignment_mm": 0.4434568584344636,
+    "governing": "reinforcement",
+    "p_exceedance": 1.0
+  },
+  "C13-00": {
+    "undercut_mm": 0.19299763804940284,
+    "reinforcement_mm": 1.4421597993048074,
+    "misalignment_mm": 2.0732637573729695,
+    "governing": "misalignment",
+    "p_exceedance": 1.0
+  },
+  "C13-01": {
+    "undercut_mm": 0.19463723718186526,
+    "reinforcement_mm": 1.9011808258282543,
+    "misalignment_mm": 1.781215914886514,
+    "governing": "misalignment",
+    "p_exceedance": 1.0
+  },
+  "C13-02": {
+    "undercut_mm": 0.2030904019830433,
+    "reinforcement_mm": 1.6329408557657956,
+    "misalignment_mm": 2.7054341851886172,
+    "governing": "misalignment",
+    "p_exceedance": 1.0
+  },
+  "C13-03": {
+    "undercut_mm": 0.15055647662294028,
+    "reinforcement_mm": 2.0184234645366645,
+    "misalignment_mm": 0.5506828825244393,
+    "governing": "undercut",
+    "p_exceedance": 2.1869744903924015e-10
+  },
+  "C13-04": {
+    "undercut_mm": 0.2518387011671501,
+    "reinforcement_mm": 1.4246406659972883,
+    "misalignment_mm": 0.219477959635946,
+    "governing": "undercut",
+    "p_exceedance": 4.68003764086955e-06
+  },
+  "C13-05": {
+    "undercut_mm": 0.057327616318047905,
+    "reinforcement_mm": 1.44484254407835,
+    "misalignment_mm": 0.3850818065312831,
+    "governing": "undercut",
+    "p_exceedance": 1.3322676295501878e-15
+  },
+  "C13-06": {
+    "undercut_mm": 0.30492130838741954,
+    "reinforcement_mm": 1.2728282291845692,
+    "misalignment_mm": 0.34866460659863163,
+    "governing": "undercut",
+    "p_exceedance": 0.00024740713166970796
+  },
+  "C13-07": {
+    "undercut_mm": 0.2389296142213141,
+    "reinforcement_mm": 1.3944352367397093,
+    "misalignment_mm": 0.517812550294303,
+    "governing": "undercut",
+    "p_exceedance": 1.565975326522917e-06
+  },
+  "C13-08": {
+    "undercut_mm": 0.1983131507031311,
+    "reinforcement_mm": 1.443984439578439,
+    "misalignment_mm": 0.4936348066670705,
+    "governing": "undercut",
+    "p_exceedance": 3.5768926709423e-08
+  },
+  "C13-09": {
+    "undercut_mm": 0.05166344544140953,
+    "reinforcement_mm": 1.950964476618473,
+    "misalignment_mm": 0.562027713144415,
+    "governing": "misalignment",
+    "p_exceedance": 2.609024107869118e-15
+  },
+  "C14-00": {
+    "undercut_mm": 0.08197618896906168,
+    "reinforcement_mm": 1.6251461939427343,
+    "misalignment_mm": 0.205532009023919,
+    "governing": "undercut",
+    "p_exceedance": 4.1744385725905886e-14
+  },
+  "C14-01": {
+    "undercut_mm": 0.3373898126838619,
+    "reinforcement_mm": 1.7179577504437409,
+    "misalignment_mm": 0.13013103108438456,
+    "governing": "undercut",
+    "p_exceedance": 0.0018435925975452405
+  },
+  "C14-02": {
+    "undercut_mm": 0.12475948389799149,
+    "reinforcement_mm": 2.04833634735166,
+    "misalignment_mm": 0.37387709528210356,
+    "governing": "undercut",
+    "p_exceedance": 1.0369483049998962e-11
+  },
+  "C14-03": {
+    "undercut_mm": 1.1014862245302321,
+    "reinforcement_mm": 1.667577732586353,
+    "misalignment_mm": 0.793946226533224,
+    "governing": "undercut",
+    "p_exceedance": 1.0
+  },
+  "C14-04": {
+    "undercut_mm": 1.0695126413786458,
+    "reinforcement_mm": 1.6126523227617628,
+    "misalignment_mm": 0.6596369806379836,
+    "governing": "undercut",
+    "p_exceedance": 1.0
+  },
+  "C14-05": {
+    "undercut_mm": 0.8664283855939642,
+    "reinforcement_mm": 1.830569169721415,
+    "misalignment_mm": 0.5739359753054142,
+    "governing": "undercut",
+    "p_exceedance": 0.999999999969925
+  },
+  "C14-06": {
+    "undercut_mm": 1.1357925133518074,
+    "reinforcement_mm": 1.2591915484650194,
+    "misalignment_mm": 0.42361986875482976,
+    "governing": "undercut",
+    "p_exceedance": 1.0
+  },
+  "C14-07": {
+    "undercut_mm": 0.24129843103284687,
+    "reinforcement_mm": 1.9658136842971656,
+    "misalignment_mm": 0.4127798876967893,
+    "governing": "undercut",
+    "p_exceedance": 1.921746181132722e-06
+  },
+  "C14-08": {
+    "undercut_mm": 0.23802453109453436,
+    "reinforcement_mm": 1.4745974469175382,
+    "misalignment_mm": 0.14649001231884148,
+    "governing": "undercut",
+    "p_exceedance": 1.4474911426698434e-06
+  },
+  "C14-09": {
+    "undercut_mm": 0.13571844525894575,
+    "reinforcement_mm": 1.4717151070821846,
+    "misalignment_mm": 0.29182574105125736,
+    "governing": "undercut",
+    "p_exceedance": 3.8839542693125395e-11
+  },
+  "C15-00": {
+    "undercut_mm": 0.21204566675553693,
+    "reinforcement_mm": 1.3383740615161557,
+    "misalignment_mm": 0.23875688783691207,
+    "governing": "undercut",
+    "p_exceedance": 1.358844128884762e-07
+  },
+  "C15-01": {
+    "undercut_mm": 0.2581849436897157,
+    "reinforcement_mm": 1.9064191416945522,
+    "misalignment_mm": 0.13853731042832684,
+    "governing": "undercut",
+    "p_exceedance": 7.867979477327314e-06
+  },
+  "C15-02": {
+    "undercut_mm": 0.17227981089997602,
+    "reinforcement_mm": 1.7426111405039153,
+    "misalignment_mm": 0.34946454046189357,
+    "governing": "undercut",
+    "p_exceedance": 2.4263482889530508e-09
+  },
+  "C15-03": {
+    "undercut_mm": 0.11205031685432307,
+    "reinforcement_mm": 1.6201435177734256,
+    "misalignment_mm": 0.6429030870041061,
+    "governing": "misalignment",
+    "p_exceedance": 9.045414417485631e-11
+  },
+  "C15-04": {
+    "undercut_mm": 0.22522382426126752,
+    "reinforcement_mm": 1.8955229864979681,
+    "misalignment_mm": 0.6140392193823605,
+    "governing": "undercut",
+    "p_exceedance": 4.630665644822507e-07
+  },
+  "C15-05": {
+    "undercut_mm": 0.27967837283542085,
+    "reinforcement_mm": 1.5803810289277118,
+    "misalignment_mm": 0.10353765015039584,
+    "governing": "undercut",
+    "p_exceedance": 4.171719139728358e-05
+  },
+  "C15-06": {
+    "undercut_mm": 0.1555276408015474,
+    "reinforcement_mm": 1.953475125059386,
+    "misalignment_mm": 0.6120687703414627,
+    "governing": "undercut",
+    "p_exceedance": 3.8427105941707396e-10
+  },
+  "C15-07": {
+    "undercut_mm": 0.3360291015410319,
+    "reinforcement_mm": 1.6190212826298218,
+    "misalignment_mm": 0.5485094013868305,
+    "governing": "undercut",
+    "p_exceedance": 0.001705466294817104
+  },
+  "C15-08": {
+    "undercut_mm": 0.2138396929201517,
+    "reinforcement_mm": 1.8032525889412414,
+    "misalignment_mm": 0.23232321659429134,
+    "governing": "undercut",
+    "p_exceedance": 1.6107473094217895e-07
+  },
+  "C15-09": {
+    "undercut_mm": 0.11582649038643085,
+    "reinforcement_mm": 1.6358359760466366,
+    "misalignment_mm": 0.11741489196802915,
+    "governing": "undercut",
+    "p_exceedance": 3.4371949730882534e-12
+  }
+}

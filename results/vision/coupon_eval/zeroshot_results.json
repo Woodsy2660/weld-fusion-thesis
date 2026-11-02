@@ -1,0 +1,2133 @@
+{
+  "model": "best_resnet18_ft-layer2.pth",
+  "n_patches": 150,
+  "accuracy": 0.47333333333333333,
+  "macro_f1": 0.2934001670843776,
+  "weighted_f1": 0.41499081035923147,
+  "trivial_baseline": 0.2338,
+  "lift_over_trivial": 0.0596001670843776,
+  "confusion_matrix": [
+    [
+      0,
+      11,
+      15
+    ],
+    [
+      0,
+      10,
+      33
+    ],
+    [
+      0,
+      20,
+      61
+    ]
+  ],
+  "head_names": [
+    "V1",
+    "V3",
+    "V4"
+  ],
+  "per_patch": [
+    {
+      "cell_id": "C01-00",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.010834216140210629,
+        "V3": 0.9859390258789062,
+        "V4": 0.0032267735805362463
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C01-01",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.0002985004393849522,
+        "V3": 0.9883629679679871,
+        "V4": 0.011338555254042149
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C01-02",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.007977093569934368,
+        "V3": 0.975666880607605,
+        "V4": 0.016356009989976883
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C01-03",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.006329686380922794,
+        "V3": 0.9932898879051208,
+        "V4": 0.00038040863000787795
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C01-04",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.019900303333997726,
+        "V3": 0.9762338995933533,
+        "V4": 0.0038658396806567907
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C01-05",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.24217696487903595,
+        "V3": 0.7575191259384155,
+        "V4": 0.00030388389131985605
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C01-06",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.00028429037774913013,
+        "V3": 0.9996429681777954,
+        "V4": 7.264910527737811e-05
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C01-07",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.0008546974277123809,
+        "V3": 0.9977385997772217,
+        "V4": 0.0014066630974411964
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C01-08",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.00040417196578346193,
+        "V3": 0.9976872205734253,
+        "V4": 0.0019086097599938512
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C01-09",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.012522242031991482,
+        "V3": 0.9305305480957031,
+        "V4": 0.05694727227091789
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C02-00",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 3.2438394555356354e-05,
+        "V3": 0.0010546341072767973,
+        "V4": 0.9989129304885864
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C02-01",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 4.263718437869102e-05,
+        "V3": 0.007869559340178967,
+        "V4": 0.9920877814292908
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C02-02",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 6.988402219576528e-06,
+        "V3": 0.010616244748234749,
+        "V4": 0.9893767833709717
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C02-03",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 5.953791969659505e-06,
+        "V3": 0.009976123459637165,
+        "V4": 0.9900179505348206
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C02-04",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 0.00011506716691656038,
+        "V3": 0.0003622115182224661,
+        "V4": 0.9995226860046387
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C02-05",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.541229514463339e-05,
+        "V3": 0.00018620291666593403,
+        "V4": 0.9997883439064026
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C02-06",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 3.3076350973715307e-06,
+        "V3": 0.9328476190567017,
+        "V4": 0.06714905798435211
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C02-07",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 3.072750814681058e-06,
+        "V3": 0.4273703396320343,
+        "V4": 0.5726266503334045
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C02-08",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.3119400819050497e-06,
+        "V3": 0.4783952236175537,
+        "V4": 0.521603524684906
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C02-09",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 7.559986261185259e-05,
+        "V3": 0.020398138090968132,
+        "V4": 0.9795262813568115
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C03-00",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 6.655207835137844e-05,
+        "V3": 0.9784305691719055,
+        "V4": 0.021502744406461716
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C03-01",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 1.0412938536319416e-05,
+        "V3": 0.9461340308189392,
+        "V4": 0.05385556071996689
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C03-02",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 1.6590951418038458e-05,
+        "V3": 0.9604365825653076,
+        "V4": 0.03954683616757393
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C03-03",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 7.51420793676516e-06,
+        "V3": 0.9986749291419983,
+        "V4": 0.0013175086351111531
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C03-04",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.00036896808887831867,
+        "V3": 0.9992707371711731,
+        "V4": 0.00036028659087605774
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C03-05",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.0007365672499872744,
+        "V3": 0.9988605976104736,
+        "V4": 0.000402848789235577
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C03-06",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.0001849896361818537,
+        "V3": 0.9995703101158142,
+        "V4": 0.00024472977383993566
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C03-07",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.000793124083429575,
+        "V3": 0.9957749247550964,
+        "V4": 0.0034319947008043528
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C03-08",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.004466846585273743,
+        "V3": 0.9945240020751953,
+        "V4": 0.001009139115922153
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C03-09",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.0007195929647423327,
+        "V3": 0.9986207485198975,
+        "V4": 0.0006595725426450372
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C04-00",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 2.606230555102229e-05,
+        "V3": 0.9979068040847778,
+        "V4": 0.002067208755761385
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C04-01",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.0009581978083588183,
+        "V3": 0.9832150340080261,
+        "V4": 0.015826769173145294
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C04-02",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.022656574845314026,
+        "V3": 0.9663030505180359,
+        "V4": 0.011040384881198406
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C04-03",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.0006595365121029317,
+        "V3": 0.9950098991394043,
+        "V4": 0.004330643452703953
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C04-04",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 4.536657434073277e-05,
+        "V3": 0.998367965221405,
+        "V4": 0.0015867498004809022
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C04-05",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.0003103434282820672,
+        "V3": 0.999239444732666,
+        "V4": 0.00045025633880868554
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C04-06",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.02747475728392601,
+        "V3": 0.9705342650413513,
+        "V4": 0.001991023076698184
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C04-07",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.015462614595890045,
+        "V3": 0.9841514825820923,
+        "V4": 0.0003859010466840118
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C04-08",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.005800819490104914,
+        "V3": 0.9890307784080505,
+        "V4": 0.005168409552425146
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C04-09",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 9.551695984555408e-05,
+        "V3": 0.9958884119987488,
+        "V4": 0.004016075748950243
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C05-00",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.0014679525047540665,
+        "V3": 0.5598887801170349,
+        "V4": 0.43864327669143677
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C05-01",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.00016119741485454142,
+        "V3": 0.8386781215667725,
+        "V4": 0.16116073727607727
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C05-02",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 0.009505399502813816,
+        "V3": 0.36610138416290283,
+        "V4": 0.6243932247161865
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C05-03",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.0021968160290271044,
+        "V3": 0.7144172787666321,
+        "V4": 0.28338584303855896
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C05-04",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.0009247627458535135,
+        "V3": 0.9085543751716614,
+        "V4": 0.09052090346813202
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C05-05",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 2.921415762102697e-05,
+        "V3": 0.983797013759613,
+        "V4": 0.016173753887414932
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C05-06",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 1.1541675121407025e-05,
+        "V3": 0.9919622540473938,
+        "V4": 0.008026163093745708
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C05-07",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 0.00040804402669891715,
+        "V3": 0.9564960598945618,
+        "V4": 0.043095823377370834
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C05-08",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 2.5051587726920843e-05,
+        "V3": 0.996272087097168,
+        "V4": 0.003702863585203886
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C05-09",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 6.5629046730464324e-06,
+        "V3": 0.9961004257202148,
+        "V4": 0.003893003100529313
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C06-00",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 0.0008402625098824501,
+        "V3": 0.013956118375062943,
+        "V4": 0.9852036237716675
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C06-01",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.102267560781911e-05,
+        "V3": 8.632053504697978e-05,
+        "V4": 0.999902606010437
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C06-02",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 8.912119483284187e-06,
+        "V3": 6.637522164965048e-05,
+        "V4": 0.9999246597290039
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C06-03",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 9.671661246102303e-06,
+        "V3": 3.1358638807432726e-05,
+        "V4": 0.9999589920043945
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C06-04",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 0.0008762011420913041,
+        "V3": 0.0010823581833392382,
+        "V4": 0.9980413913726807
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C06-05",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 4.09363055950962e-05,
+        "V3": 5.304846854414791e-05,
+        "V4": 0.999906063079834
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C06-06",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.1875248674186878e-05,
+        "V3": 0.06588996946811676,
+        "V4": 0.9340981841087341
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C06-07",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 6.4209561969619244e-06,
+        "V3": 0.140601247549057,
+        "V4": 0.8593923449516296
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C06-08",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.5602118708102353e-07,
+        "V3": 0.3054513931274414,
+        "V4": 0.6945484280586243
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C06-09",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 6.006722742313286e-06,
+        "V3": 0.04711644724011421,
+        "V4": 0.9528775811195374
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C07-00",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.3047802895016503e-05,
+        "V3": 4.9652815505396575e-05,
+        "V4": 0.9999372959136963
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C07-01",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 4.006727976957336e-06,
+        "V3": 8.142793376464397e-05,
+        "V4": 0.9999145269393921
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C07-02",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 4.41067895735614e-05,
+        "V3": 0.0004083813983015716,
+        "V4": 0.99954754114151
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C07-03",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 4.3162130168639123e-05,
+        "V3": 0.0003080996684730053,
+        "V4": 0.9996486902236938
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C07-04",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.7574397134012543e-05,
+        "V3": 0.000605344888754189,
+        "V4": 0.9993770718574524
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C07-05",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 8.392240852117538e-05,
+        "V3": 0.0018403083086013794,
+        "V4": 0.9980757236480713
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C07-06",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 4.98477129440289e-06,
+        "V3": 0.45932790637016296,
+        "V4": 0.5406671166419983
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C07-07",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 7.441969387400604e-07,
+        "V3": 0.280915766954422,
+        "V4": 0.7190834879875183
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C07-08",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 9.530111810818198e-07,
+        "V3": 0.28037241101264954,
+        "V4": 0.7196266651153564
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C07-09",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 9.011739166453481e-05,
+        "V3": 0.03374754264950752,
+        "V4": 0.9661623239517212
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C08-00",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.0916517314617522e-05,
+        "V3": 0.0006220847135409713,
+        "V4": 0.9993570446968079
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C08-01",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.39343001137604e-05,
+        "V3": 0.00015108002116903663,
+        "V4": 0.9998350143432617
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C08-02",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.6039224647101946e-05,
+        "V3": 0.0005791686708107591,
+        "V4": 0.999404788017273
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C08-03",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 3.8070262235123664e-05,
+        "V3": 0.0009611553396098316,
+        "V4": 0.9990008473396301
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C08-04",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 7.939243005239405e-06,
+        "V3": 9.533148841001093e-05,
+        "V4": 0.999896764755249
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C08-05",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 8.879355846147519e-06,
+        "V3": 0.00017423019744455814,
+        "V4": 0.9998169541358948
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C08-06",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 4.4419043661036994e-06,
+        "V3": 0.029184753075242043,
+        "V4": 0.9708107709884644
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C08-07",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.428023890388431e-06,
+        "V3": 0.03686457499861717,
+        "V4": 0.9631329774856567
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C08-08",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 5.814473297505174e-06,
+        "V3": 0.13710282742977142,
+        "V4": 0.8628913760185242
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C08-09",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 0.0008673543925397098,
+        "V3": 0.0006733519257977605,
+        "V4": 0.9984593391418457
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C09-00",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.8891607396653853e-05,
+        "V3": 0.0022272327914834023,
+        "V4": 0.997753918170929
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C09-01",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.5682875528000295e-05,
+        "V3": 0.0032315996941179037,
+        "V4": 0.9967526793479919
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C09-02",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.6730740753700957e-05,
+        "V3": 0.000590082723647356,
+        "V4": 0.9993932247161865
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C09-03",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 0.0008113605435937643,
+        "V3": 0.0012727321591228247,
+        "V4": 0.9979159235954285
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C09-04",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 4.7208130126819015e-05,
+        "V3": 0.00030307957786135375,
+        "V4": 0.9996497631072998
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C09-05",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 0.00013283804582897574,
+        "V3": 0.01791704259812832,
+        "V4": 0.981950044631958
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C09-06",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 1,
+      "pred_head": "V3",
+      "probs": {
+        "V1": 2.1801923139719293e-05,
+        "V3": 0.611092746257782,
+        "V4": 0.3888854682445526
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C09-07",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 9.266784672945505e-07,
+        "V3": 0.01836150884628296,
+        "V4": 0.9816375374794006
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C09-08",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 8.095521479845047e-07,
+        "V3": 0.2318086475133896,
+        "V4": 0.7681905627250671
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C09-09",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 6.342144479276612e-05,
+        "V3": 0.008114010095596313,
+        "V4": 0.9918225407600403
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C10-00",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 0.00019089570560026914,
+        "V3": 0.004399627912789583,
+        "V4": 0.9954094290733337
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C10-01",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 6.70085137244314e-05,
+        "V3": 0.00014166788605507463,
+        "V4": 0.9997913241386414
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C10-02",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 8.292201528092846e-06,
+        "V3": 0.01458761841058731,
+        "V4": 0.9854040741920471
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C10-03",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.809688728826586e-05,
+        "V3": 5.184630208532326e-05,
+        "V4": 0.9999300241470337
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C10-04",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 7.67633828218095e-05,
+        "V3": 0.00024160463362932205,
+        "V4": 0.9996815919876099
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C10-05",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 3.258905780967325e-05,
+        "V3": 0.00020822961232624948,
+        "V4": 0.9997591376304626
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C10-06",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 0.0005470506148412824,
+        "V3": 0.21172450482845306,
+        "V4": 0.787728488445282
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C10-07",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.1991653082077391e-05,
+        "V3": 0.2879461646080017,
+        "V4": 0.7120417952537537
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C10-08",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.243673634438892e-06,
+        "V3": 0.3300553262233734,
+        "V4": 0.6699424386024475
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C10-09",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 0.00016802067693788558,
+        "V3": 0.00180987233761698,
+        "V4": 0.9980220794677734
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C11-00",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.1416828531073406e-05,
+        "V3": 0.0002325594105059281,
+        "V4": 0.9997460246086121
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C11-01",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 4.306881601223722e-05,
+        "V3": 0.00047540332889184356,
+        "V4": 0.9994814991950989
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C11-02",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.1430769265862182e-05,
+        "V3": 0.00012537880684249103,
+        "V4": 0.9998531341552734
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C11-03",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 3.553348142304458e-05,
+        "V3": 0.00013989991566631943,
+        "V4": 0.999824583530426
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C11-04",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 8.63069508341141e-05,
+        "V3": 0.00020569835032802075,
+        "V4": 0.9997079968452454
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C11-05",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.9683875254704617e-05,
+        "V3": 7.506028487114236e-05,
+        "V4": 0.9998952150344849
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C11-06",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 6.672444214927964e-06,
+        "V3": 0.00036134987021796405,
+        "V4": 0.9996320009231567
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C11-07",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.7137725737702567e-06,
+        "V3": 0.10447516292333603,
+        "V4": 0.8955221176147461
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C11-08",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.374452833464602e-06,
+        "V3": 0.07732021808624268,
+        "V4": 0.9226773381233215
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C11-09",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 0.00021848129108548164,
+        "V3": 0.030429985374212265,
+        "V4": 0.9693515300750732
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C12-00",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.806274096656125e-05,
+        "V3": 0.002043233485892415,
+        "V4": 0.9979287385940552
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C12-01",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.6555148249608465e-05,
+        "V3": 0.0007856331067159772,
+        "V4": 0.999197781085968
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C12-02",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 3.765790461329743e-05,
+        "V3": 0.00025203177938237786,
+        "V4": 0.9997102618217468
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C12-03",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.1350027964217588e-05,
+        "V3": 0.0013853751588612795,
+        "V4": 0.998593270778656
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C12-04",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.027322286972776e-05,
+        "V3": 4.625170913641341e-05,
+        "V4": 0.9999434947967529
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C12-05",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.4473516532452777e-05,
+        "V3": 0.00019576937484089285,
+        "V4": 0.9997797608375549
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C12-06",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 5.368992788135074e-06,
+        "V3": 0.005062672775238752,
+        "V4": 0.9949319958686829
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C12-07",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 3.7432478166010696e-06,
+        "V3": 0.0007332559325732291,
+        "V4": 0.9992629885673523
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C12-08",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 7.605070095451083e-06,
+        "V3": 0.015336301177740097,
+        "V4": 0.9846560955047607
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C12-09",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 0.0020402686204761267,
+        "V3": 0.001372089027427137,
+        "V4": 0.9965876340866089
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C13-00",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 3.175882375217043e-05,
+        "V3": 0.00025247366284020245,
+        "V4": 0.9997157454490662
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C13-01",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 4.5525841414928436e-05,
+        "V3": 0.00010506508988328278,
+        "V4": 0.9998494386672974
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C13-02",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.6793908546096645e-05,
+        "V3": 0.0008690487593412399,
+        "V4": 0.9991040825843811
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C13-03",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.923333340731915e-05,
+        "V3": 7.764194015180692e-05,
+        "V4": 0.999893069267273
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C13-04",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 3.833392111118883e-05,
+        "V3": 0.0001802187762223184,
+        "V4": 0.9997814297676086
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C13-05",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.945198528119363e-05,
+        "V3": 0.0004730591317638755,
+        "V4": 0.9995074272155762
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C13-06",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.086773681890918e-05,
+        "V3": 0.029928963631391525,
+        "V4": 0.9700601696968079
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C13-07",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 3.866687166009797e-06,
+        "V3": 0.020934447646141052,
+        "V4": 0.9790616631507874
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C13-08",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.2001138404448284e-06,
+        "V3": 0.017539551481604576,
+        "V4": 0.9824582934379578
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C13-09",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 0.0005799942882731557,
+        "V3": 0.005259451922029257,
+        "V4": 0.9941604733467102
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C14-00",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 8.225264900829643e-05,
+        "V3": 0.0001799459132598713,
+        "V4": 0.9997377991676331
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C14-01",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.352525552851148e-05,
+        "V3": 5.1486498705344275e-05,
+        "V4": 0.9999250173568726
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C14-02",
+      "true_class": "L",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.4819480384176131e-05,
+        "V3": 3.8755290006520227e-05,
+        "V4": 0.9999464750289917
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C14-03",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 3.8937174394959584e-05,
+        "V3": 5.8829387853620574e-05,
+        "V4": 0.9999022483825684
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C14-04",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 7.800931052770466e-05,
+        "V3": 0.0001750477240420878,
+        "V4": 0.9997469782829285
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C14-05",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.5571340554743074e-05,
+        "V3": 0.0006181494682095945,
+        "V4": 0.9993663430213928
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C14-06",
+      "true_class": "U",
+      "vision_target": "{N,U}",
+      "true_idx": 1,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 4.076023287780117e-06,
+        "V3": 0.09382618218660355,
+        "V4": 0.9061697125434875
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C14-07",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.2390292997442884e-06,
+        "V3": 0.007501651532948017,
+        "V4": 0.992496132850647
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C14-08",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.0204641966993222e-06,
+        "V3": 0.1857718974351883,
+        "V4": 0.8142271041870117
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C14-09",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 0.0003016672853846103,
+        "V3": 0.005053156986832619,
+        "V4": 0.9946452379226685
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C15-00",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.3365902304940391e-05,
+        "V3": 0.00024273221788462251,
+        "V4": 0.9997438788414001
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C15-01",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 2.0593703084159642e-05,
+        "V3": 9.927764040185139e-05,
+        "V4": 0.9998800754547119
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C15-02",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 9.084298653760925e-06,
+        "V3": 0.0004428427782841027,
+        "V4": 0.9995480179786682
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C15-03",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 3.2148047466762364e-05,
+        "V3": 0.0006877857376821339,
+        "V4": 0.9992800354957581
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C15-04",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.5859630366321653e-05,
+        "V3": 0.000263272289885208,
+        "V4": 0.9997208714485168
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C15-05",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 3.490032031550072e-05,
+        "V3": 0.0001451115676900372,
+        "V4": 0.9998200535774231
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C15-06",
+      "true_class": "N",
+      "vision_target": "{N,U,L}",
+      "true_idx": 2,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 3.5605498851509765e-05,
+        "V3": 0.07410158962011337,
+        "V4": 0.9258628487586975
+      },
+      "correct": true
+    },
+    {
+      "cell_id": "C15-07",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 0.00017418373317923397,
+        "V3": 0.029217658564448357,
+        "V4": 0.970608115196228
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C15-08",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 1.1249184353800956e-05,
+        "V3": 0.03511766716837883,
+        "V4": 0.9648710489273071
+      },
+      "correct": false
+    },
+    {
+      "cell_id": "C15-09",
+      "true_class": "P",
+      "vision_target": "{P}",
+      "true_idx": 0,
+      "pred_idx": 2,
+      "pred_head": "V4",
+      "probs": {
+        "V1": 8.517581591149792e-05,
+        "V3": 0.05273520201444626,
+        "V4": 0.9471796154975891
+      },
+      "correct": false
+    }
+  ]
+}
